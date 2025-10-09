@@ -1,0 +1,988 @@
+{
+  "brand": "Gopalan",
+  "brandSuffix": "AI",
+  "aria": {
+    "goHome": "Go to Home",
+    "toggleMenu": "Toggle menu"
+  },
+  "nav": {
+    "home": "Home",
+    "technology": "Technology",
+    "guide": "Guide",
+    "animalGuide": "Animal Guide",
+    "medicalSupport": "Medical Support",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "auth": {
+    "signUp": "Sign Up",
+    "login": "Login",
+    "signIn": "Sign In"
+  },
+  "lang": {
+    "en": "EN",
+    "hi": "HI"
+  },
+  "langFull": {
+    "en": "English",
+    "hi": "हिंदी"
+  },
+  "hero": {
+    "tagline": "Revolutionary AI-powered Animal Type Classification and Scoring system for the Rashtriya Gokul Mission",
+    "subtagline": "Automating livestock evaluation through advanced computer vision and AI, ensuring standardized, objective scoring for scientific breeding programs.",
+    "ctaExplore": "Explore Technology",
+    "ctaDemo": "View Demo",
+    "scroll": "Scroll to learn more"
+  },
+  "solution": {
+    "title": "AI-Powered Solution",
+    "subtitle": "Revolutionary technology that transforms livestock evaluation through intelligent automation",
+    "howItWorks": "How Gopalan AI Works",
+    "steps": {
+      "capture": { "title": "Image Capture", "desc": "Field personnel capture cattle images using mobile devices" },
+      "analysis": { "title": "AI Analysis", "desc": "Advanced algorithms extract body parameters and measurements" },
+      "scoring": { "title": "Automated Scoring", "desc": "Generate objective classification scores based on standardized criteria" },
+      "integration": { "title": "Data Integration", "desc": "Seamlessly integrate results with existing databases and apps" }
+    },
+    "features": {
+      "cv": { "title": "Computer Vision Analysis", "desc": "Advanced AI algorithms analyze cattle images to extract precise body structure parameters" },
+      "scoring": { "title": "Standardized Scoring", "desc": "Objective classification scores eliminate human bias and ensure consistency" },
+      "realtime": { "title": "Real-time Processing", "desc": "Instant analysis and scoring for efficient field operations" },
+      "bpa": { "title": "BPA Integration", "desc": "Seamless integration with Bharat Pashudhan App for automated record keeping" }
+    },
+    "cta": {
+      "title": "Ready to Transform Livestock Evaluation?",
+      "desc": "Join the revolution in agricultural technology and make your breeding programs more accurate and efficient.",
+      "button": "Get Started Today"
+    }
+  },
+  "problem": {
+    "title": "The Challenge We're Solving",
+    "subtitle": "Traditional Animal Type Classification faces significant accuracy and consistency challenges",
+    "currentIssues": "Current Issues",
+    "issues": {
+      "humanError": "Human error and subjectivity in manual scoring",
+      "inconsistentQuality": "Inconsistent data quality despite trained personnel",
+      "observerBias": "Observer bias affecting scientific analysis",
+      "fatigue": "Fatigue-related measurement inaccuracies"
+    },
+    "missionImpact": "Mission Impact",
+    "missionImpactDesc": "The Rashtriya Gokul Mission's success in conserving indigenous bovine breeds and enhancing milk productivity depends on accurate Animal Type Classification for identifying elite breeding stock.",
+    "byTheNumbers": "By the Numbers",
+    "metrics": {
+      "manualAccuracy": "Manual Classification Accuracy",
+      "biasImpact": "Observer Bias Impact",
+      "targetAccuracy": "Target AI Accuracy",
+      "standardization": "Standardization"
+    }
+  },
+  "techspecs": {
+    "title": "Technical Specifications",
+    "subtitle": "Cutting-edge technology designed for precision, reliability, and ease of use in field conditions",
+    "categories": {
+      "ai": "AI Capabilities",
+      "performance": "Performance Metrics",
+      "integration": "Integration Features"
+    },
+    "items": {
+      "bodyLength": "Body Length Analysis",
+      "heightWithers": "Height at Withers",
+      "chestWidth": "Chest Width Measurement",
+      "rumpAngle": "Rump Angle Assessment",
+      "processingSpeed": "Processing Speed",
+      "imageResolution": "Image Resolution",
+      "classificationAccuracy": "Classification Accuracy",
+      "dataReliability": "Data Reliability",
+      "bpaCompatibility": "BPA Compatibility",
+      "mobileSupport": "Mobile Support",
+      "offlineMode": "Offline Mode",
+      "dataSync": "Data Sync"
+    },
+    "values": {
+      "accuracy_992": "99.2% Accuracy",
+      "accuracy_988": "98.8% Accuracy",
+      "accuracy_975": "97.5% Accuracy",
+      "accuracy_963": "96.3% Accuracy",
+      "lt3s": "< 3 seconds",
+      "4k": "4K+ Support",
+      "accuracy_95p": "95%+ Average",
+      "uptime_999": "99.9% Uptime",
+      "nativeApi": "Native API",
+      "iosAndroid": "iOS & Android",
+      "fullCapability": "Full Capability",
+      "realtime": "Real-time"
+    },
+    "keyBenefits": {
+      "title": "Key Benefits",
+      "standardization": { "title": "Standardization:", "desc": "Eliminates observer bias and human error" },
+      "efficiency": { "title": "Efficiency:", "desc": "10x faster than manual classification" },
+      "scalability": { "title": "Scalability:", "desc": "Process thousands of animals per day" },
+      "accuracy": { "title": "Accuracy:", "desc": "Consistent 95%+ classification accuracy" }
+    },
+    "missionAlignment": {
+      "title": "Mission Alignment",
+      "desc": "Gopalan AI directly supports the Rashtriya Gokul Mission objectives by providing:",
+      "enhancedBreeding": { "title": "Enhanced Breeding Programs:", "desc": "Accurate identification of elite breeding stock" },
+      "scientificValidation": { "title": "Scientific Validation:", "desc": "Reliable data for genetic improvement initiatives" },
+      "nationalImpact": { "title": "National Impact:", "desc": "Scalable solution for nationwide implementation" }
+    }
+  },
+  "footer": {
+    "description": "Revolutionary AI technology for automated Animal Type Classification, supporting the Rashtriya Gokul Mission's breeding excellence initiatives.",
+    "points": {
+      "conservation": "Supporting indigenous bovine conservation",
+      "breeding": "Enhancing scientific breeding programs",
+      "cvPowered": "Powered by advanced computer vision"
+    },
+    "keyFeatures": "Key Features",
+    "features": {
+      "measurement": "Automated body measurement extraction",
+      "scoring": "Standardized classification scoring",
+      "bpa": "BPA integration capabilities",
+      "realtime": "Real-time processing",
+      "mobile": "Mobile-friendly interface",
+      "offline": "Offline functionality"
+    },
+    "missionSupport": "Mission Support",
+    "mission": {
+      "gokul": { "title": "Rashtriya Gokul Mission", "desc": "Advancing indigenous breed conservation and genetic improvement" },
+      "excellence": { "title": "Scientific Excellence", "desc": "Ensuring data quality for breeding program decisions" }
+    },
+    "badges": {
+      "gov": "Built for Government of India",
+      "gokul": "Rashtriya Gokul Mission",
+      "ai": "AI-Powered Excellence"
+    },
+    "copyright": "© 2024 Gopalan AI. Advancing agricultural technology for a better tomorrow."
+  },
+  "classification": {
+    "badge": "AI Technology",
+    "title": "Animal Type Classification & Scoring",
+    "subtitle": "Advanced AI-powered evaluation system for comprehensive livestock assessment, breed classification, and standardized scoring with 95%+ accuracy",
+    "stats": {
+      "accuracy": "Accuracy",
+      "analysis": "Analysis",
+      "breeds": "Breeds",
+      "scoring": "Scoring"
+    },
+    "upload": {
+      "title": "Upload Image",
+      "desc": "Click to select cattle images from your device"
+    },
+    "scan": {
+      "title": "Scan with Camera",
+      "desc": "Use your device camera to capture images"
+    },
+    "live": {
+      "title": "Live AI Scoring",
+      "desc": "Experience our state-of-the-art animal classification and scoring model directly in your browser.",
+      "launch": "Launch Analysis"
+    },
+    "liveActive": {
+      "title": "Live AI Analysis & Scoring",
+      "desc": "Use our state-of-the-art AI model to analyze your cattle images in real-time",
+      "loaded": "Image loaded - Ready for advanced evaluation",
+      "close": "Close",
+      "openFull": "Open Full App",
+      "cards": {
+        "realtime": { "title": "Real-time Processing", "desc": "Get instant results as you upload images" },
+        "accuracy": { "title": "High Accuracy", "desc": "95%+ classification accuracy rate" },
+        "secure": { "title": "Secure Processing", "desc": "Your data is processed securely" }
+      }
+    },
+    "scanning": {
+      "title": "Camera Scanning Active",
+      "desc": "Position your cattle in the camera frame..."
+    },
+    "ready": {
+      "title": "Image Ready for Analysis",
+      "alt": "Selected cattle for analysis",
+      "start": "Start AI Analysis",
+      "change": "Change Image"
+    },
+    "buttons": {
+      "physical": { "title": "Evaluate Physical", "desc": "Assess body structure, physical characteristics, and overall health indicators" },
+      "score": { "title": "Evaluate Score", "desc": "Generate standardized scoring for classification, health assessment, and scientific breeding programs" },
+      "match": { "title": "Evaluate Best Match", "desc": "Find the optimal breed matches, performance insights, and health-based recommendations" },
+      "states": {
+        "analyzing": "Analyzing...",
+        "startEval": "Start Evaluation",
+        "clickToCheck": "Click to Check"
+      }
+    },
+    "alerts": {
+      "uploadFirst": "Please upload an image first using the Live AI Analysis or traditional upload."
+    },
+    "results": {
+      "complete": "Complete!",
+      "labels": {
+        "confidence": "Confidence",
+        "result": "Result",
+        "score": "Score"
+      },
+      "sections": {
+        "physicalTraits": "Physical Traits Analysis",
+        "scoringBreakdown": "Scoring Breakdown",
+        "breedMatches": "Breed Matches"
+      },
+      "types": {
+        "physical": "Physical Evaluation",
+        "score": "Score Evaluation",
+        "match": "Best Match Evaluation",
+        "error": "Error"
+      },
+      "details": {
+        "physical": "Physical structure analysis complete",
+        "score": "Standardized scoring complete",
+        "match": "Breed matching analysis complete"
+      },
+      "error": {
+        "breed": "Analysis Failed",
+        "details": "Please try again or contact support"
+      },
+      "physicalTraits": {
+        "frame": "Body frame: Large and well-proportioned",
+        "udder": "Udder conformation: Excellent attachment",
+        "legs": "Leg structure: Strong and straight"
+      },
+      "score": {
+        "breedLabel": "Classification: Excellent",
+        "breakdown": {
+          "general": "General Appearance",
+          "strength": "Dairy Strength",
+          "capacity": "Body Capacity",
+          "legs": "Feet & Legs"
+        }
+      },
+      "match": {
+        "optimal": "Optimal Match: {{breed}}",
+        "reasons": {
+          "milk": "Excellent milk production traits",
+          "butterfat": "Good butterfat content",
+          "frame": "Moderate frame size match"
+        }
+      }
+    },
+    "pipeline": {
+      "title": "AI-Powered Classification Pipeline",
+      "desc": "Our advanced computer vision system follows a comprehensive 7-step process to deliver precise livestock evaluation results",
+      "labels": {
+        "time": "Processing Time:",
+        "accuracy": "Accuracy:"
+      },
+      "steps": {
+        "dataAcq": { "title": "Data Acquisition", "desc": "High-resolution image capture from multiple angles and lighting conditions", "details": "RGB/IR sensors, 4K resolution", "tech": "Computer Vision" },
+        "preprocess": { "title": "Preprocessing", "desc": "Image enhancement, noise reduction, and standardization", "details": "Gaussian filtering, histogram equalization", "tech": "Image Processing" },
+        "features": { "title": "Feature Extraction", "desc": "Automated detection of key morphological characteristics", "details": "CNN-based feature maps, edge detection", "tech": "Deep Learning" },
+        "classification": { "title": "Classification", "desc": "Multi-class breed identification using neural networks", "details": "ResNet-50 architecture, softmax output", "tech": "AI/ML" },
+        "phenotype": { "title": "Phenotype Scoring", "desc": "Standardized evaluation of physical traits and conformity", "details": "Multi-criteria analysis, weighted scoring", "tech": "Analytics" },
+        "quality": { "title": "Quality Assessment", "desc": "Health indicators, body condition scoring, and anomaly detection", "details": "Statistical analysis, outlier detection", "tech": "ML Analytics" },
+        "integration": { "title": "Integration", "desc": "Seamless data export to farm management and breeding systems", "details": "API integration, database sync", "tech": "Cloud/API" }
+      }
+    },
+    "modals": {
+      "physical": {
+        "title": "Evaluate Physical Condition",
+        "subtitle": "Follow these steps for accurate results",
+        "cta": "Continue Evaluate Physical",
+        "steps": {
+          "prepare": { "title": "Prepare Animal", "desc": "Clean, well-lit environment" },
+          "photos": { "title": "Capture Photos", "desc": "Front, side, and rear angles" },
+          "upload": { "title": "Upload Images", "desc": "Use mobile interface" },
+          "mark": { "title": "Mark Points", "desc": "Two reference points per image" },
+          "review": { "title": "Review Results", "desc": "AI-generated analysis" }
+        }
+      },
+      "score": {
+        "title": "Evaluate Score",
+        "subtitle": "Generate standardized scoring for classification.",
+        "cta": "Continue Evaluate Score",
+        "steps": {
+          "image": { "title": "Image Capture", "desc": "Single high-quality photo" },
+          "breed": { "title": "Breed Detection", "desc": "AI identifies breed type" },
+          "category": { "title": "Category Analysis", "desc": "Classification categories" },
+          "confidence": { "title": "Confidence Score", "desc": "Accuracy percentage" },
+          "report": { "title": "Detailed Report", "desc": "Complete classification" }
+        }
+      }
+    },
+    "tags": {
+      "fullReport": "Full Report",
+      "aiInsights": "AI Insights",
+      "breedId": "Breed ID",
+      "typeClass": "Type Class",
+      "genetics": "Genetics",
+      "breeding": "Breeding"
+    }
+  }
+  ,
+  "common": {
+    "readMore": "Read More",
+    "close": "Close"
+  }
+  ,
+  "animalGuide": {
+    "hero": {
+      "badge": "Comprehensive Livestock Guide",
+      "title": "Complete Guide to Cattle & Buffalo",
+      "subtitle": "Discover comprehensive information about cattle and buffalo breeds, their characteristics, care requirements, and everything you need to know about these remarkable livestock animals.",
+      "pills": {
+        "cattle": "16 Cattle Breeds",
+        "buffalo": "8 Buffalo Breeds",
+        "tips": "Expert Care Tips"
+      }
+    },
+    "cards": {
+      "common": { "milkProd": "Milk Production", "weightRange": "Weight Range" },
+      "cattle": {
+        "badge": "8 Breeds Featured",
+        "title": "Cattle (Cows)",
+        "desc": "Cattle (Bos taurus) are domesticated bovines primarily raised for milk, meat, and leather. They are intelligent social animals with complex behavioral patterns and have been human companions for over 10,000 years, playing crucial roles in agriculture and food production worldwide.",
+        "tags": { "dairy": "Dairy Production", "meat": "Meat Production", "draft": "Draft Power", "leather": "Leather" }
+      },
+      "buffalo": {
+        "badge": "8 Breeds Featured",
+        "title": "Water Buffalo",
+        "desc": "Water buffalo (Bubalus bubalis) are large bovines perfectly adapted to hot climates and wet conditions. They produce exceptionally rich milk with higher fat content and are excellent for dairy farming in tropical and subtropical regions around the world.",
+        "tags": { "richMilk": "Rich Milk (6-8% fat)", "heat": "Heat Tolerance", "draft": "Draft Work", "cheese": "Cheese Making" }
+      }
+    },
+    "tabs": {
+      "title": "Popular Breeds Collection",
+      "subtitle": "Explore detailed information about the most important cattle and buffalo breeds, their origins, characteristics, and performance metrics.",
+      "cattle": "Cattle Breeds",
+      "buffalo": "Buffalo Breeds"
+    },
+    "physical": {
+      "title": "Physical Parameters Comparison",
+      "subtitle": "Detailed comparison of physical characteristics between cattle and buffalo breeds",
+      "cardTitle": "Average Physical Measurements",
+      "table": { "parameter": "Parameter", "cattle": "Cattle", "buffalo": "Buffalo" }
+    },
+    "milk": {
+      "title": "Milk Nutritional Analysis",
+      "subtitle": "Comprehensive comparison of milk composition and nutritional values",
+      "cardTitle": "Milk Composition Analysis",
+      "table": { "component": "Nutrient Component", "cow": "Cow Milk", "buffalo": "Buffalo Milk" },
+      "insights": {
+        "title": "Key Insights",
+        "buffalo": "Buffalo milk contains significantly higher fat content (6-8% vs 3.5-4.5%), making it ideal for producing rich dairy products like ghee, cheese, and traditional sweets.",
+        "cow": "Cow milk has a lighter consistency and milder taste, making it more suitable for direct consumption, especially for children and health-conscious consumers."
+      }
+    },
+    "care": {
+      "title": "Complete Care & Management Guide",
+      "subtitle": "Essential practices for maintaining healthy and productive livestock",
+      "cards": {
+        "production": "Production Optimization",
+        "environment": "Environmental Control",
+        "economics": "Economic Efficiency"
+      },
+      "production": { "b1": "Monitor daily milk yield and quality", "b2": "Maintain optimal body condition score (3-3.5)", "b3": "Regular genetic evaluation and breeding", "b4": "Implement precision feeding programs" },
+      "environment": { "b1": "Temperature: 18-24°C optimal range", "b2": "Humidity: 50-70% relative humidity", "b3": "Air circulation: 4-6 air changes/hour", "b4": "Lighting: 16-18 hours light/day" },
+      "economics": { "b1": "Feed cost should be ≤50% of milk revenue", "b2": "Annual replacement rate: 20-25%", "b3": "Target calving interval: 12-13 months", "b4": "Maintain detailed financial records" }
+    },
+    "breedLabels": {
+      "weight": "Weight",
+      "dailyYield": "Daily Yield",
+      "fatContent": "Fat Content",
+      "climate": "Climate"
+    },
+    "breeds": {
+      "cow": {
+        "ongole": {
+          "name": "Ongole",
+          "origin": "Andhra Pradesh, India",
+          "characteristics": "High milk production, black and white markings, docile temperament",
+          "specialty": "World's highest milk producer"
+        },
+        "hallikar": {
+          "name": "Hallikar",
+          "origin": "Karnataka, India",
+          "characteristics": "High butterfat content, brown colored, large expressive eyes",
+          "specialty": "Highest quality milk with rich cream"
+        },
+        "gir": {
+          "name": "Gir",
+          "origin": "India (Gujarat)",
+          "characteristics": "Drought resistant, distinctive lyre-shaped horns, gentle nature",
+          "specialty": "Heat tolerance and disease resistance"
+        },
+        "sahiwal": {
+          "name": "Sahiwal",
+          "origin": "Pakistan/India",
+          "characteristics": "Heat tolerant, reddish brown color, well-developed udder",
+          "specialty": "Excellent heat tolerance"
+        },
+        "malnad": {
+          "name": "Malnad Gidda",
+          "origin": "Kannada region, India",
+          "characteristics": "Golden milk, fawn and white color, calm temperament",
+          "specialty": "Golden-colored milk rich in beta-carotene"
+        },
+        "rathi": {
+          "name": "Rathi",
+          "origin": "India (Rajasthan)",
+          "characteristics": "Large size, brown color, excellent longevity",
+          "specialty": "Excellent for cheese making"
+        },
+        "redsindhi": {
+          "name": "Red Sindhi",
+          "origin": "Rajsthan (Sindh)",
+          "characteristics": "Red color, heat resistant, good grazer",
+          "specialty": "Excellent heat and drought tolerance"
+        },
+        "kankrej": {
+          "name": "Kankrej",
+          "origin": "India (Gujarat/Rajasthan)",
+          "characteristics": "Silver-grey color, lyre-shaped horns, dual purpose",
+          "specialty": "Excellent draught power"
+        }
+      },
+      "buffalo": {
+        "murrah": {
+          "name": "Murrah",
+          "origin": "India (Haryana)",
+          "characteristics": "Curved horns, high milk yield, black color, well-developed udder",
+          "specialty": "Highest milk yielding buffalo breed"
+        },
+        "niliravi": {
+          "name": "Nili-Ravi",
+          "origin": "Pakistan/India (Punjab)",
+          "characteristics": "Wall eyes, white markings on face and legs, tightly coiled horns",
+          "specialty": "Excellent adaptability"
+        },
+        "surti": {
+          "name": "Surti",
+          "origin": "India (Gujarat)",
+          "characteristics": "Compact size, sickle-shaped horns, wedge-shaped body",
+          "specialty": "Ideal for small farms"
+        },
+        "jafarabadi": {
+          "name": "Jafarabadi",
+          "origin": "India (Gujarat)",
+          "characteristics": "Large size, drooping ears, flat curved horns, black color",
+          "specialty": "Heaviest buffalo breed in India"
+        },
+        "mehsana": {
+          "name": "Mehsana",
+          "origin": "India (Gujarat)",
+          "characteristics": "Cross between Murrah and Surti, black/grey color, white markings",
+          "specialty": "Combines best traits of parent breeds"
+        },
+        "bhadawari": {
+          "name": "Bhadawari",
+          "origin": "India (UP/MP)",
+          "characteristics": "Copper colored, medium size, well-adapted to local conditions",
+          "specialty": "Very high fat content milk"
+        },
+        "toda": {
+          "name": "Toda",
+          "origin": "India (Tamil Nadu - Nilgiris)",
+          "characteristics": "Fawn colored, thick hair coat, semi-wild, sturdy build",
+          "specialty": "Adapted to hilly terrains"
+        },
+        "nagpuri": {
+          "name": "Nagpuri",
+          "origin": "India (Maharashtra)",
+          "characteristics": "Dark grey color, sword-like horns, white facial patches",
+          "specialty": "Good draught animal"
+        }
+      }
+    },
+    "nutritionalData": {
+      "fatContent": "Fat Content",
+      "protein": "Protein",
+      "lactose": "Lactose",
+      "snf": "SNF (Solids Not Fat)",
+      "totalSolids": "Total Solids",
+      "calcium": "Calcium",
+      "phosphorus": "Phosphorus"
+    },
+    "managementTips": {
+      "feeding": {
+        "category": "Feeding",
+        "tips": [
+          "Provide 40-50 kg green fodder daily for cows, 50-60 kg for buffalos",
+          "Dry fodder: 6-8 kg/day for cows, 8-10 kg/day for buffalos",
+          "Concentrate: 1 kg per 2.5 liters of milk production",
+          "Fresh clean water: 30-50 liters/day per animal",
+          "Mineral supplements and salt licks should be available",
+          "Feed 3-4 times daily at regular intervals"
+        ]
+      },
+      "housing": {
+        "category": "Housing",
+        "tips": [
+          "Minimum space: 3.5m × 2m per cow, 4m × 2.5m per buffalo",
+          "Ceiling height: minimum 3.5 meters for proper ventilation",
+          "Concrete flooring with proper drainage",
+          "Separate feeding and resting areas",
+          "Protection from rain, sun, and extreme weather",
+          "Proper waste management system"
+        ]
+      },
+      "healthCare": {
+        "category": "Health Care",
+        "tips": [
+          "Regular vaccination as per veterinary schedule",
+          "Deworming every 4-6 months",
+          "Daily health monitoring and record keeping",
+          "Immediate isolation of sick animals",
+          "Regular hoof trimming and grooming",
+          "Mastitis prevention and udder care"
+        ]
+      },
+      "breeding": {
+        "category": "Breeding",
+        "tips": [
+          "Artificial insemination for genetic improvement",
+          "Heat detection and timely breeding",
+          "Proper pregnancy care and monitoring",
+          "Dry period management (60 days before calving)",
+          "Colostrum feeding within 2 hours of birth",
+          "Maintain breeding records"
+        ]
+      }
+    }
+  },
+  "login": {
+    "hero": {
+      "title": "Welcome Back",
+      "subtitle": "Sign in to your Gopalan AI account",
+      "mainTitle": "Revolutionize Your",
+      "mainTitleHighlight": "Farm Management",
+      "description": "Join thousands of farmers who trust Gopalan AI to monitor their animals' health, prevent diseases, and optimize their farm operations with intelligent insights."
+    },
+    "form": {
+      "email": "Email Address",
+      "emailPlaceholder": "Enter your email address",
+      "password": "Password",
+      "passwordPlaceholder": "Enter your password",
+      "rememberMe": "Remember me",
+      "forgotPassword": "Forgot password?",
+      "signIn": "Sign In",
+      "signingIn": "Signing In...",
+      "orContinueWith": "Or continue with",
+      "google": "Google",
+      "facebook": "Facebook",
+      "dontHaveAccount": "Don't have an account?",
+      "signUpForFree": "Sign up for free"
+    },
+    "demo": {
+      "title": "Demo Credentials:",
+      "email": "Email: demo@example.com",
+      "password": "Password: password"
+    },
+    "benefits": {
+      "healthMonitoring": {
+        "title": "Animal Health Monitoring",
+        "description": "Track your animals' health with AI-powered insights"
+      },
+      "emergencyAlerts": {
+        "title": "Emergency Alerts",
+        "description": "Get instant notifications for health emergencies"
+      },
+      "expertCommunity": {
+        "title": "Expert Community",
+        "description": "Connect with veterinarians and fellow farmers"
+      },
+      "premiumFeatures": {
+        "title": "Premium Features",
+        "description": "Access advanced analytics and personalized recommendations"
+      }
+    },
+    "stats": {
+      "activeUsers": "Active Users",
+      "animalsMonitored": "Animals Monitored",
+      "uptime": "Uptime",
+      "support": "Support"
+    },
+    "trust": {
+      "secure": {
+        "title": "Secure & Reliable",
+        "description": "Bank-level security"
+      },
+      "global": {
+        "title": "Global Reach",
+        "description": "25+ countries"
+      }
+    },
+    "success": {
+      "title": "Welcome Back!",
+      "message": "You have successfully logged into Gopalan AI.",
+      "goToDashboard": "Go to Dashboard"
+    },
+    "validation": {
+      "emailRequired": "Email is required",
+      "emailInvalid": "Please enter a valid email address",
+      "passwordRequired": "Password is required",
+      "passwordMinLength": "Password must be at least 6 characters",
+      "invalidCredentials": "Invalid email or password. Try demo@example.com / password",
+      "errorOccurred": "An error occurred. Please try again."
+    }
+  },
+  "signup": {
+    "hero": {
+      "title": "Join the Future of",
+      "titleHighlight": "Smart Farming",
+      "description": "Get started with Gopalan AI today and transform how you care for your animals. Join thousands of farmers who are already using our AI-powered platform."
+    },
+    "form": {
+      "createAccount": "Create Account",
+      "joinCommunity": "Join Gopalan AI community today",
+      "personalInfo": "Personal Information",
+      "personalInfoDesc": "Let's get to know you better",
+      "farmInfo": "Farm Information",
+      "farmInfoDesc": "Tell us about your farm",
+      "firstName": "First Name",
+      "firstNamePlaceholder": "First name",
+      "lastName": "Last Name",
+      "lastNamePlaceholder": "Last name",
+      "email": "Email Address",
+      "emailPlaceholder": "Enter your email",
+      "phone": "Phone Number (Optional)",
+      "phonePlaceholder": "Enter your phone number",
+      "password": "Password",
+      "passwordPlaceholder": "Create a strong password",
+      "confirmPassword": "Confirm Password",
+      "confirmPasswordPlaceholder": "Confirm your password",
+      "farmName": "Farm Name",
+      "farmNamePlaceholder": "Enter your farm name",
+      "location": "Location",
+      "locationPlaceholder": "City, State/Province, Country",
+      "animalTypes": "What animals do you raise? (Select all that apply)",
+      "continue": "Continue",
+      "back": "Back",
+      "createAccountButton": "Create Account",
+      "creating": "Creating...",
+      "orSignUpWith": "Or sign up with",
+      "alreadyHaveAccount": "Already have an account?",
+      "signInHere": "Sign in here"
+    },
+    "animalTypes": {
+      "cattle": "Cattle/Cows",
+      "buffalo": "Buffalo",
+      "goats": "Goats",
+      "sheep": "Sheep",
+      "pigs": "Pigs",
+      "chickens": "Chickens",
+      "horses": "Horses",
+      "other": "Other"
+    },
+    "benefits": {
+      "aiHealthMonitoring": {
+        "title": "AI Health Monitoring",
+        "description": "Advanced AI algorithms to monitor your animals' health 24/7"
+      },
+      "instantAlerts": {
+        "title": "Instant Alerts",
+        "description": "Get real-time notifications about health issues and emergencies"
+      },
+      "expertSupport": {
+        "title": "Expert Support",
+        "description": "Access to veterinarians and farming experts worldwide"
+      },
+      "securePrivate": {
+        "title": "Secure & Private",
+        "description": "Your farm data is encrypted and completely secure"
+      }
+    },
+    "features": {
+      "title": "What you'll get:",
+      "freeTrial": "Free 30-day trial with all premium features",
+      "aiAnalysis": "AI-powered health analysis for all your animals",
+      "emergencySystem": "24/7 emergency alert system",
+      "veterinaryAccess": "Access to veterinary experts",
+      "mobileApp": "Mobile app for iOS and Android"
+    },
+    "terms": {
+      "acceptTerms": "I agree to the",
+      "termsOfService": "Terms of Service",
+      "and": "and",
+      "privacyPolicy": "Privacy Policy",
+      "receiveUpdates": "I would like to receive updates, tips, and promotional emails from Gopalan AI"
+    },
+    "success": {
+      "title": "Welcome to Gopalan AI!",
+      "message": "Your account has been created successfully. We've sent a verification email to",
+      "checkEmail": "Please check your email and click the verification link to activate your account.",
+      "checkYourEmail": "Check Your Email",
+      "backToLogin": "Back to Login"
+    },
+    "validation": {
+      "firstNameRequired": "First name is required",
+      "lastNameRequired": "Last name is required",
+      "emailRequired": "Email is required",
+      "emailInvalid": "Please enter a valid email address",
+      "passwordRequired": "Password is required",
+      "passwordMinLength": "Password must be at least 8 characters",
+      "passwordComplexity": "Password must contain uppercase, lowercase, and number",
+      "confirmPasswordRequired": "Please confirm your password",
+      "passwordsDoNotMatch": "Passwords do not match",
+      "farmNameRequired": "Farm name is required",
+      "locationRequired": "Location is required",
+      "animalTypesRequired": "Please select at least one animal type",
+      "acceptTermsRequired": "You must accept the terms and conditions",
+      "errorOccurred": "An error occurred. Please try again."
+    }
+  },
+  "medical": {
+    "hero": {
+      "title": { "a": "Animal Medical", "b": "Support" },
+      "subtitle": "Your comprehensive digital veterinary companion. Get instant access to expert medical guidance, symptoms analysis, and emergency protocols for cattle health management with AI-powered insights."
+    },
+    "stats": { "helped": "Animals Helped", "success": "Success Rate", "support": "Support Available", "rating": "User Rating" },
+    "select": {
+      "title": "Choose Your Animal",
+      "subtitle": "Select the type of animal you need medical support for",
+      "lifespan": "Lifespan",
+      "weight": "Weight",
+      "keyChars": "Key Characteristics",
+      "conditionsCovered": "{{count}} conditions covered",
+      "choose": "Select {{name}}"
+    },
+    "tips": { "title": "Quick Health Tips", "subtitle": "Essential practices for maintaining animal health" },
+    "conditionsList": {
+      "title": "Medical Conditions",
+      "for": "For {{name}}",
+      "search": "Search conditions or symptoms...",
+      "emergency": "Emergency condition"
+    },
+    "detail": {
+      "risk": "Risk",
+      "didYouKnow": "Did You Know?",
+      "emergencyTitle": "Emergency Condition",
+      "emergencyDesc": "Contact veterinarian immediately for proper diagnosis and treatment",
+      "download": "Download PDF Guide",
+      "share": "Share Information",
+      "sections": { "symptoms": "Symptoms to Watch", "causes": "Common Causes", "treatment": "Treatment Options", "prevention": "Prevention Tips" },
+      "empty": { "title": "Select a Medical Condition", "desc": "Choose a medical condition from the list to view comprehensive information about symptoms, causes, treatment options, and prevention strategies." }
+    },
+    "emergency": { "title": "Emergency Procedures", "subtitle": "Critical steps to follow during animal health emergencies", "cards": { "assessment": { "title": "Emergency Assessment", "s1": "Check vital signs (temperature, breathing, pulse)", "s2": "Assess consciousness level", "s3": "Look for obvious injuries or distress", "s4": "Note any unusual behavior", "s5": "Document symptoms and timeline" }, "callVet": { "title": "When to Call Veterinarian Immediately", "s1": "Animal is unconscious or unresponsive", "s2": "Severe bleeding or trauma", "s3": "Difficulty breathing", "s4": "Signs of severe pain", "s5": "Bloat or severe abdominal distension", "s6": "Inability to stand or walk", "s7": "Toxic plant consumption suspected" }, "firstAid": { "title": "First Aid Measures", "s1": "Keep animal calm and comfortable", "s2": "Provide fresh water if able to drink", "s3": "Move to shade or shelter", "s4": "Stop any bleeding with clean cloth", "s5": "Do not give medication without veterinary advice", "s6": "Keep detailed records of symptoms" } } },
+    "vitals": {
+      "title": "Normal Vital Signs Reference",
+      "subtitle": "Essential health parameters for cattle monitoring",
+      "cattle": "Cattle (Cows)",
+      "buffalo": "Buffalo",
+      "labels": { "temp": "Body Temperature", "heart": "Heart Rate", "resp": "Respiratory Rate", "rumen": "Rumen Contractions" }
+    },
+    "animals": {
+      "cow": {
+        "name": "Cow",
+        "description": "Dairy and beef cattle are essential livestock providing milk, meat, and leather products.",
+        "characteristics": ["Herbivorous", "Social animals", "Four-chambered stomach", "Average milk production: 6-8 gallons/day"],
+        "lifespan": "18-22 years",
+        "weight": "400-800 kg"
+      },
+      "buffalo": {
+        "name": "Buffalo",
+        "description": "Water buffalo are important for milk production and agricultural work in many tropical regions.",
+        "characteristics": ["Excellent swimmers", "Heat tolerant", "High milk fat content", "Strong work animals"],
+        "lifespan": "20-25 years",
+        "weight": "450-900 kg"
+      }
+    },
+    "conditions": {
+      "mastitis": {
+        "name": "Mastitis",
+        "description": "Inflammation of the mammary gland, most commonly caused by bacterial infection.",
+        "funFact": "Mastitis costs dairy farmers billions globally each year in lost milk production.",
+        "symptoms": ["Swollen udder", "Hot to touch", "Pain when milking", "Abnormal milk (clots, blood)", "Reduced milk production"],
+        "causes": ["Bacterial infection", "Poor hygiene", "Trauma to udder", "Stress", "Poor nutrition"],
+        "treatment": ["Antibiotic therapy", "Anti-inflammatory drugs", "Frequent milking", "Udder massage", "Proper hygiene"],
+        "prevention": ["Clean milking equipment", "Dry cow therapy", "Proper nutrition", "Regular health checks", "Stress reduction"]
+      },
+      "bloat": {
+        "name": "Bloat (Gas)",
+        "description": "Excessive accumulation of gas in the rumen causing dangerous abdominal distension.",
+        "funFact": "A cow can produce up to 500 liters of gas per day normally, but bloat prevents proper gas release.",
+        "symptoms": ["Distended left abdomen", "Difficulty breathing", "Restlessness", "Loss of appetite", "Excessive salivation"],
+        "causes": ["Rapid feed changes", "Legume-rich pasture", "Wet grass", "Grain overload", "Stress"],
+        "treatment": ["Remove feed immediately", "Walk the animal", "Vegetable oil administration", "Stomach tube insertion", "Emergency surgery if severe"],
+        "prevention": ["Gradual diet changes", "Avoid wet legumes", "Provide adequate fiber", "Regular feeding schedule", "Monitor grazing"]
+      },
+      "milkFever": {
+        "name": "Milk Fever (Hypocalcemia)",
+        "description": "Metabolic disorder caused by low blood calcium levels, typically occurring around calving.",
+        "funFact": "Despite its name, milk fever rarely involves fever - the body temperature often drops.",
+        "symptoms": ["Muscle tremors", "Inability to stand", "Cold ears and legs", "Rapid heartbeat", "Loss of consciousness"],
+        "causes": ["Calcium deficiency", "High milk production", "Poor nutrition during dry period", "Age factor", "Stress"],
+        "treatment": ["Intravenous calcium", "Supportive care", "Warmth provision", "Professional veterinary care", "Monitoring"],
+        "prevention": ["Proper dry cow nutrition", "Calcium supplementation", "Magnesium balance", "Vitamin D provision", "Gradual diet transition"]
+      },
+      "lameness": {
+        "name": "Lameness",
+        "description": "Impaired locomotion affecting one or more limbs, significantly impacting animal welfare.",
+        "funFact": "Lameness is the third most costly disease in dairy cattle after mastitis and reproductive disorders.",
+        "symptoms": ["Limping", "Reluctance to walk", "Swollen joints", "Heat in affected area", "Reduced activity"],
+        "causes": ["Hoof problems", "Injuries", "Arthritis", "Poor flooring", "Nutritional imbalances"],
+        "treatment": ["Hoof trimming", "Antibiotic therapy", "Pain management", "Rest", "Proper footing"],
+        "prevention": ["Regular hoof care", "Clean, dry housing", "Proper nutrition", "Avoid sharp objects", "Regular exercise"]
+      },
+      "diarrhea": {
+        "name": "Diarrhea",
+        "description": "Frequent passage of loose, watery stools often indicating digestive system problems.",
+        "funFact": "Calf diarrhea is responsible for more deaths in young calves than any other disease.",
+        "symptoms": ["Loose stools", "Dehydration", "Loss of appetite", "Weight loss", "Lethargy"],
+        "causes": ["Dietary changes", "Infections", "Parasites", "Stress", "Poor water quality"],
+        "treatment": ["Fluid therapy", "Electrolyte replacement", "Dietary management", "Probiotics", "Antimicrobial if needed"],
+        "prevention": ["Gradual diet changes", "Clean water supply", "Parasite control", "Stress management", "Good hygiene"]
+      },
+      "heatStress": {
+        "name": "Heat Stress",
+        "description": "Physiological strain caused by high environmental temperature and humidity.",
+        "funFact": "Buffalo can regulate body temperature by wallowing in mud, which acts as natural sunscreen.",
+        "symptoms": ["Excessive panting", "Drooling", "Reduced feed intake", "Seeking shade", "Reduced milk production"],
+        "causes": ["High temperature", "High humidity", "Poor ventilation", "Lack of shade", "Overcrowding"],
+        "treatment": ["Provide shade", "Cool water access", "Fans or misters", "Electrolyte replacement", "Reduce activity"],
+        "prevention": ["Adequate shade", "Good ventilation", "Fresh water", "Avoid midday activities", "Proper housing"]
+      },
+      "footRot": {
+        "name": "Foot Rot",
+        "description": "Bacterial infection of the hoof causing severe lameness and foul odor.",
+        "funFact": "Foot rot can spread rapidly through a herd in wet, muddy conditions.",
+        "symptoms": ["Severe lameness", "Swollen foot", "Foul smell", "Separation of hoof wall", "Pain"],
+        "causes": ["Bacterial infection", "Wet conditions", "Poor hygiene", "Injuries", "Stress"],
+        "treatment": ["Antibiotic therapy", "Hoof trimming", "Topical treatment", "Dry housing", "Pain management"],
+        "prevention": ["Dry housing", "Regular hoof care", "Good hygiene", "Avoid muddy areas", "Zinc supplementation"]
+      },
+      "respiratoryInfection": {
+        "name": "Respiratory Infection",
+        "description": "Infections affecting the respiratory system, commonly caused by viruses or bacteria.",
+        "funFact": "Buffalo are generally more resistant to respiratory diseases than cattle due to their robust immune system.",
+        "symptoms": ["Coughing", "Nasal discharge", "Difficulty breathing", "Fever", "Reduced appetite"],
+        "causes": ["Viral infections", "Bacterial infections", "Poor air quality", "Stress", "Overcrowding"],
+        "treatment": ["Antibiotic therapy", "Anti-inflammatory drugs", "Supportive care", "Good ventilation", "Rest"],
+        "prevention": ["Vaccination", "Good ventilation", "Avoid overcrowding", "Stress reduction", "Quarantine new animals"]
+      },
+      "parasites": {
+        "name": "Internal Parasites",
+        "description": "Worm infestations that can significantly impact health and productivity.",
+        "funFact": "Buffalo can harbor over 50 different species of internal parasites, but many show high resistance.",
+        "symptoms": ["Weight loss", "Poor coat", "Diarrhea", "Anemia", "Reduced performance"],
+        "causes": ["Worm infestation", "Poor pasture management", "Overcrowding", "Contaminated water", "Stress"],
+        "treatment": ["Deworming medication", "Supportive nutrition", "Iron supplementation", "Pasture rotation", "Follow-up treatment"],
+        "prevention": ["Regular deworming", "Pasture rotation", "Fecal testing", "Clean water", "Proper nutrition"]
+      },
+      "digestiveDisorders": {
+        "name": "Digestive Disorders",
+        "description": "Various conditions affecting the digestive system and nutrient absorption.",
+        "funFact": "Buffalo have a more efficient digestive system than cattle, converting poor-quality feed better.",
+        "symptoms": ["Loss of appetite", "Abdominal pain", "Abnormal feces", "Dehydration", "Weight loss"],
+        "causes": ["Poor quality feed", "Sudden diet changes", "Contaminated feed", "Stress", "Parasites"],
+        "treatment": ["Dietary management", "Probiotics", "Fluid therapy", "Anti-inflammatory drugs", "Supportive care"],
+        "prevention": ["Quality feed", "Gradual diet changes", "Clean feed storage", "Regular feeding", "Stress management"]
+      }
+    }
+  }
+  ,
+  "guide": {
+    "hero": {
+      "badge": "Step-by-Step Guide",
+      "title": "How to Use Animal Classification",
+      "subtitle": "Follow this comprehensive guide to accurately classify and score your animals using our AI-powered system.",
+      "ctaStart": "Start Classification",
+      "ctaWatch": "Watch Tutorial"
+    },
+    "requirements": {
+      "title": "Requirements",
+      "items": [
+        "Mobile device with good camera (minimum 8MP)",
+        "Stable internet connection for image processing",
+        "Well-lit environment for photography",
+        "Calm animal for clear photo capture"
+      ]
+    },
+    "proTips": {
+      "title": "Pro Tips",
+      "items": [
+        "Take photos during golden hour (early morning/late afternoon) for best lighting",
+        "Use a tripod or stabilizer for consistent framing",
+        "Allow 2-3 minutes between shots for animal to relax",
+        "Keep backup photos in case of blurry images"
+      ]
+    },
+    "process": {
+      "title": "Classification Process",
+      "subtitle": "Follow these detailed steps to ensure accurate animal classification and scoring results."
+    },
+    "labels": {
+      "step": "Step {{id}}",
+      "detailedInstructions": "Detailed Instructions:",
+      "proTip": "Pro Tip:"
+    },
+    "alt": {
+      "stepImage": "Step {{id}} illustration"
+    },
+    "aruco": {
+      "alt": "Aruco Marker",
+      "caption": "Add a Aruco marker for scale reference image for accurate measurements",
+      "download": "Download Image"
+    },
+    "steps": {
+      "1": {
+        "title": "Prepare Your Animal",
+        "description": "Position your animal in a clean, well-lit environment for optimal photo quality",
+        "details": [
+          "Ensure good natural lighting or use proper artificial lighting",
+          "Position the animal on level ground with clear background",
+          "Make sure the animal is calm and standing naturally",
+          "Remove any obstructions or distracting elements from the background",
+          "Add a Aruco marker for scale reference image for accurate measurements"
+        ],
+        "tips": {
+          "text": "Best results are achieved during daylight hours with the animal standing relaxed.",
+          "showMarker": "Show Aruco Marker"
+        }
+      },
+      "2": {
+        "title": "Capture Three Angle Photos",
+        "description": "Take clear photos from front, side, and rear angles for comprehensive analysis",
+        "details": [
+          "Front View: Capture head-on shot showing face and front body structure",
+          "Side View: Take a profile shot showing the complete side body structure",
+          "Rear View: Photograph from behind showing hindquarters and rear structure",
+          "Place the Aruco marker in each shot for scale measurements",
+          "Maintain consistent distance (3-5 meters) for all three shots"
+        ],
+        "tips": "Keep the camera at the same height as the animal's midsection for accurate proportions."
+      },
+      "3": {
+        "title": "Upload Images",
+        "description": "Upload your three photos using the mobile interface",
+        "details": [
+          "Open the Gopalan AI ",
+          "Navigate to the 'New Classification' section",
+          "Upload photos in the correct sequence: Front → Side → Rear",
+          "Ensure each image is clear and properly oriented"
+        ],
+        "tips": "Images should be at least 1024x768 pixels for best analysis results."
+      },
+      "4": {
+        "title": "Mark Measurement Points",
+        "description": "Place two reference points on each image for accurate measurements",
+        "details": [
+          "Tap on the image to place the first measurement point",
+          "Place the second point to create a reference measurement line",
+          "Common reference points: shoulder height, body length, chest girth",
+          "Follow the on-screen guidance for optimal point placement"
+        ],
+        "tips": "Use anatomical landmarks like shoulder blade or hip bone for consistent measurements."
+      },
+      "5": {
+        "title": "Review Classification Results",
+        "description": "Analyze the AI-generated breed classification and scoring results",
+        "details": [
+          "View breed identification with confidence percentage",
+          "Check body condition scoring and measurements",
+          "Review genetic trait analysis and recommendations",
+          "Save results to your animal records database"
+        ],
+        "tips": "Results accuracy improves with better photo quality and proper measurement point placement."
+      }
+    }
+  }
+}
+
+
