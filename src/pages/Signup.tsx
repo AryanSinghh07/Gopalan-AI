@@ -1,14 +1,13 @@
 import React, { useState } from 'react';
-import { useTranslation } from 'react-i18next';
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { 
-  Eye, 
-  EyeOff, 
-  Mail, 
-  Lock, 
-  User, 
+import {
+  Eye,
+  EyeOff,
+  Mail,
+  Lock,
+  User,
   Heart,
   Shield,
   CheckCircle,
@@ -55,7 +54,6 @@ interface FormErrors {
 }
 
 const Signup = () => {
-  const { t } = useTranslation();
   const [formData, setFormData] = useState<SignupFormData>({
     firstName: '',
     lastName: '',
@@ -69,7 +67,7 @@ const Signup = () => {
     acceptTerms: false,
     receiveUpdates: true
   });
-  
+
   const [errors, setErrors] = useState<FormErrors>({});
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
@@ -78,93 +76,93 @@ const Signup = () => {
   const [currentStep, setCurrentStep] = useState(1);
 
   const animalOptions = [
-    { value: 'cattle', label: t('signup.animalTypes.cattle'), icon: '🐄' },
-    { value: 'buffalo', label: t('signup.animalTypes.buffalo'), icon: '🐃' },
-    { value: 'goats', label: t('signup.animalTypes.goats'), icon: '🐐' },
-    { value: 'sheep', label: t('signup.animalTypes.sheep'), icon: '🐑' },
-    { value: 'pigs', label: t('signup.animalTypes.pigs'), icon: '🐷' },
-    { value: 'chickens', label: t('signup.animalTypes.chickens'), icon: '🐔' },
-    { value: 'horses', label: t('signup.animalTypes.horses'), icon: '🐎' },
-    { value: 'other', label: t('signup.animalTypes.other'), icon: '🐾' }
+    { value: 'cattle', label: "Cattle/Cows", icon: '🐄' },
+    { value: 'buffalo', label: "Buffalo", icon: '🐃' },
+    { value: 'goats', label: "Goats", icon: '🐐' },
+    { value: 'sheep', label: "Sheep", icon: '🐑' },
+    { value: 'pigs', label: "Pigs", icon: '🐷' },
+    { value: 'chickens', label: "Chickens", icon: '🐔' },
+    { value: 'horses', label: "Horses", icon: '🐎' },
+    { value: 'other', label: "Other", icon: '🐾' }
   ];
 
   const benefits = [
     {
       icon: <Heart className="h-6 w-6" />,
-      title: t('signup.benefits.aiHealthMonitoring.title'),
-      description: t('signup.benefits.aiHealthMonitoring.description')
+      title: "AI Health Monitoring",
+      description: "Advanced AI algorithms to monitor your animals' health 24/7"
     },
     {
       icon: <Zap className="h-6 w-6" />,
-      title: t('signup.benefits.instantAlerts.title'),
-      description: t('signup.benefits.instantAlerts.description')
+      title: "Instant Alerts",
+      description: "Get real-time notifications about health issues and emergencies"
     },
     {
       icon: <Award className="h-6 w-6" />,
-      title: t('signup.benefits.expertSupport.title'),
-      description: t('signup.benefits.expertSupport.description')
+      title: "Expert Support",
+      description: "Access to veterinarians and farming experts worldwide"
     },
     {
       icon: <Shield className="h-6 w-6" />,
-      title: t('signup.benefits.securePrivate.title'),
-      description: t('signup.benefits.securePrivate.description')
+      title: "Secure & Private",
+      description: "Your farm data is encrypted and completely secure"
     }
   ];
 
   const validateStep1 = (): boolean => {
     const newErrors: FormErrors = {};
-    
+
     if (!formData.firstName.trim()) {
-      newErrors.firstName = t('signup.validation.firstNameRequired');
+      newErrors.firstName = "First name is required";
     }
-    
+
     if (!formData.lastName.trim()) {
-      newErrors.lastName = t('signup.validation.lastNameRequired');
+      newErrors.lastName = "Last name is required";
     }
-    
+
     if (!formData.email.trim()) {
-      newErrors.email = t('signup.validation.emailRequired');
+      newErrors.email = "Email is required";
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      newErrors.email = t('signup.validation.emailInvalid');
+      newErrors.email = "Please enter a valid email address";
     }
-    
+
     if (!formData.password) {
-      newErrors.password = t('signup.validation.passwordRequired');
+      newErrors.password = "Password is required";
     } else if (formData.password.length < 8) {
-      newErrors.password = t('signup.validation.passwordMinLength');
+      newErrors.password = "Password must be at least 8 characters";
     } else if (!/(?=.*[a-z])(?=.*[A-Z])(?=.*\d)/.test(formData.password)) {
-      newErrors.password = t('signup.validation.passwordComplexity');
+      newErrors.password = "Password must contain uppercase, lowercase, and number";
     }
-    
+
     if (!formData.confirmPassword) {
-      newErrors.confirmPassword = t('signup.validation.confirmPasswordRequired');
+      newErrors.confirmPassword = "Please confirm your password";
     } else if (formData.password !== formData.confirmPassword) {
-      newErrors.confirmPassword = t('signup.validation.passwordsDoNotMatch');
+      newErrors.confirmPassword = "Passwords do not match";
     }
-    
+
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
 
   const validateStep2 = (): boolean => {
     const newErrors: FormErrors = {};
-    
+
     if (!formData.farmName.trim()) {
-      newErrors.farmName = t('signup.validation.farmNameRequired');
+      newErrors.farmName = "Farm name is required";
     }
-    
+
     if (!formData.location.trim()) {
-      newErrors.location = t('signup.validation.locationRequired');
+      newErrors.location = "Location is required";
     }
-    
+
     if (formData.animalTypes.length === 0) {
-      newErrors.animalTypes = t('signup.validation.animalTypesRequired');
+      newErrors.animalTypes = "Please select at least one animal type";
     }
-    
+
     if (!formData.acceptTerms) {
-      newErrors.acceptTerms = t('signup.validation.acceptTermsRequired');
+      newErrors.acceptTerms = "You must accept the terms and conditions";
     }
-    
+
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -172,12 +170,12 @@ const Signup = () => {
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value, type } = e.target;
     const checked = (e.target as HTMLInputElement).checked;
-    
+
     setFormData(prev => ({
       ...prev,
       [name]: type === 'checkbox' ? checked : value
     }));
-    
+
     // Clear errors when user starts typing
     if (errors[name as keyof FormErrors]) {
       setErrors(prev => ({
@@ -194,7 +192,7 @@ const Signup = () => {
         ? prev.animalTypes.filter(type => type !== animalType)
         : [...prev.animalTypes, animalType]
     }));
-    
+
     if (errors.animalTypes) {
       setErrors(prev => ({ ...prev, animalTypes: undefined }));
     }
@@ -212,12 +210,12 @@ const Signup = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!validateStep2()) return;
-    
+
     setIsLoading(true);
     setErrors({});
-    
+
     try {
       // Simulate API call
       setTimeout(() => {
@@ -225,7 +223,7 @@ const Signup = () => {
         setIsLoading(false);
       }, 3000);
     } catch (error) {
-      setErrors({ general: t('signup.validation.errorOccurred') });
+      setErrors({ general: "An error occurred. Please try again." });
       setIsLoading(false);
     }
   };
@@ -241,24 +239,24 @@ const Signup = () => {
           <div className="bg-green-100 p-6 rounded-full inline-block mb-8">
             <CheckCircle className="h-16 w-16 text-green-600" />
           </div>
-          <h2 className="text-3xl font-bold text-gray-800 mb-4">{t('signup.success.title')}</h2>
+          <h2 className="text-3xl font-bold text-gray-800 mb-4">Welcome to Gopalan AI!</h2>
           <p className="text-gray-600 mb-6">
-            {t('signup.success.message')}{' '}
+            Your account has been created successfully. We've sent a verification email to{' '}
             <span className="font-semibold text-green-600">{formData.email}</span>
           </p>
           <p className="text-sm text-gray-500 mb-8">
-            {t('signup.success.checkEmail')}
+            Please check your email and click the verification link to activate your account.
           </p>
           <div className="space-y-4">
             <Button className="w-full bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white py-3 rounded-xl">
-              {t('signup.success.checkYourEmail')}
+              Check Your Email
               <Mail className="h-5 w-5 ml-2" />
             </Button>
             <a
               href="/login"
               className="block text-green-600 hover:text-green-700 font-medium"
             >
-              {t('signup.success.backToLogin')}
+              Back to Login
             </a>
           </div>
         </div>
@@ -269,20 +267,20 @@ const Signup = () => {
   return (
     <div className="min-h-screen">
       <Navbar />
-      
+
       <div className="pt-20 min-h-screen bg-gradient-to-br from-green-50 via-emerald-50 to-teal-50">
         <div className="container mx-auto px-6 py-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start max-w-7xl mx-auto">
-            
+
             {/* Left Side - Benefits & Information */}
             <div className="order-2 lg:order-1 text-center lg:text-left">
               <div className="mb-12">
                 <h1 className="text-5xl md:text-6xl font-bold text-gray-800 mb-6 leading-tight">
-                  {t('signup.hero.title')}
-                  <span className="bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent"> {t('signup.hero.titleHighlight')}</span>
+                  Join the Future of
+                  <span className="bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent"> Smart Farming</span>
                 </h1>
                 <p className="text-xl text-gray-600 leading-relaxed mb-8 max-w-2xl">
-                  {t('signup.hero.description')}
+                  Get started with Gopalan AI today and transform how you care for your animals. Join thousands of farmers who are already using our AI-powered platform.
                 </p>
 
                 {/* Benefits */}
@@ -300,27 +298,27 @@ const Signup = () => {
 
                 {/* Features List */}
                 <div className="bg-white bg-opacity-60 backdrop-blur-sm rounded-2xl p-8 shadow-lg">
-                  <h3 className="text-2xl font-bold text-gray-800 mb-6">{t('signup.features.title')}</h3>
+                  <h3 className="text-2xl font-bold text-gray-800 mb-6">What you'll get:</h3>
                   <ul className="space-y-3">
                     <li className="flex items-center text-gray-700">
                       <CheckCircle className="h-5 w-5 text-green-600 mr-3 flex-shrink-0" />
-                      <span>{t('signup.features.freeTrial')}</span>
+                      <span>Free 30-day trial with all premium features</span>
                     </li>
                     <li className="flex items-center text-gray-700">
                       <CheckCircle className="h-5 w-5 text-green-600 mr-3 flex-shrink-0" />
-                      <span>{t('signup.features.aiAnalysis')}</span>
+                      <span>AI-powered health analysis for all your animals</span>
                     </li>
                     <li className="flex items-center text-gray-700">
                       <CheckCircle className="h-5 w-5 text-green-600 mr-3 flex-shrink-0" />
-                      <span>{t('signup.features.emergencySystem')}</span>
+                      <span>24/7 emergency alert system</span>
                     </li>
                     <li className="flex items-center text-gray-700">
                       <CheckCircle className="h-5 w-5 text-green-600 mr-3 flex-shrink-0" />
-                      <span>{t('signup.features.veterinaryAccess')}</span>
+                      <span>Access to veterinary experts</span>
                     </li>
                     <li className="flex items-center text-gray-700">
                       <CheckCircle className="h-5 w-5 text-green-600 mr-3 flex-shrink-0" />
-                      <span>{t('signup.features.mobileApp')}</span>
+                      <span>Mobile app for iOS and Android</span>
                     </li>
                   </ul>
                 </div>
@@ -334,8 +332,8 @@ const Signup = () => {
                   <div className="bg-gradient-to-r from-green-500 to-emerald-600 p-4 rounded-2xl inline-block mb-6">
                     <User className="h-10 w-10 text-white" />
                   </div>
-                  <h2 className="text-3xl font-bold text-gray-800 mb-2">{t('signup.form.createAccount')}</h2>
-                  <p className="text-gray-600">{t('signup.form.joinCommunity')}</p>
+                  <h2 className="text-3xl font-bold text-gray-800 mb-2">Create Account</h2>
+                  <p className="text-gray-600">Join Gopalan AI community today</p>
                 </div>
 
                 {/* Progress Indicator */}
@@ -353,15 +351,15 @@ const Signup = () => {
                   // Step 1: Personal Information
                   <form className="space-y-6">
                     <div className="text-center mb-6">
-                      <h3 className="text-xl font-semibold text-gray-800">{t('signup.form.personalInfo')}</h3>
-                      <p className="text-sm text-gray-600">{t('signup.form.personalInfoDesc')}</p>
+                      <h3 className="text-xl font-semibold text-gray-800">Personal Information</h3>
+                      <p className="text-sm text-gray-600">Let's get to know you better</p>
                     </div>
 
                     <div className="grid grid-cols-2 gap-4">
                       {/* First Name */}
                       <div>
                         <label htmlFor="firstName" className="block text-sm font-semibold text-gray-700 mb-2">
-                          {t('signup.form.firstName')}
+                          First Name
                         </label>
                         <input
                           type="text"
@@ -372,7 +370,7 @@ const Signup = () => {
                           className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-green-500 focus:border-transparent bg-gray-50 transition-colors ${
                             errors.firstName ? 'border-red-500' : 'border-gray-300'
                           }`}
-                          placeholder={t('signup.form.firstNamePlaceholder')}
+                          placeholder="First name"
                         />
                         {errors.firstName && (
                           <p className="text-red-600 text-xs mt-1">{errors.firstName}</p>
@@ -382,7 +380,7 @@ const Signup = () => {
                       {/* Last Name */}
                       <div>
                         <label htmlFor="lastName" className="block text-sm font-semibold text-gray-700 mb-2">
-                          {t('signup.form.lastName')}
+                          Last Name
                         </label>
                         <input
                           type="text"
@@ -393,7 +391,7 @@ const Signup = () => {
                           className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-green-500 focus:border-transparent bg-gray-50 transition-colors ${
                             errors.lastName ? 'border-red-500' : 'border-gray-300'
                           }`}
-                          placeholder={t('signup.form.lastNamePlaceholder')}
+                          placeholder="Last name"
                         />
                         {errors.lastName && (
                           <p className="text-red-600 text-xs mt-1">{errors.lastName}</p>
@@ -404,7 +402,7 @@ const Signup = () => {
                     {/* Email */}
                     <div>
                       <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
-                        {t('signup.form.email')}
+                        Email Address
                       </label>
                       <div className="relative">
                         <Mail className="h-5 w-5 text-gray-400 absolute left-4 top-3.5" />
@@ -417,7 +415,7 @@ const Signup = () => {
                           className={`w-full pl-12 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-green-500 focus:border-transparent bg-gray-50 transition-colors ${
                             errors.email ? 'border-red-500' : 'border-gray-300'
                           }`}
-                          placeholder={t('signup.form.emailPlaceholder')}
+                          placeholder="Enter your email"
                         />
                       </div>
                       {errors.email && (
@@ -431,7 +429,7 @@ const Signup = () => {
                     {/* Phone */}
                     <div>
                       <label htmlFor="phone" className="block text-sm font-semibold text-gray-700 mb-2">
-                        {t('signup.form.phone')}
+                        Phone Number (Optional)
                       </label>
                       <div className="relative">
                         <Phone className="h-5 w-5 text-gray-400 absolute left-4 top-3.5" />
@@ -442,7 +440,7 @@ const Signup = () => {
                           value={formData.phone}
                           onChange={handleInputChange}
                           className="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-green-500 focus:border-transparent bg-gray-50 transition-colors"
-                          placeholder={t('signup.form.phonePlaceholder')}
+                          placeholder="Enter your phone number"
                         />
                       </div>
                     </div>
@@ -450,7 +448,7 @@ const Signup = () => {
                     {/* Password */}
                     <div>
                       <label htmlFor="password" className="block text-sm font-semibold text-gray-700 mb-2">
-                        {t('signup.form.password')}
+                        Password
                       </label>
                       <div className="relative">
                         <Lock className="h-5 w-5 text-gray-400 absolute left-4 top-3.5" />
@@ -463,7 +461,7 @@ const Signup = () => {
                           className={`w-full pl-12 pr-12 py-3 border rounded-xl focus:ring-2 focus:ring-green-500 focus:border-transparent bg-gray-50 transition-colors ${
                             errors.password ? 'border-red-500' : 'border-gray-300'
                           }`}
-                          placeholder={t('signup.form.passwordPlaceholder')}
+                          placeholder="Create a strong password"
                         />
                         <button
                           type="button"
@@ -484,7 +482,7 @@ const Signup = () => {
                     {/* Confirm Password */}
                     <div>
                       <label htmlFor="confirmPassword" className="block text-sm font-semibold text-gray-700 mb-2">
-                        {t('signup.form.confirmPassword')}
+                        Confirm Password
                       </label>
                       <div className="relative">
                         <Lock className="h-5 w-5 text-gray-400 absolute left-4 top-3.5" />
@@ -497,7 +495,7 @@ const Signup = () => {
                           className={`w-full pl-12 pr-12 py-3 border rounded-xl focus:ring-2 focus:ring-green-500 focus:border-transparent bg-gray-50 transition-colors ${
                             errors.confirmPassword ? 'border-red-500' : 'border-gray-300'
                           }`}
-                          placeholder={t('signup.form.confirmPasswordPlaceholder')}
+                          placeholder="Confirm your password"
                         />
                         <button
                           type="button"
@@ -521,14 +519,14 @@ const Signup = () => {
                       onClick={handleNext}
                       className="w-full py-4 text-lg font-semibold rounded-xl bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
                     >
-                      {t('signup.form.continue')}
+                      Continue
                       <ArrowRight className="h-5 w-5 ml-2" />
                     </Button>
 
                     {/* Social Signup */}
                     <div className="flex items-center my-6">
                       <div className="flex-1 border-t border-gray-200"></div>
-                      <span className="px-4 text-sm text-gray-500 bg-white">{t('signup.form.orSignUpWith')}</span>
+                      <span className="px-4 text-sm text-gray-500 bg-white">Or sign up with</span>
                       <div className="flex-1 border-t border-gray-200"></div>
                     </div>
 
@@ -539,7 +537,7 @@ const Signup = () => {
                         className="flex items-center justify-center px-4 py-3 border border-gray-300 rounded-xl hover:bg-gray-50 transition-colors group"
                       >
                         <Chrome className="h-5 w-5 text-gray-600 group-hover:text-green-600" />
-                        <span className="ml-2 text-sm font-medium text-gray-700">{t('signup.form.google')}</span>
+                        <span className="ml-2 text-sm font-medium text-gray-700">Google</span>
                       </button>
                       <button
                         type="button"
@@ -547,7 +545,7 @@ const Signup = () => {
                         className="flex items-center justify-center px-4 py-3 border border-gray-300 rounded-xl hover:bg-gray-50 transition-colors group"
                       >
                         <Facebook className="h-5 w-5 text-gray-600 group-hover:text-green-600" />
-                        <span className="ml-2 text-sm font-medium text-gray-700">{t('signup.form.facebook')}</span>
+                        <span className="ml-2 text-sm font-medium text-gray-700">Facebook</span>
                       </button>
                     </div>
                   </form>
@@ -555,14 +553,14 @@ const Signup = () => {
                   // Step 2: Farm Information
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="text-center mb-6">
-                      <h3 className="text-xl font-semibold text-gray-800">{t('signup.form.farmInfo')}</h3>
-                      <p className="text-sm text-gray-600">{t('signup.form.farmInfoDesc')}</p>
+                      <h3 className="text-xl font-semibold text-gray-800">Farm Information</h3>
+                      <p className="text-sm text-gray-600">Tell us about your farm</p>
                     </div>
 
                     {/* Farm Name */}
                     <div>
                       <label htmlFor="farmName" className="block text-sm font-semibold text-gray-700 mb-2">
-                        {t('signup.form.farmName')}
+                        Farm Name
                       </label>
                       <div className="relative">
                         <Building className="h-5 w-5 text-gray-400 absolute left-4 top-3.5" />
@@ -575,7 +573,7 @@ const Signup = () => {
                           className={`w-full pl-12 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-green-500 focus:border-transparent bg-gray-50 transition-colors ${
                             errors.farmName ? 'border-red-500' : 'border-gray-300'
                           }`}
-                          placeholder={t('signup.form.farmNamePlaceholder')}
+                          placeholder="Enter your farm name"
                         />
                       </div>
                       {errors.farmName && (
@@ -589,7 +587,7 @@ const Signup = () => {
                     {/* Location */}
                     <div>
                       <label htmlFor="location" className="block text-sm font-semibold text-gray-700 mb-2">
-                        {t('signup.form.location')}
+                        Location
                       </label>
                       <div className="relative">
                         <MapPin className="h-5 w-5 text-gray-400 absolute left-4 top-3.5" />
@@ -602,7 +600,7 @@ const Signup = () => {
                           className={`w-full pl-12 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-green-500 focus:border-transparent bg-gray-50 transition-colors ${
                             errors.location ? 'border-red-500' : 'border-gray-300'
                           }`}
-                          placeholder={t('signup.form.locationPlaceholder')}
+                          placeholder="City, State/Province, Country"
                         />
                       </div>
                       {errors.location && (
@@ -616,7 +614,7 @@ const Signup = () => {
                     {/* Animal Types */}
                     <div>
                       <label className="block text-sm font-semibold text-gray-700 mb-3">
-                        {t('signup.form.animalTypes')}
+                        What animals do you raise? (Select all that apply)
                       </label>
                       <div className="grid grid-cols-2 gap-3">
                         {animalOptions.map((animal) => (
@@ -658,13 +656,13 @@ const Signup = () => {
                           className="rounded border-gray-300 text-green-600 focus:ring-green-500 mt-1"
                         />
                         <span className="ml-3 text-sm text-gray-600">
-                          {t('signup.terms.acceptTerms')}{' '}
+                          I agree to the{' '}
                           <a href="#" className="text-green-600 hover:text-green-700 font-medium">
-                            {t('signup.terms.termsOfService')}
+                            Terms of Service
                           </a>{' '}
-                          {t('signup.terms.and')}{' '}
+                          and{' '}
                           <a href="#" className="text-green-600 hover:text-green-700 font-medium">
-                            {t('signup.terms.privacyPolicy')}
+                            Privacy Policy
                           </a>
                         </span>
                       </label>
@@ -684,7 +682,7 @@ const Signup = () => {
                           className="rounded border-gray-300 text-green-600 focus:ring-green-500 mt-1"
                         />
                         <span className="ml-3 text-sm text-gray-600">
-                          {t('signup.terms.receiveUpdates')}
+                          I would like to receive updates, tips, and promotional emails from Gopalan AI
                         </span>
                       </label>
                     </div>
@@ -707,24 +705,24 @@ const Signup = () => {
                         variant="outline"
                         className="flex-1 py-3 text-green-600 border-2 border-green-600 hover:bg-green-50 rounded-xl"
                       >
-                        {t('signup.form.back')}
+                        Back
                       </Button>
                       <Button
                         type="submit"
                         disabled={isLoading}
                         className={`flex-1 py-3 text-lg font-semibold rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl ${
-                          isLoading 
-                            ? 'bg-gray-400 cursor-not-allowed' 
+                          isLoading
+                            ? 'bg-gray-400 cursor-not-allowed'
                             : 'bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white'
                         }`}
                       >
                         {isLoading ? (
                           <>
                             <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2 inline-block"></div>
-                            {t('signup.form.creating')}
+                            Creating...
                           </>
                         ) : (
-                          t('signup.form.createAccountButton')
+                          "Create Account"
                         )}
                       </Button>
                     </div>
@@ -734,9 +732,9 @@ const Signup = () => {
                 {/* Login Link */}
                 <div className="text-center mt-6">
                   <p className="text-gray-600">
-                    {t('signup.form.alreadyHaveAccount')}{' '}
+                    Already have an account?{' '}
                     <a href="/login" className="text-green-600 hover:text-green-700 font-semibold">
-                      {t('signup.form.signInHere')}
+                      Sign in here
                     </a>
                   </p>
                 </div>

@@ -3,225 +3,223 @@ import Footer from "@/components/Footer";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { useTranslation } from "react-i18next";
 
-// Import breed images from AnimalImg folder
-import girImage from "@/assets/AnimalImg/Gir.jpg";
-import sahiwalImage from "@/assets/AnimalImg/Sahiwal.jpg";
-import murrahImage from "@/assets/AnimalImg/murrah buffalo.jpg";
-import niliRaviImage from "@/assets/AnimalImg/nili-ravi buffalo.jpg";
-import surtiImage from "@/assets/AnimalImg/surti buffalo.jpg";
-import jafarabadiImage from "@/assets/AnimalImg/jafarabadi buffalo.jpg";
-import cattleOverviewImage from "@/assets/AnimalImg/Cattle (Cows).jpg";
-import buffaloOverviewImage from "@/assets/AnimalImg/Water Buffalo.jpg";
-import ongoleImage from "@/assets/AnimalImg/ongole.jpg";
-import hallikarImage from "@/assets/AnimalImg/hallikar.jpg";
-import malnadImage from "@/assets/AnimalImg/malnad.jpg";
-import rathiImage from "@/assets/AnimalImg/Rathi.jpg";
-import redsindhiImage from "@/assets/AnimalImg/redsindhi.jpg";
-import kankrejImage from "@/assets/AnimalImg/kankrej.jpg";
-import mehsanaImage from "@/assets/AnimalImg/Mehsana.jpg";
-import bhadawariImage from "@/assets/AnimalImg/bhadawari.jpg";
-import todaImage from "@/assets/AnimalImg/toda.jpg";
-import nagpuriImage from "@/assets/AnimalImg/nagpuri.jpg";
+// Breed images
+import girImage from "@/assets/animals/gir.jpg";
+import sahiwalImage from "@/assets/animals/sahiwal.jpg";
+import murrahImage from "@/assets/animals/murrah-buffalo.jpg";
+import niliRaviImage from "@/assets/animals/nili-ravi-buffalo.jpg";
+import surtiImage from "@/assets/animals/surti-buffalo.jpg";
+import jafarabadiImage from "@/assets/animals/jafarabadi-buffalo.jpg";
+import cattleOverviewImage from "@/assets/animals/cattle.jpg";
+import buffaloOverviewImage from "@/assets/animals/water-buffalo.jpg";
+import ongoleImage from "@/assets/animals/ongole.jpg";
+import hallikarImage from "@/assets/animals/hallikar.jpg";
+import malnadImage from "@/assets/animals/malnad.jpg";
+import rathiImage from "@/assets/animals/rathi.jpg";
+import redsindhiImage from "@/assets/animals/red-sindhi.jpg";
+import kankrejImage from "@/assets/animals/kankrej.jpg";
+import mehsanaImage from "@/assets/animals/mehsana.jpg";
+import bhadawariImage from "@/assets/animals/bhadawari.jpg";
+import todaImage from "@/assets/animals/toda.jpg";
+import nagpuriImage from "@/assets/animals/nagpuri.jpg";
 
 const AnimalGuide = () => {
-  const { t } = useTranslation();
   const cowBreeds = [
     {
-      name: t('animalGuide.breeds.cow.ongole.name'),
-      origin: t('animalGuide.breeds.cow.ongole.origin'),
-      characteristics: t('animalGuide.breeds.cow.ongole.characteristics'),
+      name: "Ongole",
+      origin: "Andhra Pradesh, India",
+      characteristics: "High milk production, black and white markings, docile temperament",
       avgWeight: "600-700 kg",
       milkYield: "20-30 liters/day",
       lactationYield: "4,000-12,000 kg",
       fatContent: "3.5-4.0%",
       climate: "Cold to moderate",
       image: ongoleImage,
-      specialty: t('animalGuide.breeds.cow.ongole.specialty')
+      specialty: "World's highest milk producer"
     },
     {
-      name: t('animalGuide.breeds.cow.hallikar.name'),
-      origin: t('animalGuide.breeds.cow.hallikar.origin'), 
-      characteristics: t('animalGuide.breeds.cow.hallikar.characteristics'),
+      name: "Hallikar",
+      origin: "Karnataka, India", 
+      characteristics: "High butterfat content, brown colored, large expressive eyes",
       avgWeight: "350-450 kg",
       milkYield: "15-20 liters/day",
       lactationYield: "4,000-6,000 kg",
       fatContent: "4.8-5.2%",
       climate: "Adaptable to various climates",
       image: hallikarImage,
-      specialty: t('animalGuide.breeds.cow.hallikar.specialty')
+      specialty: "Highest quality milk with rich cream"
     },
     {
-      name: t('animalGuide.breeds.cow.gir.name'),
-      origin: t('animalGuide.breeds.cow.gir.origin'),
-      characteristics: t('animalGuide.breeds.cow.gir.characteristics'),
+      name: "Gir",
+      origin: "India (Gujarat)",
+      characteristics: "Drought resistant, distinctive lyre-shaped horns, gentle nature",
       avgWeight: "300-400 kg", 
       milkYield: "10-15 liters/day",
       lactationYield: "1,200-3,000 kg",
       fatContent: "4.5-5.0%",
       climate: "Hot and dry",
       image: girImage,
-      specialty: t('animalGuide.breeds.cow.gir.specialty')
+      specialty: "Heat tolerance and disease resistance"
     },
     {
-      name: t('animalGuide.breeds.cow.sahiwal.name'),
-      origin: t('animalGuide.breeds.cow.sahiwal.origin'),
-      characteristics: t('animalGuide.breeds.cow.sahiwal.characteristics'),
+      name: "Sahiwal",
+      origin: "Pakistan/India",
+      characteristics: "Heat tolerant, reddish brown color, well-developed udder",
       avgWeight: "400-500 kg",
       milkYield: "12-16 liters/day",
       lactationYield: "2,000-3,500 kg",
       fatContent: "4.2-4.8%",
       climate: "Hot and humid",
       image: sahiwalImage,
-      specialty: t('animalGuide.breeds.cow.sahiwal.specialty')
+      specialty: "Excellent heat tolerance"
     },
     {
-      name: t('animalGuide.breeds.cow.malnad.name'),
-      origin: t('animalGuide.breeds.cow.malnad.origin'),
-      characteristics: t('animalGuide.breeds.cow.malnad.characteristics'),
+      name: "Malnad Gidda",
+      origin: "Kannada region, India",
+      characteristics: "Golden milk, fawn and white color, calm temperament",
       avgWeight: "450-500 kg",
       milkYield: "18-22 liters/day",
       lactationYield: "4,500-6,000 kg",
       fatContent: "4.5-5.0%",
       climate: "Moderate",
       image: malnadImage, // Placeholder - replace with actual image
-      specialty: t('animalGuide.breeds.cow.malnad.specialty')
+      specialty: "Golden-colored milk rich in beta-carotene"
     },
     {
-      name: t('animalGuide.breeds.cow.rathi.name'),
-      origin: t('animalGuide.breeds.cow.rathi.origin'),
-      characteristics: t('animalGuide.breeds.cow.rathi.characteristics'),
+      name: "Rathi",
+      origin: "India (Rajasthan)",
+      characteristics: "Large size, brown color, excellent longevity",
       avgWeight: "600-700 kg",
       milkYield: "20-25 liters/day",
       lactationYield: "6,000-8,000 kg",
       fatContent: "4.0-4.2%",
       climate: "Mountainous regions",
       image: rathiImage, // Placeholder - replace with actual image
-      specialty: t('animalGuide.breeds.cow.rathi.specialty')
+      specialty: "Excellent for cheese making"
     },
     {
-      name: t('animalGuide.breeds.cow.redsindhi.name'),
-      origin: t('animalGuide.breeds.cow.redsindhi.origin'),
-      characteristics: t('animalGuide.breeds.cow.redsindhi.characteristics'),
+      name: "Red Sindhi",
+      origin: "Rajsthan (Sindh)",
+      characteristics: "Red color, heat resistant, good grazer",
       avgWeight: "300-400 kg",
       milkYield: "8-12 liters/day",
       lactationYield: "1,500-2,500 kg",
       fatContent: "4.5-5.2%",
       climate: "Arid and semi-arid",
       image: redsindhiImage, // Placeholder - replace with actual image
-      specialty: t('animalGuide.breeds.cow.redsindhi.specialty')
+      specialty: "Excellent heat and drought tolerance"
     },
     {
-      name: t('animalGuide.breeds.cow.kankrej.name'),
-      origin: t('animalGuide.breeds.cow.kankrej.origin'),
-      characteristics: t('animalGuide.breeds.cow.kankrej.characteristics'),
+      name: "Kankrej",
+      origin: "India (Gujarat/Rajasthan)",
+      characteristics: "Silver-grey color, lyre-shaped horns, dual purpose",
       avgWeight: "400-500 kg",
       milkYield: "8-10 liters/day",
       lactationYield: "1,500-2,000 kg",
       fatContent: "4.0-4.5%",
       climate: "Arid regions",
       image: kankrejImage, // Placeholder - replace with actual image
-      specialty: t('animalGuide.breeds.cow.kankrej.specialty')
+      specialty: "Excellent draught power"
     }
   ];
 
   const buffaloBreeds = [
     {
-      name: t('animalGuide.breeds.buffalo.murrah.name'),
-      origin: t('animalGuide.breeds.buffalo.murrah.origin'),
-      characteristics: t('animalGuide.breeds.buffalo.murrah.characteristics'),
+      name: "Murrah",
+      origin: "India (Haryana)",
+      characteristics: "Curved horns, high milk yield, black color, well-developed udder",
       avgWeight: "450-650 kg",
       milkYield: "15-20 liters/day",
       lactationYield: "2,000-3,500 kg",
       fatContent: "7-8%",
       climate: "Sub-tropical",
       image: murrahImage,
-      specialty: t('animalGuide.breeds.buffalo.murrah.specialty')
+      specialty: "Highest milk yielding buffalo breed"
     },
     {
-      name: t('animalGuide.breeds.buffalo.niliravi.name'),
-      origin: t('animalGuide.breeds.buffalo.niliravi.origin'),
-      characteristics: t('animalGuide.breeds.buffalo.niliravi.characteristics'),
+      name: "Nili-Ravi",
+      origin: "Pakistan/India (Punjab)",
+      characteristics: "Wall eyes, white markings on face and legs, tightly coiled horns",
       avgWeight: "450-600 kg",
       milkYield: "12-18 liters/day",
       lactationYield: "1,800-2,500 kg",
       fatContent: "6-8%",
       climate: "Semi-arid",
       image: niliRaviImage,
-      specialty: t('animalGuide.breeds.buffalo.niliravi.specialty')
+      specialty: "Excellent adaptability"
     },
     {
-      name: t('animalGuide.breeds.buffalo.surti.name'),
-      origin: t('animalGuide.breeds.buffalo.surti.origin'),
-      characteristics: t('animalGuide.breeds.buffalo.surti.characteristics'),
+      name: "Surti",
+      origin: "India (Gujarat)",
+      characteristics: "Compact size, sickle-shaped horns, wedge-shaped body",
       avgWeight: "350-450 kg",
       milkYield: "8-12 liters/day",
       lactationYield: "1,000-1,500 kg",
       fatContent: "6-8%",
       climate: "Semi-arid",
       image: surtiImage,
-      specialty: t('animalGuide.breeds.buffalo.surti.specialty')
+      specialty: "Ideal for small farms"
     },
     {
-      name: t('animalGuide.breeds.buffalo.jafarabadi.name'),
-      origin: t('animalGuide.breeds.buffalo.jafarabadi.origin'),
-      characteristics: t('animalGuide.breeds.buffalo.jafarabadi.characteristics'),
+      name: "Jafarabadi",
+      origin: "India (Gujarat)",
+      characteristics: "Large size, drooping ears, flat curved horns, black color",
       avgWeight: "500-800 kg",
       milkYield: "10-15 liters/day",
       lactationYield: "1,500-2,000 kg",
       fatContent: "7-9%",
       climate: "Coastal regions",
       image: jafarabadiImage,
-      specialty: t('animalGuide.breeds.buffalo.jafarabadi.specialty')
+      specialty: "Heaviest buffalo breed in India"
     },
     {
-      name: t('animalGuide.breeds.buffalo.mehsana.name'),
-      origin: t('animalGuide.breeds.buffalo.mehsana.origin'),
-      characteristics: t('animalGuide.breeds.buffalo.mehsana.characteristics'),
+      name: "Mehsana",
+      origin: "India (Gujarat)",
+      characteristics: "Cross between Murrah and Surti, black/grey color, white markings",
       avgWeight: "400-550 kg",
       milkYield: "12-16 liters/day",
       lactationYield: "1,500-2,000 kg",
       fatContent: "6-7%",
       climate: "Semi-arid",
       image: mehsanaImage, // Placeholder - replace with actual image
-      specialty: t('animalGuide.breeds.buffalo.mehsana.specialty')
+      specialty: "Combines best traits of parent breeds"
     },
     {
-      name: t('animalGuide.breeds.buffalo.bhadawari.name'),
-      origin: t('animalGuide.breeds.buffalo.bhadawari.origin'),
-      characteristics: t('animalGuide.breeds.buffalo.bhadawari.characteristics'),
+      name: "Bhadawari",
+      origin: "India (UP/MP)",
+      characteristics: "Copper colored, medium size, well-adapted to local conditions",
       avgWeight: "350-450 kg",
       milkYield: "6-10 liters/day",
       lactationYield: "800-1,200 kg",
       fatContent: "8-12%",
       climate: "Sub-tropical",
       image: bhadawariImage, // Placeholder - replace with actual image
-      specialty: t('animalGuide.breeds.buffalo.bhadawari.specialty')
+      specialty: "Very high fat content milk"
     },
     {
-      name: t('animalGuide.breeds.buffalo.toda.name'),
-      origin: t('animalGuide.breeds.buffalo.toda.origin'),
-      characteristics: t('animalGuide.breeds.buffalo.toda.characteristics'),
+      name: "Toda",
+      origin: "India (Tamil Nadu - Nilgiris)",
+      characteristics: "Fawn colored, thick hair coat, semi-wild, sturdy build",
       avgWeight: "300-400 kg",
       milkYield: "4-8 liters/day",
       lactationYield: "400-600 kg",
       fatContent: "8%",
       climate: "Hilly regions",
       image: todaImage, // Placeholder - replace with actual image
-      specialty: t('animalGuide.breeds.buffalo.toda.specialty')
+      specialty: "Adapted to hilly terrains"
     },
     {
-      name: t('animalGuide.breeds.buffalo.nagpuri.name'),
-      origin: t('animalGuide.breeds.buffalo.nagpuri.origin'),
-      characteristics: t('animalGuide.breeds.buffalo.nagpuri.characteristics'),
+      name: "Nagpuri",
+      origin: "India (Maharashtra)",
+      characteristics: "Dark grey color, sword-like horns, white facial patches",
       avgWeight: "400-500 kg",
       milkYield: "8-12 liters/day",
       lactationYield: "700-1,200 kg",
       fatContent: "7-8%",
       climate: "Semi-arid",
       image: nagpuriImage, // Placeholder - replace with actual image
-      specialty: t('animalGuide.breeds.buffalo.nagpuri.specialty')
+      specialty: "Good draught animal"
     }
   ];
 
@@ -237,35 +235,35 @@ const AnimalGuide = () => {
   ];
 
   const nutritionalData = [
-    { nutrient: t('animalGuide.nutritionalData.fatContent'), cow: "3.5-4.5%", buffalo: "6-8%" },
-    { nutrient: t('animalGuide.nutritionalData.protein'), cow: "3.2-3.8%", buffalo: "4.2-4.8%" },
-    { nutrient: t('animalGuide.nutritionalData.lactose'), cow: "4.6-4.9%", buffalo: "4.8-5.2%" },
-    { nutrient: t('animalGuide.nutritionalData.snf'), cow: "8.5-9.0%", buffalo: "9.5-10.5%" },
-    { nutrient: t('animalGuide.nutritionalData.totalSolids'), cow: "12.0-13.5%", buffalo: "15.5-18.5%" },
-    { nutrient: t('animalGuide.nutritionalData.calcium'), cow: "120 mg/100ml", buffalo: "169 mg/100ml" },
-    { nutrient: t('animalGuide.nutritionalData.phosphorus'), cow: "90 mg/100ml", buffalo: "117 mg/100ml" }
+    { nutrient: "Fat Content", cow: "3.5-4.5%", buffalo: "6-8%" },
+    { nutrient: "Protein", cow: "3.2-3.8%", buffalo: "4.2-4.8%" },
+    { nutrient: "Lactose", cow: "4.6-4.9%", buffalo: "4.8-5.2%" },
+    { nutrient: "SNF (Solids Not Fat)", cow: "8.5-9.0%", buffalo: "9.5-10.5%" },
+    { nutrient: "Total Solids", cow: "12.0-13.5%", buffalo: "15.5-18.5%" },
+    { nutrient: "Calcium", cow: "120 mg/100ml", buffalo: "169 mg/100ml" },
+    { nutrient: "Phosphorus", cow: "90 mg/100ml", buffalo: "117 mg/100ml" }
   ];
 
   const managementTips = [
     {
-      category: t('animalGuide.managementTips.feeding.category'),
+      category: "Feeding",
       icon: "🌾",
-      tips: t('animalGuide.managementTips.feeding.tips', { returnObjects: true }) as string[]
+      tips: ["Provide 40-50 kg green fodder daily for cows, 50-60 kg for buffalos", "Dry fodder: 6-8 kg/day for cows, 8-10 kg/day for buffalos", "Concentrate: 1 kg per 2.5 liters of milk production", "Fresh clean water: 30-50 liters/day per animal", "Mineral supplements and salt licks should be available", "Feed 3-4 times daily at regular intervals"]
     },
     {
-      category: t('animalGuide.managementTips.housing.category'),
+      category: "Housing",
       icon: "🏠",
-      tips: t('animalGuide.managementTips.housing.tips', { returnObjects: true }) as string[]
+      tips: ["Minimum space: 3.5m × 2m per cow, 4m × 2.5m per buffalo", "Ceiling height: minimum 3.5 meters for proper ventilation", "Concrete flooring with proper drainage", "Separate feeding and resting areas", "Protection from rain, sun, and extreme weather", "Proper waste management system"]
     },
     {
-      category: t('animalGuide.managementTips.healthCare.category'),
+      category: "Health Care",
       icon: "🏥",
-      tips: t('animalGuide.managementTips.healthCare.tips', { returnObjects: true }) as string[]
+      tips: ["Regular vaccination as per veterinary schedule", "Deworming every 4-6 months", "Daily health monitoring and record keeping", "Immediate isolation of sick animals", "Regular hoof trimming and grooming", "Mastitis prevention and udder care"]
     },
     {
-      category: t('animalGuide.managementTips.breeding.category'),
+      category: "Breeding",
       icon: "🐄",
-      tips: t('animalGuide.managementTips.breeding.tips', { returnObjects: true }) as string[]
+      tips: ["Artificial insemination for genetic improvement", "Heat detection and timely breeding", "Proper pregnancy care and monitoring", "Dry period management (60 days before calving)", "Colostrum feeding within 2 hours of birth", "Maintain breeding records"]
     }
   ];
 
@@ -280,27 +278,27 @@ const AnimalGuide = () => {
           <div className="text-center max-w-5xl mx-auto">
             <div className="mb-6">
               <span className="inline-block px-4 py-2 bg-emerald-500/20 rounded-full text-emerald-200 text-sm font-medium mb-4">
-              {t('animalGuide.hero.badge')}
+              Comprehensive Livestock Guide
               </span>
             </div>
             <h1 className="font-playfair font-bold text-5xl md:text-7xl mb-8 bg-gradient-to-r from-emerald-200 via-green-100 to-teal-200 bg-clip-text text-transparent leading-tight">
-              {t('animalGuide.hero.title')}
+              Complete Guide to Cattle & Buffalo
             </h1>
             <p className="text-xl md:text-2xl text-gray-200 mb-10 leading-relaxed max-w-4xl mx-auto">
-              {t('animalGuide.hero.subtitle')}
+              Discover comprehensive information about cattle and buffalo breeds, their characteristics, care requirements, and everything you need to know about these remarkable livestock animals.
             </p>
             <div className="flex flex-wrap justify-center gap-4 text-sm">
               <div className="flex items-center gap-2 bg-white/10 rounded-full px-4 py-2">
                 <span className="w-2 h-2 bg-emerald-300 rounded-full"></span>
-                <span>{t('animalGuide.hero.pills.cattle')}</span>
+                <span>16 Cattle Breeds</span>
               </div>
               <div className="flex items-center gap-2 bg-white/10 rounded-full px-4 py-2">
                 <span className="w-2 h-2 bg-green-300 rounded-full"></span>
-                <span>{t('animalGuide.hero.pills.buffalo')}</span>
+                <span>8 Buffalo Breeds</span>
               </div>
               <div className="flex items-center gap-2 bg-white/10 rounded-full px-4 py-2">
                 <span className="w-2 h-2 bg-teal-300 rounded-full"></span>
-                <span>{t('animalGuide.hero.pills.tips')}</span>
+                <span>Expert Care Tips</span>
               </div>
             </div>
           </div>
@@ -322,32 +320,32 @@ const AnimalGuide = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-emerald-900/60 via-transparent to-transparent"></div>
                 <div className="absolute bottom-4 left-4">
                   <div className="bg-emerald-500/90 backdrop-blur-sm rounded-full px-4 py-2">
-                    <span className="text-white font-semibold text-lg">{t('animalGuide.cards.cattle.badge')}</span>
+                    <span className="text-white font-semibold text-lg">8 Breeds Featured</span>
                   </div>
                 </div>
               </div>
               <CardHeader className="pb-4">
                 <CardTitle className="text-3xl font-playfair text-emerald-800 flex items-center gap-3">
-                  {t('animalGuide.cards.cattle.title')}
+                  Cattle (Cows)
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-6">
-                <p className="text-gray-600 leading-relaxed text-lg">{t('animalGuide.cards.cattle.desc')}</p>
+                <p className="text-gray-600 leading-relaxed text-lg">Cattle (Bos taurus) are domesticated bovines primarily raised for milk, meat, and leather. They are intelligent social animals with complex behavioral patterns and have been human companions for over 10,000 years, playing crucial roles in agriculture and food production worldwide.</p>
                 <div className="grid grid-cols-2 gap-4">
                   <div className="bg-emerald-50 rounded-lg p-3">
-                    <div className="font-semibold text-emerald-800">{t('animalGuide.cards.common.milkProd')}</div>
+                    <div className="font-semibold text-emerald-800">Milk Production</div>
                     <div className="text-sm text-gray-600">4-30 L/day</div>
                   </div>
                   <div className="bg-emerald-50 rounded-lg p-3">
-                    <div className="font-semibold text-emerald-800">{t('animalGuide.cards.common.weightRange')}</div>
+                    <div className="font-semibold text-emerald-800">Weight Range</div>
                     <div className="text-sm text-gray-600">300-700 kg</div>
                   </div>
                 </div>
                 <div className="flex flex-wrap gap-2">
-                  <Badge className="bg-emerald-100 text-emerald-800 hover:bg-emerald-200">{t('animalGuide.cards.cattle.tags.dairy')}</Badge>
-                  <Badge className="bg-emerald-100 text-emerald-800 hover:bg-emerald-200">{t('animalGuide.cards.cattle.tags.meat')}</Badge>
-                  <Badge className="bg-emerald-100 text-emerald-800 hover:bg-emerald-200">{t('animalGuide.cards.cattle.tags.draft')}</Badge>
-                  <Badge className="bg-emerald-100 text-emerald-800 hover:bg-emerald-200">{t('animalGuide.cards.cattle.tags.leather')}</Badge>
+                  <Badge className="bg-emerald-100 text-emerald-800 hover:bg-emerald-200">Dairy Production</Badge>
+                  <Badge className="bg-emerald-100 text-emerald-800 hover:bg-emerald-200">Meat Production</Badge>
+                  <Badge className="bg-emerald-100 text-emerald-800 hover:bg-emerald-200">Draft Power</Badge>
+                  <Badge className="bg-emerald-100 text-emerald-800 hover:bg-emerald-200">Leather</Badge>
                 </div>
               </CardContent>
             </Card>
@@ -363,32 +361,32 @@ const AnimalGuide = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-teal-900/60 via-transparent to-transparent"></div>
                 <div className="absolute bottom-4 left-4">
                   <div className="bg-teal-500/90 backdrop-blur-sm rounded-full px-4 py-2">
-                    <span className="text-white font-semibold text-lg">{t('animalGuide.cards.buffalo.badge')}</span>
+                    <span className="text-white font-semibold text-lg">8 Breeds Featured</span>
                   </div>
                 </div>
               </div>
               <CardHeader className="pb-4">
                 <CardTitle className="text-3xl font-playfair text-teal-800 flex items-center gap-3">
-                  {t('animalGuide.cards.buffalo.title')}
+                  Water Buffalo
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-6">
-                <p className="text-gray-600 leading-relaxed text-lg">{t('animalGuide.cards.buffalo.desc')}</p>
+                <p className="text-gray-600 leading-relaxed text-lg">Water buffalo (Bubalus bubalis) are large bovines perfectly adapted to hot climates and wet conditions. They produce exceptionally rich milk with higher fat content and are excellent for dairy farming in tropical and subtropical regions around the world.</p>
                 <div className="grid grid-cols-2 gap-4">
                   <div className="bg-teal-50 rounded-lg p-3">
-                    <div className="font-semibold text-teal-800">{t('animalGuide.cards.common.milkProd')}</div>
+                    <div className="font-semibold text-teal-800">Milk Production</div>
                     <div className="text-sm text-gray-600">6-20 L/day</div>
                   </div>
                   <div className="bg-teal-50 rounded-lg p-3">
-                    <div className="font-semibold text-teal-800">{t('animalGuide.cards.common.weightRange')}</div>
+                    <div className="font-semibold text-teal-800">Weight Range</div>
                     <div className="text-sm text-gray-600">350-800 kg</div>
                   </div>
                 </div>
                 <div className="flex flex-wrap gap-2">
-                  <Badge className="bg-teal-100 text-teal-800 hover:bg-teal-200">{t('animalGuide.cards.buffalo.tags.richMilk')}</Badge>
-                  <Badge className="bg-teal-100 text-teal-800 hover:bg-teal-200">{t('animalGuide.cards.buffalo.tags.heat')}</Badge>
-                  <Badge className="bg-teal-100 text-teal-800 hover:bg-teal-200">{t('animalGuide.cards.buffalo.tags.draft')}</Badge>
-                  <Badge className="bg-teal-100 text-teal-800 hover:bg-teal-200">{t('animalGuide.cards.buffalo.tags.cheese')}</Badge>
+                  <Badge className="bg-teal-100 text-teal-800 hover:bg-teal-200">Rich Milk (6-8% fat)</Badge>
+                  <Badge className="bg-teal-100 text-teal-800 hover:bg-teal-200">Heat Tolerance</Badge>
+                  <Badge className="bg-teal-100 text-teal-800 hover:bg-teal-200">Draft Work</Badge>
+                  <Badge className="bg-teal-100 text-teal-800 hover:bg-teal-200">Cheese Making</Badge>
                 </div>
               </CardContent>
             </Card>
@@ -400,16 +398,16 @@ const AnimalGuide = () => {
       <section className="py-20 bg-gradient-to-br from-white via-gray-50 to-slate-100">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="font-playfair font-bold text-4xl md:text-5xl mb-6 text-gray-800">{t('animalGuide.tabs.title')}</h2>
+            <h2 className="font-playfair font-bold text-4xl md:text-5xl mb-6 text-gray-800">Popular Breeds Collection</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              {t('animalGuide.tabs.subtitle')}
+              Explore detailed information about the most important cattle and buffalo breeds, their origins, characteristics, and performance metrics.
             </p>
           </div>
           
           <Tabs defaultValue="cattle" className="w-full">
             <TabsList className="grid w-full max-w-md mx-auto grid-cols-2 mb-12 h-12">
-              <TabsTrigger value="cattle" className="text-lg font-semibold">{t('animalGuide.tabs.cattle')}</TabsTrigger>
-              <TabsTrigger value="buffalo" className="text-lg font-semibold">{t('animalGuide.tabs.buffalo')}</TabsTrigger>
+              <TabsTrigger value="cattle" className="text-lg font-semibold">Cattle Breeds</TabsTrigger>
+              <TabsTrigger value="buffalo" className="text-lg font-semibold">Buffalo Breeds</TabsTrigger>
             </TabsList>
             
             <TabsContent value="cattle" className="mt-8">
@@ -440,19 +438,19 @@ const AnimalGuide = () => {
                       <p className="text-sm text-gray-600 leading-relaxed">{breed.characteristics}</p>
                       <div className="grid grid-cols-2 gap-3 text-xs">
                         <div className="bg-emerald-50 rounded-lg p-2">
-                          <div className="text-gray-500">{t('animalGuide.breedLabels.weight')}</div>
+                          <div className="text-gray-500">Weight</div>
                           <div className="font-semibold text-emerald-800">{breed.avgWeight}</div>
                         </div>
                         <div className="bg-emerald-50 rounded-lg p-2">
-                          <div className="text-gray-500">{t('animalGuide.breedLabels.dailyYield')}</div>
+                          <div className="text-gray-500">Daily Yield</div>
                           <div className="font-semibold text-emerald-800">{breed.milkYield}</div>
                         </div>
                         <div className="bg-emerald-50 rounded-lg p-2">
-                          <div className="text-gray-500">{t('animalGuide.breedLabels.fatContent')}</div>
+                          <div className="text-gray-500">Fat Content</div>
                           <div className="font-semibold text-emerald-800">{breed.fatContent}</div>
                         </div>
                         <div className="bg-emerald-50 rounded-lg p-2">
-                          <div className="text-gray-500">{t('animalGuide.breedLabels.climate')}</div>
+                          <div className="text-gray-500">Climate</div>
                           <div className="font-semibold text-emerald-800 truncate">{breed.climate}</div>
                         </div>
                       </div>
@@ -490,19 +488,19 @@ const AnimalGuide = () => {
                       <p className="text-sm text-gray-600 leading-relaxed">{breed.characteristics}</p>
                       <div className="grid grid-cols-2 gap-3 text-xs">
                         <div className="bg-teal-50 rounded-lg p-2">
-                          <div className="text-gray-500">{t('animalGuide.breedLabels.weight')}</div>
+                          <div className="text-gray-500">Weight</div>
                           <div className="font-semibold text-teal-800">{breed.avgWeight}</div>
                         </div>
                         <div className="bg-teal-50 rounded-lg p-2">
-                          <div className="text-gray-500">{t('animalGuide.breedLabels.dailyYield')}</div>
+                          <div className="text-gray-500">Daily Yield</div>
                           <div className="font-semibold text-teal-800">{breed.milkYield}</div>
                         </div>
                         <div className="bg-teal-50 rounded-lg p-2">
-                          <div className="text-gray-500">{t('animalGuide.breedLabels.fatContent')}</div>
+                          <div className="text-gray-500">Fat Content</div>
                           <div className="font-semibold text-teal-800">{breed.fatContent}</div>
                         </div>
                         <div className="bg-teal-50 rounded-lg p-2">
-                          <div className="text-gray-500">{t('animalGuide.breedLabels.climate')}</div>
+                          <div className="text-gray-500">Climate</div>
                           <div className="font-semibold text-teal-800 truncate">{breed.climate}</div>
                         </div>
                       </div>
@@ -519,24 +517,24 @@ const AnimalGuide = () => {
       <section className="py-20 bg-gradient-to-br from-emerald-50 to-teal-50">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="font-playfair font-bold text-4xl md:text-5xl mb-6 text-gray-800">{t('animalGuide.physical.title')}</h2>
+            <h2 className="font-playfair font-bold text-4xl md:text-5xl mb-6 text-gray-800">Physical Parameters Comparison</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              {t('animalGuide.physical.subtitle')}
+              Detailed comparison of physical characteristics between cattle and buffalo breeds
             </p>
           </div>
           
           <Card className="max-w-6xl mx-auto shadow-2xl border-0 overflow-hidden">
             <CardHeader className="bg-gradient-to-r from-emerald-500 to-teal-500 text-white">
-              <CardTitle className="text-2xl font-inter text-center">{t('animalGuide.physical.cardTitle')}</CardTitle>
+              <CardTitle className="text-2xl font-inter text-center">Average Physical Measurements</CardTitle>
             </CardHeader>
             <CardContent className="p-0">
               <div className="overflow-x-auto">
                 <table className="w-full">
                   <thead>
                     <tr className="bg-gray-50 border-b">
-                      <th className="text-left py-4 px-6 font-bold text-gray-800 text-lg">{t('animalGuide.physical.table.parameter')}</th>
-                      <th className="text-center py-4 px-6 font-bold text-emerald-700 text-lg">{t('animalGuide.physical.table.cattle')}</th>
-                      <th className="text-center py-4 px-6 font-bold text-teal-700 text-lg">{t('animalGuide.physical.table.buffalo')}</th>
+                      <th className="text-left py-4 px-6 font-bold text-gray-800 text-lg">Parameter</th>
+                      <th className="text-center py-4 px-6 font-bold text-emerald-700 text-lg">Cattle</th>
+                      <th className="text-center py-4 px-6 font-bold text-teal-700 text-lg">Buffalo</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -559,24 +557,24 @@ const AnimalGuide = () => {
       <section className="py-20 bg-gradient-to-br from-white to-gray-100">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="font-playfair font-bold text-4xl md:text-5xl mb-6 text-gray-800">{t('animalGuide.milk.title')}</h2>
+            <h2 className="font-playfair font-bold text-4xl md:text-5xl mb-6 text-gray-800">Milk Nutritional Analysis</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              {t('animalGuide.milk.subtitle')}
+              Comprehensive comparison of milk composition and nutritional values
             </p>
           </div>
           
           <Card className="max-w-6xl mx-auto shadow-2xl border-0 overflow-hidden">
             <CardHeader className="bg-gradient-to-r from-blue-500 to-indigo-500 text-white">
-              <CardTitle className="text-2xl font-inter text-center">{t('animalGuide.milk.cardTitle')}</CardTitle>
+              <CardTitle className="text-2xl font-inter text-center">Milk Composition Analysis</CardTitle>
             </CardHeader>
             <CardContent className="p-0">
               <div className="overflow-x-auto">
                 <table className="w-full">
                   <thead>
                     <tr className="bg-gray-50 border-b">
-                      <th className="text-left py-4 px-6 font-bold text-gray-800 text-lg">{t('animalGuide.milk.table.component')}</th>
-                      <th className="text-center py-4 px-6 font-bold text-emerald-700 text-lg">{t('animalGuide.milk.table.cow')}</th>
-                      <th className="text-center py-4 px-6 font-bold text-teal-700 text-lg">{t('animalGuide.milk.table.buffalo')}</th>
+                      <th className="text-left py-4 px-6 font-bold text-gray-800 text-lg">Nutrient Component</th>
+                      <th className="text-center py-4 px-6 font-bold text-emerald-700 text-lg">Cow Milk</th>
+                      <th className="text-center py-4 px-6 font-bold text-teal-700 text-lg">Buffalo Milk</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -591,13 +589,13 @@ const AnimalGuide = () => {
                 </table>
               </div>
               <div className="m-6 p-6 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl border-l-4 border-blue-400">
-                <h4 className="font-bold text-lg text-blue-800 mb-3">🔍 {t('animalGuide.milk.insights.title')}</h4>
+                <h4 className="font-bold text-lg text-blue-800 mb-3">🔍 Key Insights</h4>
                 <div className="grid md:grid-cols-2 gap-4 text-sm text-gray-700">
                   <div>
-                    <p className="mb-2">{t('animalGuide.milk.insights.buffalo')}</p>
+                    <p className="mb-2">Buffalo milk contains significantly higher fat content (6-8% vs 3.5-4.5%), making it ideal for producing rich dairy products like ghee, cheese, and traditional sweets.</p>
                   </div>
                   <div>
-                    <p>{t('animalGuide.milk.insights.cow')}</p>
+                    <p>Cow milk has a lighter consistency and milder taste, making it more suitable for direct consumption, especially for children and health-conscious consumers.</p>
                   </div>
                 </div>
               </div>
@@ -610,9 +608,9 @@ const AnimalGuide = () => {
       <section className="py-20 bg-gradient-to-br from-green-50 via-emerald-50 to-teal-50">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="font-playfair font-bold text-4xl md:text-5xl mb-6 text-gray-800">{t('animalGuide.care.title')}</h2>
+            <h2 className="font-playfair font-bold text-4xl md:text-5xl mb-6 text-gray-800">Complete Care & Management Guide</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              {t('animalGuide.care.subtitle')}
+              Essential practices for maintaining healthy and productive livestock
             </p>
           </div>
           

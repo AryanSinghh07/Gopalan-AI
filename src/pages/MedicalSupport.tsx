@@ -31,9 +31,8 @@ import {
   Bookmark,
   Share2
 } from 'lucide-react';
-import { useTranslation } from "react-i18next";
-import cowImage from "@/assets/AnimalImg/Cattle (Cows).jpg";
-import buffaloImage from "@/assets/AnimalImg/Water Buffalo.jpg";
+import cowImage from "@/assets/animals/cattle.jpg";
+import buffaloImage from "@/assets/animals/water-buffalo.jpg";
 
 interface MedicalCondition {
   id: string;
@@ -61,7 +60,6 @@ interface AnimalType {
 }
 
 const MedicalSupport = () => {
-  const { t } = useTranslation();
   const [selectedAnimal, setSelectedAnimal] = useState<string>('cow');
   const [selectedCondition, setSelectedCondition] = useState<string>('');
   const [searchTerm, setSearchTerm] = useState<string>('');
@@ -69,72 +67,72 @@ const MedicalSupport = () => {
   const animalData: AnimalType[] = [
     {
       id: 'cow',
-      name: t('medical.animals.cow.name'),
+      name: "Cow",
 
       image: cowImage,
       gradient: 'from-blue-500 to-purple-600',
-      description: t('medical.animals.cow.description'),
-      characteristics: t('medical.animals.cow.characteristics', { returnObjects: true }) as string[],
-      lifespan: t('medical.animals.cow.lifespan'),
-      weight: t('medical.animals.cow.weight'),
+      description: "Dairy and beef cattle are essential livestock providing milk, meat, and leather products.",
+      characteristics: ["Herbivorous", "Social animals", "Four-chambered stomach", "Average milk production: 6-8 gallons/day"],
+      lifespan: "18-22 years",
+      weight: "400-800 kg",
       conditions: [
         {
           id: 'mastitis',
-          name: t('medical.conditions.mastitis.name'),
-          description: t('medical.conditions.mastitis.description'),
-          funFact: t('medical.conditions.mastitis.funFact'),
-          symptoms: t('medical.conditions.mastitis.symptoms', { returnObjects: true }) as string[],
-          causes: t('medical.conditions.mastitis.causes', { returnObjects: true }) as string[],
-          treatment: t('medical.conditions.mastitis.treatment', { returnObjects: true }) as string[],
-          prevention: t('medical.conditions.mastitis.prevention', { returnObjects: true }) as string[],
+          name: "Mastitis",
+          description: "Inflammation of the mammary gland, most commonly caused by bacterial infection.",
+          funFact: "Mastitis costs dairy farmers billions globally each year in lost milk production.",
+          symptoms: ["Swollen udder", "Hot to touch", "Pain when milking", "Abnormal milk (clots, blood)", "Reduced milk production"],
+          causes: ["Bacterial infection", "Poor hygiene", "Trauma to udder", "Stress", "Poor nutrition"],
+          treatment: ["Antibiotic therapy", "Anti-inflammatory drugs", "Frequent milking", "Udder massage", "Proper hygiene"],
+          prevention: ["Clean milking equipment", "Dry cow therapy", "Proper nutrition", "Regular health checks", "Stress reduction"],
           severity: 'high',
           emergencyContact: true
         },
         {
           id: 'bloat',
-          name: t('medical.conditions.bloat.name'),
-          description: t('medical.conditions.bloat.description'),
-          funFact: t('medical.conditions.bloat.funFact'),
-          symptoms: t('medical.conditions.bloat.symptoms', { returnObjects: true }) as string[],
-          causes: t('medical.conditions.bloat.causes', { returnObjects: true }) as string[],
-          treatment: t('medical.conditions.bloat.treatment', { returnObjects: true }) as string[],
-          prevention: t('medical.conditions.bloat.prevention', { returnObjects: true }) as string[],
+          name: "Bloat (Gas)",
+          description: "Excessive accumulation of gas in the rumen causing dangerous abdominal distension.",
+          funFact: "A cow can produce up to 500 liters of gas per day normally, but bloat prevents proper gas release.",
+          symptoms: ["Distended left abdomen", "Difficulty breathing", "Restlessness", "Loss of appetite", "Excessive salivation"],
+          causes: ["Rapid feed changes", "Legume-rich pasture", "Wet grass", "Grain overload", "Stress"],
+          treatment: ["Remove feed immediately", "Walk the animal", "Vegetable oil administration", "Stomach tube insertion", "Emergency surgery if severe"],
+          prevention: ["Gradual diet changes", "Avoid wet legumes", "Provide adequate fiber", "Regular feeding schedule", "Monitor grazing"],
           severity: 'high',
           emergencyContact: true
         },
         {
           id: 'milk-fever',
-          name: t('medical.conditions.milkFever.name'),
-          description: t('medical.conditions.milkFever.description'),
-          funFact: t('medical.conditions.milkFever.funFact'),
-          symptoms: t('medical.conditions.milkFever.symptoms', { returnObjects: true }) as string[],
-          causes: t('medical.conditions.milkFever.causes', { returnObjects: true }) as string[],
-          treatment: t('medical.conditions.milkFever.treatment', { returnObjects: true }) as string[],
-          prevention: t('medical.conditions.milkFever.prevention', { returnObjects: true }) as string[],
+          name: "Milk Fever (Hypocalcemia)",
+          description: "Metabolic disorder caused by low blood calcium levels, typically occurring around calving.",
+          funFact: "Despite its name, milk fever rarely involves fever - the body temperature often drops.",
+          symptoms: ["Muscle tremors", "Inability to stand", "Cold ears and legs", "Rapid heartbeat", "Loss of consciousness"],
+          causes: ["Calcium deficiency", "High milk production", "Poor nutrition during dry period", "Age factor", "Stress"],
+          treatment: ["Intravenous calcium", "Supportive care", "Warmth provision", "Professional veterinary care", "Monitoring"],
+          prevention: ["Proper dry cow nutrition", "Calcium supplementation", "Magnesium balance", "Vitamin D provision", "Gradual diet transition"],
           severity: 'high',
           emergencyContact: true
         },
         {
           id: 'lameness',
-          name: t('medical.conditions.lameness.name'),
-          description: t('medical.conditions.lameness.description'),
-          funFact: t('medical.conditions.lameness.funFact'),
-          symptoms: t('medical.conditions.lameness.symptoms', { returnObjects: true }) as string[],
-          causes: t('medical.conditions.lameness.causes', { returnObjects: true }) as string[],
-          treatment: t('medical.conditions.lameness.treatment', { returnObjects: true }) as string[],
-          prevention: t('medical.conditions.lameness.prevention', { returnObjects: true }) as string[],
+          name: "Lameness",
+          description: "Impaired locomotion affecting one or more limbs, significantly impacting animal welfare.",
+          funFact: "Lameness is the third most costly disease in dairy cattle after mastitis and reproductive disorders.",
+          symptoms: ["Limping", "Reluctance to walk", "Swollen joints", "Heat in affected area", "Reduced activity"],
+          causes: ["Hoof problems", "Injuries", "Arthritis", "Poor flooring", "Nutritional imbalances"],
+          treatment: ["Hoof trimming", "Antibiotic therapy", "Pain management", "Rest", "Proper footing"],
+          prevention: ["Regular hoof care", "Clean, dry housing", "Proper nutrition", "Avoid sharp objects", "Regular exercise"],
           severity: 'medium',
           emergencyContact: false
         },
         {
           id: 'diarrhea',
-          name: t('medical.conditions.diarrhea.name'),
-          description: t('medical.conditions.diarrhea.description'),
-          funFact: t('medical.conditions.diarrhea.funFact'),
-          symptoms: t('medical.conditions.diarrhea.symptoms', { returnObjects: true }) as string[],
-          causes: t('medical.conditions.diarrhea.causes', { returnObjects: true }) as string[],
-          treatment: t('medical.conditions.diarrhea.treatment', { returnObjects: true }) as string[],
-          prevention: t('medical.conditions.diarrhea.prevention', { returnObjects: true }) as string[],
+          name: "Diarrhea",
+          description: "Frequent passage of loose, watery stools often indicating digestive system problems.",
+          funFact: "Calf diarrhea is responsible for more deaths in young calves than any other disease.",
+          symptoms: ["Loose stools", "Dehydration", "Loss of appetite", "Weight loss", "Lethargy"],
+          causes: ["Dietary changes", "Infections", "Parasites", "Stress", "Poor water quality"],
+          treatment: ["Fluid therapy", "Electrolyte replacement", "Dietary management", "Probiotics", "Antimicrobial if needed"],
+          prevention: ["Gradual diet changes", "Clean water supply", "Parasite control", "Stress management", "Good hygiene"],
           severity: 'medium',
           emergencyContact: false
         }
@@ -142,72 +140,72 @@ const MedicalSupport = () => {
     },
     {
       id: 'buffalo',
-      name: t('medical.animals.buffalo.name'),
+      name: "Buffalo",
 
       image: buffaloImage,
       gradient: 'from-green-500 to-teal-600',
-      description: t('medical.animals.buffalo.description'),
-      characteristics: t('medical.animals.buffalo.characteristics', { returnObjects: true }) as string[],
-      lifespan: t('medical.animals.buffalo.lifespan'),
-      weight: t('medical.animals.buffalo.weight'),
+      description: "Water buffalo are important for milk production and agricultural work in many tropical regions.",
+      characteristics: ["Excellent swimmers", "Heat tolerant", "High milk fat content", "Strong work animals"],
+      lifespan: "20-25 years",
+      weight: "450-900 kg",
       conditions: [
         {
           id: 'heat-stress',
-          name: t('medical.conditions.heatStress.name'),
-          description: t('medical.conditions.heatStress.description'),
-          funFact: t('medical.conditions.heatStress.funFact'),
-          symptoms: t('medical.conditions.heatStress.symptoms', { returnObjects: true }) as string[],
-          causes: t('medical.conditions.heatStress.causes', { returnObjects: true }) as string[],
-          treatment: t('medical.conditions.heatStress.treatment', { returnObjects: true }) as string[],
-          prevention: t('medical.conditions.heatStress.prevention', { returnObjects: true }) as string[],
+          name: "Heat Stress",
+          description: "Physiological strain caused by high environmental temperature and humidity.",
+          funFact: "Buffalo can regulate body temperature by wallowing in mud, which acts as natural sunscreen.",
+          symptoms: ["Excessive panting", "Drooling", "Reduced feed intake", "Seeking shade", "Reduced milk production"],
+          causes: ["High temperature", "High humidity", "Poor ventilation", "Lack of shade", "Overcrowding"],
+          treatment: ["Provide shade", "Cool water access", "Fans or misters", "Electrolyte replacement", "Reduce activity"],
+          prevention: ["Adequate shade", "Good ventilation", "Fresh water", "Avoid midday activities", "Proper housing"],
           severity: 'medium',
           emergencyContact: false
         },
         {
           id: 'foot-rot',
-          name: t('medical.conditions.footRot.name'),
-          description: t('medical.conditions.footRot.description'),
-          funFact: t('medical.conditions.footRot.funFact'),
-          symptoms: t('medical.conditions.footRot.symptoms', { returnObjects: true }) as string[],
-          causes: t('medical.conditions.footRot.causes', { returnObjects: true }) as string[],
-          treatment: t('medical.conditions.footRot.treatment', { returnObjects: true }) as string[],
-          prevention: t('medical.conditions.footRot.prevention', { returnObjects: true }) as string[],
+          name: "Foot Rot",
+          description: "Bacterial infection of the hoof causing severe lameness and foul odor.",
+          funFact: "Foot rot can spread rapidly through a herd in wet, muddy conditions.",
+          symptoms: ["Severe lameness", "Swollen foot", "Foul smell", "Separation of hoof wall", "Pain"],
+          causes: ["Bacterial infection", "Wet conditions", "Poor hygiene", "Injuries", "Stress"],
+          treatment: ["Antibiotic therapy", "Hoof trimming", "Topical treatment", "Dry housing", "Pain management"],
+          prevention: ["Dry housing", "Regular hoof care", "Good hygiene", "Avoid muddy areas", "Zinc supplementation"],
           severity: 'high',
           emergencyContact: true
         },
         {
           id: 'respiratory-infection',
-          name: t('medical.conditions.respiratoryInfection.name'),
-          description: t('medical.conditions.respiratoryInfection.description'),
-          funFact: t('medical.conditions.respiratoryInfection.funFact'),
-          symptoms: t('medical.conditions.respiratoryInfection.symptoms', { returnObjects: true }) as string[],
-          causes: t('medical.conditions.respiratoryInfection.causes', { returnObjects: true }) as string[],
-          treatment: t('medical.conditions.respiratoryInfection.treatment', { returnObjects: true }) as string[],
-          prevention: t('medical.conditions.respiratoryInfection.prevention', { returnObjects: true }) as string[],
+          name: "Respiratory Infection",
+          description: "Infections affecting the respiratory system, commonly caused by viruses or bacteria.",
+          funFact: "Buffalo are generally more resistant to respiratory diseases than cattle due to their robust immune system.",
+          symptoms: ["Coughing", "Nasal discharge", "Difficulty breathing", "Fever", "Reduced appetite"],
+          causes: ["Viral infections", "Bacterial infections", "Poor air quality", "Stress", "Overcrowding"],
+          treatment: ["Antibiotic therapy", "Anti-inflammatory drugs", "Supportive care", "Good ventilation", "Rest"],
+          prevention: ["Vaccination", "Good ventilation", "Avoid overcrowding", "Stress reduction", "Quarantine new animals"],
           severity: 'medium',
           emergencyContact: false
         },
         {
           id: 'parasites',
-          name: t('medical.conditions.parasites.name'),
-          description: t('medical.conditions.parasites.description'),
-          funFact: t('medical.conditions.parasites.funFact'),
-          symptoms: t('medical.conditions.parasites.symptoms', { returnObjects: true }) as string[],
-          causes: t('medical.conditions.parasites.causes', { returnObjects: true }) as string[],
-          treatment: t('medical.conditions.parasites.treatment', { returnObjects: true }) as string[],
-          prevention: t('medical.conditions.parasites.prevention', { returnObjects: true }) as string[],
+          name: "Internal Parasites",
+          description: "Worm infestations that can significantly impact health and productivity.",
+          funFact: "Buffalo can harbor over 50 different species of internal parasites, but many show high resistance.",
+          symptoms: ["Weight loss", "Poor coat", "Diarrhea", "Anemia", "Reduced performance"],
+          causes: ["Worm infestation", "Poor pasture management", "Overcrowding", "Contaminated water", "Stress"],
+          treatment: ["Deworming medication", "Supportive nutrition", "Iron supplementation", "Pasture rotation", "Follow-up treatment"],
+          prevention: ["Regular deworming", "Pasture rotation", "Fecal testing", "Clean water", "Proper nutrition"],
           severity: 'medium',
           emergencyContact: false
         },
         {
           id: 'digestive-disorders',
-          name: t('medical.conditions.digestiveDisorders.name'),
-          description: t('medical.conditions.digestiveDisorders.description'),
-          funFact: t('medical.conditions.digestiveDisorders.funFact'),
-          symptoms: t('medical.conditions.digestiveDisorders.symptoms', { returnObjects: true }) as string[],
-          causes: t('medical.conditions.digestiveDisorders.causes', { returnObjects: true }) as string[],
-          treatment: t('medical.conditions.digestiveDisorders.treatment', { returnObjects: true }) as string[],
-          prevention: t('medical.conditions.digestiveDisorders.prevention', { returnObjects: true }) as string[],
+          name: "Digestive Disorders",
+          description: "Various conditions affecting the digestive system and nutrient absorption.",
+          funFact: "Buffalo have a more efficient digestive system than cattle, converting poor-quality feed better.",
+          symptoms: ["Loss of appetite", "Abdominal pain", "Abnormal feces", "Dehydration", "Weight loss"],
+          causes: ["Poor quality feed", "Sudden diet changes", "Contaminated feed", "Stress", "Parasites"],
+          treatment: ["Dietary management", "Probiotics", "Fluid therapy", "Anti-inflammatory drugs", "Supportive care"],
+          prevention: ["Quality feed", "Gradual diet changes", "Clean feed storage", "Regular feeding", "Stress management"],
           severity: 'medium',
           emergencyContact: false
         }
@@ -225,51 +223,51 @@ const MedicalSupport = () => {
 
   const emergencyProcedures = [
     {
-      title: t('medical.emergency.cards.assessment.title'),
+      title: "Emergency Assessment",
       icon: <Zap className="h-6 w-6" />,
       color: "from-red-500 to-pink-500",
       steps: [
-        t('medical.emergency.cards.assessment.s1'),
-        t('medical.emergency.cards.assessment.s2'),
-        t('medical.emergency.cards.assessment.s3'),
-        t('medical.emergency.cards.assessment.s4'),
-        t('medical.emergency.cards.assessment.s5')
+        "Check vital signs (temperature, breathing, pulse)",
+        "Assess consciousness level",
+        "Look for obvious injuries or distress",
+        "Note any unusual behavior",
+        "Document symptoms and timeline"
       ]
     },
     {
-      title: t('medical.emergency.cards.callVet.title'),
+      title: "When to Call Veterinarian Immediately",
       icon: <Phone className="h-6 w-6" />,
       color: "from-orange-500 to-red-500",
       steps: [
-        t('medical.emergency.cards.callVet.s1'),
-        t('medical.emergency.cards.callVet.s2'),
-        t('medical.emergency.cards.callVet.s3'),
-        t('medical.emergency.cards.callVet.s4'),
-        t('medical.emergency.cards.callVet.s5'),
-        t('medical.emergency.cards.callVet.s6'),
-        t('medical.emergency.cards.callVet.s7')
+        "Animal is unconscious or unresponsive",
+        "Severe bleeding or trauma",
+        "Difficulty breathing",
+        "Signs of severe pain",
+        "Bloat or severe abdominal distension",
+        "Inability to stand or walk",
+        "Toxic plant consumption suspected"
       ]
     },
     {
-      title: t('medical.emergency.cards.firstAid.title'),
+      title: "First Aid Measures",
       icon: <Shield className="h-6 w-6" />,
       color: "from-blue-500 to-indigo-500",
       steps: [
-        t('medical.emergency.cards.firstAid.s1'),
-        t('medical.emergency.cards.firstAid.s2'),
-        t('medical.emergency.cards.firstAid.s3'),
-        t('medical.emergency.cards.firstAid.s4'),
-        t('medical.emergency.cards.firstAid.s5'),
-        t('medical.emergency.cards.firstAid.s6')
+        "Keep animal calm and comfortable",
+        "Provide fresh water if able to drink",
+        "Move to shade or shelter",
+        "Stop any bleeding with clean cloth",
+        "Do not give medication without veterinary advice",
+        "Keep detailed records of symptoms"
       ]
     }
   ];
 
   const stats = [
-    { icon: <Users className="h-8 w-8" />, value: "50,000+", label: t('medical.stats.helped'), color: "text-blue-600" },
-    { icon: <Award className="h-8 w-8" />, value: "99%", label: t('medical.stats.success'), color: "text-green-600" },
-    { icon: <Clock className="h-8 w-8" />, value: "24/7", label: t('medical.stats.support'), color: "text-purple-600" },
-    { icon: <Star className="h-8 w-8" />, value: "4.9", label: t('medical.stats.rating'), color: "text-yellow-600" },
+    { icon: <Users className="h-8 w-8" />, value: "50,000+", label: "Animals Helped", color: "text-blue-600" },
+    { icon: <Award className="h-8 w-8" />, value: "99%", label: "Success Rate", color: "text-green-600" },
+    { icon: <Clock className="h-8 w-8" />, value: "24/7", label: "Support Available", color: "text-purple-600" },
+    { icon: <Star className="h-8 w-8" />, value: "4.9", label: "User Rating", color: "text-yellow-600" },
   ];
 
   const quickTips = [
@@ -331,11 +329,11 @@ const MedicalSupport = () => {
               </div>
             </div>
             <h1 className="text-6xl md:text-7xl font-bold text-white mb-8 leading-tight">
-              {t('medical.hero.title.a')}
-              <span className="bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent"> {t('medical.hero.title.b')}</span>
+              Animal Medical
+              <span className="bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent"> Support</span>
             </h1>
             <p className="text-2xl text-blue-100 max-w-4xl mx-auto mb-12 leading-relaxed">
-              {t('medical.hero.subtitle')}
+              Your comprehensive digital veterinary companion. Get instant access to expert medical guidance, symptoms analysis, and emergency protocols for cattle health management with AI-powered insights.
             </p>
             
             {/* Enhanced Stats */}
@@ -361,9 +359,9 @@ const MedicalSupport = () => {
             <div className="text-center mb-12">
               <h2 className="text-4xl font-bold text-gray-800 mb-4 flex items-center justify-center">
                 <Stethoscope className="h-10 w-10 mr-4 text-blue-600" />
-                {t('medical.select.title')}
+                Choose Your Animal
               </h2>
-              <p className="text-xl text-gray-600">{t('medical.select.subtitle')}</p>
+              <p className="text-xl text-gray-600">Select the type of animal you need medical support for</p>
             </div>
             
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
@@ -405,17 +403,17 @@ const MedicalSupport = () => {
                       
                       <div className="grid grid-cols-2 gap-4 mb-6 text-sm">
                         <div className="bg-gray-50 p-3 rounded-lg">
-                          <div className="font-semibold text-gray-800">{t('medical.select.lifespan')}</div>
+                          <div className="font-semibold text-gray-800">Lifespan</div>
                           <div className="text-gray-600">{animal.lifespan}</div>
                         </div>
                         <div className="bg-gray-50 p-3 rounded-lg">
-                          <div className="font-semibold text-gray-800">{t('medical.select.weight')}</div>
+                          <div className="font-semibold text-gray-800">Weight</div>
                           <div className="text-gray-600">{animal.weight}</div>
                         </div>
                       </div>
 
                       <div className="mb-6">
-                        <h4 className="font-semibold text-gray-800 mb-2">{t('medical.select.keyChars')}</h4>
+                        <h4 className="font-semibold text-gray-800 mb-2">Key Characteristics</h4>
                         <div className="flex flex-wrap gap-2">
                           {animal.characteristics.map((char, index) => (
                             <span key={index} className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">
@@ -428,10 +426,10 @@ const MedicalSupport = () => {
                       <div className="flex items-center justify-between">
                         <div className="flex items-center space-x-2 text-gray-600">
                           <BookOpen className="h-5 w-5" />
-                          <span>{t('medical.select.conditionsCovered', { count: animal.conditions.length })}</span>
+                          <span>{animal.conditions.length} conditions covered</span>
                         </div>
                         <span className={`px-6 py-3 rounded-full text-white font-medium bg-gradient-to-r ${animal.gradient} shadow-lg group-hover:shadow-xl transition-shadow flex items-center space-x-2`}>
-                          <span>{t('medical.select.choose', { name: animal.name })}</span>
+                          <span>Select {animal.name}</span>
                           <ChevronRight className="h-4 w-4" />
                         </span>
                       </div>
@@ -445,8 +443,8 @@ const MedicalSupport = () => {
           {/* Quick Tips Section */}
           <div className="mb-16">
             <div className="text-center mb-10">
-              <h2 className="text-3xl font-bold text-gray-800 mb-4">{t('medical.tips.title')}</h2>
-              <p className="text-gray-600">{t('medical.tips.subtitle')}</p>
+              <h2 className="text-3xl font-bold text-gray-800 mb-4">Quick Health Tips</h2>
+              <p className="text-gray-600">Essential practices for maintaining animal health</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {quickTips.map((tip, index) => (
@@ -470,8 +468,8 @@ const MedicalSupport = () => {
                     <BookOpen className="h-7 w-7 text-white" />
                   </div>
                   <div>
-                    <h2 className="text-2xl font-bold text-gray-800">{t('medical.conditionsList.title')}</h2>
-                    <p className="text-gray-600">{t('medical.conditionsList.for', { name: currentAnimal.name })}</p>
+                    <h2 className="text-2xl font-bold text-gray-800">Medical Conditions</h2>
+                    <p className="text-gray-600">For {currentAnimal.name}</p>
                   </div>
                 </div>
                 
@@ -480,7 +478,7 @@ const MedicalSupport = () => {
                   <Search className="h-5 w-5 absolute left-4 top-4 text-gray-400" />
                   <input
                     type="text"
-                    placeholder={t('medical.conditionsList.search') as string}
+                    placeholder="Search conditions or symptoms..."
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
                     className="w-full pl-12 pr-4 py-4 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-gray-50 transition-colors text-gray-700 placeholder-gray-500"
@@ -510,7 +508,7 @@ const MedicalSupport = () => {
                       {condition.emergencyContact && (
                         <div className="flex items-center mb-2">
                           <Phone className="h-4 w-4 text-red-500 mr-2" />
-                          <span className="text-sm text-red-600 font-semibold">{t('medical.conditionsList.emergency')}</span>
+                          <span className="text-sm text-red-600 font-semibold">Emergency condition</span>
                         </div>
                       )}
                       <p className="text-gray-600 text-sm line-clamp-2">{condition.description}</p>
@@ -538,7 +536,7 @@ const MedicalSupport = () => {
                       </div>
                       <div className={`px-5 py-3 rounded-xl flex items-center space-x-3 border-2 ${getSeverityColor(currentCondition.severity)}`}>
                         {getSeverityIcon(currentCondition.severity)}
-                          <span className="text-base font-bold capitalize">{currentCondition.severity} {t('medical.detail.risk')}</span>
+                          <span className="text-base font-bold capitalize">{currentCondition.severity} Risk</span>
                       </div>
                     </div>
 
@@ -549,7 +547,7 @@ const MedicalSupport = () => {
                           <Star className="h-5 w-5 text-white" />
                         </div>
                         <div>
-                          <h4 className="font-bold text-purple-800 mb-1">{t('medical.detail.didYouKnow')}</h4>
+                          <h4 className="font-bold text-purple-800 mb-1">Did You Know?</h4>
                           <p className="text-purple-700">{currentCondition.funFact}</p>
                         </div>
                       </div>
@@ -562,8 +560,8 @@ const MedicalSupport = () => {
                             <Phone className="h-6 w-6 text-white" />
                           </div>
                           <div>
-                            <span className="font-bold text-xl">⚠️ {t('medical.detail.emergencyTitle')}</span>
-                            <p className="text-red-700 mt-1">{t('medical.detail.emergencyDesc')}</p>
+                            <span className="font-bold text-xl">⚠️ Emergency Condition</span>
+                            <p className="text-red-700 mt-1">Contact veterinarian immediately for proper diagnosis and treatment</p>
                           </div>
                         </div>
                       </div>
@@ -573,11 +571,11 @@ const MedicalSupport = () => {
                     <div className="flex flex-wrap gap-4 mb-8">
                       <Button className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-6 py-3 rounded-xl shadow-lg hover:shadow-xl transition-all">
                         <Download className="h-5 w-5 mr-2" />
-                        {t('medical.detail.download')}
+                        Download PDF Guide
                       </Button>
                       <Button variant="outline" className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-6 py-3 rounded-xl shadow-lg hover:shadow-xl transition-all">
                         <Share2 className="h-5 w-5 mr-2" />
-                        {t('medical.detail.share')}
+                        Share Information
                       </Button>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -585,7 +583,7 @@ const MedicalSupport = () => {
                       <div className="bg-gradient-to-br from-orange-50 to-red-50 p-8 rounded-2xl border border-orange-200 hover:shadow-lg transition-shadow">
                         <h3 className="text-2xl font-bold mb-6 flex items-center text-orange-800">
                           <Eye className="h-7 w-7 mr-3 text-orange-600" />
-                          {t('medical.detail.sections.symptoms')}
+                          Symptoms to Watch
                         </h3>
                         <ul className="space-y-4">
                           {currentCondition.symptoms.map((symptom, index) => (
@@ -601,7 +599,7 @@ const MedicalSupport = () => {
                       <div className="bg-gradient-to-br from-yellow-50 to-orange-50 p-8 rounded-2xl border border-yellow-200 hover:shadow-lg transition-shadow">
                         <h3 className="text-2xl font-bold mb-6 flex items-center text-yellow-800">
                           <AlertTriangle className="h-7 w-7 mr-3 text-yellow-600" />
-                          {t('medical.detail.sections.causes')}
+                          Common Causes
                         </h3>
                         <ul className="space-y-4">
                           {currentCondition.causes.map((cause, index) => (
@@ -617,7 +615,7 @@ const MedicalSupport = () => {
                       <div className="bg-gradient-to-br from-blue-50 to-indigo-50 p-8 rounded-2xl border border-blue-200 hover:shadow-lg transition-shadow">
                         <h3 className="text-2xl font-bold mb-6 flex items-center text-blue-800">
                           <Pill className="h-7 w-7 mr-3 text-blue-600" />
-                          {t('medical.detail.sections.treatment')}
+                          Treatment Options
                         </h3>
                         <ul className="space-y-4">
                           {currentCondition.treatment.map((treatment, index) => (
@@ -633,7 +631,7 @@ const MedicalSupport = () => {
                       <div className="bg-gradient-to-br from-green-50 to-teal-50 p-8 rounded-2xl border border-green-200 hover:shadow-lg transition-shadow">
                         <h3 className="text-2xl font-bold mb-6 flex items-center text-green-800">
                           <Shield className="h-7 w-7 mr-3 text-green-600" />
-                          {t('medical.detail.sections.prevention')}
+                          Prevention Tips
                         </h3>
                         <ul className="space-y-4">
                           {currentCondition.prevention.map((prevention, index) => (
@@ -652,8 +650,8 @@ const MedicalSupport = () => {
                   <div className="bg-gradient-to-br from-blue-100 to-purple-100 p-12 rounded-3xl mb-8 inline-block">
                     <Stethoscope className="h-24 w-24 text-blue-600" />
                   </div>
-                  <h3 className="text-3xl font-bold text-gray-800 mb-4">{t('medical.detail.empty.title')}</h3>
-                  <p className="text-xl text-gray-600 max-w-lg mx-auto leading-relaxed">{t('medical.detail.empty.desc')}</p>
+                  <h3 className="text-3xl font-bold text-gray-800 mb-4">Select a Medical Condition</h3>
+                  <p className="text-xl text-gray-600 max-w-lg mx-auto leading-relaxed">Choose a medical condition from the list to view comprehensive information about symptoms, causes, treatment options, and prevention strategies.</p>
                 </div>
               )}
             </div>
@@ -665,8 +663,8 @@ const MedicalSupport = () => {
               <div className="bg-gradient-to-r from-red-500 to-pink-500 p-6 rounded-2xl inline-block mb-6">
                 <AlertTriangle className="h-10 w-10 text-white" />
               </div>
-              <h2 className="text-4xl font-bold text-gray-800 mb-4">{t('medical.emergency.title')}</h2>
-              <p className="text-xl text-gray-600">{t('medical.emergency.subtitle')}</p>
+              <h2 className="text-4xl font-bold text-gray-800 mb-4">Emergency Procedures</h2>
+              <p className="text-xl text-gray-600">Critical steps to follow during animal health emergencies</p>
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
@@ -699,21 +697,21 @@ const MedicalSupport = () => {
               <div className="bg-gradient-to-r from-blue-500 to-teal-500 p-6 rounded-2xl inline-block mb-6">
                 <Thermometer className="h-10 w-10 text-white" />
               </div>
-              <h2 className="text-4xl font-bold text-gray-800 mb-4">{t('medical.vitals.title')}</h2>
-              <p className="text-xl text-gray-600">{t('medical.vitals.subtitle')}</p>
+              <h2 className="text-4xl font-bold text-gray-800 mb-4">Normal Vital Signs Reference</h2>
+              <p className="text-xl text-gray-600">Essential health parameters for cattle monitoring</p>
             </div>
             
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 max-w-6xl mx-auto">
               <div className="bg-gradient-to-br from-blue-50 to-indigo-50 p-10 rounded-3xl border border-blue-200 hover:shadow-xl transition-shadow">
                 <div className="flex items-center mb-8">
-                  <h3 className="text-3xl font-bold text-blue-800">{t('medical.vitals.cattle')}</h3>
+                  <h3 className="text-3xl font-bold text-blue-800">Cattle (Cows)</h3>
                 </div>
                 <div className="space-y-6">
                   {[
-                    { label: t('medical.vitals.labels.temp'), value: '101-102.5°F (38.3-39.2°C)', icon: <Thermometer className="h-6 w-6" /> },
-                    { label: t('medical.vitals.labels.heart'), value: '60-70 beats/minute', icon: <Heart className="h-6 w-6" /> },
-                    { label: t('medical.vitals.labels.resp'), value: '12-28 breaths/minute', icon: <Activity className="h-6 w-6" /> },
-                    { label: t('medical.vitals.labels.rumen'), value: '1-3 per 2 minutes', icon: <TrendingUp className="h-6 w-6" /> },
+                    { label: "Body Temperature", value: '101-102.5°F (38.3-39.2°C)', icon: <Thermometer className="h-6 w-6" /> },
+                    { label: "Heart Rate", value: '60-70 beats/minute', icon: <Heart className="h-6 w-6" /> },
+                    { label: "Respiratory Rate", value: '12-28 breaths/minute', icon: <Activity className="h-6 w-6" /> },
+                    { label: "Rumen Contractions", value: '1-3 per 2 minutes', icon: <TrendingUp className="h-6 w-6" /> },
                   ].map((vital, index) => (
                     <div key={index} className="bg-white p-6 rounded-2xl shadow-sm border border-blue-100 hover:shadow-md transition-shadow group">
                       <div className="flex justify-between items-center">
@@ -730,14 +728,14 @@ const MedicalSupport = () => {
 
               <div className="bg-gradient-to-br from-green-50 to-teal-50 p-10 rounded-3xl border border-green-200 hover:shadow-xl transition-shadow">
                 <div className="flex items-center mb-8">
-                  <h3 className="text-3xl font-bold text-green-800">{t('medical.vitals.buffalo')}</h3>
+                  <h3 className="text-3xl font-bold text-green-800">Buffalo</h3>
                 </div>
                 <div className="space-y-6">
                   {[
-                    { label: t('medical.vitals.labels.temp'), value: '100-102°F (37.8-38.9°C)', icon: <Thermometer className="h-6 w-6" /> },
-                    { label: t('medical.vitals.labels.heart'), value: '55-65 beats/minute', icon: <Heart className="h-6 w-6" /> },
-                    { label: t('medical.vitals.labels.resp'), value: '15-25 breaths/minute', icon: <Activity className="h-6 w-6" /> },
-                    { label: t('medical.vitals.labels.rumen'), value: '1-2 per 2 minutes', icon: <TrendingUp className="h-6 w-6" /> },
+                    { label: "Body Temperature", value: '100-102°F (37.8-38.9°C)', icon: <Thermometer className="h-6 w-6" /> },
+                    { label: "Heart Rate", value: '55-65 beats/minute', icon: <Heart className="h-6 w-6" /> },
+                    { label: "Respiratory Rate", value: '15-25 breaths/minute', icon: <Activity className="h-6 w-6" /> },
+                    { label: "Rumen Contractions", value: '1-2 per 2 minutes', icon: <TrendingUp className="h-6 w-6" /> },
                   ].map((vital, index) => (
                     <div key={index} className="bg-white p-6 rounded-2xl shadow-sm border border-green-100 hover:shadow-md transition-shadow group">
                       <div className="flex justify-between items-center">

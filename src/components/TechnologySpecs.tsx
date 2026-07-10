@@ -1,33 +1,30 @@
-import { useTranslation } from "react-i18next";
-
 const TechnologySpecs = () => {
-  const { t } = useTranslation();
   const specifications = [
     {
-      category: t('techspecs.categories.ai'),
+      category: "AI Capabilities",
       items: [
-        { label: t('techspecs.items.bodyLength'), value: t('techspecs.values.accuracy_992') },
-        { label: t('techspecs.items.heightWithers'), value: t('techspecs.values.accuracy_988') },
-        { label: t('techspecs.items.chestWidth'), value: t('techspecs.values.accuracy_975') },
-        { label: t('techspecs.items.rumpAngle'), value: t('techspecs.values.accuracy_963') },
+        { label: "Body Length Analysis", value: "99.2% Accuracy" },
+        { label: "Height at Withers", value: "98.8% Accuracy" },
+        { label: "Chest Width Measurement", value: "97.5% Accuracy" },
+        { label: "Rump Angle Assessment", value: "96.3% Accuracy" },
       ]
     },
     {
-      category: t('techspecs.categories.performance'),
+      category: "Performance Metrics",
       items: [
-        { label: t('techspecs.items.processingSpeed'), value: t('techspecs.values.lt3s') },
-        { label: t('techspecs.items.imageResolution'), value: t('techspecs.values.4k') },
-        { label: t('techspecs.items.classificationAccuracy'), value: t('techspecs.values.accuracy_95p') },
-        { label: t('techspecs.items.dataReliability'), value: t('techspecs.values.uptime_999') },
+        { label: "Processing Speed", value: "< 3 seconds" },
+        { label: "Image Resolution", value: "4K+ Support" },
+        { label: "Classification Accuracy", value: "95%+ Average" },
+        { label: "Data Reliability", value: "99.9% Uptime" },
       ]
     },
     {
-      category: t('techspecs.categories.integration'),
+      category: "Integration Features",
       items: [
-        { label: t('techspecs.items.bpaCompatibility'), value: t('techspecs.values.nativeApi') },
-        { label: t('techspecs.items.mobileSupport'), value: t('techspecs.values.iosAndroid') },
-        { label: t('techspecs.items.offlineMode'), value: t('techspecs.values.fullCapability') },
-        { label: t('techspecs.items.dataSync'), value: t('techspecs.values.realtime') },
+        { label: "BPA Compatibility", value: "Native API" },
+        { label: "Mobile Support", value: "iOS & Android" },
+        { label: "Offline Mode", value: "Full Capability" },
+        { label: "Data Sync", value: "Real-time" },
       ]
     }
   ];
@@ -38,13 +35,13 @@ const TechnologySpecs = () => {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
-              {t('techspecs.title')}
+              Technical Specifications
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              {t('techspecs.subtitle')}
+              Cutting-edge technology designed for precision, reliability, and ease of use in field conditions
             </p>
           </div>
-          
+
           <div className="grid lg:grid-cols-3 gap-8">
             {specifications.map((spec, index) => (
               <div key={index} className="bg-card rounded-2xl p-8 shadow-card border">
@@ -60,55 +57,55 @@ const TechnologySpecs = () => {
               </div>
             ))}
           </div>
-          
+
           <div className="mt-16 grid md:grid-cols-2 gap-12 items-center">
             <div className="bg-primary/5 rounded-2xl p-8 border border-primary/20">
-              <h3 className="text-3xl font-bold mb-6 text-primary">{t('techspecs.keyBenefits.title')}</h3>
+              <h3 className="text-3xl font-bold mb-6 text-primary">Key Benefits</h3>
               <ul className="space-y-4">
                 <li className="flex items-start">
                   <div className="w-2 h-2 bg-primary rounded-full mt-2 mr-4 flex-shrink-0" />
                   <span className="text-muted-foreground">
-                    <strong>{t('techspecs.keyBenefits.standardization.title')}</strong> {t('techspecs.keyBenefits.standardization.desc')}
+                    <strong>Standardization:</strong> Eliminates observer bias and human error
                   </span>
                 </li>
                 <li className="flex items-start">
                   <div className="w-2 h-2 bg-primary rounded-full mt-2 mr-4 flex-shrink-0" />
                   <span className="text-muted-foreground">
-                    <strong>{t('techspecs.keyBenefits.efficiency.title')}</strong> {t('techspecs.keyBenefits.efficiency.desc')}
+                    <strong>Efficiency:</strong> 10x faster than manual classification
                   </span>
                 </li>
                 <li className="flex items-start">
                   <div className="w-2 h-2 bg-primary rounded-full mt-2 mr-4 flex-shrink-0" />
                   <span className="text-muted-foreground">
-                    <strong>{t('techspecs.keyBenefits.scalability.title')}</strong> {t('techspecs.keyBenefits.scalability.desc')}
+                    <strong>Scalability:</strong> Process thousands of animals per day
                   </span>
                 </li>
                 <li className="flex items-start">
                   <div className="w-2 h-2 bg-primary rounded-full mt-2 mr-4 flex-shrink-0" />
                   <span className="text-muted-foreground">
-                    <strong>{t('techspecs.keyBenefits.accuracy.title')}</strong> {t('techspecs.keyBenefits.accuracy.desc')}
+                    <strong>Accuracy:</strong> Consistent 95%+ classification accuracy
                   </span>
                 </li>
               </ul>
             </div>
-            
+
             <div className="bg-gradient-card rounded-2xl p-8 shadow-card border">
-              <h3 className="text-3xl font-bold mb-6 text-secondary">{t('techspecs.missionAlignment.title')}</h3>
+              <h3 className="text-3xl font-bold mb-6 text-secondary">Mission Alignment</h3>
               <p className="text-muted-foreground mb-6">
-                {t('techspecs.missionAlignment.desc')}
+                Gopalan AI directly supports the Rashtriya Gokul Mission objectives by providing:
               </p>
               <div className="space-y-3">
                 <div className="bg-background/50 rounded-lg p-4">
-                  <strong className="text-foreground">{t('techspecs.missionAlignment.enhancedBreeding.title')}</strong>
-                  <span className="text-muted-foreground ml-2">{t('techspecs.missionAlignment.enhancedBreeding.desc')}</span>
+                  <strong className="text-foreground">Enhanced Breeding Programs:</strong>
+                  <span className="text-muted-foreground ml-2">Accurate identification of elite breeding stock</span>
                 </div>
                 <div className="bg-background/50 rounded-lg p-4">
-                  <strong className="text-foreground">{t('techspecs.missionAlignment.scientificValidation.title')}</strong>
-                  <span className="text-muted-foreground ml-2">{t('techspecs.missionAlignment.scientificValidation.desc')}</span>
+                  <strong className="text-foreground">Scientific Validation:</strong>
+                  <span className="text-muted-foreground ml-2">Reliable data for genetic improvement initiatives</span>
                 </div>
                 <div className="bg-background/50 rounded-lg p-4">
-                  <strong className="text-foreground">{t('techspecs.missionAlignment.nationalImpact.title')}</strong>
-                  <span className="text-muted-foreground ml-2">{t('techspecs.missionAlignment.nationalImpact.desc')}</span>
+                  <strong className="text-foreground">National Impact:</strong>
+                  <span className="text-muted-foreground ml-2">Scalable solution for nationwide implementation</span>
                 </div>
               </div>
             </div>

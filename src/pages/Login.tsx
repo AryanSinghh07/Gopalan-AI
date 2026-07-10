@@ -1,14 +1,13 @@
 import React, { useState } from 'react';
-import { useTranslation } from 'react-i18next';
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { 
-  Eye, 
-  EyeOff, 
-  Mail, 
-  Lock, 
-  User, 
+import {
+  Eye,
+  EyeOff,
+  Mail,
+  Lock,
+  User,
   Heart,
   Shield,
   CheckCircle,
@@ -37,13 +36,12 @@ interface FormErrors {
 }
 
 const Login = () => {
-  const { t } = useTranslation();
   const [formData, setFormData] = useState<LoginFormData>({
     email: '',
     password: '',
     rememberMe: false
   });
-  
+
   const [errors, setErrors] = useState<FormErrors>({});
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -52,50 +50,50 @@ const Login = () => {
   const benefits = [
     {
       icon: <Heart className="h-6 w-6" />,
-      title: t('login.benefits.healthMonitoring.title'),
-      description: t('login.benefits.healthMonitoring.description')
+      title: "Animal Health Monitoring",
+      description: "Track your animals' health with AI-powered insights"
     },
     {
       icon: <Shield className="h-6 w-6" />,
-      title: t('login.benefits.emergencyAlerts.title'),
-      description: t('login.benefits.emergencyAlerts.description')
+      title: "Emergency Alerts",
+      description: "Get instant notifications for health emergencies"
     },
     {
       icon: <Users className="h-6 w-6" />,
-      title: t('login.benefits.expertCommunity.title'),
-      description: t('login.benefits.expertCommunity.description')
+      title: "Expert Community",
+      description: "Connect with veterinarians and fellow farmers"
     },
     {
       icon: <Star className="h-6 w-6" />,
-      title: t('login.benefits.premiumFeatures.title'),
-      description: t('login.benefits.premiumFeatures.description')
+      title: "Premium Features",
+      description: "Access advanced analytics and personalized recommendations"
     }
   ];
 
   const stats = [
-    { value: "100K+", label: t('login.stats.activeUsers') },
-    { value: "500K+", label: t('login.stats.animalsMonitored') },
-    { value: "99.2%", label: t('login.stats.uptime') },
-    { value: "24/7", label: t('login.stats.support') }
+    { value: "100K+", label: "Active Users" },
+    { value: "500K+", label: "Animals Monitored" },
+    { value: "99.2%", label: "Uptime" },
+    { value: "24/7", label: "Support" }
   ];
 
   const validateForm = (): boolean => {
     const newErrors: FormErrors = {};
-    
+
     // Email validation
     if (!formData.email) {
-      newErrors.email = t('login.validation.emailRequired');
+      newErrors.email = "Email is required";
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      newErrors.email = t('login.validation.emailInvalid');
+      newErrors.email = "Please enter a valid email address";
     }
-    
+
     // Password validation
     if (!formData.password) {
-      newErrors.password = t('login.validation.passwordRequired');
+      newErrors.password = "Password is required";
     } else if (formData.password.length < 6) {
-      newErrors.password = t('login.validation.passwordMinLength');
+      newErrors.password = "Password must be at least 6 characters";
     }
-    
+
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -106,7 +104,7 @@ const Login = () => {
       ...prev,
       [name]: type === 'checkbox' ? checked : value
     }));
-    
+
     // Clear errors when user starts typing
     if (errors[name as keyof FormErrors]) {
       setErrors(prev => ({
@@ -118,12 +116,12 @@ const Login = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!validateForm()) return;
-    
+
     setIsLoading(true);
     setErrors({});
-    
+
     try {
       // Simulate API call
       setTimeout(() => {
@@ -132,12 +130,12 @@ const Login = () => {
           setLoginSuccess(true);
           setIsLoading(false);
         } else {
-          setErrors({ general: t('login.validation.invalidCredentials') });
+          setErrors({ general: "Invalid email or password. Try demo@example.com / password" });
           setIsLoading(false);
         }
       }, 2000);
     } catch (error) {
-      setErrors({ general: t('login.validation.errorOccurred') });
+      setErrors({ general: "An error occurred. Please try again." });
       setIsLoading(false);
     }
   };
@@ -153,10 +151,10 @@ const Login = () => {
           <div className="bg-green-100 p-6 rounded-full inline-block mb-8">
             <CheckCircle className="h-16 w-16 text-green-600" />
           </div>
-          <h2 className="text-3xl font-bold text-gray-800 mb-4">{t('login.success.title')}</h2>
-          <p className="text-gray-600 mb-8">{t('login.success.message')}</p>
+          <h2 className="text-3xl font-bold text-gray-800 mb-4">Welcome Back!</h2>
+          <p className="text-gray-600 mb-8">You have successfully logged into Gopalan AI.</p>
           <Button className="w-full bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white py-3 rounded-xl">
-            {t('login.success.goToDashboard')}
+            Go to Dashboard
             <ArrowRight className="h-5 w-5 ml-2" />
           </Button>
         </div>
@@ -167,11 +165,11 @@ const Login = () => {
   return (
     <div className="min-h-screen">
       <Navbar />
-      
+
       <div className="pt-20 min-h-screen bg-gradient-to-br from-green-50 via-emerald-50 to-teal-50">
         <div className="container mx-auto px-6 py-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto">
-            
+
             {/* Left Side - Login Form */}
             <div className="order-2 lg:order-1">
               <div className="bg-white rounded-3xl shadow-2xl p-10 border border-gray-100 max-w-md mx-auto lg:mx-0">
@@ -179,8 +177,8 @@ const Login = () => {
                   <div className="bg-gradient-to-r from-green-500 to-emerald-600 p-4 rounded-2xl inline-block mb-6">
                     <User className="h-10 w-10 text-white" />
                   </div>
-                  <h1 className="text-3xl font-bold text-gray-800 mb-2">{t('login.hero.title')}</h1>
-                  <p className="text-gray-600">{t('login.hero.subtitle')}</p>
+                  <h1 className="text-3xl font-bold text-gray-800 mb-2">Welcome Back</h1>
+                  <p className="text-gray-600">Sign in to your Gopalan AI account</p>
                 </div>
 
                 {/* Demo Credentials Notice */}
@@ -188,9 +186,9 @@ const Login = () => {
                   <div className="flex items-start">
                     <AlertCircle className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
                     <div className="text-sm">
-                      <p className="text-green-800 font-medium">{t('login.demo.title')}</p>
-                      <p className="text-green-700">{t('login.demo.email')}</p>
-                      <p className="text-green-700">{t('login.demo.password')}</p>
+                      <p className="text-green-800 font-medium">Demo Credentials:</p>
+                      <p className="text-green-700">Email: demo@example.com</p>
+                      <p className="text-green-700">Password: password</p>
                     </div>
                   </div>
                 </div>
@@ -199,7 +197,7 @@ const Login = () => {
                   {/* Email Field */}
                   <div>
                     <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
-                      {t('login.form.email')}
+                      Email Address
                     </label>
                     <div className="relative">
                       <Mail className="h-5 w-5 text-gray-400 absolute left-4 top-3.5" />
@@ -212,7 +210,7 @@ const Login = () => {
                         className={`w-full pl-12 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-green-500 focus:border-transparent bg-gray-50 transition-colors ${
                           errors.email ? 'border-red-500' : 'border-gray-300'
                         }`}
-                        placeholder={t('login.form.emailPlaceholder')}
+                        placeholder="Enter your email address"
                       />
                     </div>
                     {errors.email && (
@@ -226,7 +224,7 @@ const Login = () => {
                   {/* Password Field */}
                   <div>
                     <label htmlFor="password" className="block text-sm font-semibold text-gray-700 mb-2">
-                      {t('login.form.password')}
+                      Password
                     </label>
                     <div className="relative">
                       <Lock className="h-5 w-5 text-gray-400 absolute left-4 top-3.5" />
@@ -239,7 +237,7 @@ const Login = () => {
                         className={`w-full pl-12 pr-12 py-3 border rounded-xl focus:ring-2 focus:ring-green-500 focus:border-transparent bg-gray-50 transition-colors ${
                           errors.password ? 'border-red-500' : 'border-gray-300'
                         }`}
-                        placeholder={t('login.form.passwordPlaceholder')}
+                        placeholder="Enter your password"
                       />
                       <button
                         type="button"
@@ -267,10 +265,10 @@ const Login = () => {
                         onChange={handleInputChange}
                         className="rounded border-gray-300 text-green-600 focus:ring-green-500"
                       />
-                      <span className="ml-2 text-sm text-gray-600">{t('login.form.rememberMe')}</span>
+                      <span className="ml-2 text-sm text-gray-600">Remember me</span>
                     </label>
                     <a href="#" className="text-sm text-green-600 hover:text-green-700 font-medium">
-                      {t('login.form.forgotPassword')}
+                      Forgot password?
                     </a>
                   </div>
 
@@ -289,19 +287,19 @@ const Login = () => {
                     type="submit"
                     disabled={isLoading}
                     className={`w-full py-4 text-lg font-semibold rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl ${
-                      isLoading 
-                        ? 'bg-gray-400 cursor-not-allowed' 
+                      isLoading
+                        ? 'bg-gray-400 cursor-not-allowed'
                         : 'bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white'
                     }`}
                   >
                     {isLoading ? (
                       <>
                         <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-3 inline-block"></div>
-                        {t('login.form.signingIn')}
+                        Signing In...
                       </>
                     ) : (
                       <>
-                        {t('login.form.signIn')}
+                        Sign In
                         <ArrowRight className="h-5 w-5 ml-2 inline-block" />
                       </>
                     )}
@@ -311,7 +309,7 @@ const Login = () => {
                 {/* Divider */}
                 <div className="flex items-center my-8">
                   <div className="flex-1 border-t border-gray-200"></div>
-                  <span className="px-4 text-sm text-gray-500 bg-white">{t('login.form.orContinueWith')}</span>
+                  <span className="px-4 text-sm text-gray-500 bg-white">Or continue with</span>
                   <div className="flex-1 border-t border-gray-200"></div>
                 </div>
 
@@ -322,23 +320,23 @@ const Login = () => {
                     className="flex items-center justify-center px-4 py-3 border border-gray-300 rounded-xl hover:bg-gray-50 transition-colors group"
                   >
                     <Chrome className="h-5 w-5 text-gray-600 group-hover:text-green-600" />
-                    <span className="ml-2 text-sm font-medium text-gray-700">{t('login.form.google')}</span>
+                    <span className="ml-2 text-sm font-medium text-gray-700">Google</span>
                   </button>
                   <button
                     onClick={() => handleSocialLogin('facebook')}
                     className="flex items-center justify-center px-4 py-3 border border-gray-300 rounded-xl hover:bg-gray-50 transition-colors group"
                   >
                     <Facebook className="h-5 w-5 text-gray-600 group-hover:text-green-600" />
-                    <span className="ml-2 text-sm font-medium text-gray-700">{t('login.form.facebook')}</span>
+                    <span className="ml-2 text-sm font-medium text-gray-700">Facebook</span>
                   </button>
                 </div>
 
                 {/* Sign Up Link */}
                 <div className="text-center">
                   <p className="text-gray-600">
-                    {t('login.form.dontHaveAccount')}{' '}
+                    Don't have an account?{' '}
                     <a href="/signup" className="text-green-600 hover:text-green-700 font-semibold">
-                      {t('login.form.signUpForFree')}
+                      Sign up for free
                     </a>
                   </p>
                 </div>
@@ -349,11 +347,11 @@ const Login = () => {
             <div className="order-1 lg:order-2 text-center lg:text-left">
               <div className="mb-12">
                 <h2 className="text-5xl md:text-6xl font-bold text-gray-800 mb-6 leading-tight">
-                  {t('login.hero.mainTitle')}
-                  <span className="bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent"> {t('login.hero.mainTitleHighlight')}</span>
+                  Revolutionize Your
+                  <span className="bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent"> Farm Management</span>
                 </h2>
                 <p className="text-xl text-gray-600 leading-relaxed mb-8 max-w-2xl">
-                  {t('login.hero.description')}
+                  Join thousands of farmers who trust Gopalan AI to monitor their animals' health, prevent diseases, and optimize their farm operations with intelligent insights.
                 </p>
 
                 {/* Stats */}
@@ -386,15 +384,15 @@ const Login = () => {
                   <div className="flex items-center">
                     <Shield className="h-8 w-8 text-green-600 mr-3" />
                     <div>
-                      <div className="text-lg font-bold text-gray-800">{t('login.trust.secure.title')}</div>
-                      <div className="text-sm text-gray-600">{t('login.trust.secure.description')}</div>
+                      <div className="text-lg font-bold text-gray-800">Secure & Reliable</div>
+                      <div className="text-sm text-gray-600">Bank-level security</div>
                     </div>
                   </div>
                   <div className="flex items-center">
                     <Globe className="h-8 w-8 text-green-600 mr-3" />
                     <div>
-                      <div className="text-lg font-bold text-gray-800">{t('login.trust.global.title')}</div>
-                      <div className="text-sm text-gray-600">{t('login.trust.global.description')}</div>
+                      <div className="text-lg font-bold text-gray-800">Global Reach</div>
+                      <div className="text-sm text-gray-600">25+ countries</div>
                     </div>
                   </div>
                 </div>

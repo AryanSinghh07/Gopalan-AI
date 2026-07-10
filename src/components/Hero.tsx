@@ -1,11 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { useEffect, useRef, useState } from "react";
-import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
-import video1Src from "@/assets/video1.mp4";
-import video2Src from "@/assets/video2.mp4";
-import video11Src from "@/assets/video11.mp4";
-import video22Src from "@/assets/video22.mp4";
+import video1Src from "@/assets/hero-video-1.mp4";
+import video2Src from "@/assets/hero-video-2.mp4";
+import video11Src from "@/assets/hero-video-3.mp4";
+import video22Src from "@/assets/hero-video-4.mp4";
 
 const Hero = () => {
   const video1Ref = useRef<HTMLVideoElement>(null);
@@ -15,7 +14,6 @@ const Hero = () => {
   
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
-  const { t } = useTranslation();
   const navigate = useNavigate();
 
   const videos = [
@@ -117,22 +115,22 @@ const Hero = () => {
         <div className="max-w-4xl mx-auto">
           <div className="animate-fade-in">
             <h1 className="font-playfair text-5xl md:text-7xl font-bold mb-6 leading-tight text-white drop-shadow-2xl">
-              <span className="block animate-slide-in-left">{t('brand')}</span>
+              <span className="block animate-slide-in-left">Gopalan</span>
               <span className="bg-gradient-to-r from-white to-primary-glow bg-clip-text text-transparent animate-slide-in-right drop-shadow-2xl">
-                {t('brandSuffix')}
+                AI
               </span>
             </h1>
           </div>
           
           <div className="animate-fade-in" style={{ animationDelay: '0.2s' }}>
             <p className="font-inter text-xl md:text-2xl mb-8 text-white drop-shadow-xl leading-relaxed">
-              {t('hero.tagline')}
+              Revolutionary AI-powered Animal Type Classification and Scoring system for the Rashtriya Gokul Mission
             </p>
           </div>
           
           <div className="animate-fade-in" style={{ animationDelay: '0.4s' }}>
             <p className="font-inter text-lg mb-12 text-white drop-shadow-lg max-w-3xl mx-auto">
-              {t('hero.subtagline')}
+              Automating livestock evaluation through advanced computer vision and AI, ensuring standardized, objective scoring for scientific breeding programs.
             </p>
           </div>
           
@@ -144,10 +142,10 @@ const Hero = () => {
                 className="font-inter text-lg px-8 py-4 transform hover:scale-105 transition-all duration-300"
                 onClick={() => navigate('/technical-details')}
               >
-                {t('hero.ctaExplore')}
+                Explore Technology
               </Button>
               <Button variant="outline-hero" size="lg" className="font-inter text-lg px-8 py-4 transform hover:scale-105 transition-all duration-300">
-                {t('hero.ctaDemo')}
+                View Demo
               </Button>
             </div>
           </div>
@@ -157,7 +155,7 @@ const Hero = () => {
       {/* Scroll Indicator */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/60 animate-bounce">
         <div className="flex flex-col items-center justify-center">
-          <span className="text-sm mb-2 text-center">{t('hero.scroll')}</span>
+          <span className="text-sm mb-2 text-center">Scroll to learn more</span>
           <div className="w-6 h-10 border-2 border-white/30 rounded-full flex items-center justify-center">
             <div className="w-1 h-3 bg-white/60 rounded-full animate-pulse" />
           </div>

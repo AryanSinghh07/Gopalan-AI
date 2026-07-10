@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import gopalanLogo from "@/assets/Gopalan Logo.png";
+import gopalanLogo from "@/assets/gopalan-logo.png";
 import { 
   Heart, 
   Users, 
