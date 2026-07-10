@@ -6,7 +6,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import girImage from "@/assets/AnimalImg/Gir.jpg";
 import angleImage from "@/assets/AnimalImg/anglephotos.jpg";
-import uploadiImage from "@/assets/AnimalImg/uploadi.png";
+import uploadiImage from "@/assets/AnimalImg/uploadi.jpg";
 import mesurepointImage from "@/assets/AnimalImg/mesurepoint.jpg";
 import scoreImage from "@/assets/AnimalImg/score.png";
 import React, { useState } from "react";
@@ -293,6 +293,7 @@ const Guide = () => {
                           <img 
                             src={step.image} 
                             alt={t('guide.alt.stepImage', { id: step.id })}
+                            loading="lazy"
                             className="w-full h-auto object-cover"
                           />
                         </div>

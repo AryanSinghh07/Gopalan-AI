@@ -1,6 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
+import video1Src from "@/assets/video1.mp4";
+import video2Src from "@/assets/video2.mp4";
+import video11Src from "@/assets/video11.mp4";
+import video22Src from "@/assets/video22.mp4";
 
 const Hero = () => {
   const video1Ref = useRef<HTMLVideoElement>(null);
@@ -11,12 +16,13 @@ const Hero = () => {
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const { t } = useTranslation();
+  const navigate = useNavigate();
 
   const videos = [
-    { ref: video1Ref, src: "src/assets/video1.mp4", opacity: "opacity 30" },
-    { ref: video2Ref, src: "src/assets/video2.mp4", opacity: "opacity 30" },
-    { ref: video11Ref, src: "src/assets/video11.mp4", opacity: "opacity 30" },
-    { ref: video22Ref, src: "src/assets/video22.mp4", opacity: "opacity 30" }
+    { ref: video1Ref, src: video1Src, opacity: "opacity-100" },
+    { ref: video2Ref, src: video2Src, opacity: "opacity-100" },
+    { ref: video11Ref, src: video11Src, opacity: "opacity-100" },
+    { ref: video22Ref, src: video22Src, opacity: "opacity-100" }
   ];
 
   useEffect(() => {
@@ -37,8 +43,8 @@ const Hero = () => {
           });
 
           await currentVideo.play();
-        } catch (error) {
-          console.log(`Video ${currentVideoIndex + 1} failed to play:`, error);
+        } catch {
+          // Autoplay can be blocked by the browser; the poster/overlay still renders.
         }
       }
     };
@@ -136,7 +142,7 @@ const Hero = () => {
                 variant="hero" 
                 size="lg" 
                 className="font-inter text-lg px-8 py-4 transform hover:scale-105 transition-all duration-300"
-                onClick={() => window.location.href = '/technical-details'}
+                onClick={() => navigate('/technical-details')}
               >
                 {t('hero.ctaExplore')}
               </Button>
@@ -149,7 +155,7 @@ const Hero = () => {
       </div>
       
       {/* Scroll Indicator */}
-      <div className="absolute bottom-8 center-translate-x-1/2 text-white/60 animate-bounce">
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/60 animate-bounce">
         <div className="flex flex-col items-center justify-center">
           <span className="text-sm mb-2 text-center">{t('hero.scroll')}</span>
           <div className="w-6 h-10 border-2 border-white/30 rounded-full flex items-center justify-center">

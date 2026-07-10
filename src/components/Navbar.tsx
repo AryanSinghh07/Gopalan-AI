@@ -1,12 +1,14 @@
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
+import { Link, useNavigate } from "react-router-dom";
 import gopalanLogo from "@/assets/Gopalan Logo.png";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { t, i18n } = useTranslation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -73,8 +75,8 @@ const Navbar = () => {
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <a
-            href="/"
+          <Link
+            to="/"
             className="flex items-center space-x-3 group cursor-pointer"
             aria-label={t('aria.goHome')}
           >
@@ -87,19 +89,19 @@ const Navbar = () => {
               <span className={isScrolled ? "text-foreground" : "text-white"}>{t('brand')}</span>
               <span className="text-primary ml-1">{t('brandSuffix')}</span>
             </div>
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.name}
-                href={link.href}
+                to={link.href}
                 className={`${isScrolled ? "text-foreground/80" : "text-white/80"} hover:text-primary font-inter font-medium transition-colors duration-200 relative group`}
               >
                 {link.name}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
-              </a>
+              </Link>
             ))}
           </div>
 
@@ -115,14 +117,14 @@ const Navbar = () => {
             <Button
               variant="ghost"
               className={`font-inter ${isScrolled ? "text-foreground" : "text-white"}`}
-              onClick={() => window.location.href = "/signup"}
+              onClick={() => navigate("/signup")}
             >
               {t('auth.signUp')}
             </Button>
             <Button
               variant="default"
               className="font-inter shadow-card hover:shadow-elegant"
-              onClick={() => window.location.href = "/login"}
+              onClick={() => navigate("/login")}
             >
               {t('auth.login')}
             </Button>
@@ -154,14 +156,14 @@ const Navbar = () => {
         }`}>
           <div className="py-4 space-y-4 border-t border-border/20">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.name}
-                href={link.href}
+                to={link.href}
                 className={`block ${isScrolled ? "text-foreground/80" : "text-white/80"} hover:text-primary font-inter font-medium transition-colors duration-200 py-2`}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {link.name}
-              </a>
+              </Link>
             ))}
             <div className="pt-4 space-y-3 border-t border-border/20">
               {/* Mobile Language Selector */}
@@ -171,10 +173,18 @@ const Navbar = () => {
                 onLanguageChange={handleLanguageChange}
               />
               
-              <Button variant="ghost" className={`w-full font-inter ${isScrolled ? "text-foreground" : "text-white"}`}>
-                {t('auth.signIn')}
+              <Button
+                variant="ghost"
+                className={`w-full font-inter ${isScrolled ? "text-foreground" : "text-white"}`}
+                onClick={() => { setIsMobileMenuOpen(false); navigate("/signup"); }}
+              >
+                {t('auth.signUp')}
               </Button>
-              <Button variant="default" className="w-full font-inter">
+              <Button
+                variant="default"
+                className="w-full font-inter"
+                onClick={() => { setIsMobileMenuOpen(false); navigate("/login"); }}
+              >
                 {t('auth.login')}
               </Button>
             </div>

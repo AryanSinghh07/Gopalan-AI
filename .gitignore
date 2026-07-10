@@ -12,6 +12,9 @@ dist
 dist-ssr
 *.local
 
+# Uncompressed originals of website images (kept locally as backup)
+originals-backup
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

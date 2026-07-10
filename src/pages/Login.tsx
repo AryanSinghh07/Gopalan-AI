@@ -142,8 +142,7 @@ const Login = () => {
     }
   };
 
-  const handleSocialLogin = (provider: string) => {
-    console.log(`Login with ${provider}`);
+  const handleSocialLogin = (_provider: string) => {
     // Implement social login logic here
   };
 
@@ -338,7 +337,7 @@ const Login = () => {
                 <div className="text-center">
                   <p className="text-gray-600">
                     {t('login.form.dontHaveAccount')}{' '}
-                    <a href="http://localhost:8080/signup" className="text-green-600 hover:text-green-700 font-semibold">
+                    <a href="/signup" className="text-green-600 hover:text-green-700 font-semibold">
                       {t('login.form.signUpForFree')}
                     </a>
                   </p>

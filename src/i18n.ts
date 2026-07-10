@@ -25,9 +25,11 @@ void i18n
     returnNull: false,
   });
 
-// Persist language changes so navigation/reloads keep selection
+// Persist language changes and keep <html lang> in sync for SEO/screen readers
 if (typeof window !== 'undefined') {
+  document.documentElement.lang = persistedLanguage;
   i18n.on('languageChanged', (lng) => {
+    document.documentElement.lang = lng;
     try {
       window.localStorage.setItem('i18nextLng', lng);
     } catch (_) {

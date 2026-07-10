@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import gopalanLogo from "@/assets/Gopalan Logo.png";
 import { 
   Heart, 
   Users, 
@@ -189,7 +190,7 @@ const About = () => {
             <div className="flex justify-center items-center mb-8">
               <div className="bg-white bg-opacity-20 p-6 rounded-full backdrop-blur-sm animate-pulse">
                 <img
-                  src="src\assets\Gopalan Logo.png"
+                  src={gopalanLogo}
                   alt="Gopalan AI Logo"
                   className="h-16 w-16 object-contain"
                 />

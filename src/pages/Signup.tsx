@@ -230,8 +230,7 @@ const Signup = () => {
     }
   };
 
-  const handleSocialSignup = (provider: string) => {
-    console.log(`Sign up with ${provider}`);
+  const handleSocialSignup = (_provider: string) => {
     // Implement social signup logic here
   };
 
@@ -255,8 +254,8 @@ const Signup = () => {
               {t('signup.success.checkYourEmail')}
               <Mail className="h-5 w-5 ml-2" />
             </Button>
-            <a 
-              href="http://localhost:8080/login" 
+            <a
+              href="/login"
               className="block text-green-600 hover:text-green-700 font-medium"
             >
               {t('signup.success.backToLogin')}
@@ -736,7 +735,7 @@ const Signup = () => {
                 <div className="text-center mt-6">
                   <p className="text-gray-600">
                     {t('signup.form.alreadyHaveAccount')}{' '}
-                    <a href="http://localhost:8080/login" className="text-green-600 hover:text-green-700 font-semibold">
+                    <a href="/login" className="text-green-600 hover:text-green-700 font-semibold">
                       {t('signup.form.signInHere')}
                     </a>
                   </p>

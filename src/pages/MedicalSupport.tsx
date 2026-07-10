@@ -32,6 +32,8 @@ import {
   Share2
 } from 'lucide-react';
 import { useTranslation } from "react-i18next";
+import cowImage from "@/assets/AnimalImg/Cattle (Cows).jpg";
+import buffaloImage from "@/assets/AnimalImg/Water Buffalo.jpg";
 
 interface MedicalCondition {
   id: string;
@@ -69,7 +71,7 @@ const MedicalSupport = () => {
       id: 'cow',
       name: t('medical.animals.cow.name'),
 
-      image: 'https://www.peta.org/wp-content/uploads/2024/05/mother-and-baby-cow-in-grass.jpg',
+      image: cowImage,
       gradient: 'from-blue-500 to-purple-600',
       description: t('medical.animals.cow.description'),
       characteristics: t('medical.animals.cow.characteristics', { returnObjects: true }) as string[],
@@ -142,7 +144,7 @@ const MedicalSupport = () => {
       id: 'buffalo',
       name: t('medical.animals.buffalo.name'),
 
-      image: 'https://agrifutures.com.au/wp-content/uploads/2017/07/DSC_11281_1500.jpg',
+      image: buffaloImage,
       gradient: 'from-green-500 to-teal-600',
       description: t('medical.animals.buffalo.description'),
       characteristics: t('medical.animals.buffalo.characteristics', { returnObjects: true }) as string[],
@@ -387,6 +389,7 @@ const MedicalSupport = () => {
                       <img 
                         src={animal.image} 
                         alt={animal.name}
+                        loading="lazy"
                         className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
                       />
                       {selectedAnimal === animal.id && (

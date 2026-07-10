@@ -14,14 +14,14 @@ import surtiImage from "@/assets/AnimalImg/surti buffalo.jpg";
 import jafarabadiImage from "@/assets/AnimalImg/jafarabadi buffalo.jpg";
 import cattleOverviewImage from "@/assets/AnimalImg/Cattle (Cows).jpg";
 import buffaloOverviewImage from "@/assets/AnimalImg/Water Buffalo.jpg";
-import ongoleImage from "@/assets/AnimalImg/Ongole.jpg";
-import hallikarImage from "@/assets/AnimalImg/Hallikar.jpg";
+import ongoleImage from "@/assets/AnimalImg/ongole.jpg";
+import hallikarImage from "@/assets/AnimalImg/hallikar.jpg";
 import malnadImage from "@/assets/AnimalImg/malnad.jpg";
 import rathiImage from "@/assets/AnimalImg/Rathi.jpg";
 import redsindhiImage from "@/assets/AnimalImg/redsindhi.jpg";
 import kankrejImage from "@/assets/AnimalImg/kankrej.jpg";
 import mehsanaImage from "@/assets/AnimalImg/Mehsana.jpg";
-import bhadawariImage from "@/assets/AnimalImg/bhadawari.png";
+import bhadawariImage from "@/assets/AnimalImg/bhadawari.jpg";
 import todaImage from "@/assets/AnimalImg/toda.jpg";
 import nagpuriImage from "@/assets/AnimalImg/nagpuri.jpg";
 
@@ -275,7 +275,6 @@ const AnimalGuide = () => {
       
       {/* Enhanced Hero Section */}
       <section className="pt-20 pb-20 bg-gradient-to-br from-emerald-900 via-green-800 to-teal-900 text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/api/placeholder/1920/1080')] opacity-10 bg-cover bg-center"></div>
         <div className="absolute inset-0 bg-gradient-to-r from-emerald-900/90 to-green-900/90"></div>
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center max-w-5xl mx-auto">
@@ -317,6 +316,7 @@ const AnimalGuide = () => {
                 <img 
                   src={cattleOverviewImage} 
                   alt="Cattle overview"
+                  loading="lazy"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-emerald-900/60 via-transparent to-transparent"></div>
@@ -357,6 +357,7 @@ const AnimalGuide = () => {
                 <img 
                   src={buffaloOverviewImage} 
                   alt="Buffalo overview"
+                  loading="lazy"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-teal-900/60 via-transparent to-transparent"></div>
@@ -419,6 +420,7 @@ const AnimalGuide = () => {
                       <img 
                         src={breed.image} 
                         alt={breed.name}
+                        loading="lazy"
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
@@ -468,6 +470,7 @@ const AnimalGuide = () => {
                       <img 
                         src={breed.image} 
                         alt={breed.name}
+                        loading="lazy"
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
