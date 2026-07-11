@@ -2,18 +2,14 @@ import { Link } from "react-router-dom";
 import { Home, Camera } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
+import HeroDecor from "@/components/HeroDecor";
 
 const NotFound = () => {
   return (
-    <div className="min-h-screen bg-gradient-hero">
+    <div className="relative min-h-screen bg-gradient-hero overflow-hidden">
       <Navbar />
-      <div className="flex min-h-screen items-center justify-center px-6">
-        {/* Floating particles */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
-          <div className="absolute top-1/4 left-1/4 w-3 h-3 bg-white/10 rounded-full animate-float"></div>
-          <div className="absolute top-1/3 right-1/4 w-4 h-4 bg-accent/20 rounded-full animate-float" style={{ animationDelay: "1s" }}></div>
-          <div className="absolute bottom-1/3 left-1/3 w-2 h-2 bg-white/20 rounded-full animate-float" style={{ animationDelay: "2s" }}></div>
-        </div>
+      <HeroDecor fade={false} />
+      <div className="relative flex min-h-screen items-center justify-center px-6">
 
         <div className="relative z-10 text-center max-w-lg animate-fade-in">
           <div className="text-8xl md:text-9xl mb-4 animate-float">🐄</div>

@@ -2,6 +2,7 @@ import { Link, useParams } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
+import HeroDecor from "@/components/HeroDecor";
 import { Button } from "@/components/ui/button";
 import {
   ArrowLeft,
@@ -55,10 +56,8 @@ const BreedDetail = () => {
       <Navbar />
 
       {/* Hero */}
-      <section className="relative pt-28 pb-16 bg-gradient-hero text-white overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
-          <div className="absolute top-10 right-10 w-56 h-56 bg-accent/10 rounded-full blur-3xl animate-float" />
-        </div>
+      <section className="relative pt-32 pb-16 bg-gradient-hero text-white overflow-hidden">
+        <HeroDecor fade={false} />
         <div className="container mx-auto px-6 relative z-10">
           <Link
             to="/animal-guide"

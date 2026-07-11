@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
+import HeroDecor from "@/components/HeroDecor";
 import gopalanLogo from "@/assets/gopalan-logo.png";
 import {
   Heart,
@@ -146,11 +147,8 @@ const About = () => {
       <Navbar />
 
       {/* Hero Section */}
-      <div className="relative pt-28 pb-20 bg-gradient-hero text-white overflow-hidden">
-        <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
-          <div className="absolute top-16 left-10 w-40 h-40 bg-white/10 rounded-full animate-float"></div>
-          <div className="absolute bottom-10 right-12 w-28 h-28 bg-accent/20 rounded-full animate-float" style={{ animationDelay: "1.5s" }}></div>
-        </div>
+      <div className="relative pt-32 pb-24 bg-gradient-hero text-white overflow-hidden">
+        <HeroDecor />
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center">
             <div className="flex justify-center items-center mb-8">

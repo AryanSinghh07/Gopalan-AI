@@ -2,6 +2,7 @@ import { useRef, useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
+import HeroDecor from "@/components/HeroDecor";
 import { Button } from "@/components/ui/button";
 import {
   Camera,
@@ -86,11 +87,8 @@ const Analyze = () => {
       <Navbar />
 
       {/* Hero */}
-      <section className="relative pt-28 pb-16 bg-gradient-hero text-white overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
-          <div className="absolute top-10 left-10 w-40 h-40 bg-accent/10 rounded-full blur-3xl animate-float" />
-          <div className="absolute bottom-0 right-10 w-56 h-56 bg-primary-glow/10 rounded-full blur-3xl animate-float" style={{ animationDelay: "1.5s" }} />
-        </div>
+      <section className="relative pt-32 pb-20 bg-gradient-hero text-white overflow-hidden">
+        <HeroDecor />
         <div className="container mx-auto px-6 relative z-10 text-center">
           <span className="glass inline-flex items-center gap-2 px-5 py-2 rounded-full text-white/90 text-sm font-medium mb-6 animate-fade-in">
             <Sparkles className="h-4 w-4 text-accent" />

@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
 import AnimatedCounter from "@/components/AnimatedCounter";
+import HeroDecor from "@/components/HeroDecor";
 import girImage from "@/assets/animals/gir.jpg";
 import angleImage from "@/assets/animals/angle-photos.jpg";
 import uploadiImage from "@/assets/animals/upload-interface.jpg";
@@ -151,11 +152,8 @@ const Guide = () => {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="pt-20 pb-20 bg-gradient-hero text-white relative overflow-hidden">
-        {/* Soft floating glows */}
-        <div className="absolute -top-16 -right-16 w-72 h-72 bg-accent/25 rounded-full blur-3xl animate-float" aria-hidden="true"></div>
-        <div className="absolute -bottom-20 -left-10 w-80 h-80 bg-amber-400/10 rounded-full blur-3xl animate-pulse-soft" aria-hidden="true"></div>
-
+      <section className="pt-28 pb-20 bg-gradient-hero text-white relative overflow-hidden">
+        <HeroDecor />
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <ScrollReveal variant="fade-in">

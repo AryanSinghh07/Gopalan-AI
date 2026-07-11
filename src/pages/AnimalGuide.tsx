@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import ScrollReveal from "@/components/ScrollReveal";
 import AnimatedCounter from "@/components/AnimatedCounter";
+import HeroDecor from "@/components/HeroDecor";
 
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
@@ -61,9 +62,8 @@ const AnimalGuide = () => {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="pt-20 pb-24 bg-gradient-hero text-white relative overflow-hidden">
-        <div className="absolute -top-20 -right-16 w-80 h-80 bg-accent/25 rounded-full blur-3xl animate-float" aria-hidden="true"></div>
-        <div className="absolute -bottom-24 -left-12 w-96 h-96 bg-amber-400/10 rounded-full blur-3xl animate-pulse-soft" aria-hidden="true"></div>
+      <section className="pt-28 pb-24 bg-gradient-hero text-white relative overflow-hidden">
+        <HeroDecor />
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center max-w-5xl mx-auto">
             <ScrollReveal variant="fade-in">

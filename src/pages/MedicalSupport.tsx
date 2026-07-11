@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
 import AnimatedCounter from "@/components/AnimatedCounter";
+import HeroDecor from "@/components/HeroDecor";
 import {
   Heart,
   AlertTriangle,
@@ -314,13 +315,8 @@ const MedicalSupport = () => {
       <Navbar />
 
       {/* Hero Section */}
-      <div className="relative pt-20 bg-gradient-hero text-white overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
-          <div className="absolute top-16 left-10 w-40 h-40 bg-white/5 rounded-full animate-float"></div>
-          <div className="absolute bottom-10 right-16 w-32 h-32 bg-amber-300/10 rounded-full animate-float" style={{ animationDelay: '1.2s' }}></div>
-          <div className="absolute top-1/3 right-1/4 w-24 h-24 bg-accent/20 rounded-full animate-pulse-soft"></div>
-        </div>
-
+      <div className="relative pt-24 bg-gradient-hero text-white overflow-hidden">
+        <HeroDecor />
         <div className="container mx-auto px-6 relative z-10 section-padding">
           <div className="text-center">
             <ScrollReveal variant="zoom">

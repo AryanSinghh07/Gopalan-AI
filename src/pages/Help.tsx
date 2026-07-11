@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
+import HeroDecor from "@/components/HeroDecor";
 import { Button } from "@/components/ui/button";
 import {
   ChevronDown,
@@ -66,10 +67,8 @@ const Help = () => {
       <Navbar />
 
       {/* Hero */}
-      <section className="relative pt-28 pb-16 bg-gradient-hero text-white overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
-          <div className="absolute top-10 left-10 w-48 h-48 bg-accent/10 rounded-full blur-3xl animate-float" />
-        </div>
+      <section className="relative pt-32 pb-20 bg-gradient-hero text-white overflow-hidden">
+        <HeroDecor />
         <div className="container mx-auto px-6 relative z-10 text-center">
           <span className="glass inline-flex items-center gap-2 px-5 py-2 rounded-full text-white/90 text-sm font-medium mb-6">
             <HelpCircle className="h-4 w-4 text-accent" />
