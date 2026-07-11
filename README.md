@@ -47,3 +47,7 @@ src/
 ## Deployment
 
 The site is configured for Netlify (`netlify.toml` includes the SPA redirect rule). Any static host that serves `dist/` with an SPA fallback will work.
+
+## AI Backend
+
+The `/analyze` page embeds a hosted body-condition-scoring model (a Hugging Face Gradio Space). To build your own Python + ArUco backend — measurement, scoring, breed classification, and disease prediction — see **[docs/BACKEND_GUIDE.md](docs/BACKEND_GUIDE.md)**, which covers the architecture, the OpenCV/ArUco pipeline, the models, recommended datasets, deployment, and how to connect it to this site.
