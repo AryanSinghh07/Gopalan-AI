@@ -53,7 +53,7 @@ const Solution = () => {
           <ScrollReveal>
             <div className="text-center mb-16">
               <span className="section-badge mb-6">🌱 Our Solution</span>
-              <h2 className="font-playfair text-3xl md:text-5xl font-bold mt-6 mb-6 text-foreground">
+              <h2 className="font-display text-3xl md:text-5xl font-bold mt-6 mb-6 text-foreground">
                 AI-Powered <span className="gradient-text">Solution</span>
               </h2>
               <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
@@ -65,7 +65,7 @@ const Solution = () => {
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-20">
             <div>
               <ScrollReveal variant="slide-left">
-                <h3 className="font-playfair text-3xl font-bold mb-8 text-primary">
+                <h3 className="font-display text-3xl font-bold mb-8 text-primary">
                   How Gopalan AI Works
                 </h3>
               </ScrollReveal>
@@ -124,7 +124,7 @@ const Solution = () => {
             <div className="bg-gradient-hero rounded-3xl p-8 md:p-12 text-center text-white shadow-elegant relative overflow-hidden">
               <div className="absolute -top-16 -right-16 w-64 h-64 bg-white/10 rounded-full blur-3xl pointer-events-none"></div>
               <div className="relative z-10">
-                <h3 className="font-playfair text-3xl md:text-4xl font-bold mb-6">
+                <h3 className="font-display text-3xl md:text-4xl font-bold mb-6">
                   Ready to Transform Livestock Evaluation?
                 </h3>
                 <p className="text-lg md:text-xl mb-8 opacity-90 max-w-2xl mx-auto">

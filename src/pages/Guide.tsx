@@ -164,7 +164,7 @@ const Guide = () => {
               </span>
             </ScrollReveal>
             <ScrollReveal variant="fade-up" delay={100}>
-              <h1 className="text-4xl md:text-5xl font-playfair font-bold mb-6 text-white">
+              <h1 className="text-4xl md:text-5xl font-display font-bold mb-6 text-white">
                 How to Photograph &amp; Score Your Animal
               </h1>
             </ScrollReveal>
@@ -193,15 +193,15 @@ const Guide = () => {
             <ScrollReveal variant="fade-up" delay={400}>
               <div className="mt-10 grid grid-cols-3 gap-4 max-w-md mx-auto">
                 <div className="rounded-2xl bg-white/10 px-4 py-3">
-                  <AnimatedCounter end={5} className="text-3xl font-playfair font-bold text-white" />
+                  <AnimatedCounter end={5} className="text-3xl font-display font-bold text-white" />
                   <p className="text-xs text-emerald-100 mt-1">Easy Steps</p>
                 </div>
                 <div className="rounded-2xl bg-white/10 px-4 py-3">
-                  <AnimatedCounter end={3} className="text-3xl font-playfair font-bold text-white" />
+                  <AnimatedCounter end={3} className="text-3xl font-display font-bold text-white" />
                   <p className="text-xs text-emerald-100 mt-1">Photo Angles</p>
                 </div>
                 <div className="rounded-2xl bg-white/10 px-4 py-3">
-                  <AnimatedCounter end={2} className="text-3xl font-playfair font-bold text-white" />
+                  <AnimatedCounter end={2} className="text-3xl font-display font-bold text-white" />
                   <p className="text-xs text-emerald-100 mt-1">Points per Photo</p>
                 </div>
               </div>
@@ -217,7 +217,7 @@ const Guide = () => {
             <ScrollReveal>
               <div className="text-center mb-12">
                 <span className="section-badge mb-4">Before You Start</span>
-                <h2 className="font-playfair text-3xl md:text-5xl font-bold mb-4">
+                <h2 className="font-display text-3xl md:text-5xl font-bold mb-4">
                   What You <span className="gradient-text">Need</span>
                 </h2>
                 <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -229,7 +229,7 @@ const Guide = () => {
             <div className="grid md:grid-cols-2 gap-8">
               <ScrollReveal variant="slide-left">
                 <div className="h-full rounded-2xl border border-border bg-card shadow-card card-lift p-8">
-                  <h3 className="flex items-center gap-3 text-xl font-playfair font-bold mb-6">
+                  <h3 className="flex items-center gap-3 text-xl font-display font-bold mb-6">
                     <span className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
                       <CheckCircle className="w-5 h-5 text-primary" />
                     </span>
@@ -248,7 +248,7 @@ const Guide = () => {
 
               <ScrollReveal variant="slide-right" delay={100}>
                 <div className="h-full rounded-2xl border border-border bg-card shadow-card card-lift p-8">
-                  <h3 className="flex items-center gap-3 text-xl font-playfair font-bold mb-6">
+                  <h3 className="flex items-center gap-3 text-xl font-display font-bold mb-6">
                     <span className="w-10 h-10 rounded-full bg-accent/15 flex items-center justify-center flex-shrink-0">
                       <AlertCircle className="w-5 h-5 text-accent" />
                     </span>
@@ -276,7 +276,7 @@ const Guide = () => {
             <ScrollReveal>
               <div className="text-center mb-16">
                 <span className="section-badge mb-4">5 Simple Steps</span>
-                <h2 className="font-playfair text-3xl md:text-5xl font-bold mb-4">
+                <h2 className="font-display text-3xl md:text-5xl font-bold mb-4">
                   Classification <span className="gradient-text">Process</span>
                 </h2>
                 <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -294,7 +294,7 @@ const Guide = () => {
                   <div className="relative rounded-2xl border border-border bg-card shadow-card card-lift overflow-hidden">
                     {/* Big step numeral */}
                     <span
-                      className="absolute top-2 right-6 font-playfair font-bold text-[7rem] md:text-[9rem] leading-none text-primary/10 select-none pointer-events-none"
+                      className="absolute top-2 right-6 font-display font-bold text-[7rem] md:text-[9rem] leading-none text-primary/10 select-none pointer-events-none"
                       aria-hidden="true"
                     >
                       {step.id}
@@ -310,7 +310,7 @@ const Guide = () => {
                             <Badge variant="outline" className="mb-2 border-primary/30 text-primary">
                               {`Step ${step.id}`}
                             </Badge>
-                            <h3 className="text-2xl font-playfair font-bold mb-2">
+                            <h3 className="text-2xl font-display font-bold mb-2">
                               {step.title}
                             </h3>
                             <p className="text-muted-foreground">

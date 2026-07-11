@@ -72,7 +72,7 @@ const TechnologySpecs = () => {
           <ScrollReveal>
             <div className="text-center mb-16">
               <span className="section-badge mb-6">⚙️ Under the Hood</span>
-              <h2 className="font-playfair text-3xl md:text-5xl font-bold mt-6 mb-6 text-foreground">
+              <h2 className="font-display text-3xl md:text-5xl font-bold mt-6 mb-6 text-foreground">
                 Technical <span className="gradient-text">Specifications</span>
               </h2>
               <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
@@ -112,7 +112,7 @@ const TechnologySpecs = () => {
               <div className="rounded-2xl border border-primary/20 bg-primary/5 shadow-card card-lift p-8 h-full">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="rounded-xl bg-primary/10 text-primary p-3 text-xl leading-none">✅</div>
-                  <h3 className="font-playfair text-3xl font-bold text-primary">Key Benefits</h3>
+                  <h3 className="font-display text-3xl font-bold text-primary">Key Benefits</h3>
                 </div>
                 <ul className="space-y-4">
                   {keyBenefits.map((benefit, index) => (
@@ -131,7 +131,7 @@ const TechnologySpecs = () => {
               <div className="rounded-2xl border border-border bg-card shadow-card card-lift p-8 h-full">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="rounded-xl bg-accent/10 text-accent p-3 text-xl leading-none">🇮🇳</div>
-                  <h3 className="font-playfair text-3xl font-bold gradient-text-warm">Mission Alignment</h3>
+                  <h3 className="font-display text-3xl font-bold gradient-text-warm">Mission Alignment</h3>
                 </div>
                 <p className="text-muted-foreground mb-6">
                   Gopalan AI directly supports the Rashtriya Gokul Mission objectives by providing:

@@ -242,7 +242,7 @@ const Signup = () => {
           <div className="bg-primary/10 p-6 rounded-full inline-block mb-8 animate-scale-in">
             <CheckCircle className="h-16 w-16 text-primary" />
           </div>
-          <h2 className="font-playfair text-3xl font-bold text-foreground mb-4">Welcome to Gopalan AI!</h2>
+          <h2 className="font-display text-3xl font-bold text-foreground mb-4">Welcome to Gopalan AI!</h2>
           <p className="text-muted-foreground mb-6">
             Your account has been created successfully. We've sent a verification email to{' '}
             <span className="font-semibold text-primary">{formData.email}</span>
@@ -283,7 +283,7 @@ const Signup = () => {
                     <Sparkles className="w-4 h-4" />
                     Grow With Gopalan AI
                   </span>
-                  <h1 className="font-playfair text-3xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
+                  <h1 className="font-display text-3xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
                     Join the Future of
                     <span className="gradient-text"> Smart Farming</span>
                   </h1>
@@ -314,7 +314,7 @@ const Signup = () => {
                 {/* Features List */}
                 <ScrollReveal variant="fade-in" delay={200}>
                   <div className="bg-card rounded-2xl border border-border p-8 shadow-card text-left">
-                    <h3 className="font-playfair text-2xl font-bold text-foreground mb-6">What you'll get:</h3>
+                    <h3 className="font-display text-2xl font-bold text-foreground mb-6">What you'll get:</h3>
                     <ul className="space-y-3">
                       <li className="flex items-center text-foreground/90">
                         <CheckCircle className="h-5 w-5 text-primary mr-3 flex-shrink-0" />
@@ -350,7 +350,7 @@ const Signup = () => {
                     <div className="bg-gradient-to-r from-primary to-primary-glow p-4 rounded-2xl inline-block mb-6 shadow-glow animate-float">
                       <User className="h-10 w-10 text-primary-foreground" />
                     </div>
-                    <h2 className="font-playfair text-3xl font-bold text-foreground mb-2">Create Account</h2>
+                    <h2 className="font-display text-3xl font-bold text-foreground mb-2">Create Account</h2>
                     <p className="text-muted-foreground">Join Gopalan AI community today</p>
                   </div>
 

@@ -92,7 +92,7 @@ const Hero = () => {
           </div>
 
           <div className="animate-fade-in">
-            <h1 className="font-playfair text-5xl md:text-7xl font-bold mb-6 leading-tight text-white drop-shadow-2xl">
+            <h1 className="font-display text-5xl md:text-7xl font-bold mb-6 leading-tight text-white drop-shadow-2xl">
               <span className="block animate-slide-in-left">Gopalan</span>
               <span className="bg-gradient-to-r from-white via-primary-glow to-accent bg-clip-text text-transparent animate-slide-in-right drop-shadow-2xl">
                 AI

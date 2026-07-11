@@ -200,7 +200,7 @@ const AnimalTypeClassification = () => {
           <div className="text-center mb-16">
             <ScrollReveal>
               <span className="section-badge mb-6">🐄 AI Technology</span>
-              <h2 className="font-playfair text-3xl md:text-5xl font-bold mt-6 mb-6 text-foreground">
+              <h2 className="font-display text-3xl md:text-5xl font-bold mt-6 mb-6 text-foreground">
                 Animal Type <span className="gradient-text">Classification</span> &amp; Scoring
               </h2>
               <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
@@ -235,7 +235,7 @@ const AnimalTypeClassification = () => {
                   <div className="text-center mb-10">
                     <div className="inline-flex items-center gap-3 mb-4">
                       {scoringActive && <div className="w-3 h-3 rounded-full bg-primary animate-pulse-soft"></div>}
-                      <h3 className="font-playfair text-2xl md:text-4xl font-bold gradient-text">
+                      <h3 className="font-display text-2xl md:text-4xl font-bold gradient-text">
                         🚀 Live AI Scoring Platform
                       </h3>
                       {scoringActive && <div className="w-3 h-3 rounded-full bg-primary animate-pulse-soft"></div>}
@@ -310,7 +310,7 @@ const AnimalTypeClassification = () => {
               <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 opacity-50 pointer-events-none"></div>
               <div className="relative z-10">
                 <div className="text-center mb-14">
-                  <h3 className="font-playfair text-3xl md:text-5xl font-bold mb-6">
+                  <h3 className="font-display text-3xl md:text-5xl font-bold mb-6">
                     <span className="gradient-text">AI-Powered</span> Classification Pipeline
                   </h3>
                   <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
@@ -391,7 +391,7 @@ const AnimalTypeClassification = () => {
                 <div className="w-16 h-16 mx-auto bg-gradient-to-br from-primary to-primary-glow rounded-2xl flex items-center justify-center mb-4 shadow-glow">
                   <span className="text-2xl">🔬</span>
                 </div>
-                <h2 className="font-playfair text-2xl font-bold text-foreground mb-2">
+                <h2 className="font-display text-2xl font-bold text-foreground mb-2">
                   Evaluate Physical Condition
                 </h2>
                 <p className="text-muted-foreground">
@@ -458,7 +458,7 @@ const AnimalTypeClassification = () => {
                 <div className="w-16 h-16 mx-auto bg-gradient-to-br from-emerald-600 to-green-700 rounded-2xl flex items-center justify-center mb-4 shadow-glow">
                   <span className="text-2xl">🎯</span>
                 </div>
-                <h2 className="font-playfair text-2xl font-bold text-foreground mb-2">
+                <h2 className="font-display text-2xl font-bold text-foreground mb-2">
                   Evaluate Score
                 </h2>
                 <p className="text-muted-foreground">

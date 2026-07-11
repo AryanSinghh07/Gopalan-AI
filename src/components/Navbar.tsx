@@ -46,7 +46,7 @@ const Navbar = () => {
               alt="Gopalan AI logo"
               className="h-8 w-auto md:h-10 transition-transform duration-300 group-hover:scale-110"
             />
-            <div className="font-playfair font-bold text-xl md:text-2xl">
+            <div className="font-display font-bold text-xl md:text-2xl">
               <span className={solid ? "text-foreground" : "text-white"}>Gopalan</span>
               <span className="text-primary ml-1">AI</span>
             </div>

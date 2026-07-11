@@ -19,7 +19,7 @@ const Footer = () => {
                   alt="Gopalan Logo"
                   className="h-10 w-auto"
                 />
-                <h3 className="font-playfair text-3xl font-bold text-white">Gopalan AI</h3>
+                <h3 className="font-display text-3xl font-bold text-white">Gopalan AI</h3>
               </div>
               <p className="font-inter text-white/80 mb-6 leading-relaxed">
                 Revolutionary AI technology for automated Animal Type Classification, supporting the Rashtriya Gokul Mission's breeding excellence initiatives.
@@ -32,7 +32,7 @@ const Footer = () => {
             </div>
 
             <div className="animate-fade-in" style={{ animationDelay: '0.2s' }}>
-              <h4 className="font-playfair text-xl font-semibold mb-6 text-white">Key Features</h4>
+              <h4 className="font-display text-xl font-semibold mb-6 text-white">Key Features</h4>
               <ul className="space-y-3 font-inter text-white/80">
                 <li className="flex items-center">
                   <div className="w-2 h-2 bg-emerald-400 rounded-full mr-3"></div>
@@ -62,7 +62,7 @@ const Footer = () => {
             </div>
 
             <div className="animate-fade-in" style={{ animationDelay: '0.4s' }}>
-              <h4 className="font-playfair text-xl font-semibold mb-6 text-white">Mission Support</h4>
+              <h4 className="font-display text-xl font-semibold mb-6 text-white">Mission Support</h4>
               <div className="space-y-4">
                 <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg p-4 hover:bg-white/15 transition-all duration-300">
                   <h5 className="font-inter font-semibold mb-2 text-white">Rashtriya Gokul Mission</h5>

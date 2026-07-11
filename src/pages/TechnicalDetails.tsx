@@ -116,10 +116,10 @@ const TechnicalDetails = () => {
             
             {/* Main Heading */}
             <div className="animate-fade-in mb-8" style={{ animationDelay: '0.1s' }}>
-              <h1 className="font-playfair text-5xl md:text-7xl lg:text-8xl font-bold text-white leading-tight mb-2">
+              <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold text-white leading-tight mb-2">
                 Technical Innovation
               </h1>
-              <div className="flex justify-center items-center gap-4 text-5xl md:text-7xl lg:text-8xl font-playfair font-bold">
+              <div className="flex justify-center items-center gap-4 text-5xl md:text-7xl lg:text-8xl font-display font-bold">
                 <span className="text-white">&</span>
                 <span className="text-emerald-300">AI Excellence</span>
               </div>
@@ -172,7 +172,7 @@ const TechnicalDetails = () => {
                 <span className="text-primary text-sm font-medium">AI-Powered Process</span>
               </div>
               
-              <h2 className="font-playfair text-3xl md:text-5xl font-bold mb-6 text-foreground">
+              <h2 className="font-display text-3xl md:text-5xl font-bold mb-6 text-foreground">
                 AI Processing <span className="text-primary relative">
                   Pipeline
                   <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-primary/50 to-transparent rounded-full"></div>
@@ -265,7 +265,7 @@ const TechnicalDetails = () => {
                 <span className="text-primary text-sm font-medium">Advanced Technology</span>
               </div>
               
-              <h2 className="font-playfair text-3xl md:text-5xl font-bold mb-6 text-foreground">
+              <h2 className="font-display text-3xl md:text-5xl font-bold mb-6 text-foreground">
                 Technical <span className="text-primary relative">
                   Specifications
                   <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-primary/50 to-transparent rounded-full"></div>
@@ -339,7 +339,7 @@ const TechnicalDetails = () => {
                     <span className="text-primary text-sm font-medium">Mobile Innovation</span>
                   </div>
                   
-                  <h3 className="font-playfair text-3xl md:text-4xl font-bold mb-6 text-foreground">
+                  <h3 className="font-display text-3xl md:text-4xl font-bold mb-6 text-foreground">
                     Mobile-First <span className="text-primary relative">
                       Experience
                       <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-primary/50 to-transparent rounded-full"></div>

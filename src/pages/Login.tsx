@@ -154,7 +154,7 @@ const Login = () => {
           <div className="bg-primary/10 p-6 rounded-full inline-block mb-8 animate-scale-in">
             <CheckCircle className="h-16 w-16 text-primary" />
           </div>
-          <h2 className="font-playfair text-3xl font-bold text-foreground mb-4">Welcome Back!</h2>
+          <h2 className="font-display text-3xl font-bold text-foreground mb-4">Welcome Back!</h2>
           <p className="text-muted-foreground mb-8">You have successfully logged into Gopalan AI.</p>
           <Button className="w-full min-h-12 bg-gradient-to-r from-primary to-primary-glow hover:opacity-90 text-primary-foreground py-3 rounded-xl shadow-elegant transition-all duration-300 ease-smooth">
             Go to Dashboard
@@ -181,7 +181,7 @@ const Login = () => {
                     <div className="bg-gradient-to-r from-primary to-primary-glow p-4 rounded-2xl inline-block mb-6 shadow-glow animate-float">
                       <User className="h-10 w-10 text-primary-foreground" />
                     </div>
-                    <h1 className="font-playfair text-3xl font-bold text-foreground mb-2">Welcome Back</h1>
+                    <h1 className="font-display text-3xl font-bold text-foreground mb-2">Welcome Back</h1>
                     <p className="text-muted-foreground">Sign in to your Gopalan AI account</p>
                   </div>
 
@@ -356,7 +356,7 @@ const Login = () => {
                     <Sparkles className="w-4 h-4" />
                     Smart Dairy Farming
                   </span>
-                  <h2 className="font-playfair text-3xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
+                  <h2 className="font-display text-3xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
                     Revolutionize Your
                     <span className="gradient-text"> Farm Management</span>
                   </h2>

@@ -52,6 +52,7 @@ export default {
       backgroundImage: {
         'gradient-primary': 'var(--gradient-primary)',
         'gradient-hero': 'var(--gradient-hero)',
+        'gradient-lime': 'var(--gradient-lime)',
         'gradient-card': 'var(--gradient-card)',
       },
       boxShadow: {
@@ -61,7 +62,7 @@ export default {
       },
       fontFamily: {
         'inter': ['Inter', 'sans-serif'],
-        'playfair': ['Playfair Display', 'serif'],
+        'display': ['"Space Grotesk"', 'sans-serif'],
       },
       transitionTimingFunction: {
         'smooth': 'cubic-bezier(0.4, 0, 0.2, 1)',

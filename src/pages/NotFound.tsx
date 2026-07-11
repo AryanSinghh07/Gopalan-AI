@@ -17,7 +17,7 @@ const NotFound = () => {
 
         <div className="relative z-10 text-center max-w-lg animate-fade-in">
           <div className="text-8xl md:text-9xl mb-4 animate-float">🐄</div>
-          <h1 className="font-playfair text-7xl md:text-8xl font-bold text-white mb-4 drop-shadow-2xl">
+          <h1 className="font-display text-7xl md:text-8xl font-bold text-white mb-4 drop-shadow-2xl">
             404
           </h1>
           <p className="text-2xl font-semibold text-white mb-3">

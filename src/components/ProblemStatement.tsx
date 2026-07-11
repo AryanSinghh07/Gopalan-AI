@@ -23,7 +23,7 @@ const ProblemStatement = () => {
           <ScrollReveal>
             <div className="text-center mb-16">
               <span className="section-badge mb-6">⚠️ The Problem</span>
-              <h2 className="font-playfair text-3xl md:text-5xl font-bold mt-6 mb-6 text-foreground">
+              <h2 className="font-display text-3xl md:text-5xl font-bold mt-6 mb-6 text-foreground">
                 The Challenge <span className="gradient-text">We're Solving</span>
               </h2>
               <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
@@ -38,7 +38,7 @@ const ProblemStatement = () => {
                 <div className="rounded-2xl border border-border bg-card shadow-card card-lift p-8">
                   <div className="flex items-center gap-3 mb-4">
                     <div className="rounded-xl bg-destructive/10 text-destructive p-3 text-xl leading-none">⚠️</div>
-                    <h3 className="font-playfair text-2xl font-bold text-destructive">Current Issues</h3>
+                    <h3 className="font-display text-2xl font-bold text-destructive">Current Issues</h3>
                   </div>
                   <ul className="space-y-4 text-muted-foreground">
                     {currentIssues.map((issue, index) => (
@@ -55,7 +55,7 @@ const ProblemStatement = () => {
                 <div className="rounded-2xl border border-border bg-card shadow-card card-lift p-8">
                   <div className="flex items-center gap-3 mb-4">
                     <div className="rounded-xl bg-primary/10 text-primary p-3 text-xl leading-none">🇮🇳</div>
-                    <h3 className="font-playfair text-2xl font-bold text-primary">Mission Impact</h3>
+                    <h3 className="font-display text-2xl font-bold text-primary">Mission Impact</h3>
                   </div>
                   <p className="text-muted-foreground">
                     The Rashtriya Gokul Mission's success in conserving indigenous bovine breeds and enhancing milk
@@ -67,7 +67,7 @@ const ProblemStatement = () => {
 
             <ScrollReveal variant="slide-right" delay={100}>
               <div className="rounded-2xl border border-primary/20 bg-primary/5 shadow-card card-lift p-8">
-                <h3 className="font-playfair text-3xl font-bold mb-8 text-primary">By the Numbers</h3>
+                <h3 className="font-display text-3xl font-bold mb-8 text-primary">By the Numbers</h3>
                 <div className="space-y-6">
                   {numbers.map((item, index) => (
                     <div

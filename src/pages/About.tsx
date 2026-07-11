@@ -158,7 +158,7 @@ const About = () => {
                 <img src={gopalanLogo} alt="Gopalan AI logo" className="h-16 w-16 object-contain" loading="lazy" />
               </div>
             </div>
-            <h1 className="font-playfair text-5xl md:text-7xl font-bold text-white mb-6 leading-tight animate-fade-in">
+            <h1 className="font-display text-5xl md:text-7xl font-bold text-white mb-6 leading-tight animate-fade-in">
               About
               <span className="bg-gradient-to-r from-primary-glow to-accent bg-clip-text text-transparent"> Gopalan AI</span>
             </h1>
@@ -181,7 +181,7 @@ const About = () => {
                   <div className="rounded-xl bg-primary/10 text-primary p-4 mr-5">
                     <Target className="h-8 w-8" />
                   </div>
-                  <h2 className="font-playfair text-3xl font-bold text-foreground">Our Mission</h2>
+                  <h2 className="font-display text-3xl font-bold text-foreground">Our Mission</h2>
                 </div>
                 <p className="text-lg text-muted-foreground leading-relaxed mb-4">
                   To give every farmer easy access to reliable livestock care — with intelligent,
@@ -200,7 +200,7 @@ const About = () => {
                   <div className="rounded-xl bg-accent/10 text-accent p-4 mr-5">
                     <Star className="h-8 w-8" />
                   </div>
-                  <h2 className="font-playfair text-3xl font-bold text-foreground">Our Vision</h2>
+                  <h2 className="font-display text-3xl font-bold text-foreground">Our Vision</h2>
                 </div>
                 <p className="text-lg text-muted-foreground leading-relaxed mb-4">
                   A future where every farmer has instant access to expert guidance — leading to
@@ -219,7 +219,7 @@ const About = () => {
             <ScrollReveal>
               <div className="text-center mb-14">
                 <span className="section-badge mb-4">🌱 What We Stand For</span>
-                <h2 className="font-playfair text-3xl md:text-5xl font-bold text-foreground mt-4 mb-4">
+                <h2 className="font-display text-3xl md:text-5xl font-bold text-foreground mt-4 mb-4">
                   Our <span className="gradient-text">Values</span>
                 </h2>
                 <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -249,7 +249,7 @@ const About = () => {
               <div className="rounded-2xl border border-border bg-gradient-to-br from-muted/60 to-background shadow-card p-8 md:p-12">
                 <div className="text-center mb-12">
                   <span className="section-badge mb-4">⚡ Built for Farmers</span>
-                  <h2 className="font-playfair text-3xl md:text-5xl font-bold text-foreground mt-4 mb-4">
+                  <h2 className="font-display text-3xl md:text-5xl font-bold text-foreground mt-4 mb-4">
                     What Makes Us Different
                   </h2>
                   <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -284,7 +284,7 @@ const About = () => {
                   <div className="rounded-2xl bg-gradient-to-r from-primary to-primary-glow p-5 inline-block mb-5 shadow-glow">
                     <MessageSquare className="h-9 w-9 text-white" />
                   </div>
-                  <h2 className="font-playfair text-3xl md:text-4xl font-bold text-foreground mb-3">
+                  <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-3">
                     We'd Love to Hear From You
                   </h2>
                   <p className="text-lg text-muted-foreground">
@@ -420,7 +420,7 @@ const About = () => {
               </div>
 
               <div className="relative z-10">
-                <h2 className="font-playfair text-3xl md:text-4xl font-bold mb-4 text-center">Get In Touch</h2>
+                <h2 className="font-display text-3xl md:text-4xl font-bold mb-4 text-center">Get In Touch</h2>
                 <p className="text-lg mb-12 text-white/85 max-w-2xl mx-auto leading-relaxed text-center">
                   Have questions? Need support? Want to partner with us? We're here to help.
                 </p>

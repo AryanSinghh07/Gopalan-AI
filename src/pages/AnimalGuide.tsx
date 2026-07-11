@@ -284,7 +284,7 @@ const AnimalGuide = () => {
               </span>
             </ScrollReveal>
             <ScrollReveal variant="fade-up" delay={100}>
-              <h1 className="font-playfair font-bold text-4xl md:text-6xl mb-8 text-white leading-tight">
+              <h1 className="font-display font-bold text-4xl md:text-6xl mb-8 text-white leading-tight">
                 Complete Guide to <span className="bg-gradient-to-r from-emerald-200 via-green-100 to-amber-200 bg-clip-text text-transparent">Cattle &amp; Buffalo</span>
               </h1>
             </ScrollReveal>
@@ -296,15 +296,15 @@ const AnimalGuide = () => {
             <ScrollReveal variant="fade-up" delay={300}>
               <div className="flex flex-wrap justify-center gap-4">
                 <div className="rounded-2xl bg-white/10 px-6 py-4 min-w-[8rem]">
-                  <AnimatedCounter end={16} className="text-3xl font-playfair font-bold text-white" />
+                  <AnimatedCounter end={16} className="text-3xl font-display font-bold text-white" />
                   <p className="text-sm text-emerald-100 mt-1">Cattle Breeds</p>
                 </div>
                 <div className="rounded-2xl bg-white/10 px-6 py-4 min-w-[8rem]">
-                  <AnimatedCounter end={8} className="text-3xl font-playfair font-bold text-white" />
+                  <AnimatedCounter end={8} className="text-3xl font-display font-bold text-white" />
                   <p className="text-sm text-emerald-100 mt-1">Buffalo Breeds</p>
                 </div>
                 <div className="rounded-2xl bg-white/10 px-6 py-4 min-w-[8rem]">
-                  <AnimatedCounter end={4} className="text-3xl font-playfair font-bold text-white" />
+                  <AnimatedCounter end={4} className="text-3xl font-display font-bold text-white" />
                   <p className="text-sm text-emerald-100 mt-1">Expert Care Areas</p>
                 </div>
               </div>
@@ -319,7 +319,7 @@ const AnimalGuide = () => {
           <ScrollReveal>
             <div className="text-center mb-14">
               <span className="section-badge mb-4">Know Your Animals</span>
-              <h2 className="font-playfair text-3xl md:text-5xl font-bold mb-4">
+              <h2 className="font-display text-3xl md:text-5xl font-bold mb-4">
                 Cattle &amp; <span className="gradient-text">Buffalo</span> at a Glance
               </h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -346,7 +346,7 @@ const AnimalGuide = () => {
                   </div>
                 </div>
                 <div className="p-6 md:p-8 space-y-6">
-                  <h3 className="text-3xl font-playfair font-bold text-foreground">Cattle (Cows)</h3>
+                  <h3 className="text-3xl font-display font-bold text-foreground">Cattle (Cows)</h3>
                   <p className="text-muted-foreground leading-relaxed">
                     Cattle (Bos taurus) are kept mainly for milk, meat, and leather. They are intelligent, social animals and have worked beside humans for over 10,000 years, playing a big role in farming and food across the world.
                   </p>
@@ -387,7 +387,7 @@ const AnimalGuide = () => {
                   </div>
                 </div>
                 <div className="p-6 md:p-8 space-y-6">
-                  <h3 className="text-3xl font-playfair font-bold text-foreground">Water Buffalo</h3>
+                  <h3 className="text-3xl font-display font-bold text-foreground">Water Buffalo</h3>
                   <p className="text-muted-foreground leading-relaxed">
                     Water buffalo (Bubalus bubalis) are large animals well suited to hot, wet climates. Their milk is very rich, with higher fat content, which makes them excellent for dairy farming in tropical regions.
                   </p>
@@ -420,7 +420,7 @@ const AnimalGuide = () => {
           <ScrollReveal>
             <div className="text-center mb-14">
               <span className="section-badge mb-4">Breed Encyclopedia</span>
-              <h2 className="font-playfair text-3xl md:text-5xl font-bold mb-4">
+              <h2 className="font-display text-3xl md:text-5xl font-bold mb-4">
                 Popular <span className="gradient-text">Breeds</span> Collection
               </h2>
               <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
@@ -552,7 +552,7 @@ const AnimalGuide = () => {
           <ScrollReveal>
             <div className="text-center mb-14">
               <span className="section-badge mb-4">Body Comparison</span>
-              <h2 className="font-playfair text-3xl md:text-5xl font-bold mb-4">
+              <h2 className="font-display text-3xl md:text-5xl font-bold mb-4">
                 Physical <span className="gradient-text">Parameters</span>
               </h2>
               <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
@@ -564,7 +564,7 @@ const AnimalGuide = () => {
           <ScrollReveal variant="zoom" delay={100}>
             <div className="max-w-6xl mx-auto rounded-2xl border border-border bg-card shadow-elegant overflow-hidden">
               <div className="bg-gradient-to-r from-emerald-800 to-green-700 text-white py-5 px-6">
-                <h3 className="text-2xl font-playfair font-bold text-center">Average Physical Measurements</h3>
+                <h3 className="text-2xl font-display font-bold text-center">Average Physical Measurements</h3>
               </div>
               <div className="overflow-x-auto">
                 <table className="w-full min-w-[36rem]">
@@ -597,7 +597,7 @@ const AnimalGuide = () => {
           <ScrollReveal>
             <div className="text-center mb-14">
               <span className="section-badge mb-4">Milk Quality</span>
-              <h2 className="font-playfair text-3xl md:text-5xl font-bold mb-4">
+              <h2 className="font-display text-3xl md:text-5xl font-bold mb-4">
                 Milk <span className="gradient-text-warm">Nutrition</span> Compared
               </h2>
               <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
@@ -609,7 +609,7 @@ const AnimalGuide = () => {
           <ScrollReveal variant="zoom" delay={100}>
             <div className="max-w-6xl mx-auto rounded-2xl border border-border bg-card shadow-elegant overflow-hidden">
               <div className="bg-gradient-to-r from-green-700 to-amber-600 text-white py-5 px-6">
-                <h3 className="text-2xl font-playfair font-bold text-center">Milk Composition Analysis</h3>
+                <h3 className="text-2xl font-display font-bold text-center">Milk Composition Analysis</h3>
               </div>
               <div className="overflow-x-auto">
                 <table className="w-full min-w-[36rem]">
@@ -653,7 +653,7 @@ const AnimalGuide = () => {
           <ScrollReveal>
             <div className="text-center mb-14">
               <span className="section-badge mb-4">Daily Care</span>
-              <h2 className="font-playfair text-3xl md:text-5xl font-bold mb-4">
+              <h2 className="font-display text-3xl md:text-5xl font-bold mb-4">
                 Care &amp; <span className="gradient-text">Management</span> Guide
               </h2>
               <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
@@ -670,7 +670,7 @@ const AnimalGuide = () => {
                     <div className="text-6xl mb-4 group-hover:scale-110 transition-transform duration-300">
                       {section.icon}
                     </div>
-                    <h3 className="text-2xl font-playfair font-bold text-foreground">
+                    <h3 className="text-2xl font-display font-bold text-foreground">
                       {section.category}
                     </h3>
                   </div>

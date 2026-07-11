@@ -332,7 +332,7 @@ const MedicalSupport = () => {
             </ScrollReveal>
 
             <ScrollReveal>
-              <h1 className="font-playfair text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+              <h1 className="font-display text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
                 Animal Medical
                 <span className="bg-gradient-to-r from-amber-300 to-yellow-200 bg-clip-text text-transparent"> Support</span>
               </h1>
@@ -373,7 +373,7 @@ const MedicalSupport = () => {
                   <Stethoscope className="h-4 w-4 mr-2" />
                   Step 1
                 </span>
-                <h2 className="font-playfair text-3xl md:text-5xl font-bold mt-4 mb-4">
+                <h2 className="font-display text-3xl md:text-5xl font-bold mt-4 mb-4">
                   Choose Your <span className="gradient-text">Animal</span>
                 </h2>
                 <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -424,7 +424,7 @@ const MedicalSupport = () => {
                       </div>
 
                       <div className="text-center">
-                        <h3 className="font-playfair text-2xl md:text-3xl font-bold mb-3">{animal.name}</h3>
+                        <h3 className="font-display text-2xl md:text-3xl font-bold mb-3">{animal.name}</h3>
                         <p className="text-muted-foreground mb-5 leading-relaxed">{animal.description}</p>
 
                         <div className="grid grid-cols-2 gap-4 mb-6 text-sm">
@@ -475,7 +475,7 @@ const MedicalSupport = () => {
                   <Heart className="h-4 w-4 mr-2" />
                   Daily Care
                 </span>
-                <h2 className="font-playfair text-3xl md:text-5xl font-bold mt-4 mb-4">
+                <h2 className="font-display text-3xl md:text-5xl font-bold mt-4 mb-4">
                   Quick <span className="gradient-text">Health Tips</span>
                 </h2>
                 <p className="text-lg text-muted-foreground">Simple habits that keep your animals healthy.</p>
@@ -505,7 +505,7 @@ const MedicalSupport = () => {
                   <BookOpen className="h-4 w-4 mr-2" />
                   Step 2
                 </span>
-                <h2 className="font-playfair text-3xl md:text-5xl font-bold mt-4 mb-4">
+                <h2 className="font-display text-3xl md:text-5xl font-bold mt-4 mb-4">
                   Find the <span className="gradient-text">Condition</span>
                 </h2>
                 <p className="text-lg text-muted-foreground">Search by name or symptom, then tap a condition to learn more.</p>
@@ -588,7 +588,7 @@ const MedicalSupport = () => {
                             <Activity className="h-7 w-7 text-white" />
                           </div>
                           <div>
-                            <h3 className="font-playfair text-2xl md:text-4xl font-bold mb-1">{currentCondition.name}</h3>
+                            <h3 className="font-display text-2xl md:text-4xl font-bold mb-1">{currentCondition.name}</h3>
                             <p className="text-muted-foreground md:text-lg">{currentCondition.description}</p>
                           </div>
                         </div>
@@ -718,7 +718,7 @@ const MedicalSupport = () => {
                       <div className="bg-primary/10 p-10 rounded-2xl mb-8 inline-block animate-float">
                         <Stethoscope className="h-20 w-20 text-primary" />
                       </div>
-                      <h3 className="font-playfair text-2xl md:text-3xl font-bold mb-4">Select a Medical Condition</h3>
+                      <h3 className="font-display text-2xl md:text-3xl font-bold mb-4">Select a Medical Condition</h3>
                       <p className="text-lg text-muted-foreground max-w-lg mx-auto leading-relaxed">
                         Pick a condition from the list to see its symptoms, causes, treatment options, and prevention tips.
                       </p>
@@ -737,7 +737,7 @@ const MedicalSupport = () => {
                   <AlertTriangle className="h-4 w-4 mr-2" />
                   Be Prepared
                 </span>
-                <h2 className="font-playfair text-3xl md:text-5xl font-bold mt-4 mb-4">
+                <h2 className="font-display text-3xl md:text-5xl font-bold mt-4 mb-4">
                   Emergency <span className="gradient-text-warm">Procedures</span>
                 </h2>
                 <p className="text-lg text-muted-foreground">Important steps to follow during an animal health emergency.</p>
@@ -776,7 +776,7 @@ const MedicalSupport = () => {
                   <Thermometer className="h-4 w-4 mr-2" />
                   Know What Is Normal
                 </span>
-                <h2 className="font-playfair text-3xl md:text-5xl font-bold mt-4 mb-4">
+                <h2 className="font-display text-3xl md:text-5xl font-bold mt-4 mb-4">
                   Normal <span className="gradient-text">Vital Signs</span>
                 </h2>
                 <p className="text-lg text-muted-foreground">Healthy ranges for cattle and buffalo. Compare with your animal.</p>
@@ -787,7 +787,7 @@ const MedicalSupport = () => {
               <ScrollReveal variant="slide-left" className="h-full">
                 <div className="h-full bg-emerald-50 p-6 md:p-10 rounded-2xl border border-emerald-200 hover:shadow-elegant transition-shadow">
                   <div className="flex items-center mb-8">
-                    <h3 className="font-playfair text-2xl md:text-3xl font-bold text-emerald-800">Cattle (Cows)</h3>
+                    <h3 className="font-display text-2xl md:text-3xl font-bold text-emerald-800">Cattle (Cows)</h3>
                   </div>
                   <div className="space-y-4">
                     {[
@@ -813,7 +813,7 @@ const MedicalSupport = () => {
               <ScrollReveal variant="slide-right" delay={100} className="h-full">
                 <div className="h-full bg-amber-50 p-6 md:p-10 rounded-2xl border border-amber-200 hover:shadow-elegant transition-shadow">
                   <div className="flex items-center mb-8">
-                    <h3 className="font-playfair text-2xl md:text-3xl font-bold text-amber-800">Buffalo</h3>
+                    <h3 className="font-display text-2xl md:text-3xl font-bold text-amber-800">Buffalo</h3>
                   </div>
                   <div className="space-y-4">
                     {[
