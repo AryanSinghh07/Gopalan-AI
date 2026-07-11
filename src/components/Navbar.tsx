@@ -84,13 +84,6 @@ const Navbar = () => {
           {/* Desktop Actions */}
           <div className="hidden md:flex items-center space-x-3">
             <Button
-              variant="ghost"
-              className={`font-inter ${solid ? "text-foreground" : "text-white hover:bg-white/10 hover:text-white"}`}
-              onClick={() => navigate("/login")}
-            >
-              Login
-            </Button>
-            <Button
               className="btn-lime font-inter rounded-xl px-5 hover:scale-105"
               onClick={() => navigate("/analyze")}
             >
@@ -152,7 +145,7 @@ const Navbar = () => {
                 </Link>
               );
             })}
-            <div className="pt-4 space-y-3 border-t border-border/20">
+            <div className="pt-4 border-t border-border/20">
               <Button
                 className="btn-lime w-full min-h-12 font-inter rounded-xl"
                 onClick={() => {
@@ -163,28 +156,6 @@ const Navbar = () => {
                 <Camera className="h-4 w-4 mr-1.5" />
                 Analyze My Animal
               </Button>
-              <div className="flex gap-3">
-                <Button
-                  variant="outline"
-                  className="flex-1 min-h-12 font-inter rounded-xl"
-                  onClick={() => {
-                    setIsMobileMenuOpen(false);
-                    navigate("/login");
-                  }}
-                >
-                  Login
-                </Button>
-                <Button
-                  variant="outline"
-                  className="flex-1 min-h-12 font-inter rounded-xl"
-                  onClick={() => {
-                    setIsMobileMenuOpen(false);
-                    navigate("/signup");
-                  }}
-                >
-                  Sign Up
-                </Button>
-              </div>
             </div>
           </div>
         </div>

@@ -10,8 +10,6 @@ import {
   Target,
   Star,
   Shield,
-  Mail,
-  Phone,
   MapPin,
   Send,
   MessageSquare,
@@ -425,9 +423,9 @@ const About = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
                   {[
-                    { icon: <Mail className="h-10 w-10" />, title: "Email Us", lines: ["support@gopalanai.com", "partnership@gopalanai.com"] },
-                    { icon: <Phone className="h-10 w-10" />, title: "Call Us", lines: ["+1 (555) 123-4567", "Mon-Fri, 9 AM - 6 PM"] },
-                    { icon: <MapPin className="h-10 w-10" />, title: "Visit Us", lines: ["Galgotias University", "Uttar Pradesh, India"] },
+                    { icon: <MessageSquare className="h-10 w-10" />, title: "Message Us", lines: ["Use the feedback form above", "We read every message"] },
+                    { icon: <Clock className="h-10 w-10" />, title: "Response Time", lines: ["We aim to reply", "within a few days"] },
+                    { icon: <MapPin className="h-10 w-10" />, title: "Based At", lines: ["Galgotias University", "Uttar Pradesh, India"] },
                   ].map((c, index) => (
                     <ScrollReveal key={c.title} delay={index * 120}>
                       <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 text-center hover:bg-white/15 transition-colors h-full">

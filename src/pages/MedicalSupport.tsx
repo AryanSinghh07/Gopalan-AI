@@ -263,10 +263,10 @@ const MedicalSupport = () => {
   ];
 
   const stats = [
-    { icon: <Users className="h-8 w-8" />, value: <AnimatedCounter end={50} suffix="K+" />, label: "Animals Helped" },
-    { icon: <Award className="h-8 w-8" />, value: <AnimatedCounter end={99} suffix="%" />, label: "Success Rate" },
-    { icon: <Clock className="h-8 w-8" />, value: <span>24/7</span>, label: "Support Available" },
-    { icon: <Star className="h-8 w-8" />, value: <AnimatedCounter end={4.9} decimals={1} />, label: "User Rating" },
+    { icon: <Users className="h-8 w-8" />, value: <AnimatedCounter end={2} />, label: "Animals Covered" },
+    { icon: <Award className="h-8 w-8" />, value: <AnimatedCounter end={10} suffix="+" />, label: "Health Conditions" },
+    { icon: <Clock className="h-8 w-8" />, value: <span>24/7</span>, label: "Free Access" },
+    { icon: <Star className="h-8 w-8" />, value: <AnimatedCounter end={100} suffix="%" />, label: "Free to Use" },
   ];
 
   const quickTips = [

@@ -84,7 +84,7 @@ const AnimalGuide = () => {
             <ScrollReveal variant="fade-up" delay={300}>
               <div className="flex flex-wrap justify-center gap-4">
                 <div className="rounded-2xl bg-white/10 px-6 py-4 min-w-[8rem]">
-                  <AnimatedCounter end={16} className="text-3xl font-display font-bold text-white" />
+                  <AnimatedCounter end={8} className="text-3xl font-display font-bold text-white" />
                   <p className="text-sm text-white/85 mt-1">Cattle Breeds</p>
                 </div>
                 <div className="rounded-2xl bg-white/10 px-6 py-4 min-w-[8rem]">

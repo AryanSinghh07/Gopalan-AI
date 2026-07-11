@@ -12,8 +12,8 @@ const exploreLinks = [
 const supportLinks = [
   { name: "Help & FAQ", href: "/help" },
   { name: "About Us", href: "/about" },
-  { name: "Login", href: "/login" },
-  { name: "Sign Up", href: "/signup" },
+  { name: "How It Works", href: "/guide" },
+  { name: "Analyze an Animal", href: "/analyze" },
 ];
 
 const Footer = () => {
