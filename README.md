@@ -181,6 +181,12 @@ and every push auto-deploys. Any static host that serves `dist/` with an SPA fal
 
 ---
 
+## 📄 License
+
+Released under the **[MIT License](LICENSE)** — © 2026 Aryan Singh.
+
+---
+
 <div align="center">
 
 **Made for the farmers of India** 🇮🇳

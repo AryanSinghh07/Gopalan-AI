@@ -1,7 +1,9 @@
 {
-  "name": "vite_react_shadcn_ts",
+  "name": "cattle-scoring-breed-selection",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "license": "MIT",
+  "author": "Aryan Singh",
   "type": "module",
   "scripts": {
     "dev": "vite",
