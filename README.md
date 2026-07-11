@@ -2,7 +2,7 @@
 
 <img src="src/assets/gopalan-logo.png" alt="Gopalan AI logo" width="110" />
 
-# 🐄 Gopalan AI
+# Gopalan AI
 
 ## Cattle Scoring &amp; Breed Selection
 
