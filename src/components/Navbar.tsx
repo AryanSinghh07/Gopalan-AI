@@ -1,14 +1,16 @@
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Camera } from "lucide-react";
 import gopalanLogo from "@/assets/gopalan-logo.png";
 
 const navLinks = [
   { name: "Home", href: "/" },
+  { name: "Analyze", href: "/analyze" },
+  { name: "Breeds", href: "/animal-guide" },
+  { name: "Health", href: "/medical-support" },
   { name: "Guide", href: "/guide" },
-  { name: "Animal Guide", href: "/animal-guide" },
-  { name: "Medical Support", href: "/medical-support" },
-  { name: "About", href: "/about" },
+  { name: "Help", href: "/help" },
 ];
 
 const Navbar = () => {
@@ -80,20 +82,20 @@ const Navbar = () => {
           </div>
 
           {/* Desktop Actions */}
-          <div className="hidden md:flex items-center space-x-4">
+          <div className="hidden md:flex items-center space-x-3">
             <Button
               variant="ghost"
-              className={`font-inter ${solid ? "text-foreground" : "text-white"}`}
-              onClick={() => navigate("/signup")}
-            >
-              Sign Up
-            </Button>
-            <Button
-              variant="default"
-              className="font-inter rounded-xl px-6 shadow-card hover:shadow-elegant hover:scale-105 transition-all duration-300"
+              className={`font-inter ${solid ? "text-foreground" : "text-white hover:bg-white/10 hover:text-white"}`}
               onClick={() => navigate("/login")}
             >
               Login
+            </Button>
+            <Button
+              className="btn-lime font-inter rounded-xl px-5 hover:scale-105"
+              onClick={() => navigate("/analyze")}
+            >
+              <Camera className="h-4 w-4 mr-1.5" />
+              Analyze
             </Button>
           </div>
 
@@ -127,7 +129,7 @@ const Navbar = () => {
         {/* Mobile Menu */}
         <div
           className={`md:hidden transition-all duration-300 overflow-hidden ${
-            isMobileMenuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+            isMobileMenuOpen ? "max-h-[36rem] opacity-100" : "max-h-0 opacity-0"
           }`}
         >
           <div className="py-4 space-y-2 border-t border-border/20">
@@ -152,25 +154,37 @@ const Navbar = () => {
             })}
             <div className="pt-4 space-y-3 border-t border-border/20">
               <Button
-                variant="ghost"
-                className={`w-full min-h-12 font-inter ${solid ? "text-foreground" : "text-white"}`}
+                className="btn-lime w-full min-h-12 font-inter rounded-xl"
                 onClick={() => {
                   setIsMobileMenuOpen(false);
-                  navigate("/signup");
+                  navigate("/analyze");
                 }}
               >
-                Sign Up
+                <Camera className="h-4 w-4 mr-1.5" />
+                Analyze My Animal
               </Button>
-              <Button
-                variant="default"
-                className="w-full min-h-12 font-inter rounded-xl"
-                onClick={() => {
-                  setIsMobileMenuOpen(false);
-                  navigate("/login");
-                }}
-              >
-                Login
-              </Button>
+              <div className="flex gap-3">
+                <Button
+                  variant="outline"
+                  className="flex-1 min-h-12 font-inter rounded-xl"
+                  onClick={() => {
+                    setIsMobileMenuOpen(false);
+                    navigate("/login");
+                  }}
+                >
+                  Login
+                </Button>
+                <Button
+                  variant="outline"
+                  className="flex-1 min-h-12 font-inter rounded-xl"
+                  onClick={() => {
+                    setIsMobileMenuOpen(false);
+                    navigate("/signup");
+                  }}
+                >
+                  Sign Up
+                </Button>
+              </div>
             </div>
           </div>
         </div>
