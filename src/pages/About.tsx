@@ -154,13 +154,16 @@ const About = () => {
                 <img src={gopalanLogo} alt="Gopalan AI logo" className="h-16 w-16 object-contain" loading="lazy" />
               </div>
             </div>
-            <h1 className="font-display text-5xl md:text-7xl font-bold text-white mb-6 leading-tight animate-fade-in">
+            <h1 className="font-display text-5xl md:text-7xl font-bold text-white mb-3 leading-tight animate-fade-in">
               About
               <span className="bg-gradient-to-r from-primary-glow to-accent bg-clip-text text-transparent"> Gopalan AI</span>
             </h1>
-            <p className="text-xl md:text-2xl text-white/85 max-w-3xl mx-auto leading-relaxed animate-fade-in">
-              Helping Indian farmers care for their cattle and buffalo with simple,
-              AI-powered tools — for healthier animals and stronger livelihoods.
+            <p className="font-display text-xl md:text-3xl font-bold text-accent mb-6 animate-fade-in">
+              Cattle Scoring &amp; Breed Selection
+            </p>
+            <p className="text-lg md:text-2xl text-white/85 max-w-3xl mx-auto leading-relaxed animate-fade-in">
+              Gopalan AI helps Indian farmers score their cattle and buffalo, choose the right breed,
+              and keep their animals healthy — with simple, AI-powered tools for stronger livelihoods.
             </p>
           </div>
         </div>

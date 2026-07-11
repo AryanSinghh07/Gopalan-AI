@@ -87,29 +87,35 @@ const Hero = () => {
         <div className="max-w-4xl mx-auto">
           <div className="animate-fade-in">
             <span className="inline-flex items-center gap-2 px-5 py-2 mb-8 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white/90 text-sm md:text-base font-medium">
-              🇮🇳 Supporting the Rashtriya Gokul Mission
+              🇮🇳 AI for the Rashtriya Gokul Mission
             </span>
           </div>
 
           <div className="animate-fade-in">
-            <h1 className="font-display text-5xl md:text-7xl font-bold mb-6 leading-tight text-white drop-shadow-2xl">
-              <span className="block animate-slide-in-left">Gopalan</span>
+            <h1 className="font-display text-5xl md:text-7xl font-bold mb-4 leading-tight text-white drop-shadow-2xl">
+              <span className="inline animate-slide-in-left">Gopalan</span>
               <span className="bg-gradient-to-r from-white via-primary-glow to-accent bg-clip-text text-transparent animate-slide-in-right drop-shadow-2xl">
-                AI
+                {" "}AI
               </span>
             </h1>
           </div>
 
+          <div className="animate-fade-in">
+            <p className="font-display text-2xl md:text-4xl font-bold mb-6 text-accent drop-shadow-xl">
+              Cattle Scoring &amp; Breed Selection
+            </p>
+          </div>
+
           <div className="animate-fade-in" style={{ animationDelay: "0.2s" }}>
-            <p className="font-inter text-xl md:text-2xl mb-6 text-white drop-shadow-xl leading-relaxed">
-              Score your cattle and check their health — with just a photo
+            <p className="font-inter text-lg md:text-2xl mb-4 text-white drop-shadow-xl leading-relaxed">
+              Score your animal, pick the right breed, and check its health — from just one photo.
             </p>
           </div>
 
           <div className="animate-fade-in" style={{ animationDelay: "0.4s" }}>
             <p className="font-inter text-base md:text-lg mb-12 text-white/90 drop-shadow-lg max-w-2xl mx-auto">
-              Take a photo of your animal with an ArUco marker, and our AI measures it,
-              scores its body condition, and helps you spot health problems early.
+              Snap a photo with an ArUco marker and let AI measure your cattle or buffalo, score its
+              body condition, identify the breed, and flag health problems early.
             </p>
           </div>
 

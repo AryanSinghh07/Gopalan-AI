@@ -47,15 +47,17 @@ const Footer = () => {
 
           <div className="grid md:grid-cols-4 gap-10">
             <div className="md:col-span-2">
-              <div className="flex items-center space-x-3 mb-5">
+              <div className="flex items-center space-x-3 mb-2">
                 <img src={gopalanLogo} alt="Gopalan AI logo" className="h-10 w-auto" loading="lazy" />
                 <h3 className="font-display text-2xl font-bold text-white">
                   Gopalan<span className="text-accent"> AI</span>
                 </h3>
               </div>
+              <p className="font-display text-accent font-semibold mb-4">Cattle Scoring &amp; Breed Selection</p>
               <p className="text-white/75 mb-6 leading-relaxed max-w-md">
-                AI-powered cattle and buffalo scoring using ArUco markers — helping Indian farmers
-                measure, score, and care for their animals. Proudly supporting the Rashtriya Gokul Mission.
+                Score your cattle, pick the right breed, and check its health — from a single photo.
+                AI-powered livestock evaluation using ArUco markers, proudly supporting the
+                Rashtriya Gokul Mission.
               </p>
               <div className="flex flex-wrap gap-2 text-xs">
                 <span className="px-3 py-1.5 rounded-full bg-white/10 text-white/80">Government of India</span>

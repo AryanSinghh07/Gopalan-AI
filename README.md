@@ -2,12 +2,13 @@
 
 <img src="src/assets/gopalan-logo.png" alt="Gopalan AI logo" width="110" />
 
-# Cattle Scoring & Breed Selection
+# 🐄 Gopalan AI
 
-### AI-powered cattle & buffalo evaluation for Indian farmers
+## Cattle Scoring &amp; Breed Selection
 
-**Score your animal's body condition, identify its breed, and check its health — from a single photo.**
+### Score your cattle, pick the right breed, and check its health — from a single photo. 📷✨
 
+Smart, AI-powered livestock evaluation for Indian farmers.
 Built to support the **Rashtriya Gokul Mission** 🇮🇳
 
 </div>
@@ -16,9 +17,9 @@ Built to support the **Rashtriya Gokul Mission** 🇮🇳
 
 ## 📖 Overview
 
-**Cattle Scoring & Breed Selection** (Gopalan AI) is a web platform that helps farmers evaluate their
-cattle and buffalo using nothing more than a smartphone photo. By placing a printed **ArUco marker**
-next to the animal, the AI can measure the animal in real-world units, score its **body condition**,
+**Gopalan AI** is a web platform for **Cattle Scoring &amp; Breed Selection** — helping farmers evaluate
+their cattle and buffalo using nothing more than a smartphone photo. By placing a printed **ArUco marker**
+next to the animal, the AI can measure it in real-world units, score its **body condition**,
 identify its **breed**, and point the farmer to relevant **health guidance** — all in one place.
 
 <div align="center">
