@@ -12,19 +12,19 @@ const TechnicalDetails = () => {
       icon: Upload,
       title: "User Uploads Image",
       description: "Farmers or veterinarians upload high-quality images of livestock through our mobile app or web interface",
-      color: "from-blue-500 to-cyan-500",
-      bgPattern: "from-blue-500/5 to-cyan-500/10"
+      color: "from-primary to-primary-glow",
+      bgPattern: "from-primary/5 to-primary-glow/10"
     },
     {
       icon: Eye,
       title: "Object Detection",
       description: "Advanced YOLO model detects animals in images, with ArUco markers ensuring precise localization and tracking.",
-      color: "from-purple-500 to-pink-500",
-      bgPattern: "from-purple-500/5 to-pink-500/10"
+      color: "from-emerald-500 to-teal-500",
+      bgPattern: "from-emerald-500/5 to-teal-500/10"
     },
     {
       icon: Search,
-      title: "Species Identification", 
+      title: "Species Identification",
       description: "AI model determines whether the detected animal is a cow or buffalo with 99.2% accuracy",
       color: "from-green-500 to-emerald-500",
       bgPattern: "from-green-500/5 to-emerald-500/10"
@@ -33,15 +33,15 @@ const TechnicalDetails = () => {
       icon: BarChart3,
       title: "Breed Classification",
       description: "Deep learning algorithms classify the specific breed from our database of 50+ recognized breeds",
-      color: "from-orange-500 to-red-500",
-      bgPattern: "from-orange-500/5 to-red-500/10"
+      color: "from-amber-500 to-orange-500",
+      bgPattern: "from-amber-500/5 to-orange-500/10"
     },
     {
       icon: Award,
       title: "Physical Parameters & Scoring",
       description: "Comprehensive evaluation of physical traits and breeding potential based on standardized scoring systems",
-      color: "from-indigo-500 to-purple-500",
-      bgPattern: "from-indigo-500/5 to-purple-500/10"
+      color: "from-lime-500 to-green-600",
+      bgPattern: "from-lime-500/5 to-green-600/10"
     }
   ];
 
@@ -49,7 +49,7 @@ const TechnicalDetails = () => {
     {
       icon: Cpu,
       title: "AI Model Architecture",
-      color: "from-blue-500 to-cyan-500",
+      color: "from-primary to-primary-glow",
       items: [
         "YOLO v8 for object detection",
         "ResNet-50 backbone for feature extraction", 
@@ -71,7 +71,7 @@ const TechnicalDetails = () => {
     {
       icon: Upload,
       title: "Data Requirements",
-      color: "from-purple-500 to-pink-500", 
+      color: "from-amber-500 to-orange-500",
       items: [
         "Minimum 1080p image resolution",
         "Clear visibility of animal features",
@@ -82,7 +82,7 @@ const TechnicalDetails = () => {
     {
       icon: Shield,
       title: "Integration Options",
-      color: "from-orange-500 to-red-500",
+      color: "from-emerald-500 to-teal-600",
       items: [
         "REST API for web applications",
         "Mobile SDK for native apps",
@@ -155,13 +155,13 @@ const TechnicalDetails = () => {
       </section>
 
       {/* Enhanced Working Process Section */}
-      <section className="relative py-20 bg-gradient-subtle overflow-hidden">
+      <section className="relative py-20 bg-muted/30 overflow-hidden">
         {/* Enhanced Background Pattern */}
         <div 
           className="absolute inset-0 opacity-20 bg-cover bg-center"
           style={{ backgroundImage: `url(${processFlowBg})` }}
         />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(120,119,198,0.1),transparent_70%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,hsl(var(--primary) / 0.1),transparent_70%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(255,255,255,0.05),transparent_70%)]" />
         
         <div className="relative z-10 container mx-auto px-6">
@@ -255,7 +255,7 @@ const TechnicalDetails = () => {
       {/* Enhanced Technical Specifications */}
       <section className="py-20 bg-background relative overflow-hidden">
         {/* Subtle background pattern */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(120,119,198,0.03),transparent_70%)]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,hsl(var(--primary) / 0.04),transparent_70%)]"></div>
         
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-6xl mx-auto">
@@ -327,7 +327,7 @@ const TechnicalDetails = () => {
             </div>
 
             {/* Enhanced Mobile Demo Section */}
-            <div className="relative bg-gradient-subtle rounded-3xl p-8 md:p-12 animate-fade-in overflow-hidden" style={{ animationDelay: '0.5s' }}>
+            <div className="relative bg-muted/30 rounded-3xl p-8 md:p-12 animate-fade-in overflow-hidden" style={{ animationDelay: '0.5s' }}>
               {/* Background decoration */}
               <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-primary/5 to-transparent rounded-full blur-3xl"></div>
               <div className="absolute bottom-0 left-0 w-48 h-48 bg-gradient-to-tr from-accent/5 to-transparent rounded-full blur-2xl"></div>
