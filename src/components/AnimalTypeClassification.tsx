@@ -1,6 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import ScrollReveal from "@/components/ScrollReveal";
+import AnimatedCounter from "@/components/AnimatedCounter";
 
 const AnimalTypeClassification = () => {
   const navigate = useNavigate();
@@ -25,7 +27,7 @@ const AnimalTypeClassification = () => {
       description: "High-resolution image capture from multiple angles and lighting conditions",
       details: "RGB/IR sensors, 4K resolution",
       technology: "Computer Vision",
-      gradient: "from-blue-500 to-blue-600",
+      gradient: "from-green-500 to-emerald-600",
       processingTime: "< 0.1s",
       accuracy: "99.9%"
     },
@@ -35,7 +37,7 @@ const AnimalTypeClassification = () => {
       description: "Image enhancement, noise reduction, and standardization",
       details: "Gaussian filtering, histogram equalization",
       technology: "Image Processing",
-      gradient: "from-green-500 to-green-600",
+      gradient: "from-emerald-500 to-green-600",
       processingTime: "0.3s",
       accuracy: "98.5%"
     },
@@ -45,7 +47,7 @@ const AnimalTypeClassification = () => {
       description: "Automated detection of key morphological characteristics",
       details: "CNN-based feature maps, edge detection",
       technology: "Deep Learning",
-      gradient: "from-purple-500 to-purple-600",
+      gradient: "from-lime-600 to-green-700",
       processingTime: "0.8s",
       accuracy: "97.2%"
     },
@@ -55,7 +57,7 @@ const AnimalTypeClassification = () => {
       description: "Multi-class breed identification using neural networks",
       details: "ResNet-50 architecture, softmax output",
       technology: "AI/ML",
-      gradient: "from-red-500 to-red-600",
+      gradient: "from-amber-500 to-amber-600",
       processingTime: "0.5s",
       accuracy: "96.3%"
     },
@@ -65,7 +67,7 @@ const AnimalTypeClassification = () => {
       description: "Standardized evaluation of physical traits and conformity",
       details: "Multi-criteria analysis, weighted scoring",
       technology: "Analytics",
-      gradient: "from-orange-500 to-orange-600",
+      gradient: "from-orange-500 to-amber-600",
       processingTime: "0.4s",
       accuracy: "94.8%"
     },
@@ -75,7 +77,7 @@ const AnimalTypeClassification = () => {
       description: "Health indicators, body condition scoring, and anomaly detection",
       details: "Statistical analysis, outlier detection",
       technology: "ML Analytics",
-      gradient: "from-teal-500 to-teal-600",
+      gradient: "from-emerald-600 to-green-700",
       processingTime: "0.6s",
       accuracy: "93.7%"
     },
@@ -85,7 +87,7 @@ const AnimalTypeClassification = () => {
       description: "Seamless data export to farm management and breeding systems",
       details: "API integration, database sync",
       technology: "Cloud/API",
-      gradient: "from-indigo-500 to-indigo-600",
+      gradient: "from-yellow-500 to-amber-600",
       processingTime: "0.2s",
       accuracy: "99.9%"
     }
@@ -105,6 +107,17 @@ const AnimalTypeClassification = () => {
     { icon: "📋", title: "Category Analysis", desc: "Classification categories" },
     { icon: "📈", title: "Confidence Score", desc: "Accuracy percentage" },
     { icon: "📄", title: "Detailed Report", desc: "Complete classification" }
+  ];
+
+  // Live platform stats (from real-time scoring state)
+  const liveStats = [
+    { label: "Overall Score", value: liveScores.overall, decimals: 1, suffix: "" },
+    { label: "Physical", value: liveScores.physical, decimals: 1, suffix: "" },
+    { label: "Health", value: liveScores.health, decimals: 1, suffix: "" },
+    { label: "Productivity", value: liveScores.productivity, decimals: 1, suffix: "" },
+    { label: "Genetic", value: liveScores.genetic, decimals: 1, suffix: "" },
+    { label: "Active Animals", value: activeAnimals, decimals: 0, suffix: "" },
+    { label: "Scored Today", value: processingCount, decimals: 0, suffix: "+" }
   ];
 
   // Complete Analysis handlers
@@ -145,303 +158,243 @@ const AnimalTypeClassification = () => {
     setShowClassificationPopup(false);
   };
 
+  // The three main analysis actions
+  const analysisActions = [
+    {
+      icon: "🔬",
+      title: "Evaluate Physical",
+      tags: ["Full Report", "AI Insights"],
+      gradient: "from-primary to-primary-glow",
+      glow: "bg-primary/30",
+      onClick: handleCompleteAnalysisClick
+    },
+    {
+      icon: "🎯",
+      title: "Evaluate Score",
+      tags: ["Breed ID", "Type Class"],
+      gradient: "from-emerald-600 to-green-700",
+      glow: "bg-emerald-500/30",
+      onClick: handleClassificationClick
+    },
+    {
+      icon: "⭐",
+      title: "Evaluate Best Match",
+      tags: ["Genetics", "Breeding"],
+      gradient: "from-amber-500 to-orange-600",
+      glow: "bg-accent/30",
+      onClick: undefined
+    }
+  ];
+
   return (
-    <section id="technology" className="min-h-screen py-20 bg-gradient-to-br from-background via-muted/20 to-primary/5 relative overflow-hidden">
+    <section id="classification" className="section-padding bg-gradient-to-br from-background via-muted/20 to-primary/5 relative overflow-hidden">
       {/* Background decorative elements */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-primary rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent rounded-full blur-3xl"></div>
+      <div className="absolute inset-0 opacity-5 pointer-events-none">
+        <div className="absolute top-20 left-10 w-72 h-72 bg-primary rounded-full blur-3xl animate-float"></div>
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent rounded-full blur-3xl animate-float" style={{ animationDelay: "1.5s" }}></div>
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-7xl mx-auto">
           {/* Section Header */}
-          <div className="text-center mb-20">
-            <div className="inline-block mb-6">
-              <span className="bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold uppercase tracking-wider">
-                AI Technology
-              </span>
-            </div>
-            <h2 className="font-playfair text-5xl md:text-7xl font-bold mb-8 text-foreground bg-gradient-to-br from-foreground to-foreground/70 bg-clip-text">
-              Animal Type Classification & Scoring
-            </h2>
-            <p className="font-inter text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto mb-16 leading-relaxed">
-              Advanced AI-powered evaluation system for comprehensive livestock assessment, breed classification, and standardized scoring with 95%+ accuracy
-            </p>
+          <div className="text-center mb-16">
+            <ScrollReveal>
+              <span className="section-badge mb-6">🐄 AI Technology</span>
+              <h2 className="font-playfair text-3xl md:text-5xl font-bold mt-6 mb-6 text-foreground">
+                Animal Type <span className="gradient-text">Classification</span> &amp; Scoring
+              </h2>
+              <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+                Take photos of your animal. Our AI checks the breed, body type, and score for you — with 95%+ accuracy.
+              </p>
+            </ScrollReveal>
 
-            {/* Stats */}
-            <div className="flex flex-wrap justify-center gap-8 mb-16">
-              <div className="text-center">
-                <div className="text-3xl font-bold text-primary">95%+</div>
-                <div className="text-sm text-muted-foreground">Accuracy</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-primary">3sec</div>
-                <div className="text-sm text-muted-foreground">Analysis</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-primary">50+</div>
-                <div className="text-sm text-muted-foreground">Breeds</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-primary">AI-Based</div>
-                <div className="text-sm text-muted-foreground">Scoring</div>
-              </div>
+            {/* Animated stat strip */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto mt-12 mb-16">
+              {[
+                { stat: <AnimatedCounter end={95} suffix="%+" />, label: "Accuracy" },
+                { stat: <AnimatedCounter end={3} suffix=" sec" />, label: "Analysis Time" },
+                { stat: <AnimatedCounter end={50} suffix="+" />, label: "Breeds" },
+                { stat: <>AI-Based</>, label: "Scoring" }
+              ].map((item, index) => (
+                <ScrollReveal key={index} variant="zoom" delay={index * 100}>
+                  <div className="rounded-2xl border border-border bg-card shadow-card card-lift p-5 text-center">
+                    <div className="text-3xl font-bold text-primary">{item.stat}</div>
+                    <div className="text-sm text-muted-foreground mt-1">{item.label}</div>
+                  </div>
+                </ScrollReveal>
+              ))}
             </div>
 
             {/* LIVE AI SCORING PLATFORM */}
-            <div className="bg-gradient-to-br from-card/90 via-card/80 to-card/70 backdrop-blur-xl rounded-3xl p-8 md:p-12 shadow-2xl border border-border/50 mb-16 max-w-6xl mx-auto relative overflow-hidden">
+            <ScrollReveal variant="fade-up">
+              <div className="rounded-2xl border border-border bg-card shadow-elegant p-6 md:p-12 mb-16 max-w-6xl mx-auto relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 pointer-events-none"></div>
 
-              <div className="relative z-10">
-                {/* Platform Header */}
-                <div className="text-center mb-10">
-                  <div className="inline-flex items-center gap-3 mb-6">
-                    <div className="w-3 h-3 rounded-full bg-green-500 animate-pulse"></div>
-                    <h3 className="font-playfair text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
-                      🚀 Live AI Scoring Platform
-                    </h3>
-                    <div className="w-3 h-3 rounded-full bg-green-500 animate-pulse"></div>
-                  </div>
-
-                  <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-                    Experience real-time AI-powered livestock scoring with advanced neural networks
-                  </p>
-
-                  {/* ANALYSIS ACTION BUTTONS */}
-                  <div className="grid md:grid-cols-3 gap-8 mb-8 max-w-5xl mx-auto">
-
-                    {/* Complete Analysis Button - With Click Handler */}
-                    <div className="group relative transform transition-all duration-500 hover:-translate-y-2">
-                      {/* Animated Background Glow */}
-                      <div className="absolute -inset-1 bg-gradient-to-r from-blue-400 via-blue-500 to-cyan-500 rounded-3xl blur-lg opacity-30 group-hover:opacity-60 transition-all duration-500 animate-pulse group-hover:animate-none"></div>
-
-                      {/* Secondary Glow Layer */}
-                      <div className="absolute -inset-2 bg-gradient-to-r from-blue-300/20 to-cyan-400/20 rounded-3xl blur-2xl opacity-0 group-hover:opacity-40 transition-all duration-700"></div>
-
-                      {/* Button Container */}
-                      <div className="relative bg-gradient-to-br from-blue-50/90 to-cyan-50/90 backdrop-blur-sm rounded-3xl p-1.5 shadow-xl">
-                        <Button
-                          onClick={handleCompleteAnalysisClick}
-                          className="relative w-full h-auto min-h-[280px] p-6 bg-gradient-to-br from-blue-500 via-blue-600 to-cyan-600 hover:from-blue-600 hover:via-cyan-600 hover:to-blue-700 border-0 rounded-2xl shadow-2xl transition-all duration-500 group-hover:shadow-blue-500/25 group-hover:scale-[1.02] overflow-hidden"
-                        >
-
-                          {/* Animated Shine Effect */}
-                          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
-
-                          {/* Content */}
-                          <div className="relative text-center z-10 flex flex-col justify-between h-full">
-                            {/* Enhanced Icon Container */}
-                            <div className="relative mb-6">
-                              <div className="w-16 h-16 mx-auto bg-white/20 rounded-2xl flex items-center justify-center backdrop-blur-sm group-hover:bg-white/30 transition-all duration-300 group-hover:rotate-12 group-hover:scale-110">
-                                <span className="text-3xl filter drop-shadow-lg">🔬</span>
-                              </div>
-                              {/* Floating particles effect */}
-                              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-2 h-2 bg-white/40 rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-ping"></div>
-                              <div className="absolute top-2 right-1/4 w-1 h-1 bg-white/60 rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-bounce" style={{animationDelay: '0.2s'}}></div>
-                            </div>
-
-                            {/* Text Content */}
-                            <div className="flex-1 flex flex-col justify-center">
-                              {/* Enhanced Typography */}
-                              <div className="font-bold text-xl mb-4 text-white tracking-wide leading-tight">
-                                Evaluate Physical
-                              </div>
-                            </div>
-
-                            {/* Feature Tags */}
-                            <div className="flex flex-wrap gap-2 justify-center mt-auto">
-                              <span className="px-3 py-1.5 bg-white/20 rounded-full text-xs text-white font-medium">Full Report</span>
-                              <span className="px-3 py-1.5 bg-white/20 rounded-full text-xs text-white font-medium">AI Insights</span>
-                            </div>
-                          </div>
-                        </Button>
-                      </div>
+                <div className="relative z-10">
+                  {/* Platform Header */}
+                  <div className="text-center mb-10">
+                    <div className="inline-flex items-center gap-3 mb-4">
+                      {scoringActive && <div className="w-3 h-3 rounded-full bg-primary animate-pulse-soft"></div>}
+                      <h3 className="font-playfair text-2xl md:text-4xl font-bold gradient-text">
+                        🚀 Live AI Scoring Platform
+                      </h3>
+                      {scoringActive && <div className="w-3 h-3 rounded-full bg-primary animate-pulse-soft"></div>}
                     </div>
 
-                    {/* Classification Analysis Button - With Click Handler */}
-                    <div className="group relative transform transition-all duration-500 hover:-translate-y-2">
-                      {/* Animated Background Glow */}
-                      <div className="absolute -inset-1 bg-gradient-to-r from-green-400 via-emerald-500 to-teal-500 rounded-3xl blur-lg opacity-30 group-hover:opacity-60 transition-all duration-500 animate-pulse group-hover:animate-none"></div>
+                    <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+                      Real-time AI livestock scoring, powered by advanced neural networks
+                    </p>
 
-                      {/* Secondary Glow Layer */}
-                      <div className="absolute -inset-2 bg-gradient-to-r from-green-300/20 to-emerald-400/20 rounded-3xl blur-2xl opacity-0 group-hover:opacity-40 transition-all duration-700"></div>
-
-                      {/* Button Container */}
-                      <div className="relative bg-gradient-to-br from-green-50/90 to-emerald-50/90 backdrop-blur-sm rounded-3xl p-1.5 shadow-xl">
-                        <Button
-                          onClick={handleClassificationClick}
-                          className="relative w-full h-auto min-h-[280px] p-6 bg-gradient-to-br from-green-500 via-emerald-600 to-teal-600 hover:from-emerald-600 hover:via-green-600 hover:to-teal-700 border-0 rounded-2xl shadow-2xl transition-all duration-500 group-hover:shadow-green-500/25 group-hover:scale-[1.02] overflow-hidden"
-                        >
-
-                          {/* Animated Shine Effect */}
-                          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
-
-                          {/* Content */}
-                          <div className="relative text-center z-10 flex flex-col justify-between h-full">
-                            {/* Enhanced Icon Container */}
-                            <div className="relative mb-6">
-                              <div className="w-16 h-16 mx-auto bg-white/20 rounded-2xl flex items-center justify-center backdrop-blur-sm group-hover:bg-white/30 transition-all duration-300 group-hover:rotate-12 group-hover:scale-110">
-                                <span className="text-3xl filter drop-shadow-lg">🎯</span>
-                              </div>
-                              {/* Floating particles effect */}
-                              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-2 h-2 bg-white/40 rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-ping"></div>
-                              <div className="absolute top-2 right-1/4 w-1 h-1 bg-white/60 rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-bounce" style={{animationDelay: '0.2s'}}></div>
+                    {/* Live score chips */}
+                    <div className="flex flex-wrap justify-center gap-3 mb-10">
+                      {liveStats.map((s, index) => (
+                        <ScrollReveal key={s.label} variant="fade-in" delay={index * 80}>
+                          <div className="rounded-xl bg-primary/10 px-4 py-2 text-center min-w-[104px]">
+                            <div className="text-lg font-bold text-primary">
+                              <AnimatedCounter end={s.value} decimals={s.decimals} suffix={s.suffix} />
                             </div>
-
-                            {/* Text Content */}
-                            <div className="flex-1 flex flex-col justify-center">
-                              {/* Enhanced Typography */}
-                              <div className="font-bold text-xl mb-4 text-white tracking-wide leading-tight">
-                                Evaluate Score
-                              </div>
-                            </div>
-
-                            {/* Feature Tags */}
-                            <div className="flex flex-wrap gap-2 justify-center mt-auto">
-                              <span className="px-3 py-1.5 bg-white/20 rounded-full text-xs text-white font-medium">Breed ID</span>
-                              <span className="px-3 py-1.5 bg-white/20 rounded-full text-xs text-white font-medium">Type Class</span>
-                            </div>
+                            <div className="text-xs text-muted-foreground">{s.label}</div>
                           </div>
-                        </Button>
-                      </div>
+                        </ScrollReveal>
+                      ))}
                     </div>
 
-                    {/* Evaluate Best Match Button */}
-                    <div className="group relative transform transition-all duration-500 hover:-translate-y-2">
-                      {/* Animated Background Glow */}
-                      <div className="absolute -inset-1 bg-gradient-to-r from-purple-400 via-violet-500 to-fuchsia-500 rounded-3xl blur-lg opacity-30 group-hover:opacity-60 transition-all duration-500 animate-pulse group-hover:animate-none"></div>
+                    {/* ANALYSIS ACTION BUTTONS */}
+                    <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                      {analysisActions.map((action, index) => (
+                        <ScrollReveal key={action.title} variant="fade-up" delay={index * 120}>
+                          <div className="group relative h-full">
+                            {/* Soft glow behind the card */}
+                            <div className={`absolute -inset-1 ${action.glow} rounded-2xl blur-lg opacity-30 group-hover:opacity-60 transition-all duration-500`}></div>
 
-                      {/* Secondary Glow Layer */}
-                      <div className="absolute -inset-2 bg-gradient-to-r from-purple-300/20 to-fuchsia-400/20 rounded-3xl blur-2xl opacity-0 group-hover:opacity-40 transition-all duration-700"></div>
+                            <Button
+                              onClick={action.onClick}
+                              className={`relative w-full h-auto min-h-[240px] p-6 bg-gradient-to-br ${action.gradient} border-0 rounded-2xl shadow-elegant transition-all duration-300 ease-smooth hover:scale-105 hover:shadow-glow overflow-hidden`}
+                            >
+                              {/* Shine sweep on hover */}
+                              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
 
-                      {/* Button Container */}
-                      <div className="relative bg-gradient-to-br from-purple-50/90 to-fuchsia-50/90 backdrop-blur-sm rounded-3xl p-1.5 shadow-xl">
-                        <Button className="relative w-full h-auto min-h-[280px] p-6 bg-gradient-to-br from-purple-500 via-violet-600 to-fuchsia-600 hover:from-violet-600 hover:via-purple-600 hover:to-fuchsia-700 border-0 rounded-2xl shadow-2xl transition-all duration-500 group-hover:shadow-purple-500/25 group-hover:scale-[1.02] overflow-hidden">
+                              <div className="relative text-center z-10 flex flex-col justify-between h-full w-full">
+                                <div className="w-16 h-16 mx-auto mb-6 bg-white/20 rounded-xl flex items-center justify-center backdrop-blur-sm group-hover:bg-white/30 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 ease-spring">
+                                  <span className="text-3xl">{action.icon}</span>
+                                </div>
 
-                          {/* Animated Shine Effect */}
-                          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+                                <div className="flex-1 flex flex-col justify-center">
+                                  <div className="font-bold text-xl mb-4 text-white tracking-wide leading-tight">
+                                    {action.title}
+                                  </div>
+                                </div>
 
-                          {/* Content */}
-                          <div className="relative text-center z-10 flex flex-col justify-between h-full">
-                            {/* Enhanced Icon Container */}
-                            <div className="relative mb-6">
-                              <div className="w-16 h-16 mx-auto bg-white/20 rounded-2xl flex items-center justify-center backdrop-blur-sm group-hover:bg-white/30 transition-all duration-300 group-hover:rotate-12 group-hover:scale-110">
-                                <span className="text-3xl filter drop-shadow-lg">⭐</span>
+                                <div className="flex flex-wrap gap-2 justify-center mt-auto">
+                                  {action.tags.map((tag) => (
+                                    <span key={tag} className="px-3 py-1.5 bg-white/20 rounded-full text-xs text-white font-medium">
+                                      {tag}
+                                    </span>
+                                  ))}
+                                </div>
                               </div>
-                              {/* Floating particles effect */}
-                              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-2 h-2 bg-white/40 rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-ping"></div>
-                              <div className="absolute top-2 right-1/4 w-1 h-1 bg-white/60 rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-bounce" style={{animationDelay: '0.2s'}}></div>
-                            </div>
-
-                            {/* Text Content */}
-                            <div className="flex-1 flex flex-col justify-center">
-                              {/* Enhanced Typography */}
-                              <div className="font-bold text-xl mb-4 text-white tracking-wide leading-tight">
-                                Evaluate Best Match
-                              </div>
-                            </div>
-
-                            {/* Feature Tags */}
-                            <div className="flex flex-wrap gap-2 justify-center mt-auto">
-                              <span className="px-3 py-1.5 bg-white/20 rounded-full text-xs text-white font-medium">Genetics</span>
-                              <span className="px-3 py-1.5 bg-white/20 rounded-full text-xs text-white font-medium">Breeding</span>
-                            </div>
+                            </Button>
                           </div>
-                        </Button>
-                      </div>
+                        </ScrollReveal>
+                      ))}
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
+            </ScrollReveal>
           </div>
 
-          {/* IMPROVED CLASSIFICATION PROCESS FLOW */}
-          <div className="bg-card/80 backdrop-blur-sm rounded-3xl p-12 md:p-16 shadow-2xl border border-border/50 relative overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 opacity-50"></div>
-            <div className="relative z-10">
-              <div className="text-center mb-16">
-                <h3 className="text-4xl md:text-5xl font-bold mb-6 text-primary bg-gradient-to-r from-primary to-accent bg-clip-text">
-                  AI-Powered Classification Pipeline
-                </h3>
-                <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                  Our advanced computer vision system follows a comprehensive 7-step process to deliver precise livestock evaluation results
-                </p>
-              </div>
+          {/* CLASSIFICATION PROCESS FLOW */}
+          <ScrollReveal variant="fade-up">
+            <div className="rounded-2xl border border-border bg-card shadow-card p-8 md:p-14 relative overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 opacity-50 pointer-events-none"></div>
+              <div className="relative z-10">
+                <div className="text-center mb-14">
+                  <h3 className="font-playfair text-3xl md:text-5xl font-bold mb-6">
+                    <span className="gradient-text">AI-Powered</span> Classification Pipeline
+                  </h3>
+                  <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+                    Our computer vision system follows 7 simple steps to give you precise livestock evaluation results
+                  </p>
+                </div>
 
-              <div className="grid lg:grid-cols-7 md:grid-cols-3 sm:grid-cols-2 gap-8 mb-16">
-                {enhancedProcessSteps.map((step, index) => (
-                  <div key={index} className="text-center relative group">
-                    {/* Step Number and Icon Container */}
-                    <div className="relative mb-6">
-                      <div className={`w-20 h-20 bg-gradient-to-br ${step.gradient} rounded-2xl flex items-center justify-center text-white font-bold text-lg mx-auto shadow-2xl group-hover:scale-110 group-hover:rotate-6 transition-all duration-300`}>
-                        {step.step}
-                      </div>
-                      {/* Technology Badge */}
-                      <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 bg-white text-xs px-2 py-1 rounded-full text-primary font-semibold shadow-md opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        {step.technology}
-                      </div>
-                    </div>
-                    {/* Step Content */}
-                    <div className="relative z-10 group-hover:-translate-y-2 transition-transform duration-300">
-                      <h4 className="text-lg font-bold mb-3 text-foreground">
-                        {step.title}
-                      </h4>
-                      <p className="text-sm text-muted-foreground leading-relaxed mb-3">
-                        {step.description}
-                      </p>
-                      {/* Technical Details */}
-                      <div className="text-xs text-primary/70 font-medium">
-                        {step.details}
-                      </div>
-                    </div>
+                <div className="grid lg:grid-cols-7 md:grid-cols-3 sm:grid-cols-2 gap-8">
+                  {enhancedProcessSteps.map((step, index) => (
+                    <ScrollReveal key={index} variant="fade-up" delay={index * 100}>
+                      <div className="text-center relative group">
+                        {/* Step Number and Icon Container */}
+                        <div className="relative mb-6">
+                          <div className={`w-20 h-20 bg-gradient-to-br ${step.gradient} rounded-2xl flex items-center justify-center text-white font-bold text-lg mx-auto shadow-elegant group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 ease-spring`}>
+                            {step.step}
+                          </div>
+                          {/* Technology Badge */}
+                          <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 bg-card border border-border text-xs px-2 py-1 rounded-full text-primary font-semibold shadow-card opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
+                            {step.technology}
+                          </div>
+                        </div>
+                        {/* Step Content */}
+                        <div className="relative z-10 group-hover:-translate-y-2 transition-transform duration-300 ease-smooth">
+                          <h4 className="text-lg font-bold mb-3 text-foreground">
+                            {step.title}
+                          </h4>
+                          <p className="text-sm text-muted-foreground leading-relaxed mb-3">
+                            {step.description}
+                          </p>
+                          {/* Technical Details */}
+                          <div className="text-xs text-primary/70 font-medium">
+                            {step.details}
+                          </div>
+                        </div>
 
-                    {/* Hover Metrics */}
-                    <div className="absolute inset-x-0 top-full mt-4 bg-white/90 backdrop-blur-sm rounded-lg p-3 shadow-lg opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300 pointer-events-none">
-                      <div className="text-xs space-y-1">
-                        <div className="flex justify-between">
-                          <span className="text-muted-foreground">Processing Time:</span>
-                          <span className="font-semibold text-primary">{step.processingTime}</span>
-                        </div>
-                        <div className="flex justify-between">
-                          <span className="text-muted-foreground">Accuracy:</span>
-                          <span className="font-semibold text-green-600">{step.accuracy}</span>
+                        {/* Hover Metrics */}
+                        <div className="absolute inset-x-0 top-full mt-4 bg-card border border-border rounded-xl p-3 shadow-elegant opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300 pointer-events-none z-20">
+                          <div className="text-xs space-y-1">
+                            <div className="flex justify-between gap-2">
+                              <span className="text-muted-foreground">Time:</span>
+                              <span className="font-semibold text-primary">{step.processingTime}</span>
+                            </div>
+                            <div className="flex justify-between gap-2">
+                              <span className="text-muted-foreground">Accuracy:</span>
+                              <span className="font-semibold text-primary">{step.accuracy}</span>
+                            </div>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </div>
-                ))}
+                    </ScrollReveal>
+                  ))}
+                </div>
               </div>
             </div>
-          </div>
+          </ScrollReveal>
         </div>
       </div>
 
       {/* COMPLETE ANALYSIS POPUP MODAL */}
       {showAnalysisPopup && (
-        <div className="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center z-50 p-4">
-          <div className="bg-white rounded-2xl max-w-2xl w-full shadow-2xl relative animate-in fade-in zoom-in duration-300">
+        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4">
+          <div className="bg-card border border-border rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-elegant relative animate-in fade-in zoom-in duration-300">
 
             {/* Close Button */}
             <button
               onClick={handleCloseAnalysisPopup}
-              className="absolute top-4 right-4 w-8 h-8 bg-gray-100 hover:bg-gray-200 rounded-full flex items-center justify-center text-gray-500 hover:text-gray-700 transition-all duration-200 z-10"
+              aria-label="Close"
+              className="absolute top-4 right-4 w-10 h-10 bg-muted hover:bg-muted/70 rounded-full flex items-center justify-center text-muted-foreground hover:text-foreground transition-all duration-200 hover:scale-105 z-10"
             >
-              <span className="text-lg">×</span>
+              <span className="text-xl leading-none">×</span>
             </button>
 
             {/* Popup Content */}
-            <div className="p-8">
+            <div className="p-6 md:p-8">
 
               {/* Header */}
               <div className="text-center mb-8">
-                <div className="w-16 h-16 mx-auto bg-gradient-to-br from-blue-500 to-cyan-600 rounded-2xl flex items-center justify-center mb-4">
-                  <span className="text-2xl text-white">🔬</span>
+                <div className="w-16 h-16 mx-auto bg-gradient-to-br from-primary to-primary-glow rounded-2xl flex items-center justify-center mb-4 shadow-glow">
+                  <span className="text-2xl">🔬</span>
                 </div>
-                <h2 className="text-2xl font-bold text-gray-900 mb-2">
+                <h2 className="font-playfair text-2xl font-bold text-foreground mb-2">
                   Evaluate Physical Condition
                 </h2>
-                <p className="text-gray-600">
+                <p className="text-muted-foreground">
                   Follow these steps for accurate results
                 </p>
               </div>
@@ -449,31 +402,31 @@ const AnimalTypeClassification = () => {
               {/* Quick Steps Grid */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
                 {quickSteps.map((step, index) => (
-                  <div key={index} className="flex items-center gap-3 p-4 bg-gray-50 rounded-xl">
-                    <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <div key={index} className="flex items-center gap-3 p-4 bg-muted/50 border border-border rounded-xl">
+                    <div className="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center flex-shrink-0">
                       <span className="text-lg">{step.icon}</span>
                     </div>
                     <div>
-                      <div className="font-semibold text-gray-900 text-sm">{step.title}</div>
-                      <div className="text-xs text-gray-600">{step.desc}</div>
+                      <div className="font-semibold text-foreground text-sm">{step.title}</div>
+                      <div className="text-xs text-muted-foreground">{step.desc}</div>
                     </div>
                   </div>
                 ))}
               </div>
 
               {/* Action Buttons */}
-              <div className="flex gap-3">
+              <div className="flex flex-col sm:flex-row gap-3">
                 <Button
                   variant="outline"
                   onClick={handleReadMoreAnalysis}
-                  className="flex-1 py-3 text-black border-black hover:bg-black hover:text-white transition-colors duration-200"
+                  className="flex-1 min-h-12 rounded-xl border-border text-foreground hover:bg-muted hover:scale-105 transition-all duration-300"
                 >
                   Read More
                 </Button>
 
                 <Button
                   onClick={handleContinueAnalysis}
-                  className="flex-1 py-3 bg-blue-600 hover:bg-blue-700 text-white"
+                  className="flex-1 min-h-12 rounded-xl bg-primary hover:bg-primary/90 text-primary-foreground hover:scale-105 transition-all duration-300"
                 >
                   Continue Evaluate Physical
                 </Button>
@@ -485,29 +438,30 @@ const AnimalTypeClassification = () => {
 
       {/* CLASSIFICATION ANALYSIS POPUP MODAL */}
       {showClassificationPopup && (
-        <div className="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center z-50 p-4">
-          <div className="bg-white rounded-2xl max-w-2xl w-full shadow-2xl relative animate-in fade-in zoom-in duration-300">
+        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4">
+          <div className="bg-card border border-border rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-elegant relative animate-in fade-in zoom-in duration-300">
 
             {/* Close Button */}
             <button
               onClick={handleCloseClassificationPopup}
-              className="absolute top-4 right-4 w-8 h-8 bg-gray-100 hover:bg-gray-200 rounded-full flex items-center justify-center text-gray-500 hover:text-gray-700 transition-all duration-200 z-10"
+              aria-label="Close"
+              className="absolute top-4 right-4 w-10 h-10 bg-muted hover:bg-muted/70 rounded-full flex items-center justify-center text-muted-foreground hover:text-foreground transition-all duration-200 hover:scale-105 z-10"
             >
-              <span className="text-lg">×</span>
+              <span className="text-xl leading-none">×</span>
             </button>
 
             {/* Popup Content */}
-            <div className="p-8">
+            <div className="p-6 md:p-8">
 
               {/* Header */}
               <div className="text-center mb-8">
-                <div className="w-16 h-16 mx-auto bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mb-4">
-                  <span className="text-2xl text-white">🎯</span>
+                <div className="w-16 h-16 mx-auto bg-gradient-to-br from-emerald-600 to-green-700 rounded-2xl flex items-center justify-center mb-4 shadow-glow">
+                  <span className="text-2xl">🎯</span>
                 </div>
-                <h2 className="text-2xl font-bold text-gray-900 mb-2">
+                <h2 className="font-playfair text-2xl font-bold text-foreground mb-2">
                   Evaluate Score
                 </h2>
-                <p className="text-gray-600">
+                <p className="text-muted-foreground">
                   Generate standardized scoring for classification.
                 </p>
               </div>
@@ -515,31 +469,31 @@ const AnimalTypeClassification = () => {
               {/* Quick Steps Grid */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
                 {classificationSteps.map((step, index) => (
-                  <div key={index} className="flex items-center gap-3 p-4 bg-gray-50 rounded-xl">
-                    <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <div key={index} className="flex items-center gap-3 p-4 bg-muted/50 border border-border rounded-xl">
+                    <div className="w-10 h-10 rounded-xl bg-accent/10 text-accent flex items-center justify-center flex-shrink-0">
                       <span className="text-lg">{step.icon}</span>
                     </div>
                     <div>
-                      <div className="font-semibold text-gray-900 text-sm">{step.title}</div>
-                      <div className="text-xs text-gray-600">{step.desc}</div>
+                      <div className="font-semibold text-foreground text-sm">{step.title}</div>
+                      <div className="text-xs text-muted-foreground">{step.desc}</div>
                     </div>
                   </div>
                 ))}
               </div>
 
               {/* Action Buttons */}
-              <div className="flex gap-3">
+              <div className="flex flex-col sm:flex-row gap-3">
                 <Button
                   variant="outline"
                   onClick={handleReadMoreClassification}
-                  className="flex-1 py-3 text-black border-black hover:bg-black hover:text-white transition-colors duration-200"
+                  className="flex-1 min-h-12 rounded-xl border-border text-foreground hover:bg-muted hover:scale-105 transition-all duration-300"
                 >
                   Read More
                 </Button>
 
                 <Button
                   onClick={handleContinueClassification}
-                  className="flex-1 py-3 bg-green-600 hover:bg-green-700 text-white"
+                  className="flex-1 min-h-12 rounded-xl bg-primary hover:bg-primary/90 text-primary-foreground hover:scale-105 transition-all duration-300"
                 >
                   Continue Evaluate Score
                 </Button>

@@ -2,17 +2,19 @@ import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { 
-  Heart, 
-  AlertTriangle, 
-  Phone, 
-  Thermometer, 
-  Stethoscope, 
-  Pill, 
-  Eye, 
-  Activity, 
-  Clock, 
-  CheckCircle, 
+import ScrollReveal from "@/components/ScrollReveal";
+import AnimatedCounter from "@/components/AnimatedCounter";
+import {
+  Heart,
+  AlertTriangle,
+  Phone,
+  Thermometer,
+  Stethoscope,
+  Pill,
+  Eye,
+  Activity,
+  Clock,
+  CheckCircle,
   XCircle,
   Search,
   Download,
@@ -23,12 +25,8 @@ import {
   Award,
   TrendingUp,
   Users,
-  Calendar,
-  MapPin,
   ChevronRight,
-  PlayCircle,
   FileText,
-  Bookmark,
   Share2
 } from 'lucide-react';
 import cowImage from "@/assets/animals/cattle.jpg";
@@ -70,7 +68,7 @@ const MedicalSupport = () => {
       name: "Cow",
 
       image: cowImage,
-      gradient: 'from-blue-500 to-purple-600',
+      gradient: 'from-emerald-600 to-green-700',
       description: "Dairy and beef cattle are essential livestock providing milk, meat, and leather products.",
       characteristics: ["Herbivorous", "Social animals", "Four-chambered stomach", "Average milk production: 6-8 gallons/day"],
       lifespan: "18-22 years",
@@ -143,7 +141,7 @@ const MedicalSupport = () => {
       name: "Buffalo",
 
       image: buffaloImage,
-      gradient: 'from-green-500 to-teal-600',
+      gradient: 'from-green-600 to-teal-700',
       description: "Water buffalo are important for milk production and agricultural work in many tropical regions.",
       characteristics: ["Excellent swimmers", "Heat tolerant", "High milk fat content", "Strong work animals"],
       lifespan: "20-25 years",
@@ -225,7 +223,7 @@ const MedicalSupport = () => {
     {
       title: "Emergency Assessment",
       icon: <Zap className="h-6 w-6" />,
-      color: "from-red-500 to-pink-500",
+      color: "from-red-500 to-red-600",
       steps: [
         "Check vital signs (temperature, breathing, pulse)",
         "Assess consciousness level",
@@ -251,7 +249,7 @@ const MedicalSupport = () => {
     {
       title: "First Aid Measures",
       icon: <Shield className="h-6 w-6" />,
-      color: "from-blue-500 to-indigo-500",
+      color: "from-emerald-600 to-green-700",
       steps: [
         "Keep animal calm and comfortable",
         "Provide fresh water if able to drink",
@@ -264,45 +262,41 @@ const MedicalSupport = () => {
   ];
 
   const stats = [
-    { icon: <Users className="h-8 w-8" />, value: "50,000+", label: "Animals Helped", color: "text-blue-600" },
-    { icon: <Award className="h-8 w-8" />, value: "99%", label: "Success Rate", color: "text-green-600" },
-    { icon: <Clock className="h-8 w-8" />, value: "24/7", label: "Support Available", color: "text-purple-600" },
-    { icon: <Star className="h-8 w-8" />, value: "4.9", label: "User Rating", color: "text-yellow-600" },
+    { icon: <Users className="h-8 w-8" />, value: <AnimatedCounter end={50} suffix="K+" />, label: "Animals Helped" },
+    { icon: <Award className="h-8 w-8" />, value: <AnimatedCounter end={99} suffix="%" />, label: "Success Rate" },
+    { icon: <Clock className="h-8 w-8" />, value: <span>24/7</span>, label: "Support Available" },
+    { icon: <Star className="h-8 w-8" />, value: <AnimatedCounter end={4.9} decimals={1} />, label: "User Rating" },
   ];
 
   const quickTips = [
     {
       icon: <Eye className="h-6 w-6" />,
       title: "Daily Observation",
-      tip: "Monitor your animals daily for changes in behavior, appetite, or physical appearance.",
-      color: "from-blue-500 to-cyan-500"
+      tip: "Watch your animals every day. Look for changes in behavior, appetite, or physical appearance."
     },
     {
       icon: <Thermometer className="h-6 w-6" />,
       title: "Temperature Check",
-      tip: "Learn to take your animal's temperature - it's the most important vital sign.",
-      color: "from-green-500 to-emerald-500"
+      tip: "Learn to take your animal's temperature. It is the most important vital sign."
     },
     {
       icon: <Phone className="h-6 w-6" />,
       title: "Vet Contact Ready",
-      tip: "Keep your veterinarian's contact information easily accessible at all times.",
-      color: "from-purple-500 to-violet-500"
+      tip: "Keep your veterinarian's phone number easy to find at all times."
     },
     {
       icon: <FileText className="h-6 w-6" />,
       title: "Record Keeping",
-      tip: "Maintain detailed health records for each animal including treatments and vaccinations.",
-      color: "from-orange-500 to-red-500"
+      tip: "Keep health records for each animal, including treatments and vaccinations."
     }
   ];
 
   const getSeverityColor = (severity: string) => {
     switch (severity) {
-      case 'high': return 'text-red-600 bg-red-100 border-red-200';
-      case 'medium': return 'text-yellow-600 bg-yellow-100 border-yellow-200';
-      case 'low': return 'text-green-600 bg-green-100 border-green-200';
-      default: return 'text-gray-600 bg-gray-100 border-gray-200';
+      case 'high': return 'text-red-700 bg-red-50 border-red-200';
+      case 'medium': return 'text-amber-700 bg-amber-50 border-amber-200';
+      case 'low': return 'text-emerald-700 bg-emerald-50 border-emerald-200';
+      default: return 'text-muted-foreground bg-muted border-border';
     }
   };
 
@@ -316,441 +310,533 @@ const MedicalSupport = () => {
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-background text-foreground">
       <Navbar />
-      
-      {/* Enhanced Hero Section */}
-      <div className="relative pt-20 pb-20 bg-gradient-to-br from-green-800 via-emerald-700 to-green-900 text-white overflow-hidden">
-        <div className="container mx-auto px-6 relative z-10">
+
+      {/* Hero Section */}
+      <div className="relative pt-20 bg-gradient-to-br from-emerald-900 via-green-800 to-teal-900 text-white overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
+          <div className="absolute top-16 left-10 w-40 h-40 bg-white/5 rounded-full animate-float"></div>
+          <div className="absolute bottom-10 right-16 w-32 h-32 bg-amber-300/10 rounded-full animate-float" style={{ animationDelay: '1.2s' }}></div>
+          <div className="absolute top-1/3 right-1/4 w-24 h-24 bg-emerald-300/10 rounded-full animate-pulse-soft"></div>
+        </div>
+
+        <div className="container mx-auto px-6 relative z-10 section-padding">
           <div className="text-center">
-            <div className="flex justify-center items-center mb-8">
-              <div className="bg-white bg-opacity-20 p-6 rounded-full backdrop-blur-sm animate-pulse">
-                <Heart className="h-16 w-16 text-red-300" />
-              </div>
-            </div>
-            <h1 className="text-6xl md:text-7xl font-bold text-white mb-8 leading-tight">
-              Animal Medical
-              <span className="bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent"> Support</span>
-            </h1>
-            <p className="text-2xl text-blue-100 max-w-4xl mx-auto mb-12 leading-relaxed">
-              Your comprehensive digital veterinary companion. Get instant access to expert medical guidance, symptoms analysis, and emergency protocols for cattle health management with AI-powered insights.
-            </p>
-            
-            {/* Enhanced Stats */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16">
-              {stats.map((stat, index) => (
-                <div key={index} className="group bg-white bg-opacity-15 backdrop-blur-sm rounded-2xl p-8 border border-white border-opacity-30 hover:bg-opacity-25 transition-all duration-300 transform hover:scale-105">
-                  <div className={`${stat.color} mb-4 flex justify-center group-hover:animate-bounce`}>
-                    {stat.icon}
-                  </div>
-                  <div className="text-3xl font-bold text-white mb-2">{stat.value}</div>
-                  <div className="text-blue-200 text-base">{stat.label}</div>
+            <ScrollReveal variant="zoom">
+              <div className="flex justify-center items-center mb-8">
+                <div className="bg-white/15 p-6 rounded-full backdrop-blur-sm animate-pulse-soft">
+                  <Heart className="h-14 w-14 text-amber-300" />
                 </div>
+              </div>
+            </ScrollReveal>
+
+            <ScrollReveal>
+              <h1 className="font-playfair text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+                Animal Medical
+                <span className="bg-gradient-to-r from-amber-300 to-yellow-200 bg-clip-text text-transparent"> Support</span>
+              </h1>
+            </ScrollReveal>
+
+            <ScrollReveal delay={100}>
+              <p className="text-lg md:text-xl text-emerald-100 max-w-3xl mx-auto mb-12 leading-relaxed">
+                Your trusted health guide for cows and buffalo. Find symptoms, causes, treatments, and emergency steps — all in one place.
+              </p>
+            </ScrollReveal>
+
+            {/* Stats */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mt-8">
+              {stats.map((stat, index) => (
+                <ScrollReveal key={index} delay={index * 100}>
+                  <div className="group bg-white/10 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-white/20 hover:bg-white/20 transition-all duration-300 ease-smooth hover:-translate-y-1 h-full">
+                    <div className="text-amber-300 mb-3 flex justify-center">
+                      {stat.icon}
+                    </div>
+                    <div className="text-2xl md:text-3xl font-bold text-white mb-1">{stat.value}</div>
+                    <div className="text-emerald-100 text-sm md:text-base">{stat.label}</div>
+                  </div>
+                </ScrollReveal>
               ))}
             </div>
           </div>
         </div>
       </div>
 
-      <div className="bg-gradient-to-br from-gray-50 to-blue-50 py-20">
+      <div className="bg-background">
         <div className="container mx-auto px-6">
-          {/* Enhanced Animal Selection */}
-          <div className="bg-white rounded-3xl shadow-2xl p-10 mb-16 border border-gray-100">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold text-gray-800 mb-4 flex items-center justify-center">
-                <Stethoscope className="h-10 w-10 mr-4 text-blue-600" />
-                Choose Your Animal
-              </h2>
-              <p className="text-xl text-gray-600">Select the type of animal you need medical support for</p>
-            </div>
-            
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-              {animalData.map((animal) => (
-                <div
-                  key={animal.id}
-                  onClick={() => {
-                    setSelectedAnimal(animal.id);
-                    setSelectedCondition('');
-                    setSearchTerm('');
-                  }}
-                  className={`group relative cursor-pointer rounded-3xl transition-all duration-500 transform hover:scale-105 ${
-                    selectedAnimal === animal.id
-                      ? 'ring-4 ring-blue-500 ring-opacity-50 shadow-2xl'
-                      : 'shadow-xl hover:shadow-2xl'
-                  }`}
-                >
-                  <div className={`absolute inset-0 bg-gradient-to-r ${animal.gradient} rounded-3xl opacity-20 group-hover:opacity-30 transition-opacity`}></div>
-                  
-                  <div className="relative bg-white rounded-3xl p-8 border border-gray-200">
-                    {/* Animal Image */}
-                    <div className="relative mb-6 rounded-2xl overflow-hidden shadow-lg">
-                      <img 
-                        src={animal.image} 
-                        alt={animal.name}
-                        loading="lazy"
-                        className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
-                      />
-                      {selectedAnimal === animal.id && (
-                        <div className="absolute top-4 right-4 bg-blue-500 text-white rounded-full p-2">
-                          <CheckCircle className="h-6 w-6" />
-                        </div>
-                      )}
-                    </div>
 
-                    <div className="text-center">
-                      <h3 className="text-3xl font-bold text-gray-800 mb-3">{animal.name}</h3>
-                      <p className="text-gray-600 mb-4 leading-relaxed">{animal.description}</p>
-                      
-                      <div className="grid grid-cols-2 gap-4 mb-6 text-sm">
-                        <div className="bg-gray-50 p-3 rounded-lg">
-                          <div className="font-semibold text-gray-800">Lifespan</div>
-                          <div className="text-gray-600">{animal.lifespan}</div>
-                        </div>
-                        <div className="bg-gray-50 p-3 rounded-lg">
-                          <div className="font-semibold text-gray-800">Weight</div>
-                          <div className="text-gray-600">{animal.weight}</div>
-                        </div>
+          {/* Animal Selection */}
+          <section className="section-padding">
+            <ScrollReveal>
+              <div className="text-center mb-12">
+                <span className="section-badge">
+                  <Stethoscope className="h-4 w-4 mr-2" />
+                  Step 1
+                </span>
+                <h2 className="font-playfair text-3xl md:text-5xl font-bold mt-4 mb-4">
+                  Choose Your <span className="gradient-text">Animal</span>
+                </h2>
+                <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                  Tap the animal you need help with.
+                </p>
+              </div>
+            </ScrollReveal>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+              {animalData.map((animal, index) => (
+                <ScrollReveal key={animal.id} variant={index === 0 ? "slide-left" : "slide-right"} delay={index * 100} className="h-full">
+                  <div
+                    onClick={() => {
+                      setSelectedAnimal(animal.id);
+                      setSelectedCondition('');
+                      setSearchTerm('');
+                    }}
+                    role="button"
+                    tabIndex={0}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        setSelectedAnimal(animal.id);
+                        setSelectedCondition('');
+                        setSearchTerm('');
+                      }
+                    }}
+                    className={`group relative h-full cursor-pointer rounded-2xl border bg-card shadow-card card-lift transition-all duration-300 ease-smooth ${
+                      selectedAnimal === animal.id
+                        ? 'border-primary ring-2 ring-primary/40 shadow-elegant'
+                        : 'border-border hover:border-primary/40'
+                    }`}
+                  >
+                    <div className="p-6 md:p-8">
+                      {/* Animal Image */}
+                      <div className="relative mb-6 rounded-xl overflow-hidden shadow-card">
+                        <img
+                          src={animal.image}
+                          alt={animal.name}
+                          loading="lazy"
+                          className="w-full h-56 md:h-64 object-cover group-hover:scale-110 transition-transform duration-500 ease-smooth"
+                        />
+                        {selectedAnimal === animal.id && (
+                          <div className="absolute top-4 right-4 bg-primary text-primary-foreground rounded-full p-2 shadow-glow animate-fade-up">
+                            <CheckCircle className="h-6 w-6" />
+                          </div>
+                        )}
                       </div>
 
-                      <div className="mb-6">
-                        <h4 className="font-semibold text-gray-800 mb-2">Key Characteristics</h4>
-                        <div className="flex flex-wrap gap-2">
-                          {animal.characteristics.map((char, index) => (
-                            <span key={index} className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">
-                              {char}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
+                      <div className="text-center">
+                        <h3 className="font-playfair text-2xl md:text-3xl font-bold mb-3">{animal.name}</h3>
+                        <p className="text-muted-foreground mb-5 leading-relaxed">{animal.description}</p>
 
-                      <div className="flex items-center justify-between">
-                        <div className="flex items-center space-x-2 text-gray-600">
-                          <BookOpen className="h-5 w-5" />
-                          <span>{animal.conditions.length} conditions covered</span>
+                        <div className="grid grid-cols-2 gap-4 mb-6 text-sm">
+                          <div className="bg-muted p-3 rounded-xl">
+                            <div className="font-semibold">Lifespan</div>
+                            <div className="text-muted-foreground">{animal.lifespan}</div>
+                          </div>
+                          <div className="bg-muted p-3 rounded-xl">
+                            <div className="font-semibold">Weight</div>
+                            <div className="text-muted-foreground">{animal.weight}</div>
+                          </div>
                         </div>
-                        <span className={`px-6 py-3 rounded-full text-white font-medium bg-gradient-to-r ${animal.gradient} shadow-lg group-hover:shadow-xl transition-shadow flex items-center space-x-2`}>
-                          <span>Select {animal.name}</span>
-                          <ChevronRight className="h-4 w-4" />
-                        </span>
+
+                        <div className="mb-6">
+                          <h4 className="font-semibold mb-2">Key Characteristics</h4>
+                          <div className="flex flex-wrap justify-center gap-2">
+                            {animal.characteristics.map((char, charIndex) => (
+                              <span key={charIndex} className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">
+                                {char}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+
+                        <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+                          <div className="flex items-center space-x-2 text-muted-foreground">
+                            <BookOpen className="h-5 w-5" />
+                            <span>{animal.conditions.length} conditions covered</span>
+                          </div>
+                          <span className={`min-h-12 px-6 py-3 rounded-full text-white font-medium bg-gradient-to-r ${animal.gradient} shadow-card group-hover:shadow-elegant transition-shadow flex items-center space-x-2`}>
+                            <span>Select {animal.name}</span>
+                            <ChevronRight className="h-4 w-4" />
+                          </span>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
+                </ScrollReveal>
               ))}
             </div>
-          </div>
+          </section>
 
           {/* Quick Tips Section */}
-          <div className="mb-16">
-            <div className="text-center mb-10">
-              <h2 className="text-3xl font-bold text-gray-800 mb-4">Quick Health Tips</h2>
-              <p className="text-gray-600">Essential practices for maintaining animal health</p>
-            </div>
+          <section className="pb-16 md:pb-24">
+            <ScrollReveal>
+              <div className="text-center mb-12">
+                <span className="section-badge">
+                  <Heart className="h-4 w-4 mr-2" />
+                  Daily Care
+                </span>
+                <h2 className="font-playfair text-3xl md:text-5xl font-bold mt-4 mb-4">
+                  Quick <span className="gradient-text">Health Tips</span>
+                </h2>
+                <p className="text-lg text-muted-foreground">Simple habits that keep your animals healthy.</p>
+              </div>
+            </ScrollReveal>
+
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {quickTips.map((tip, index) => (
-                <div key={index} className="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100">
-                  <div className={`bg-gradient-to-r ${tip.color} p-3 rounded-xl mb-4 inline-block group-hover:scale-110 transition-transform`}>
-                    <div className="text-white">{tip.icon}</div>
+                <ScrollReveal key={index} delay={index * 100} className="h-full">
+                  <div className="group h-full rounded-2xl border border-border bg-card shadow-card card-lift p-6">
+                    <div className="rounded-xl bg-primary/10 text-primary p-3 mb-4 inline-block group-hover:scale-110 transition-transform ease-smooth">
+                      {tip.icon}
+                    </div>
+                    <h3 className="font-bold text-lg mb-2">{tip.title}</h3>
+                    <p className="text-muted-foreground text-sm leading-relaxed">{tip.tip}</p>
                   </div>
-                  <h3 className="font-bold text-lg text-gray-800 mb-2">{tip.title}</h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">{tip.tip}</p>
-                </div>
+                </ScrollReveal>
               ))}
             </div>
-          </div>
+          </section>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {/* Enhanced Conditions List */}
-            <div className="lg:col-span-1">
-              <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100 sticky top-8">
-                <div className="flex items-center mb-8">
-                  <div className={`bg-gradient-to-r ${currentAnimal.gradient} p-4 rounded-xl mr-4`}>
-                    <BookOpen className="h-7 w-7 text-white" />
-                  </div>
-                  <div>
-                    <h2 className="text-2xl font-bold text-gray-800">Medical Conditions</h2>
-                    <p className="text-gray-600">For {currentAnimal.name}</p>
-                  </div>
-                </div>
-                
-                {/* Enhanced Search */}
-                <div className="relative mb-8">
-                  <Search className="h-5 w-5 absolute left-4 top-4 text-gray-400" />
-                  <input
-                    type="text"
-                    placeholder="Search conditions or symptoms..."
-                    value={searchTerm}
-                    onChange={(e) => setSearchTerm(e.target.value)}
-                    className="w-full pl-12 pr-4 py-4 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-gray-50 transition-colors text-gray-700 placeholder-gray-500"
-                  />
-                </div>
-
-                <div className="space-y-4 max-h-96 overflow-y-auto">
-                  {filteredConditions.map((condition) => (
-                    <button
-                      key={condition.id}
-                      onClick={() => setSelectedCondition(condition.id)}
-                      className={`w-full text-left p-5 border-2 rounded-xl transition-all duration-300 group ${
-                        selectedCondition === condition.id
-                          ? 'border-blue-500 bg-blue-50 shadow-lg transform scale-105'
-                          : 'border-gray-100 hover:border-blue-300 hover:bg-blue-25 hover:shadow-md'
-                      }`}
-                    >
-                      <div className="flex items-center justify-between mb-3">
-                        <h3 className="font-bold text-gray-800 group-hover:text-blue-800 transition-colors text-lg">
-                          {condition.name}
-                        </h3>
-                        <div className={`px-3 py-1 rounded-full text-xs flex items-center space-x-1 border-2 ${getSeverityColor(condition.severity)}`}>
-                          {getSeverityIcon(condition.severity)}
-                          <span className="capitalize font-bold">{condition.severity}</span>
-                        </div>
-                      </div>
-                      {condition.emergencyContact && (
-                        <div className="flex items-center mb-2">
-                          <Phone className="h-4 w-4 text-red-500 mr-2" />
-                          <span className="text-sm text-red-600 font-semibold">Emergency condition</span>
-                        </div>
-                      )}
-                      <p className="text-gray-600 text-sm line-clamp-2">{condition.description}</p>
-                    </button>
-                  ))}
-                </div>
+          {/* Conditions Browser */}
+          <section className="pb-16 md:pb-24">
+            <ScrollReveal>
+              <div className="text-center mb-12">
+                <span className="section-badge">
+                  <BookOpen className="h-4 w-4 mr-2" />
+                  Step 2
+                </span>
+                <h2 className="font-playfair text-3xl md:text-5xl font-bold mt-4 mb-4">
+                  Find the <span className="gradient-text">Condition</span>
+                </h2>
+                <p className="text-lg text-muted-foreground">Search by name or symptom, then tap a condition to learn more.</p>
               </div>
-            </div>
+            </ScrollReveal>
 
-            {/* Enhanced Condition Details */}
-            <div className="lg:col-span-2">
-              {currentCondition ? (
-                <div className="space-y-6">
-                  {/* Main Condition Card */}
-                  <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
-                    <div className="flex items-center justify-between mb-8">
-                      <div className="flex items-center">
-                        <div className="bg-gradient-to-r from-blue-500 to-purple-600 p-4 rounded-xl mr-5">
-                          <Activity className="h-8 w-8 text-white" />
-                        </div>
-                        <div>
-                          <h2 className="text-4xl font-bold text-gray-800 mb-1">{currentCondition.name}</h2>
-                          <p className="text-gray-600 text-lg">{currentCondition.description}</p>
-                        </div>
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+              {/* Conditions List */}
+              <div className="lg:col-span-1">
+                <ScrollReveal variant="slide-left">
+                  <div className="rounded-2xl border border-border bg-card shadow-card p-6 md:p-8 lg:sticky lg:top-24">
+                    <div className="flex items-center mb-6">
+                      <div className={`bg-gradient-to-r ${currentAnimal.gradient} p-3 rounded-xl mr-4`}>
+                        <BookOpen className="h-6 w-6 text-white" />
                       </div>
-                      <div className={`px-5 py-3 rounded-xl flex items-center space-x-3 border-2 ${getSeverityColor(currentCondition.severity)}`}>
-                        {getSeverityIcon(currentCondition.severity)}
-                          <span className="text-base font-bold capitalize">{currentCondition.severity} Risk</span>
+                      <div>
+                        <h3 className="text-xl font-bold">Medical Conditions</h3>
+                        <p className="text-muted-foreground text-sm">For {currentAnimal.name}</p>
                       </div>
                     </div>
 
-                    {/* Fun Fact */}
-                    <div className="bg-gradient-to-r from-purple-50 to-pink-50 border border-purple-200 p-6 rounded-xl mb-8">
-                      <div className="flex items-start">
-                        <div className="bg-purple-500 p-2 rounded-lg mr-4 flex-shrink-0">
-                          <Star className="h-5 w-5 text-white" />
-                        </div>
-                        <div>
-                          <h4 className="font-bold text-purple-800 mb-1">Did You Know?</h4>
-                          <p className="text-purple-700">{currentCondition.funFact}</p>
-                        </div>
-                      </div>
+                    {/* Search */}
+                    <div className="relative mb-6">
+                      <Search className="h-5 w-5 absolute left-4 top-1/2 -translate-y-1/2 text-muted-foreground" />
+                      <input
+                        type="text"
+                        placeholder="Search conditions or symptoms..."
+                        value={searchTerm}
+                        onChange={(e) => setSearchTerm(e.target.value)}
+                        className="w-full min-h-12 pl-12 pr-4 py-3 border border-border rounded-xl bg-muted/50 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
+                      />
                     </div>
 
-                    {currentCondition.emergencyContact && (
-                      <div className="bg-gradient-to-r from-red-50 to-pink-50 border-2 border-red-200 p-6 rounded-xl mb-8">
-                        <div className="flex items-center text-red-800">
-                          <div className="bg-red-500 p-3 rounded-lg mr-4">
-                            <Phone className="h-6 w-6 text-white" />
+                    <div className="space-y-3 max-h-96 overflow-y-auto pr-1">
+                      {filteredConditions.map((condition) => (
+                        <button
+                          key={condition.id}
+                          onClick={() => setSelectedCondition(condition.id)}
+                          className={`w-full min-h-12 text-left p-4 border-2 rounded-xl transition-all duration-300 ease-smooth group ${
+                            selectedCondition === condition.id
+                              ? 'border-primary bg-primary/5 shadow-card'
+                              : 'border-border hover:border-primary/50 hover:bg-muted/50 hover:shadow-card'
+                          }`}
+                        >
+                          <div className="flex items-center justify-between gap-2 mb-2">
+                            <h4 className="font-bold group-hover:text-primary transition-colors">
+                              {condition.name}
+                            </h4>
+                            <div className={`px-2.5 py-1 rounded-full text-xs flex items-center space-x-1 border shrink-0 ${getSeverityColor(condition.severity)}`}>
+                              {getSeverityIcon(condition.severity)}
+                              <span className="capitalize font-bold">{condition.severity}</span>
+                            </div>
+                          </div>
+                          {condition.emergencyContact && (
+                            <div className="flex items-center mb-1">
+                              <Phone className="h-4 w-4 text-red-600 mr-2" />
+                              <span className="text-sm text-red-600 font-semibold">Emergency condition</span>
+                            </div>
+                          )}
+                          <p className="text-muted-foreground text-sm line-clamp-2">{condition.description}</p>
+                        </button>
+                      ))}
+                      {filteredConditions.length === 0 && (
+                        <p className="text-muted-foreground text-sm text-center py-6">No condition found. Try another word.</p>
+                      )}
+                    </div>
+                  </div>
+                </ScrollReveal>
+              </div>
+
+              {/* Condition Details */}
+              <div className="lg:col-span-2">
+                {currentCondition ? (
+                  <div key={currentCondition.id} className="animate-fade-up space-y-6">
+                    {/* Main Condition Card */}
+                    <div className="rounded-2xl border border-border bg-card shadow-card p-6 md:p-8">
+                      <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-8">
+                        <div className="flex items-center">
+                          <div className="bg-gradient-to-r from-emerald-600 to-green-700 p-4 rounded-xl mr-4 shrink-0">
+                            <Activity className="h-7 w-7 text-white" />
                           </div>
                           <div>
-                            <span className="font-bold text-xl">⚠️ Emergency Condition</span>
-                            <p className="text-red-700 mt-1">Contact veterinarian immediately for proper diagnosis and treatment</p>
+                            <h3 className="font-playfair text-2xl md:text-4xl font-bold mb-1">{currentCondition.name}</h3>
+                            <p className="text-muted-foreground md:text-lg">{currentCondition.description}</p>
+                          </div>
+                        </div>
+                        <div className={`px-4 py-2.5 rounded-xl flex items-center space-x-2 border-2 shrink-0 self-start ${getSeverityColor(currentCondition.severity)}`}>
+                          {getSeverityIcon(currentCondition.severity)}
+                          <span className="font-bold capitalize">{currentCondition.severity} Risk</span>
+                        </div>
+                      </div>
+
+                      {/* Fun Fact */}
+                      <div className="bg-accent/10 border border-accent/30 p-5 rounded-xl mb-8">
+                        <div className="flex items-start">
+                          <div className="rounded-xl bg-accent text-accent-foreground p-2 mr-4 flex-shrink-0">
+                            <Star className="h-5 w-5" />
+                          </div>
+                          <div>
+                            <h4 className="font-bold mb-1">Did You Know?</h4>
+                            <p className="text-muted-foreground">{currentCondition.funFact}</p>
                           </div>
                         </div>
                       </div>
-                    )}
 
-                    {/* Action Buttons */}
-                    <div className="flex flex-wrap gap-4 mb-8">
-                      <Button className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-6 py-3 rounded-xl shadow-lg hover:shadow-xl transition-all">
-                        <Download className="h-5 w-5 mr-2" />
-                        Download PDF Guide
-                      </Button>
-                      <Button variant="outline" className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-6 py-3 rounded-xl shadow-lg hover:shadow-xl transition-all">
-                        <Share2 className="h-5 w-5 mr-2" />
-                        Share Information
-                      </Button>
-                    </div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                      {/* Enhanced Symptoms */}
-                      <div className="bg-gradient-to-br from-orange-50 to-red-50 p-8 rounded-2xl border border-orange-200 hover:shadow-lg transition-shadow">
-                        <h3 className="text-2xl font-bold mb-6 flex items-center text-orange-800">
-                          <Eye className="h-7 w-7 mr-3 text-orange-600" />
-                          Symptoms to Watch
-                        </h3>
-                        <ul className="space-y-4">
-                          {currentCondition.symptoms.map((symptom, index) => (
-                            <li key={index} className="flex items-start group">
-                              <div className="h-3 w-3 bg-orange-500 rounded-full mt-2 mr-4 flex-shrink-0 group-hover:scale-125 transition-transform"></div>
-                              <span className="text-gray-700 leading-relaxed">{symptom}</span>
-                            </li>
-                          ))}
-                        </ul>
+                      {currentCondition.emergencyContact && (
+                        <div className="bg-red-50 border-2 border-red-200 p-5 rounded-xl mb-8 animate-pulse-soft">
+                          <div className="flex items-center text-red-800">
+                            <div className="bg-red-600 p-3 rounded-xl mr-4 shrink-0">
+                              <Phone className="h-6 w-6 text-white" />
+                            </div>
+                            <div>
+                              <span className="font-bold text-lg md:text-xl">Emergency Condition</span>
+                              <p className="text-red-700 mt-1">Call your veterinarian now for proper diagnosis and treatment.</p>
+                            </div>
+                          </div>
+                        </div>
+                      )}
+
+                      {/* Action Buttons */}
+                      <div className="flex flex-wrap gap-4 mb-8">
+                        <Button className="min-h-12 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-xl shadow-card hover:shadow-elegant transition-all">
+                          <Download className="h-5 w-5 mr-2" />
+                          Download PDF Guide
+                        </Button>
+                        <Button variant="outline" className="min-h-12 border-primary/40 text-primary hover:bg-primary/10 px-6 py-3 rounded-xl shadow-card hover:shadow-elegant transition-all">
+                          <Share2 className="h-5 w-5 mr-2" />
+                          Share Information
+                        </Button>
                       </div>
 
-                      {/* Enhanced Causes */}
-                      <div className="bg-gradient-to-br from-yellow-50 to-orange-50 p-8 rounded-2xl border border-yellow-200 hover:shadow-lg transition-shadow">
-                        <h3 className="text-2xl font-bold mb-6 flex items-center text-yellow-800">
-                          <AlertTriangle className="h-7 w-7 mr-3 text-yellow-600" />
-                          Common Causes
-                        </h3>
-                        <ul className="space-y-4">
-                          {currentCondition.causes.map((cause, index) => (
-                            <li key={index} className="flex items-start group">
-                              <div className="h-3 w-3 bg-yellow-500 rounded-full mt-2 mr-4 flex-shrink-0 group-hover:scale-125 transition-transform"></div>
-                              <span className="text-gray-700 leading-relaxed">{cause}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        {/* Symptoms */}
+                        <ScrollReveal delay={0} className="h-full">
+                          <div className="h-full bg-red-50 p-6 md:p-8 rounded-2xl border border-red-200 hover:shadow-card transition-shadow">
+                            <h4 className="text-xl md:text-2xl font-bold mb-5 flex items-center text-red-800">
+                              <Eye className="h-6 w-6 mr-3 text-red-600" />
+                              Symptoms to Watch
+                            </h4>
+                            <ul className="space-y-3">
+                              {currentCondition.symptoms.map((symptom, index) => (
+                                <li key={index} className="flex items-start group">
+                                  <div className="h-2.5 w-2.5 bg-red-500 rounded-full mt-2 mr-3 flex-shrink-0 group-hover:scale-125 transition-transform"></div>
+                                  <span className="text-foreground/80 leading-relaxed">{symptom}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        </ScrollReveal>
 
-                      {/* Enhanced Treatment */}
-                      <div className="bg-gradient-to-br from-blue-50 to-indigo-50 p-8 rounded-2xl border border-blue-200 hover:shadow-lg transition-shadow">
-                        <h3 className="text-2xl font-bold mb-6 flex items-center text-blue-800">
-                          <Pill className="h-7 w-7 mr-3 text-blue-600" />
-                          Treatment Options
-                        </h3>
-                        <ul className="space-y-4">
-                          {currentCondition.treatment.map((treatment, index) => (
-                            <li key={index} className="flex items-start group">
-                              <div className="h-3 w-3 bg-blue-500 rounded-full mt-2 mr-4 flex-shrink-0 group-hover:scale-125 transition-transform"></div>
-                              <span className="text-gray-700 leading-relaxed">{treatment}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
+                        {/* Causes */}
+                        <ScrollReveal delay={100} className="h-full">
+                          <div className="h-full bg-amber-50 p-6 md:p-8 rounded-2xl border border-amber-200 hover:shadow-card transition-shadow">
+                            <h4 className="text-xl md:text-2xl font-bold mb-5 flex items-center text-amber-800">
+                              <AlertTriangle className="h-6 w-6 mr-3 text-amber-600" />
+                              Common Causes
+                            </h4>
+                            <ul className="space-y-3">
+                              {currentCondition.causes.map((cause, index) => (
+                                <li key={index} className="flex items-start group">
+                                  <div className="h-2.5 w-2.5 bg-amber-500 rounded-full mt-2 mr-3 flex-shrink-0 group-hover:scale-125 transition-transform"></div>
+                                  <span className="text-foreground/80 leading-relaxed">{cause}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        </ScrollReveal>
 
-                      {/* Enhanced Prevention */}
-                      <div className="bg-gradient-to-br from-green-50 to-teal-50 p-8 rounded-2xl border border-green-200 hover:shadow-lg transition-shadow">
-                        <h3 className="text-2xl font-bold mb-6 flex items-center text-green-800">
-                          <Shield className="h-7 w-7 mr-3 text-green-600" />
-                          Prevention Tips
-                        </h3>
-                        <ul className="space-y-4">
-                          {currentCondition.prevention.map((prevention, index) => (
-                            <li key={index} className="flex items-start group">
-                              <div className="h-3 w-3 bg-green-500 rounded-full mt-2 mr-4 flex-shrink-0 group-hover:scale-125 transition-transform"></div>
-                              <span className="text-gray-700 leading-relaxed">{prevention}</span>
-                            </li>
-                          ))}
-                        </ul>
+                        {/* Treatment */}
+                        <ScrollReveal delay={200} className="h-full">
+                          <div className="h-full bg-emerald-50 p-6 md:p-8 rounded-2xl border border-emerald-200 hover:shadow-card transition-shadow">
+                            <h4 className="text-xl md:text-2xl font-bold mb-5 flex items-center text-emerald-800">
+                              <Pill className="h-6 w-6 mr-3 text-emerald-600" />
+                              Treatment Options
+                            </h4>
+                            <ul className="space-y-3">
+                              {currentCondition.treatment.map((treatment, index) => (
+                                <li key={index} className="flex items-start group">
+                                  <div className="h-2.5 w-2.5 bg-emerald-500 rounded-full mt-2 mr-3 flex-shrink-0 group-hover:scale-125 transition-transform"></div>
+                                  <span className="text-foreground/80 leading-relaxed">{treatment}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        </ScrollReveal>
+
+                        {/* Prevention */}
+                        <ScrollReveal delay={300} className="h-full">
+                          <div className="h-full bg-green-50 p-6 md:p-8 rounded-2xl border border-green-200 hover:shadow-card transition-shadow">
+                            <h4 className="text-xl md:text-2xl font-bold mb-5 flex items-center text-green-800">
+                              <Shield className="h-6 w-6 mr-3 text-green-600" />
+                              Prevention Tips
+                            </h4>
+                            <ul className="space-y-3">
+                              {currentCondition.prevention.map((prevention, index) => (
+                                <li key={index} className="flex items-start group">
+                                  <div className="h-2.5 w-2.5 bg-green-600 rounded-full mt-2 mr-3 flex-shrink-0 group-hover:scale-125 transition-transform"></div>
+                                  <span className="text-foreground/80 leading-relaxed">{prevention}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        </ScrollReveal>
                       </div>
                     </div>
                   </div>
-                </div>
-              ) : (
-                <div className="bg-white rounded-2xl shadow-xl p-16 text-center border border-gray-100">
-                  <div className="bg-gradient-to-br from-blue-100 to-purple-100 p-12 rounded-3xl mb-8 inline-block">
-                    <Stethoscope className="h-24 w-24 text-blue-600" />
-                  </div>
-                  <h3 className="text-3xl font-bold text-gray-800 mb-4">Select a Medical Condition</h3>
-                  <p className="text-xl text-gray-600 max-w-lg mx-auto leading-relaxed">Choose a medical condition from the list to view comprehensive information about symptoms, causes, treatment options, and prevention strategies.</p>
-                </div>
-              )}
-            </div>
-          </div>
-
-          {/* Enhanced Emergency Procedures */}
-          <div className="mt-20 bg-white rounded-3xl shadow-2xl p-12 border border-gray-100">
-            <div className="text-center mb-16">
-              <div className="bg-gradient-to-r from-red-500 to-pink-500 p-6 rounded-2xl inline-block mb-6">
-                <AlertTriangle className="h-10 w-10 text-white" />
+                ) : (
+                  <ScrollReveal variant="fade-in">
+                    <div className="rounded-2xl border border-border bg-card shadow-card p-10 md:p-16 text-center">
+                      <div className="bg-primary/10 p-10 rounded-2xl mb-8 inline-block animate-float">
+                        <Stethoscope className="h-20 w-20 text-primary" />
+                      </div>
+                      <h3 className="font-playfair text-2xl md:text-3xl font-bold mb-4">Select a Medical Condition</h3>
+                      <p className="text-lg text-muted-foreground max-w-lg mx-auto leading-relaxed">
+                        Pick a condition from the list to see its symptoms, causes, treatment options, and prevention tips.
+                      </p>
+                    </div>
+                  </ScrollReveal>
+                )}
               </div>
-              <h2 className="text-4xl font-bold text-gray-800 mb-4">Emergency Procedures</h2>
-              <p className="text-xl text-gray-600">Critical steps to follow during animal health emergencies</p>
             </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+          </section>
+
+          {/* Emergency Procedures */}
+          <section className="pb-16 md:pb-24">
+            <ScrollReveal>
+              <div className="text-center mb-12">
+                <span className="section-badge">
+                  <AlertTriangle className="h-4 w-4 mr-2" />
+                  Be Prepared
+                </span>
+                <h2 className="font-playfair text-3xl md:text-5xl font-bold mt-4 mb-4">
+                  Emergency <span className="gradient-text-warm">Procedures</span>
+                </h2>
+                <p className="text-lg text-muted-foreground">Important steps to follow during an animal health emergency.</p>
+              </div>
+            </ScrollReveal>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {emergencyProcedures.map((procedure, index) => (
-                <div key={index} className="group hover:shadow-2xl transition-all duration-500 transform hover:scale-105">
-                  <div className="bg-gradient-to-br from-gray-50 to-white border border-gray-200 rounded-3xl p-8 h-full">
-                    <div className={`bg-gradient-to-r ${procedure.color} p-4 rounded-2xl mb-6 inline-block group-hover:scale-110 transition-transform`}>
+                <ScrollReveal key={index} delay={index * 100} className="h-full">
+                  <div className="group h-full rounded-2xl border border-border bg-card shadow-card card-lift p-6 md:p-8">
+                    <div className={`bg-gradient-to-r ${procedure.color} p-4 rounded-2xl mb-6 inline-block group-hover:scale-110 transition-transform ease-smooth`}>
                       <div className="text-white">{procedure.icon}</div>
                     </div>
-                    <h3 className="font-bold text-2xl mb-6 text-gray-800">{procedure.title}</h3>
+                    <h3 className="font-bold text-xl md:text-2xl mb-6">{procedure.title}</h3>
                     <ol className="space-y-4">
                       {procedure.steps.map((step, stepIndex) => (
                         <li key={stepIndex} className="flex items-start group/item">
-                          <span className="bg-gradient-to-r from-blue-500 to-purple-600 text-white text-sm font-bold px-4 py-2 rounded-full mr-4 mt-1 flex-shrink-0 group-hover/item:scale-110 transition-transform">
+                          <span className="bg-primary/10 text-primary text-sm font-bold h-8 w-8 flex items-center justify-center rounded-full mr-3 mt-0.5 flex-shrink-0 group-hover/item:scale-110 transition-transform">
                             {stepIndex + 1}
                           </span>
-                          <span className="text-gray-700 leading-relaxed">{step}</span>
+                          <span className="text-foreground/80 leading-relaxed">{step}</span>
                         </li>
                       ))}
                     </ol>
                   </div>
-                </div>
+                </ScrollReveal>
               ))}
             </div>
-          </div>
+          </section>
 
-          {/* Enhanced Vital Signs Reference */}
-          <div className="mt-20 bg-white rounded-3xl shadow-2xl p-12 border border-gray-100">
-            <div className="text-center mb-16">
-              <div className="bg-gradient-to-r from-blue-500 to-teal-500 p-6 rounded-2xl inline-block mb-6">
-                <Thermometer className="h-10 w-10 text-white" />
+          {/* Vital Signs Reference */}
+          <section className="pb-16 md:pb-24">
+            <ScrollReveal>
+              <div className="text-center mb-12">
+                <span className="section-badge">
+                  <Thermometer className="h-4 w-4 mr-2" />
+                  Know What Is Normal
+                </span>
+                <h2 className="font-playfair text-3xl md:text-5xl font-bold mt-4 mb-4">
+                  Normal <span className="gradient-text">Vital Signs</span>
+                </h2>
+                <p className="text-lg text-muted-foreground">Healthy ranges for cattle and buffalo. Compare with your animal.</p>
               </div>
-              <h2 className="text-4xl font-bold text-gray-800 mb-4">Normal Vital Signs Reference</h2>
-              <p className="text-xl text-gray-600">Essential health parameters for cattle monitoring</p>
-            </div>
-            
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 max-w-6xl mx-auto">
-              <div className="bg-gradient-to-br from-blue-50 to-indigo-50 p-10 rounded-3xl border border-blue-200 hover:shadow-xl transition-shadow">
-                <div className="flex items-center mb-8">
-                  <h3 className="text-3xl font-bold text-blue-800">Cattle (Cows)</h3>
-                </div>
-                <div className="space-y-6">
-                  {[
-                    { label: "Body Temperature", value: '101-102.5°F (38.3-39.2°C)', icon: <Thermometer className="h-6 w-6" /> },
-                    { label: "Heart Rate", value: '60-70 beats/minute', icon: <Heart className="h-6 w-6" /> },
-                    { label: "Respiratory Rate", value: '12-28 breaths/minute', icon: <Activity className="h-6 w-6" /> },
-                    { label: "Rumen Contractions", value: '1-3 per 2 minutes', icon: <TrendingUp className="h-6 w-6" /> },
-                  ].map((vital, index) => (
-                    <div key={index} className="bg-white p-6 rounded-2xl shadow-sm border border-blue-100 hover:shadow-md transition-shadow group">
-                      <div className="flex justify-between items-center">
-                        <div className="flex items-center">
-                          <div className="text-blue-600 mr-4 group-hover:scale-110 transition-transform">{vital.icon}</div>
-                          <span className="font-bold text-gray-800 text-lg">{vital.label}</span>
-                        </div>
-                        <span className="text-blue-700 font-bold text-lg">{vital.value}</span>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
+            </ScrollReveal>
 
-              <div className="bg-gradient-to-br from-green-50 to-teal-50 p-10 rounded-3xl border border-green-200 hover:shadow-xl transition-shadow">
-                <div className="flex items-center mb-8">
-                  <h3 className="text-3xl font-bold text-green-800">Buffalo</h3>
-                </div>
-                <div className="space-y-6">
-                  {[
-                    { label: "Body Temperature", value: '100-102°F (37.8-38.9°C)', icon: <Thermometer className="h-6 w-6" /> },
-                    { label: "Heart Rate", value: '55-65 beats/minute', icon: <Heart className="h-6 w-6" /> },
-                    { label: "Respiratory Rate", value: '15-25 breaths/minute', icon: <Activity className="h-6 w-6" /> },
-                    { label: "Rumen Contractions", value: '1-2 per 2 minutes', icon: <TrendingUp className="h-6 w-6" /> },
-                  ].map((vital, index) => (
-                    <div key={index} className="bg-white p-6 rounded-2xl shadow-sm border border-green-100 hover:shadow-md transition-shadow group">
-                      <div className="flex justify-between items-center">
-                        <div className="flex items-center">
-                          <div className="text-green-600 mr-4 group-hover:scale-110 transition-transform">{vital.icon}</div>
-                          <span className="font-bold text-gray-800 text-lg">{vital.label}</span>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+              <ScrollReveal variant="slide-left" className="h-full">
+                <div className="h-full bg-emerald-50 p-6 md:p-10 rounded-2xl border border-emerald-200 hover:shadow-elegant transition-shadow">
+                  <div className="flex items-center mb-8">
+                    <h3 className="font-playfair text-2xl md:text-3xl font-bold text-emerald-800">Cattle (Cows)</h3>
+                  </div>
+                  <div className="space-y-4">
+                    {[
+                      { label: "Body Temperature", value: '101-102.5°F (38.3-39.2°C)', icon: <Thermometer className="h-6 w-6" /> },
+                      { label: "Heart Rate", value: '60-70 beats/minute', icon: <Heart className="h-6 w-6" /> },
+                      { label: "Respiratory Rate", value: '12-28 breaths/minute', icon: <Activity className="h-6 w-6" /> },
+                      { label: "Rumen Contractions", value: '1-3 per 2 minutes', icon: <TrendingUp className="h-6 w-6" /> },
+                    ].map((vital, index) => (
+                      <div key={index} className="bg-card p-5 rounded-2xl shadow-card border border-emerald-100 hover:shadow-elegant transition-shadow group">
+                        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2">
+                          <div className="flex items-center">
+                            <div className="text-emerald-600 mr-3 group-hover:scale-110 transition-transform">{vital.icon}</div>
+                            <span className="font-bold">{vital.label}</span>
+                          </div>
+                          <span className="text-emerald-700 font-bold">{vital.value}</span>
                         </div>
-                        <span className="text-green-700 font-bold text-lg">{vital.value}</span>
                       </div>
-                    </div>
-                  ))}
+                    ))}
+                  </div>
                 </div>
-              </div>
+              </ScrollReveal>
+
+              <ScrollReveal variant="slide-right" delay={100} className="h-full">
+                <div className="h-full bg-amber-50 p-6 md:p-10 rounded-2xl border border-amber-200 hover:shadow-elegant transition-shadow">
+                  <div className="flex items-center mb-8">
+                    <h3 className="font-playfair text-2xl md:text-3xl font-bold text-amber-800">Buffalo</h3>
+                  </div>
+                  <div className="space-y-4">
+                    {[
+                      { label: "Body Temperature", value: '100-102°F (37.8-38.9°C)', icon: <Thermometer className="h-6 w-6" /> },
+                      { label: "Heart Rate", value: '55-65 beats/minute', icon: <Heart className="h-6 w-6" /> },
+                      { label: "Respiratory Rate", value: '15-25 breaths/minute', icon: <Activity className="h-6 w-6" /> },
+                      { label: "Rumen Contractions", value: '1-2 per 2 minutes', icon: <TrendingUp className="h-6 w-6" /> },
+                    ].map((vital, index) => (
+                      <div key={index} className="bg-card p-5 rounded-2xl shadow-card border border-amber-100 hover:shadow-elegant transition-shadow group">
+                        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2">
+                          <div className="flex items-center">
+                            <div className="text-amber-600 mr-3 group-hover:scale-110 transition-transform">{vital.icon}</div>
+                            <span className="font-bold">{vital.label}</span>
+                          </div>
+                          <span className="text-amber-700 font-bold">{vital.value}</span>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </ScrollReveal>
             </div>
-          </div>
+          </section>
         </div>
       </div>
       <Footer />

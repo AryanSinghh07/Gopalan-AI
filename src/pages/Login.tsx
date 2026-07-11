@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import ScrollReveal from "@/components/ScrollReveal";
+import AnimatedCounter from "@/components/AnimatedCounter";
 import {
   Eye,
   EyeOff,
@@ -14,13 +16,11 @@ import {
   AlertCircle,
   ArrowRight,
   Chrome,
-  Github,
   Facebook,
-  Apple,
-  Smartphone,
   Globe,
   Users,
-  Star
+  Star,
+  Sparkles
 } from 'lucide-react';
 
 interface LoginFormData {
@@ -34,6 +34,9 @@ interface FormErrors {
   password?: string;
   general?: string;
 }
+
+const inputBase =
+  "w-full min-h-12 rounded-xl border bg-muted/50 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-colors";
 
 const Login = () => {
   const [formData, setFormData] = useState<LoginFormData>({
@@ -71,10 +74,10 @@ const Login = () => {
   ];
 
   const stats = [
-    { value: "100K+", label: "Active Users" },
-    { value: "500K+", label: "Animals Monitored" },
-    { value: "99.2%", label: "Uptime" },
-    { value: "24/7", label: "Support" }
+    { end: 100, suffix: "K+", decimals: 0, label: "Active Users" },
+    { end: 500, suffix: "K+", decimals: 0, label: "Animals Monitored" },
+    { end: 99.2, suffix: "%", decimals: 1, label: "Uptime" },
+    { end: 24, suffix: "/7", decimals: 0, label: "Support" }
   ];
 
   const validateForm = (): boolean => {
@@ -146,14 +149,14 @@ const Login = () => {
 
   if (loginSuccess) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-green-50 to-emerald-50 flex items-center justify-center p-6">
-        <div className="max-w-md w-full bg-white rounded-3xl shadow-2xl p-12 text-center">
-          <div className="bg-green-100 p-6 rounded-full inline-block mb-8">
-            <CheckCircle className="h-16 w-16 text-green-600" />
+      <div className="min-h-screen bg-background flex items-center justify-center p-6">
+        <div className="max-w-md w-full bg-card rounded-2xl border border-border shadow-elegant p-12 text-center animate-fade-up">
+          <div className="bg-primary/10 p-6 rounded-full inline-block mb-8 animate-scale-in">
+            <CheckCircle className="h-16 w-16 text-primary" />
           </div>
-          <h2 className="text-3xl font-bold text-gray-800 mb-4">Welcome Back!</h2>
-          <p className="text-gray-600 mb-8">You have successfully logged into Gopalan AI.</p>
-          <Button className="w-full bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white py-3 rounded-xl">
+          <h2 className="font-playfair text-3xl font-bold text-foreground mb-4">Welcome Back!</h2>
+          <p className="text-muted-foreground mb-8">You have successfully logged into Gopalan AI.</p>
+          <Button className="w-full min-h-12 bg-gradient-to-r from-primary to-primary-glow hover:opacity-90 text-primary-foreground py-3 rounded-xl shadow-elegant transition-all duration-300 ease-smooth">
             Go to Dashboard
             <ArrowRight className="h-5 w-5 ml-2" />
           </Button>
@@ -166,237 +169,257 @@ const Login = () => {
     <div className="min-h-screen">
       <Navbar />
 
-      <div className="pt-20 min-h-screen bg-gradient-to-br from-green-50 via-emerald-50 to-teal-50">
+      <div className="pt-20 min-h-screen bg-background">
         <div className="container mx-auto px-6 py-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto">
 
             {/* Left Side - Login Form */}
             <div className="order-2 lg:order-1">
-              <div className="bg-white rounded-3xl shadow-2xl p-10 border border-gray-100 max-w-md mx-auto lg:mx-0">
-                <div className="text-center mb-10">
-                  <div className="bg-gradient-to-r from-green-500 to-emerald-600 p-4 rounded-2xl inline-block mb-6">
-                    <User className="h-10 w-10 text-white" />
+              <ScrollReveal variant="slide-left">
+                <div className="bg-card rounded-2xl border border-border shadow-elegant p-8 md:p-10 max-w-md mx-auto lg:mx-0">
+                  <div className="text-center mb-10">
+                    <div className="bg-gradient-to-r from-primary to-primary-glow p-4 rounded-2xl inline-block mb-6 shadow-glow animate-float">
+                      <User className="h-10 w-10 text-primary-foreground" />
+                    </div>
+                    <h1 className="font-playfair text-3xl font-bold text-foreground mb-2">Welcome Back</h1>
+                    <p className="text-muted-foreground">Sign in to your Gopalan AI account</p>
                   </div>
-                  <h1 className="text-3xl font-bold text-gray-800 mb-2">Welcome Back</h1>
-                  <p className="text-gray-600">Sign in to your Gopalan AI account</p>
-                </div>
 
-                {/* Demo Credentials Notice */}
-                <div className="bg-green-50 border border-green-200 rounded-xl p-4 mb-6">
-                  <div className="flex items-start">
-                    <AlertCircle className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                    <div className="text-sm">
-                      <p className="text-green-800 font-medium">Demo Credentials:</p>
-                      <p className="text-green-700">Email: demo@example.com</p>
-                      <p className="text-green-700">Password: password</p>
+                  {/* Demo Credentials Notice */}
+                  <div className="bg-primary/5 border border-primary/20 rounded-xl p-4 mb-6">
+                    <div className="flex items-start">
+                      <AlertCircle className="h-5 w-5 text-primary mr-2 mt-0.5 flex-shrink-0" />
+                      <div className="text-sm">
+                        <p className="text-primary font-medium">Demo Credentials:</p>
+                        <p className="text-foreground/80">Email: demo@example.com</p>
+                        <p className="text-foreground/80">Password: password</p>
+                      </div>
                     </div>
                   </div>
-                </div>
 
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  {/* Email Field */}
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
-                      Email Address
-                    </label>
-                    <div className="relative">
-                      <Mail className="h-5 w-5 text-gray-400 absolute left-4 top-3.5" />
-                      <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleInputChange}
-                        className={`w-full pl-12 pr-4 py-3 border rounded-xl focus:ring-2 focus:ring-green-500 focus:border-transparent bg-gray-50 transition-colors ${
-                          errors.email ? 'border-red-500' : 'border-gray-300'
-                        }`}
-                        placeholder="Enter your email address"
-                      />
+                  <form onSubmit={handleSubmit} className="space-y-6">
+                    {/* Email Field */}
+                    <div>
+                      <label htmlFor="email" className="block text-sm font-semibold text-foreground mb-2">
+                        Email Address
+                      </label>
+                      <div className="relative">
+                        <Mail className="h-5 w-5 text-muted-foreground absolute left-4 top-3.5" />
+                        <input
+                          type="email"
+                          id="email"
+                          name="email"
+                          value={formData.email}
+                          onChange={handleInputChange}
+                          className={`${inputBase} pl-12 pr-4 py-3 ${
+                            errors.email ? 'border-red-500' : 'border-border'
+                          }`}
+                          placeholder="Enter your email address"
+                        />
+                      </div>
+                      {errors.email && (
+                        <p className="text-red-600 text-sm mt-1 flex items-center">
+                          <AlertCircle className="h-4 w-4 mr-1" />
+                          {errors.email}
+                        </p>
+                      )}
                     </div>
-                    {errors.email && (
-                      <p className="text-red-600 text-sm mt-1 flex items-center">
-                        <AlertCircle className="h-4 w-4 mr-1" />
-                        {errors.email}
-                      </p>
+
+                    {/* Password Field */}
+                    <div>
+                      <label htmlFor="password" className="block text-sm font-semibold text-foreground mb-2">
+                        Password
+                      </label>
+                      <div className="relative">
+                        <Lock className="h-5 w-5 text-muted-foreground absolute left-4 top-3.5" />
+                        <input
+                          type={showPassword ? 'text' : 'password'}
+                          id="password"
+                          name="password"
+                          value={formData.password}
+                          onChange={handleInputChange}
+                          className={`${inputBase} pl-12 pr-12 py-3 ${
+                            errors.password ? 'border-red-500' : 'border-border'
+                          }`}
+                          placeholder="Enter your password"
+                        />
+                        <button
+                          type="button"
+                          onClick={() => setShowPassword(!showPassword)}
+                          className="absolute right-4 top-3.5 text-muted-foreground hover:text-foreground transition-colors"
+                        >
+                          {showPassword ? <EyeOff className="h-5 w-5" /> : <Eye className="h-5 w-5" />}
+                        </button>
+                      </div>
+                      {errors.password && (
+                        <p className="text-red-600 text-sm mt-1 flex items-center">
+                          <AlertCircle className="h-4 w-4 mr-1" />
+                          {errors.password}
+                        </p>
+                      )}
+                    </div>
+
+                    {/* Remember Me & Forgot Password */}
+                    <div className="flex items-center justify-between">
+                      <label className="flex items-center cursor-pointer">
+                        <input
+                          type="checkbox"
+                          name="rememberMe"
+                          checked={formData.rememberMe}
+                          onChange={handleInputChange}
+                          className="h-4 w-4 rounded border-border text-primary focus:ring-primary accent-[hsl(var(--primary))]"
+                        />
+                        <span className="ml-2 text-sm text-muted-foreground">Remember me</span>
+                      </label>
+                      <a href="#" className="text-sm text-primary hover:text-primary-glow font-medium transition-colors">
+                        Forgot password?
+                      </a>
+                    </div>
+
+                    {/* General Error */}
+                    {errors.general && (
+                      <div className="bg-red-50 border border-red-200 rounded-xl p-3 animate-wiggle">
+                        <p className="text-red-600 text-sm flex items-center">
+                          <AlertCircle className="h-4 w-4 mr-2" />
+                          {errors.general}
+                        </p>
+                      </div>
                     )}
+
+                    {/* Submit Button */}
+                    <Button
+                      type="submit"
+                      disabled={isLoading}
+                      className={`w-full min-h-12 py-4 text-lg font-semibold rounded-xl transition-all duration-300 ease-smooth transform hover:scale-[1.02] shadow-card hover:shadow-elegant ${
+                        isLoading
+                          ? 'bg-muted-foreground/40 cursor-not-allowed'
+                          : 'bg-gradient-to-r from-primary to-primary-glow hover:opacity-90 text-primary-foreground'
+                      }`}
+                    >
+                      {isLoading ? (
+                        <>
+                          <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-3 inline-block"></div>
+                          Signing In...
+                        </>
+                      ) : (
+                        <>
+                          Sign In
+                          <ArrowRight className="h-5 w-5 ml-2 inline-block" />
+                        </>
+                      )}
+                    </Button>
+                  </form>
+
+                  {/* Divider */}
+                  <div className="flex items-center my-8">
+                    <div className="flex-1 border-t border-border"></div>
+                    <span className="px-4 text-sm text-muted-foreground bg-card">Or continue with</span>
+                    <div className="flex-1 border-t border-border"></div>
                   </div>
 
-                  {/* Password Field */}
-                  <div>
-                    <label htmlFor="password" className="block text-sm font-semibold text-gray-700 mb-2">
-                      Password
-                    </label>
-                    <div className="relative">
-                      <Lock className="h-5 w-5 text-gray-400 absolute left-4 top-3.5" />
-                      <input
-                        type={showPassword ? 'text' : 'password'}
-                        id="password"
-                        name="password"
-                        value={formData.password}
-                        onChange={handleInputChange}
-                        className={`w-full pl-12 pr-12 py-3 border rounded-xl focus:ring-2 focus:ring-green-500 focus:border-transparent bg-gray-50 transition-colors ${
-                          errors.password ? 'border-red-500' : 'border-gray-300'
-                        }`}
-                        placeholder="Enter your password"
-                      />
-                      <button
-                        type="button"
-                        onClick={() => setShowPassword(!showPassword)}
-                        className="absolute right-4 top-3.5 text-gray-400 hover:text-gray-600"
-                      >
-                        {showPassword ? <EyeOff className="h-5 w-5" /> : <Eye className="h-5 w-5" />}
-                      </button>
-                    </div>
-                    {errors.password && (
-                      <p className="text-red-600 text-sm mt-1 flex items-center">
-                        <AlertCircle className="h-4 w-4 mr-1" />
-                        {errors.password}
-                      </p>
-                    )}
+                  {/* Social Login Buttons */}
+                  <div className="grid grid-cols-2 gap-4 mb-8">
+                    <button
+                      onClick={() => handleSocialLogin('google')}
+                      className="flex items-center justify-center min-h-12 px-4 py-3 border border-border rounded-xl hover:bg-muted/60 transition-colors group"
+                    >
+                      <Chrome className="h-5 w-5 text-muted-foreground group-hover:text-primary transition-colors" />
+                      <span className="ml-2 text-sm font-medium text-foreground">Google</span>
+                    </button>
+                    <button
+                      onClick={() => handleSocialLogin('facebook')}
+                      className="flex items-center justify-center min-h-12 px-4 py-3 border border-border rounded-xl hover:bg-muted/60 transition-colors group"
+                    >
+                      <Facebook className="h-5 w-5 text-muted-foreground group-hover:text-primary transition-colors" />
+                      <span className="ml-2 text-sm font-medium text-foreground">Facebook</span>
+                    </button>
                   </div>
 
-                  {/* Remember Me & Forgot Password */}
-                  <div className="flex items-center justify-between">
-                    <label className="flex items-center">
-                      <input
-                        type="checkbox"
-                        name="rememberMe"
-                        checked={formData.rememberMe}
-                        onChange={handleInputChange}
-                        className="rounded border-gray-300 text-green-600 focus:ring-green-500"
-                      />
-                      <span className="ml-2 text-sm text-gray-600">Remember me</span>
-                    </label>
-                    <a href="#" className="text-sm text-green-600 hover:text-green-700 font-medium">
-                      Forgot password?
-                    </a>
+                  {/* Sign Up Link */}
+                  <div className="text-center">
+                    <p className="text-muted-foreground">
+                      Don't have an account?{' '}
+                      <a href="/signup" className="text-primary hover:text-primary-glow font-semibold transition-colors">
+                        Sign up for free
+                      </a>
+                    </p>
                   </div>
-
-                  {/* General Error */}
-                  {errors.general && (
-                    <div className="bg-red-50 border border-red-200 rounded-xl p-3">
-                      <p className="text-red-600 text-sm flex items-center">
-                        <AlertCircle className="h-4 w-4 mr-2" />
-                        {errors.general}
-                      </p>
-                    </div>
-                  )}
-
-                  {/* Submit Button */}
-                  <Button
-                    type="submit"
-                    disabled={isLoading}
-                    className={`w-full py-4 text-lg font-semibold rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl ${
-                      isLoading
-                        ? 'bg-gray-400 cursor-not-allowed'
-                        : 'bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white'
-                    }`}
-                  >
-                    {isLoading ? (
-                      <>
-                        <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-3 inline-block"></div>
-                        Signing In...
-                      </>
-                    ) : (
-                      <>
-                        Sign In
-                        <ArrowRight className="h-5 w-5 ml-2 inline-block" />
-                      </>
-                    )}
-                  </Button>
-                </form>
-
-                {/* Divider */}
-                <div className="flex items-center my-8">
-                  <div className="flex-1 border-t border-gray-200"></div>
-                  <span className="px-4 text-sm text-gray-500 bg-white">Or continue with</span>
-                  <div className="flex-1 border-t border-gray-200"></div>
                 </div>
-
-                {/* Social Login Buttons */}
-                <div className="grid grid-cols-2 gap-4 mb-8">
-                  <button
-                    onClick={() => handleSocialLogin('google')}
-                    className="flex items-center justify-center px-4 py-3 border border-gray-300 rounded-xl hover:bg-gray-50 transition-colors group"
-                  >
-                    <Chrome className="h-5 w-5 text-gray-600 group-hover:text-green-600" />
-                    <span className="ml-2 text-sm font-medium text-gray-700">Google</span>
-                  </button>
-                  <button
-                    onClick={() => handleSocialLogin('facebook')}
-                    className="flex items-center justify-center px-4 py-3 border border-gray-300 rounded-xl hover:bg-gray-50 transition-colors group"
-                  >
-                    <Facebook className="h-5 w-5 text-gray-600 group-hover:text-green-600" />
-                    <span className="ml-2 text-sm font-medium text-gray-700">Facebook</span>
-                  </button>
-                </div>
-
-                {/* Sign Up Link */}
-                <div className="text-center">
-                  <p className="text-gray-600">
-                    Don't have an account?{' '}
-                    <a href="/signup" className="text-green-600 hover:text-green-700 font-semibold">
-                      Sign up for free
-                    </a>
-                  </p>
-                </div>
-              </div>
+              </ScrollReveal>
             </div>
 
             {/* Right Side - Benefits & Information */}
             <div className="order-1 lg:order-2 text-center lg:text-left">
               <div className="mb-12">
-                <h2 className="text-5xl md:text-6xl font-bold text-gray-800 mb-6 leading-tight">
-                  Revolutionize Your
-                  <span className="bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent"> Farm Management</span>
-                </h2>
-                <p className="text-xl text-gray-600 leading-relaxed mb-8 max-w-2xl">
-                  Join thousands of farmers who trust Gopalan AI to monitor their animals' health, prevent diseases, and optimize their farm operations with intelligent insights.
-                </p>
+                <ScrollReveal>
+                  <span className="section-badge mb-6">
+                    <Sparkles className="w-4 h-4" />
+                    Smart Dairy Farming
+                  </span>
+                  <h2 className="font-playfair text-3xl md:text-5xl font-bold text-foreground mb-6 leading-tight">
+                    Revolutionize Your
+                    <span className="gradient-text"> Farm Management</span>
+                  </h2>
+                  <p className="text-lg text-muted-foreground leading-relaxed mb-8 max-w-2xl">
+                    Join thousands of farmers who trust Gopalan AI to monitor their animals' health, prevent diseases, and optimize their farm operations with intelligent insights.
+                  </p>
+                </ScrollReveal>
 
                 {/* Stats */}
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
                   {stats.map((stat, index) => (
-                    <div key={index} className="bg-white bg-opacity-80 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
-                      <div className="text-3xl font-bold text-gray-800 mb-1">{stat.value}</div>
-                      <div className="text-gray-600 text-sm">{stat.label}</div>
-                    </div>
+                    <ScrollReveal key={index} variant="zoom" delay={index * 100}>
+                      <div className="bg-card rounded-2xl border border-border p-6 shadow-card card-lift h-full">
+                        <div className="text-3xl font-bold gradient-text mb-1">
+                          <AnimatedCounter end={stat.end} suffix={stat.suffix} decimals={stat.decimals} />
+                        </div>
+                        <div className="text-muted-foreground text-sm">{stat.label}</div>
+                      </div>
+                    </ScrollReveal>
                   ))}
                 </div>
 
                 {/* Benefits */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {benefits.map((benefit, index) => (
-                    <div key={index} className="bg-white bg-opacity-80 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow group">
-                      <div className="bg-gradient-to-r from-green-500 to-emerald-600 p-3 rounded-xl mb-4 inline-block group-hover:scale-110 transition-transform">
-                        <div className="text-white">{benefit.icon}</div>
+                    <ScrollReveal key={index} variant="slide-right" delay={index * 100}>
+                      <div className="bg-card rounded-2xl border border-border p-6 shadow-card card-lift group h-full">
+                        <div className={`p-3 rounded-xl mb-4 inline-block group-hover:scale-110 transition-transform duration-300 ease-smooth ${
+                          index % 2 === 0
+                            ? 'bg-gradient-to-br from-primary to-primary-glow text-primary-foreground'
+                            : 'bg-gradient-to-br from-accent to-orange-500 text-accent-foreground'
+                        }`}>
+                          {benefit.icon}
+                        </div>
+                        <h3 className="text-lg font-bold text-foreground mb-2">{benefit.title}</h3>
+                        <p className="text-muted-foreground text-sm">{benefit.description}</p>
                       </div>
-                      <h3 className="text-lg font-bold text-gray-800 mb-2">{benefit.title}</h3>
-                      <p className="text-gray-600 text-sm">{benefit.description}</p>
-                    </div>
+                    </ScrollReveal>
                   ))}
                 </div>
               </div>
 
               {/* Trust Indicators */}
-              <div className="bg-white bg-opacity-60 backdrop-blur-sm rounded-2xl p-8 shadow-lg">
-                <div className="flex items-center justify-center space-x-8">
-                  <div className="flex items-center">
-                    <Shield className="h-8 w-8 text-green-600 mr-3" />
-                    <div>
-                      <div className="text-lg font-bold text-gray-800">Secure & Reliable</div>
-                      <div className="text-sm text-gray-600">Bank-level security</div>
+              <ScrollReveal variant="fade-in" delay={200}>
+                <div className="bg-card rounded-2xl border border-border p-8 shadow-card">
+                  <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-12">
+                    <div className="flex items-center">
+                      <Shield className="h-8 w-8 text-primary mr-3" />
+                      <div className="text-left">
+                        <div className="text-lg font-bold text-foreground">Secure & Reliable</div>
+                        <div className="text-sm text-muted-foreground">Bank-level security</div>
+                      </div>
                     </div>
-                  </div>
-                  <div className="flex items-center">
-                    <Globe className="h-8 w-8 text-green-600 mr-3" />
-                    <div>
-                      <div className="text-lg font-bold text-gray-800">Global Reach</div>
-                      <div className="text-sm text-gray-600">25+ countries</div>
+                    <div className="flex items-center">
+                      <Globe className="h-8 w-8 text-accent mr-3" />
+                      <div className="text-left">
+                        <div className="text-lg font-bold text-foreground">Global Reach</div>
+                        <div className="text-sm text-muted-foreground">25+ countries</div>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              </ScrollReveal>
             </div>
           </div>
         </div>

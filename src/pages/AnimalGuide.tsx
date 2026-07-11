@@ -1,8 +1,9 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import ScrollReveal from "@/components/ScrollReveal";
+import AnimatedCounter from "@/components/AnimatedCounter";
 
 // Breed images
 import girImage from "@/assets/animals/gir.jpg";
@@ -40,7 +41,7 @@ const AnimalGuide = () => {
     },
     {
       name: "Hallikar",
-      origin: "Karnataka, India", 
+      origin: "Karnataka, India",
       characteristics: "High butterfat content, brown colored, large expressive eyes",
       avgWeight: "350-450 kg",
       milkYield: "15-20 liters/day",
@@ -54,7 +55,7 @@ const AnimalGuide = () => {
       name: "Gir",
       origin: "India (Gujarat)",
       characteristics: "Drought resistant, distinctive lyre-shaped horns, gentle nature",
-      avgWeight: "300-400 kg", 
+      avgWeight: "300-400 kg",
       milkYield: "10-15 liters/day",
       lactationYield: "1,200-3,000 kg",
       fatContent: "4.5-5.0%",
@@ -268,244 +269,276 @@ const AnimalGuide = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-green-50 to-emerald-50 font-inter">
+    <div className="min-h-screen bg-background font-inter">
       <Navbar />
-      
-      {/* Enhanced Hero Section */}
-      <section className="pt-20 pb-20 bg-gradient-to-br from-emerald-900 via-green-800 to-teal-900 text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-emerald-900/90 to-green-900/90"></div>
+
+      {/* Hero Section */}
+      <section className="pt-20 pb-24 bg-gradient-to-br from-emerald-900 via-green-800 to-teal-900 text-white relative overflow-hidden">
+        <div className="absolute -top-20 -right-16 w-80 h-80 bg-emerald-500/20 rounded-full blur-3xl animate-float" aria-hidden="true"></div>
+        <div className="absolute -bottom-24 -left-12 w-96 h-96 bg-amber-400/10 rounded-full blur-3xl animate-pulse-soft" aria-hidden="true"></div>
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center max-w-5xl mx-auto">
-            <div className="mb-6">
-              <span className="inline-block px-4 py-2 bg-emerald-500/20 rounded-full text-emerald-200 text-sm font-medium mb-4">
-              Comprehensive Livestock Guide
+            <ScrollReveal variant="fade-in">
+              <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 text-emerald-100 text-sm font-semibold tracking-wide mb-6">
+                Complete Livestock Guide
               </span>
-            </div>
-            <h1 className="font-playfair font-bold text-5xl md:text-7xl mb-8 bg-gradient-to-r from-emerald-200 via-green-100 to-teal-200 bg-clip-text text-transparent leading-tight">
-              Complete Guide to Cattle & Buffalo
-            </h1>
-            <p className="text-xl md:text-2xl text-gray-200 mb-10 leading-relaxed max-w-4xl mx-auto">
-              Discover comprehensive information about cattle and buffalo breeds, their characteristics, care requirements, and everything you need to know about these remarkable livestock animals.
-            </p>
-            <div className="flex flex-wrap justify-center gap-4 text-sm">
-              <div className="flex items-center gap-2 bg-white/10 rounded-full px-4 py-2">
-                <span className="w-2 h-2 bg-emerald-300 rounded-full"></span>
-                <span>16 Cattle Breeds</span>
+            </ScrollReveal>
+            <ScrollReveal variant="fade-up" delay={100}>
+              <h1 className="font-playfair font-bold text-4xl md:text-6xl mb-8 text-white leading-tight">
+                Complete Guide to <span className="bg-gradient-to-r from-emerald-200 via-green-100 to-amber-200 bg-clip-text text-transparent">Cattle &amp; Buffalo</span>
+              </h1>
+            </ScrollReveal>
+            <ScrollReveal variant="fade-up" delay={200}>
+              <p className="text-lg md:text-xl text-emerald-50/90 mb-10 leading-relaxed max-w-3xl mx-auto">
+                Learn about cattle and buffalo breeds — their traits, milk yield, and how to care for them.
+              </p>
+            </ScrollReveal>
+            <ScrollReveal variant="fade-up" delay={300}>
+              <div className="flex flex-wrap justify-center gap-4">
+                <div className="rounded-2xl bg-white/10 px-6 py-4 min-w-[8rem]">
+                  <AnimatedCounter end={16} className="text-3xl font-playfair font-bold text-white" />
+                  <p className="text-sm text-emerald-100 mt-1">Cattle Breeds</p>
+                </div>
+                <div className="rounded-2xl bg-white/10 px-6 py-4 min-w-[8rem]">
+                  <AnimatedCounter end={8} className="text-3xl font-playfair font-bold text-white" />
+                  <p className="text-sm text-emerald-100 mt-1">Buffalo Breeds</p>
+                </div>
+                <div className="rounded-2xl bg-white/10 px-6 py-4 min-w-[8rem]">
+                  <AnimatedCounter end={4} className="text-3xl font-playfair font-bold text-white" />
+                  <p className="text-sm text-emerald-100 mt-1">Expert Care Areas</p>
+                </div>
               </div>
-              <div className="flex items-center gap-2 bg-white/10 rounded-full px-4 py-2">
-                <span className="w-2 h-2 bg-green-300 rounded-full"></span>
-                <span>8 Buffalo Breeds</span>
-              </div>
-              <div className="flex items-center gap-2 bg-white/10 rounded-full px-4 py-2">
-                <span className="w-2 h-2 bg-teal-300 rounded-full"></span>
-                <span>Expert Care Tips</span>
-              </div>
-            </div>
+            </ScrollReveal>
           </div>
         </div>
       </section>
 
-      {/* Enhanced Overview Cards */}
-      <section className="py-20 -mt-10 relative z-20">
+      {/* Overview Cards */}
+      <section className="section-padding">
         <div className="container mx-auto px-6">
-          <div className="grid md:grid-cols-2 gap-8 mb-16">
-            <Card className="group border-0 shadow-2xl hover:shadow-3xl transition-all duration-500 overflow-hidden bg-gradient-to-br from-white to-emerald-50">
-              <div className="relative h-64 overflow-hidden">
-                <img 
-                  src={cattleOverviewImage} 
-                  alt="Cattle overview"
-                  loading="lazy"
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-emerald-900/60 via-transparent to-transparent"></div>
-                <div className="absolute bottom-4 left-4">
-                  <div className="bg-emerald-500/90 backdrop-blur-sm rounded-full px-4 py-2">
-                    <span className="text-white font-semibold text-lg">8 Breeds Featured</span>
-                  </div>
-                </div>
-              </div>
-              <CardHeader className="pb-4">
-                <CardTitle className="text-3xl font-playfair text-emerald-800 flex items-center gap-3">
-                  Cattle (Cows)
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-6">
-                <p className="text-gray-600 leading-relaxed text-lg">Cattle (Bos taurus) are domesticated bovines primarily raised for milk, meat, and leather. They are intelligent social animals with complex behavioral patterns and have been human companions for over 10,000 years, playing crucial roles in agriculture and food production worldwide.</p>
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="bg-emerald-50 rounded-lg p-3">
-                    <div className="font-semibold text-emerald-800">Milk Production</div>
-                    <div className="text-sm text-gray-600">4-30 L/day</div>
-                  </div>
-                  <div className="bg-emerald-50 rounded-lg p-3">
-                    <div className="font-semibold text-emerald-800">Weight Range</div>
-                    <div className="text-sm text-gray-600">300-700 kg</div>
-                  </div>
-                </div>
-                <div className="flex flex-wrap gap-2">
-                  <Badge className="bg-emerald-100 text-emerald-800 hover:bg-emerald-200">Dairy Production</Badge>
-                  <Badge className="bg-emerald-100 text-emerald-800 hover:bg-emerald-200">Meat Production</Badge>
-                  <Badge className="bg-emerald-100 text-emerald-800 hover:bg-emerald-200">Draft Power</Badge>
-                  <Badge className="bg-emerald-100 text-emerald-800 hover:bg-emerald-200">Leather</Badge>
-                </div>
-              </CardContent>
-            </Card>
+          <ScrollReveal>
+            <div className="text-center mb-14">
+              <span className="section-badge mb-4">Know Your Animals</span>
+              <h2 className="font-playfair text-3xl md:text-5xl font-bold mb-4">
+                Cattle &amp; <span className="gradient-text">Buffalo</span> at a Glance
+              </h2>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                Two great dairy animals — each with its own strengths.
+              </p>
+            </div>
+          </ScrollReveal>
 
-            <Card className="group border-0 shadow-2xl hover:shadow-3xl transition-all duration-500 overflow-hidden bg-gradient-to-br from-white to-teal-50">
-              <div className="relative h-64 overflow-hidden">
-                <img 
-                  src={buffaloOverviewImage} 
-                  alt="Buffalo overview"
-                  loading="lazy"
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-teal-900/60 via-transparent to-transparent"></div>
-                <div className="absolute bottom-4 left-4">
-                  <div className="bg-teal-500/90 backdrop-blur-sm rounded-full px-4 py-2">
-                    <span className="text-white font-semibold text-lg">8 Breeds Featured</span>
+          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            <ScrollReveal variant="slide-left">
+              <div className="group h-full rounded-2xl border border-border bg-card shadow-card card-lift overflow-hidden">
+                <div className="relative h-64 overflow-hidden">
+                  <img
+                    src={cattleOverviewImage}
+                    alt="Cattle overview"
+                    loading="lazy"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-emerald-950/70 via-transparent to-transparent"></div>
+                  <div className="absolute bottom-4 left-4">
+                    <span className="inline-block bg-primary/90 backdrop-blur-sm rounded-full px-4 py-2 text-white font-semibold">
+                      8 Breeds Featured
+                    </span>
+                  </div>
+                </div>
+                <div className="p-6 md:p-8 space-y-6">
+                  <h3 className="text-3xl font-playfair font-bold text-foreground">Cattle (Cows)</h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    Cattle (Bos taurus) are kept mainly for milk, meat, and leather. They are intelligent, social animals and have worked beside humans for over 10,000 years, playing a big role in farming and food across the world.
+                  </p>
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="bg-primary/5 border border-primary/10 rounded-xl p-3">
+                      <div className="font-semibold text-primary">Milk Production</div>
+                      <div className="text-sm text-muted-foreground">4-30 L/day</div>
+                    </div>
+                    <div className="bg-primary/5 border border-primary/10 rounded-xl p-3">
+                      <div className="font-semibold text-primary">Weight Range</div>
+                      <div className="text-sm text-muted-foreground">300-700 kg</div>
+                    </div>
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    <Badge className="bg-primary/10 text-primary hover:bg-primary/20 border-0">Dairy Production</Badge>
+                    <Badge className="bg-primary/10 text-primary hover:bg-primary/20 border-0">Meat Production</Badge>
+                    <Badge className="bg-primary/10 text-primary hover:bg-primary/20 border-0">Draft Power</Badge>
+                    <Badge className="bg-primary/10 text-primary hover:bg-primary/20 border-0">Leather</Badge>
                   </div>
                 </div>
               </div>
-              <CardHeader className="pb-4">
-                <CardTitle className="text-3xl font-playfair text-teal-800 flex items-center gap-3">
-                  Water Buffalo
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-6">
-                <p className="text-gray-600 leading-relaxed text-lg">Water buffalo (Bubalus bubalis) are large bovines perfectly adapted to hot climates and wet conditions. They produce exceptionally rich milk with higher fat content and are excellent for dairy farming in tropical and subtropical regions around the world.</p>
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="bg-teal-50 rounded-lg p-3">
-                    <div className="font-semibold text-teal-800">Milk Production</div>
-                    <div className="text-sm text-gray-600">6-20 L/day</div>
-                  </div>
-                  <div className="bg-teal-50 rounded-lg p-3">
-                    <div className="font-semibold text-teal-800">Weight Range</div>
-                    <div className="text-sm text-gray-600">350-800 kg</div>
+            </ScrollReveal>
+
+            <ScrollReveal variant="slide-right" delay={100}>
+              <div className="group h-full rounded-2xl border border-border bg-card shadow-card card-lift overflow-hidden">
+                <div className="relative h-64 overflow-hidden">
+                  <img
+                    src={buffaloOverviewImage}
+                    alt="Buffalo overview"
+                    loading="lazy"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-green-950/70 via-transparent to-transparent"></div>
+                  <div className="absolute bottom-4 left-4">
+                    <span className="inline-block bg-accent/90 backdrop-blur-sm rounded-full px-4 py-2 text-accent-foreground font-semibold">
+                      8 Breeds Featured
+                    </span>
                   </div>
                 </div>
-                <div className="flex flex-wrap gap-2">
-                  <Badge className="bg-teal-100 text-teal-800 hover:bg-teal-200">Rich Milk (6-8% fat)</Badge>
-                  <Badge className="bg-teal-100 text-teal-800 hover:bg-teal-200">Heat Tolerance</Badge>
-                  <Badge className="bg-teal-100 text-teal-800 hover:bg-teal-200">Draft Work</Badge>
-                  <Badge className="bg-teal-100 text-teal-800 hover:bg-teal-200">Cheese Making</Badge>
+                <div className="p-6 md:p-8 space-y-6">
+                  <h3 className="text-3xl font-playfair font-bold text-foreground">Water Buffalo</h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    Water buffalo (Bubalus bubalis) are large animals well suited to hot, wet climates. Their milk is very rich, with higher fat content, which makes them excellent for dairy farming in tropical regions.
+                  </p>
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="bg-accent/10 border border-accent/20 rounded-xl p-3">
+                      <div className="font-semibold text-accent">Milk Production</div>
+                      <div className="text-sm text-muted-foreground">6-20 L/day</div>
+                    </div>
+                    <div className="bg-accent/10 border border-accent/20 rounded-xl p-3">
+                      <div className="font-semibold text-accent">Weight Range</div>
+                      <div className="text-sm text-muted-foreground">350-800 kg</div>
+                    </div>
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    <Badge className="bg-accent/15 text-accent hover:bg-accent/25 border-0">Rich Milk (6-8% fat)</Badge>
+                    <Badge className="bg-accent/15 text-accent hover:bg-accent/25 border-0">Heat Tolerance</Badge>
+                    <Badge className="bg-accent/15 text-accent hover:bg-accent/25 border-0">Draft Work</Badge>
+                    <Badge className="bg-accent/15 text-accent hover:bg-accent/25 border-0">Cheese Making</Badge>
+                  </div>
                 </div>
-              </CardContent>
-            </Card>
+              </div>
+            </ScrollReveal>
           </div>
         </div>
       </section>
 
-      {/* Enhanced Breed Information with Tabs */}
-      <section className="py-20 bg-gradient-to-br from-white via-gray-50 to-slate-100">
+      {/* Breed Information with Tabs */}
+      <section className="section-padding bg-muted/30">
         <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="font-playfair font-bold text-4xl md:text-5xl mb-6 text-gray-800">Popular Breeds Collection</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Explore detailed information about the most important cattle and buffalo breeds, their origins, characteristics, and performance metrics.
-            </p>
-          </div>
-          
+          <ScrollReveal>
+            <div className="text-center mb-14">
+              <span className="section-badge mb-4">Breed Encyclopedia</span>
+              <h2 className="font-playfair text-3xl md:text-5xl font-bold mb-4">
+                Popular <span className="gradient-text">Breeds</span> Collection
+              </h2>
+              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+                Explore the most important cattle and buffalo breeds — their origins, traits, and milk performance.
+              </p>
+            </div>
+          </ScrollReveal>
+
           <Tabs defaultValue="cattle" className="w-full">
-            <TabsList className="grid w-full max-w-md mx-auto grid-cols-2 mb-12 h-12">
-              <TabsTrigger value="cattle" className="text-lg font-semibold">Cattle Breeds</TabsTrigger>
-              <TabsTrigger value="buffalo" className="text-lg font-semibold">Buffalo Breeds</TabsTrigger>
-            </TabsList>
-            
+            <ScrollReveal variant="zoom">
+              <TabsList className="grid w-full max-w-md mx-auto grid-cols-2 mb-12 h-12">
+                <TabsTrigger value="cattle" className="text-lg font-semibold">Cattle Breeds</TabsTrigger>
+                <TabsTrigger value="buffalo" className="text-lg font-semibold">Buffalo Breeds</TabsTrigger>
+              </TabsList>
+            </ScrollReveal>
+
             <TabsContent value="cattle" className="mt-8">
               <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-                {cowBreeds.map((breed) => (
-                  <Card key={breed.name} className="group hover:shadow-2xl transition-all duration-500 overflow-hidden border-0 bg-gradient-to-br from-white to-emerald-50">
-                    <div className="relative h-48 overflow-hidden">
-                      <img 
-                        src={breed.image} 
-                        alt={breed.name}
-                        loading="lazy"
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                      <div className="absolute top-3 right-3">
-                        <Badge className="bg-emerald-500/90 text-white border-0">{breed.origin}</Badge>
+                {cowBreeds.map((breed, index) => (
+                  <ScrollReveal key={breed.name} delay={(index % 4) * 100}>
+                    <div className="group h-full rounded-2xl border border-border bg-card shadow-card card-lift overflow-hidden">
+                      <div className="relative h-48 overflow-hidden">
+                        <img
+                          src={breed.image}
+                          alt={breed.name}
+                          loading="lazy"
+                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <div className="absolute top-3 right-3">
+                          <Badge className="bg-primary/90 text-white border-0">{breed.origin}</Badge>
+                        </div>
+                        <div className="absolute bottom-3 left-3 right-3">
+                          <span className="inline-block bg-card/90 backdrop-blur-sm rounded-lg px-3 py-1 text-sm font-semibold text-foreground">
+                            {breed.specialty}
+                          </span>
+                        </div>
                       </div>
-                      <div className="absolute bottom-3 left-3">
-                        <div className="bg-white/90 backdrop-blur-sm rounded-lg px-3 py-1">
-                          <span className="text-sm font-semibold text-gray-800">{breed.specialty}</span>
+                      <div className="p-5 space-y-4">
+                        <h3 className="text-xl font-bold text-primary">{breed.name}</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">{breed.characteristics}</p>
+                        <div className="grid grid-cols-2 gap-3 text-xs">
+                          <div className="bg-primary/5 border border-primary/10 rounded-lg p-2">
+                            <div className="text-muted-foreground">Weight</div>
+                            <div className="font-semibold text-primary">{breed.avgWeight}</div>
+                          </div>
+                          <div className="bg-primary/5 border border-primary/10 rounded-lg p-2">
+                            <div className="text-muted-foreground">Daily Yield</div>
+                            <div className="font-semibold text-primary">{breed.milkYield}</div>
+                          </div>
+                          <div className="bg-accent/10 border border-accent/20 rounded-lg p-2">
+                            <div className="text-muted-foreground">Fat Content</div>
+                            <div className="font-semibold text-accent">{breed.fatContent}</div>
+                          </div>
+                          <div className="bg-accent/10 border border-accent/20 rounded-lg p-2">
+                            <div className="text-muted-foreground">Climate</div>
+                            <div className="font-semibold text-accent truncate">{breed.climate}</div>
+                          </div>
+                        </div>
+                        <div className="text-xs text-muted-foreground">
+                          Lactation yield: <span className="font-semibold text-foreground">{breed.lactationYield}</span>
                         </div>
                       </div>
                     </div>
-                    <CardHeader className="pb-3">
-                      <CardTitle className="text-xl font-inter text-emerald-800">{breed.name}</CardTitle>
-                    </CardHeader>
-                    <CardContent className="space-y-4">
-                      <p className="text-sm text-gray-600 leading-relaxed">{breed.characteristics}</p>
-                      <div className="grid grid-cols-2 gap-3 text-xs">
-                        <div className="bg-emerald-50 rounded-lg p-2">
-                          <div className="text-gray-500">Weight</div>
-                          <div className="font-semibold text-emerald-800">{breed.avgWeight}</div>
-                        </div>
-                        <div className="bg-emerald-50 rounded-lg p-2">
-                          <div className="text-gray-500">Daily Yield</div>
-                          <div className="font-semibold text-emerald-800">{breed.milkYield}</div>
-                        </div>
-                        <div className="bg-emerald-50 rounded-lg p-2">
-                          <div className="text-gray-500">Fat Content</div>
-                          <div className="font-semibold text-emerald-800">{breed.fatContent}</div>
-                        </div>
-                        <div className="bg-emerald-50 rounded-lg p-2">
-                          <div className="text-gray-500">Climate</div>
-                          <div className="font-semibold text-emerald-800 truncate">{breed.climate}</div>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
+                  </ScrollReveal>
                 ))}
               </div>
             </TabsContent>
-            
+
             <TabsContent value="buffalo" className="mt-8">
               <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-                {buffaloBreeds.map((breed) => (
-                  <Card key={breed.name} className="group hover:shadow-2xl transition-all duration-500 overflow-hidden border-0 bg-gradient-to-br from-white to-teal-50">
-                    <div className="relative h-48 overflow-hidden">
-                      <img 
-                        src={breed.image} 
-                        alt={breed.name}
-                        loading="lazy"
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                      <div className="absolute top-3 right-3">
-                        <Badge className="bg-teal-500/90 text-white border-0">{breed.origin}</Badge>
+                {buffaloBreeds.map((breed, index) => (
+                  <ScrollReveal key={breed.name} delay={(index % 4) * 100}>
+                    <div className="group h-full rounded-2xl border border-border bg-card shadow-card card-lift overflow-hidden">
+                      <div className="relative h-48 overflow-hidden">
+                        <img
+                          src={breed.image}
+                          alt={breed.name}
+                          loading="lazy"
+                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <div className="absolute top-3 right-3">
+                          <Badge className="bg-accent/90 text-accent-foreground border-0">{breed.origin}</Badge>
+                        </div>
+                        <div className="absolute bottom-3 left-3 right-3">
+                          <span className="inline-block bg-card/90 backdrop-blur-sm rounded-lg px-3 py-1 text-sm font-semibold text-foreground">
+                            {breed.specialty}
+                          </span>
+                        </div>
                       </div>
-                      <div className="absolute bottom-3 left-3">
-                        <div className="bg-white/90 backdrop-blur-sm rounded-lg px-3 py-1">
-                          <span className="text-sm font-semibold text-gray-800">{breed.specialty}</span>
+                      <div className="p-5 space-y-4">
+                        <h3 className="text-xl font-bold text-primary">{breed.name}</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">{breed.characteristics}</p>
+                        <div className="grid grid-cols-2 gap-3 text-xs">
+                          <div className="bg-primary/5 border border-primary/10 rounded-lg p-2">
+                            <div className="text-muted-foreground">Weight</div>
+                            <div className="font-semibold text-primary">{breed.avgWeight}</div>
+                          </div>
+                          <div className="bg-primary/5 border border-primary/10 rounded-lg p-2">
+                            <div className="text-muted-foreground">Daily Yield</div>
+                            <div className="font-semibold text-primary">{breed.milkYield}</div>
+                          </div>
+                          <div className="bg-accent/10 border border-accent/20 rounded-lg p-2">
+                            <div className="text-muted-foreground">Fat Content</div>
+                            <div className="font-semibold text-accent">{breed.fatContent}</div>
+                          </div>
+                          <div className="bg-accent/10 border border-accent/20 rounded-lg p-2">
+                            <div className="text-muted-foreground">Climate</div>
+                            <div className="font-semibold text-accent truncate">{breed.climate}</div>
+                          </div>
+                        </div>
+                        <div className="text-xs text-muted-foreground">
+                          Lactation yield: <span className="font-semibold text-foreground">{breed.lactationYield}</span>
                         </div>
                       </div>
                     </div>
-                    <CardHeader className="pb-3">
-                      <CardTitle className="text-xl font-inter text-teal-800">{breed.name}</CardTitle>
-                    </CardHeader>
-                    <CardContent className="space-y-4">
-                      <p className="text-sm text-gray-600 leading-relaxed">{breed.characteristics}</p>
-                      <div className="grid grid-cols-2 gap-3 text-xs">
-                        <div className="bg-teal-50 rounded-lg p-2">
-                          <div className="text-gray-500">Weight</div>
-                          <div className="font-semibold text-teal-800">{breed.avgWeight}</div>
-                        </div>
-                        <div className="bg-teal-50 rounded-lg p-2">
-                          <div className="text-gray-500">Daily Yield</div>
-                          <div className="font-semibold text-teal-800">{breed.milkYield}</div>
-                        </div>
-                        <div className="bg-teal-50 rounded-lg p-2">
-                          <div className="text-gray-500">Fat Content</div>
-                          <div className="font-semibold text-teal-800">{breed.fatContent}</div>
-                        </div>
-                        <div className="bg-teal-50 rounded-lg p-2">
-                          <div className="text-gray-500">Climate</div>
-                          <div className="font-semibold text-teal-800 truncate">{breed.climate}</div>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
+                  </ScrollReveal>
                 ))}
               </div>
             </TabsContent>
@@ -513,129 +546,144 @@ const AnimalGuide = () => {
         </div>
       </section>
 
-      {/* Enhanced Physical Parameters */}
-      <section className="py-20 bg-gradient-to-br from-emerald-50 to-teal-50">
+      {/* Physical Parameters */}
+      <section className="section-padding">
         <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="font-playfair font-bold text-4xl md:text-5xl mb-6 text-gray-800">Physical Parameters Comparison</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Detailed comparison of physical characteristics between cattle and buffalo breeds
-            </p>
-          </div>
-          
-          <Card className="max-w-6xl mx-auto shadow-2xl border-0 overflow-hidden">
-            <CardHeader className="bg-gradient-to-r from-emerald-500 to-teal-500 text-white">
-              <CardTitle className="text-2xl font-inter text-center">Average Physical Measurements</CardTitle>
-            </CardHeader>
-            <CardContent className="p-0">
+          <ScrollReveal>
+            <div className="text-center mb-14">
+              <span className="section-badge mb-4">Body Comparison</span>
+              <h2 className="font-playfair text-3xl md:text-5xl font-bold mb-4">
+                Physical <span className="gradient-text">Parameters</span>
+              </h2>
+              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+                Compare body measurements of cattle and buffalo side by side.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <ScrollReveal variant="zoom" delay={100}>
+            <div className="max-w-6xl mx-auto rounded-2xl border border-border bg-card shadow-elegant overflow-hidden">
+              <div className="bg-gradient-to-r from-emerald-800 to-green-700 text-white py-5 px-6">
+                <h3 className="text-2xl font-playfair font-bold text-center">Average Physical Measurements</h3>
+              </div>
               <div className="overflow-x-auto">
-                <table className="w-full">
+                <table className="w-full min-w-[36rem]">
                   <thead>
-                    <tr className="bg-gray-50 border-b">
-                      <th className="text-left py-4 px-6 font-bold text-gray-800 text-lg">Parameter</th>
-                      <th className="text-center py-4 px-6 font-bold text-emerald-700 text-lg">Cattle</th>
-                      <th className="text-center py-4 px-6 font-bold text-teal-700 text-lg">Buffalo</th>
+                    <tr className="bg-muted/50 border-b border-border">
+                      <th className="text-left py-4 px-6 font-bold text-foreground text-lg">Parameter</th>
+                      <th className="text-center py-4 px-6 font-bold text-primary text-lg">Cattle</th>
+                      <th className="text-center py-4 px-6 font-bold text-accent text-lg">Buffalo</th>
                     </tr>
                   </thead>
                   <tbody>
                     {physicalParams.map((param, index) => (
-                      <tr key={index} className="border-b hover:bg-gray-50 transition-colors duration-200">
-                        <td className="py-4 px-6 font-semibold text-gray-800">{param.parameter}</td>
-                        <td className="py-4 px-6 text-center bg-emerald-50 font-medium text-emerald-800">{param.cow}</td>
-                        <td className="py-4 px-6 text-center bg-teal-50 font-medium text-teal-800">{param.buffalo}</td>
+                      <tr key={index} className="border-b border-border hover:bg-muted/40 transition-colors duration-200">
+                        <td className="py-4 px-6 font-semibold text-foreground">{param.parameter}</td>
+                        <td className="py-4 px-6 text-center bg-primary/5 font-medium text-primary">{param.cow}</td>
+                        <td className="py-4 px-6 text-center bg-accent/5 font-medium text-accent">{param.buffalo}</td>
                       </tr>
                     ))}
                   </tbody>
                 </table>
               </div>
-            </CardContent>
-          </Card>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 
-      {/* Enhanced Nutritional Comparison */}
-      <section className="py-20 bg-gradient-to-br from-white to-gray-100">
+      {/* Nutritional Comparison */}
+      <section className="section-padding bg-muted/30">
         <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="font-playfair font-bold text-4xl md:text-5xl mb-6 text-gray-800">Milk Nutritional Analysis</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Comprehensive comparison of milk composition and nutritional values
-            </p>
-          </div>
-          
-          <Card className="max-w-6xl mx-auto shadow-2xl border-0 overflow-hidden">
-            <CardHeader className="bg-gradient-to-r from-blue-500 to-indigo-500 text-white">
-              <CardTitle className="text-2xl font-inter text-center">Milk Composition Analysis</CardTitle>
-            </CardHeader>
-            <CardContent className="p-0">
+          <ScrollReveal>
+            <div className="text-center mb-14">
+              <span className="section-badge mb-4">Milk Quality</span>
+              <h2 className="font-playfair text-3xl md:text-5xl font-bold mb-4">
+                Milk <span className="gradient-text-warm">Nutrition</span> Compared
+              </h2>
+              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+                See what is inside cow milk and buffalo milk, side by side.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <ScrollReveal variant="zoom" delay={100}>
+            <div className="max-w-6xl mx-auto rounded-2xl border border-border bg-card shadow-elegant overflow-hidden">
+              <div className="bg-gradient-to-r from-green-700 to-amber-600 text-white py-5 px-6">
+                <h3 className="text-2xl font-playfair font-bold text-center">Milk Composition Analysis</h3>
+              </div>
               <div className="overflow-x-auto">
-                <table className="w-full">
+                <table className="w-full min-w-[36rem]">
                   <thead>
-                    <tr className="bg-gray-50 border-b">
-                      <th className="text-left py-4 px-6 font-bold text-gray-800 text-lg">Nutrient Component</th>
-                      <th className="text-center py-4 px-6 font-bold text-emerald-700 text-lg">Cow Milk</th>
-                      <th className="text-center py-4 px-6 font-bold text-teal-700 text-lg">Buffalo Milk</th>
+                    <tr className="bg-muted/50 border-b border-border">
+                      <th className="text-left py-4 px-6 font-bold text-foreground text-lg">Nutrient Component</th>
+                      <th className="text-center py-4 px-6 font-bold text-primary text-lg">Cow Milk</th>
+                      <th className="text-center py-4 px-6 font-bold text-accent text-lg">Buffalo Milk</th>
                     </tr>
                   </thead>
                   <tbody>
                     {nutritionalData.map((nutrient, index) => (
-                      <tr key={index} className="border-b hover:bg-gray-50 transition-colors duration-200">
-                        <td className="py-4 px-6 font-semibold text-gray-800">{nutrient.nutrient}</td>
-                        <td className="py-4 px-6 text-center bg-emerald-50 font-medium text-emerald-800">{nutrient.cow}</td>
-                        <td className="py-4 px-6 text-center bg-teal-50 font-medium text-teal-800">{nutrient.buffalo}</td>
+                      <tr key={index} className="border-b border-border hover:bg-muted/40 transition-colors duration-200">
+                        <td className="py-4 px-6 font-semibold text-foreground">{nutrient.nutrient}</td>
+                        <td className="py-4 px-6 text-center bg-primary/5 font-medium text-primary">{nutrient.cow}</td>
+                        <td className="py-4 px-6 text-center bg-accent/5 font-medium text-accent">{nutrient.buffalo}</td>
                       </tr>
                     ))}
                   </tbody>
                 </table>
               </div>
-              <div className="m-6 p-6 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl border-l-4 border-blue-400">
-                <h4 className="font-bold text-lg text-blue-800 mb-3">🔍 Key Insights</h4>
-                <div className="grid md:grid-cols-2 gap-4 text-sm text-gray-700">
+              <div className="m-6 p-6 bg-accent/10 rounded-xl border-l-4 border-accent">
+                <h4 className="font-bold text-lg text-accent mb-3">🔍 Key Insights</h4>
+                <div className="grid md:grid-cols-2 gap-4 text-sm text-muted-foreground">
                   <div>
-                    <p className="mb-2">Buffalo milk contains significantly higher fat content (6-8% vs 3.5-4.5%), making it ideal for producing rich dairy products like ghee, cheese, and traditional sweets.</p>
+                    <p className="mb-2">Buffalo milk has much more fat (6-8% vs 3.5-4.5%). This makes it ideal for rich dairy products like ghee, cheese, and traditional sweets.</p>
                   </div>
                   <div>
-                    <p>Cow milk has a lighter consistency and milder taste, making it more suitable for direct consumption, especially for children and health-conscious consumers.</p>
+                    <p>Cow milk is lighter and milder in taste. It is better for direct drinking, especially for children and health-conscious families.</p>
                   </div>
                 </div>
               </div>
-            </CardContent>
-          </Card>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 
-      {/* Enhanced Care & Management */}
-      <section className="py-20 bg-gradient-to-br from-green-50 via-emerald-50 to-teal-50">
+      {/* Care & Management */}
+      <section className="section-padding">
         <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="font-playfair font-bold text-4xl md:text-5xl mb-6 text-gray-800">Complete Care & Management Guide</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Essential practices for maintaining healthy and productive livestock
-            </p>
-          </div>
-          
+          <ScrollReveal>
+            <div className="text-center mb-14">
+              <span className="section-badge mb-4">Daily Care</span>
+              <h2 className="font-playfair text-3xl md:text-5xl font-bold mb-4">
+                Care &amp; <span className="gradient-text">Management</span> Guide
+              </h2>
+              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+                Simple daily practices to keep your animals healthy and productive.
+              </p>
+            </div>
+          </ScrollReveal>
+
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {managementTips.map((section) => (
-              <Card key={section.category} className="hover:shadow-2xl transition-all duration-500 border-0 bg-gradient-to-br from-white to-gray-50 group">
-                <CardHeader className="text-center pb-4">
-                  <div className="text-6xl mb-4 group-hover:scale-110 transition-transform duration-300">
-                    {section.icon}
+            {managementTips.map((section, index) => (
+              <ScrollReveal key={section.category} delay={index * 100}>
+                <div className="group h-full rounded-2xl border border-border bg-card shadow-card card-lift p-6">
+                  <div className="text-center mb-6">
+                    <div className="text-6xl mb-4 group-hover:scale-110 transition-transform duration-300">
+                      {section.icon}
+                    </div>
+                    <h3 className="text-2xl font-playfair font-bold text-foreground">
+                      {section.category}
+                    </h3>
                   </div>
-                  <CardTitle className="text-2xl font-playfair text-gray-800">
-                    {section.category}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-3">
                   <ul className="space-y-3">
-                    {section.tips.map((tip, index) => (
-                      <li key={index} className="flex items-start gap-3 text-sm text-gray-600 leading-relaxed">
-                        <span className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></span>
+                    {section.tips.map((tip, tipIndex) => (
+                      <li key={tipIndex} className="flex items-start gap-3 text-sm text-muted-foreground leading-relaxed">
+                        <span className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></span>
                         <span>{tip}</span>
                       </li>
                     ))}
                   </ul>
-                </CardContent>
-              </Card>
+                </div>
+              </ScrollReveal>
             ))}
           </div>
         </div>
