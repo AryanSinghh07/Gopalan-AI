@@ -69,7 +69,7 @@ const MedicalSupport = () => {
       name: "Cow",
 
       image: cowImage,
-      gradient: 'from-emerald-600 to-green-700',
+      gradient: 'from-primary to-primary-glow',
       description: "Dairy and beef cattle are essential livestock providing milk, meat, and leather products.",
       characteristics: ["Herbivorous", "Social animals", "Four-chambered stomach", "Average milk production: 6-8 gallons/day"],
       lifespan: "18-22 years",
@@ -142,7 +142,7 @@ const MedicalSupport = () => {
       name: "Buffalo",
 
       image: buffaloImage,
-      gradient: 'from-green-600 to-teal-700',
+      gradient: 'from-emerald-700 to-green-800',
       description: "Water buffalo are important for milk production and agricultural work in many tropical regions.",
       characteristics: ["Excellent swimmers", "Heat tolerant", "High milk fat content", "Strong work animals"],
       lifespan: "20-25 years",
@@ -361,24 +361,42 @@ const MedicalSupport = () => {
       <div className="bg-background">
         <div className="container mx-auto px-6">
 
-          {/* Animal Selection */}
+          {/* Health Checker Workflow */}
           <section className="section-padding">
             <ScrollReveal>
-              <div className="text-center mb-12">
+              <div className="text-center mb-10">
                 <span className="section-badge">
                   <Stethoscope className="h-4 w-4 mr-2" />
-                  Step 1
+                  Health Checker
                 </span>
                 <h2 className="font-display text-3xl md:text-5xl font-bold mt-4 mb-4">
-                  Choose Your <span className="gradient-text">Animal</span>
+                  Check Your Animal in <span className="gradient-text">2 Simple Steps</span>
                 </h2>
                 <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                  Tap the animal you need help with.
+                  Pick your animal, then find the condition for clear guidance.
                 </p>
               </div>
             </ScrollReveal>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            <div className="max-w-6xl mx-auto rounded-3xl border border-border bg-muted/30 p-5 sm:p-8 lg:p-10 space-y-16">
+              {/* Step 1 — Choose Your Animal */}
+              <div>
+                <ScrollReveal>
+                  <div className="text-center mb-10">
+                    <span className="inline-flex items-center gap-2 mb-3">
+                      <span className="flex items-center justify-center w-8 h-8 rounded-full bg-primary text-primary-foreground font-bold text-sm">1</span>
+                      <span className="text-primary font-bold tracking-wide text-sm">STEP ONE</span>
+                    </span>
+                    <h3 className="font-display text-2xl md:text-4xl font-bold mb-2">
+                      Choose Your <span className="gradient-text">Animal</span>
+                    </h3>
+                    <p className="text-muted-foreground max-w-2xl mx-auto">
+                      Tap the animal you need help with.
+                    </p>
+                  </div>
+                </ScrollReveal>
+
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               {animalData.map((animal, index) => (
                 <ScrollReveal key={animal.id} variant={index === 0 ? "slide-left" : "slide-right"} delay={index * 100} className="h-full">
                   <div
@@ -445,14 +463,24 @@ const MedicalSupport = () => {
                           </div>
                         </div>
 
-                        <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-                          <div className="flex items-center space-x-2 text-muted-foreground">
-                            <BookOpen className="h-5 w-5" />
-                            <span>{animal.conditions.length} conditions covered</span>
-                          </div>
-                          <span className={`min-h-12 px-6 py-3 rounded-full text-white font-medium bg-gradient-to-r ${animal.gradient} shadow-card group-hover:shadow-elegant transition-shadow flex items-center space-x-2`}>
-                            <span>Select {animal.name}</span>
-                            <ChevronRight className="h-4 w-4" />
+                        <div
+                          className={`flex items-center justify-between gap-3 min-h-12 px-5 rounded-xl font-semibold transition-colors ${
+                            selectedAnimal === animal.id
+                              ? 'bg-primary text-primary-foreground'
+                              : 'bg-muted text-foreground group-hover:bg-primary/10 group-hover:text-primary'
+                          }`}
+                        >
+                          <span className="flex items-center gap-2 text-sm font-medium">
+                            <BookOpen className="h-4 w-4" />
+                            {animal.conditions.length} conditions
+                          </span>
+                          <span className="flex items-center gap-2">
+                            {selectedAnimal === animal.id ? 'Selected' : `Select ${animal.name}`}
+                            {selectedAnimal === animal.id ? (
+                              <CheckCircle className="h-5 w-5" />
+                            ) : (
+                              <ChevronRight className="h-5 w-5" />
+                            )}
                           </span>
                         </div>
                       </div>
@@ -460,53 +488,28 @@ const MedicalSupport = () => {
                   </div>
                 </ScrollReveal>
               ))}
-            </div>
-          </section>
-
-          {/* Quick Tips Section */}
-          <section className="pb-16 md:pb-24">
-            <ScrollReveal>
-              <div className="text-center mb-12">
-                <span className="section-badge">
-                  <Heart className="h-4 w-4 mr-2" />
-                  Daily Care
-                </span>
-                <h2 className="font-display text-3xl md:text-5xl font-bold mt-4 mb-4">
-                  Quick <span className="gradient-text">Health Tips</span>
-                </h2>
-                <p className="text-lg text-muted-foreground">Simple habits that keep your animals healthy.</p>
+                </div>
               </div>
-            </ScrollReveal>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {quickTips.map((tip, index) => (
-                <ScrollReveal key={index} delay={index * 100} className="h-full">
-                  <div className="group h-full rounded-2xl border border-border bg-card shadow-card card-lift p-6">
-                    <div className="rounded-xl bg-primary/10 text-primary p-3 mb-4 inline-block group-hover:scale-110 transition-transform ease-smooth">
-                      {tip.icon}
-                    </div>
-                    <h3 className="font-bold text-lg mb-2">{tip.title}</h3>
-                    <p className="text-muted-foreground text-sm leading-relaxed">{tip.tip}</p>
+              {/* Divider between steps */}
+              <div className="border-t border-border" />
+
+              {/* Step 2 — Find the Condition */}
+              <div>
+                <ScrollReveal>
+                  <div className="text-center mb-10">
+                    <span className="inline-flex items-center gap-2 mb-3">
+                      <span className="flex items-center justify-center w-8 h-8 rounded-full bg-primary text-primary-foreground font-bold text-sm">2</span>
+                      <span className="text-primary font-bold tracking-wide text-sm">STEP TWO</span>
+                    </span>
+                    <h3 className="font-display text-2xl md:text-4xl font-bold mb-2">
+                      Find the <span className="gradient-text">Condition</span>
+                    </h3>
+                    <p className="text-muted-foreground max-w-2xl mx-auto">
+                      Search by name or symptom, then tap a condition to learn more.
+                    </p>
                   </div>
                 </ScrollReveal>
-              ))}
-            </div>
-          </section>
-
-          {/* Conditions Browser */}
-          <section className="pb-16 md:pb-24">
-            <ScrollReveal>
-              <div className="text-center mb-12">
-                <span className="section-badge">
-                  <BookOpen className="h-4 w-4 mr-2" />
-                  Step 2
-                </span>
-                <h2 className="font-display text-3xl md:text-5xl font-bold mt-4 mb-4">
-                  Find the <span className="gradient-text">Condition</span>
-                </h2>
-                <p className="text-lg text-muted-foreground">Search by name or symptom, then tap a condition to learn more.</p>
-              </div>
-            </ScrollReveal>
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
               {/* Conditions List */}
@@ -722,6 +725,38 @@ const MedicalSupport = () => {
                   </ScrollReveal>
                 )}
               </div>
+            </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Quick Health Tips */}
+          <section className="pb-16 md:pb-24">
+            <ScrollReveal>
+              <div className="text-center mb-12">
+                <span className="section-badge">
+                  <Heart className="h-4 w-4 mr-2" />
+                  Daily Care
+                </span>
+                <h2 className="font-display text-3xl md:text-5xl font-bold mt-4 mb-4">
+                  Quick <span className="gradient-text">Health Tips</span>
+                </h2>
+                <p className="text-lg text-muted-foreground">Simple habits that keep your animals healthy.</p>
+              </div>
+            </ScrollReveal>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {quickTips.map((tip, index) => (
+                <ScrollReveal key={index} delay={index * 100} className="h-full">
+                  <div className="group h-full rounded-2xl border border-border bg-card shadow-card card-lift p-6">
+                    <div className="rounded-xl bg-primary/10 text-primary p-3 mb-4 inline-block group-hover:scale-110 transition-transform ease-smooth">
+                      {tip.icon}
+                    </div>
+                    <h3 className="font-bold text-lg mb-2">{tip.title}</h3>
+                    <p className="text-muted-foreground text-sm leading-relaxed">{tip.tip}</p>
+                  </div>
+                </ScrollReveal>
+              ))}
             </div>
           </section>
 
