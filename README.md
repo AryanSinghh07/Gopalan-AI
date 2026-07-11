@@ -11,6 +11,10 @@
 Smart, AI-powered livestock evaluation for Indian farmers.
 Built to support the **Rashtriya Gokul Mission** 🇮🇳
 
+<br/>
+
+### 🔗 [**Live Website → gopalanai.netlify.app**](https://gopalanai.netlify.app/)
+
 </div>
 
 ---
@@ -175,9 +179,26 @@ src/
 
 ## 🌐 Deployment
 
-The site is configured for **Netlify** (`netlify.toml` includes the SPA redirect rule). Connect this
-GitHub repo to Netlify, set the build command to `npm run build` and the publish directory to `dist`,
-and every push auto-deploys. Any static host that serves `dist/` with an SPA fallback also works.
+🚀 **Live at [gopalanai.netlify.app](https://gopalanai.netlify.app/)** — deployed on **Netlify**.
+
+The project is set up for continuous deployment: it's connected to this GitHub repo, so **every push
+to `main` triggers an automatic rebuild and redeploy** — no manual steps.
+
+**Netlify configuration**
+
+| Setting | Value |
+|---|---|
+| Build command | `npm run build` |
+| Publish directory | `dist` |
+| SPA redirects | handled by `netlify.toml` (all routes → `index.html`) |
+
+**Deploy your own copy**
+
+1. Fork/clone this repo.
+2. On [Netlify](https://netlify.com), choose **Add new site → Import an existing project** and pick the repo.
+3. Netlify auto-detects the settings above — click **Deploy**.
+
+Any static host that serves `dist/` with an SPA fallback (Vercel, GitHub Pages, Cloudflare Pages, etc.) also works.
 
 ---
 
