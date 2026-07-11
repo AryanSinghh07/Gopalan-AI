@@ -5,7 +5,7 @@ import Navbar from "@/components/Navbar";
 
 const NotFound = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-emerald-900 via-green-800 to-teal-900">
+    <div className="min-h-screen bg-gradient-hero">
       <Navbar />
       <div className="flex min-h-screen items-center justify-center px-6">
         {/* Floating particles */}

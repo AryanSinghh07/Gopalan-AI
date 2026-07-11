@@ -314,7 +314,7 @@ const MedicalSupport = () => {
       <Navbar />
 
       {/* Hero Section */}
-      <div className="relative pt-20 bg-gradient-to-br from-emerald-900 via-green-800 to-teal-900 text-white overflow-hidden">
+      <div className="relative pt-20 bg-gradient-hero text-white overflow-hidden">
         <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
           <div className="absolute top-16 left-10 w-40 h-40 bg-white/5 rounded-full animate-float"></div>
           <div className="absolute bottom-10 right-16 w-32 h-32 bg-amber-300/10 rounded-full animate-float" style={{ animationDelay: '1.2s' }}></div>

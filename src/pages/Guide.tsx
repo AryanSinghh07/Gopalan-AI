@@ -151,7 +151,7 @@ const Guide = () => {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="pt-20 pb-20 bg-gradient-to-br from-emerald-900 via-green-800 to-teal-900 text-white relative overflow-hidden">
+      <section className="pt-20 pb-20 bg-gradient-hero text-white relative overflow-hidden">
         {/* Soft floating glows */}
         <div className="absolute -top-16 -right-16 w-72 h-72 bg-emerald-500/20 rounded-full blur-3xl animate-float" aria-hidden="true"></div>
         <div className="absolute -bottom-20 -left-10 w-80 h-80 bg-amber-400/10 rounded-full blur-3xl animate-pulse-soft" aria-hidden="true"></div>

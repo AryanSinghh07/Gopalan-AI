@@ -5,225 +5,13 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import ScrollReveal from "@/components/ScrollReveal";
 import AnimatedCounter from "@/components/AnimatedCounter";
 
-// Breed images
-import girImage from "@/assets/animals/gir.jpg";
-import sahiwalImage from "@/assets/animals/sahiwal.jpg";
-import murrahImage from "@/assets/animals/murrah-buffalo.jpg";
-import niliRaviImage from "@/assets/animals/nili-ravi-buffalo.jpg";
-import surtiImage from "@/assets/animals/surti-buffalo.jpg";
-import jafarabadiImage from "@/assets/animals/jafarabadi-buffalo.jpg";
+import { Link } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
+import { cowBreeds, buffaloBreeds } from "@/data/breeds";
 import cattleOverviewImage from "@/assets/animals/cattle.jpg";
 import buffaloOverviewImage from "@/assets/animals/water-buffalo.jpg";
-import ongoleImage from "@/assets/animals/ongole.jpg";
-import hallikarImage from "@/assets/animals/hallikar.jpg";
-import malnadImage from "@/assets/animals/malnad.jpg";
-import rathiImage from "@/assets/animals/rathi.jpg";
-import redsindhiImage from "@/assets/animals/red-sindhi.jpg";
-import kankrejImage from "@/assets/animals/kankrej.jpg";
-import mehsanaImage from "@/assets/animals/mehsana.jpg";
-import bhadawariImage from "@/assets/animals/bhadawari.jpg";
-import todaImage from "@/assets/animals/toda.jpg";
-import nagpuriImage from "@/assets/animals/nagpuri.jpg";
 
 const AnimalGuide = () => {
-  const cowBreeds = [
-    {
-      name: "Ongole",
-      origin: "Andhra Pradesh, India",
-      characteristics: "High milk production, black and white markings, docile temperament",
-      avgWeight: "600-700 kg",
-      milkYield: "20-30 liters/day",
-      lactationYield: "4,000-12,000 kg",
-      fatContent: "3.5-4.0%",
-      climate: "Cold to moderate",
-      image: ongoleImage,
-      specialty: "World's highest milk producer"
-    },
-    {
-      name: "Hallikar",
-      origin: "Karnataka, India",
-      characteristics: "High butterfat content, brown colored, large expressive eyes",
-      avgWeight: "350-450 kg",
-      milkYield: "15-20 liters/day",
-      lactationYield: "4,000-6,000 kg",
-      fatContent: "4.8-5.2%",
-      climate: "Adaptable to various climates",
-      image: hallikarImage,
-      specialty: "Highest quality milk with rich cream"
-    },
-    {
-      name: "Gir",
-      origin: "India (Gujarat)",
-      characteristics: "Drought resistant, distinctive lyre-shaped horns, gentle nature",
-      avgWeight: "300-400 kg",
-      milkYield: "10-15 liters/day",
-      lactationYield: "1,200-3,000 kg",
-      fatContent: "4.5-5.0%",
-      climate: "Hot and dry",
-      image: girImage,
-      specialty: "Heat tolerance and disease resistance"
-    },
-    {
-      name: "Sahiwal",
-      origin: "Pakistan/India",
-      characteristics: "Heat tolerant, reddish brown color, well-developed udder",
-      avgWeight: "400-500 kg",
-      milkYield: "12-16 liters/day",
-      lactationYield: "2,000-3,500 kg",
-      fatContent: "4.2-4.8%",
-      climate: "Hot and humid",
-      image: sahiwalImage,
-      specialty: "Excellent heat tolerance"
-    },
-    {
-      name: "Malnad Gidda",
-      origin: "Kannada region, India",
-      characteristics: "Golden milk, fawn and white color, calm temperament",
-      avgWeight: "450-500 kg",
-      milkYield: "18-22 liters/day",
-      lactationYield: "4,500-6,000 kg",
-      fatContent: "4.5-5.0%",
-      climate: "Moderate",
-      image: malnadImage, // Placeholder - replace with actual image
-      specialty: "Golden-colored milk rich in beta-carotene"
-    },
-    {
-      name: "Rathi",
-      origin: "India (Rajasthan)",
-      characteristics: "Large size, brown color, excellent longevity",
-      avgWeight: "600-700 kg",
-      milkYield: "20-25 liters/day",
-      lactationYield: "6,000-8,000 kg",
-      fatContent: "4.0-4.2%",
-      climate: "Mountainous regions",
-      image: rathiImage, // Placeholder - replace with actual image
-      specialty: "Excellent for cheese making"
-    },
-    {
-      name: "Red Sindhi",
-      origin: "Rajsthan (Sindh)",
-      characteristics: "Red color, heat resistant, good grazer",
-      avgWeight: "300-400 kg",
-      milkYield: "8-12 liters/day",
-      lactationYield: "1,500-2,500 kg",
-      fatContent: "4.5-5.2%",
-      climate: "Arid and semi-arid",
-      image: redsindhiImage, // Placeholder - replace with actual image
-      specialty: "Excellent heat and drought tolerance"
-    },
-    {
-      name: "Kankrej",
-      origin: "India (Gujarat/Rajasthan)",
-      characteristics: "Silver-grey color, lyre-shaped horns, dual purpose",
-      avgWeight: "400-500 kg",
-      milkYield: "8-10 liters/day",
-      lactationYield: "1,500-2,000 kg",
-      fatContent: "4.0-4.5%",
-      climate: "Arid regions",
-      image: kankrejImage, // Placeholder - replace with actual image
-      specialty: "Excellent draught power"
-    }
-  ];
-
-  const buffaloBreeds = [
-    {
-      name: "Murrah",
-      origin: "India (Haryana)",
-      characteristics: "Curved horns, high milk yield, black color, well-developed udder",
-      avgWeight: "450-650 kg",
-      milkYield: "15-20 liters/day",
-      lactationYield: "2,000-3,500 kg",
-      fatContent: "7-8%",
-      climate: "Sub-tropical",
-      image: murrahImage,
-      specialty: "Highest milk yielding buffalo breed"
-    },
-    {
-      name: "Nili-Ravi",
-      origin: "Pakistan/India (Punjab)",
-      characteristics: "Wall eyes, white markings on face and legs, tightly coiled horns",
-      avgWeight: "450-600 kg",
-      milkYield: "12-18 liters/day",
-      lactationYield: "1,800-2,500 kg",
-      fatContent: "6-8%",
-      climate: "Semi-arid",
-      image: niliRaviImage,
-      specialty: "Excellent adaptability"
-    },
-    {
-      name: "Surti",
-      origin: "India (Gujarat)",
-      characteristics: "Compact size, sickle-shaped horns, wedge-shaped body",
-      avgWeight: "350-450 kg",
-      milkYield: "8-12 liters/day",
-      lactationYield: "1,000-1,500 kg",
-      fatContent: "6-8%",
-      climate: "Semi-arid",
-      image: surtiImage,
-      specialty: "Ideal for small farms"
-    },
-    {
-      name: "Jafarabadi",
-      origin: "India (Gujarat)",
-      characteristics: "Large size, drooping ears, flat curved horns, black color",
-      avgWeight: "500-800 kg",
-      milkYield: "10-15 liters/day",
-      lactationYield: "1,500-2,000 kg",
-      fatContent: "7-9%",
-      climate: "Coastal regions",
-      image: jafarabadiImage,
-      specialty: "Heaviest buffalo breed in India"
-    },
-    {
-      name: "Mehsana",
-      origin: "India (Gujarat)",
-      characteristics: "Cross between Murrah and Surti, black/grey color, white markings",
-      avgWeight: "400-550 kg",
-      milkYield: "12-16 liters/day",
-      lactationYield: "1,500-2,000 kg",
-      fatContent: "6-7%",
-      climate: "Semi-arid",
-      image: mehsanaImage, // Placeholder - replace with actual image
-      specialty: "Combines best traits of parent breeds"
-    },
-    {
-      name: "Bhadawari",
-      origin: "India (UP/MP)",
-      characteristics: "Copper colored, medium size, well-adapted to local conditions",
-      avgWeight: "350-450 kg",
-      milkYield: "6-10 liters/day",
-      lactationYield: "800-1,200 kg",
-      fatContent: "8-12%",
-      climate: "Sub-tropical",
-      image: bhadawariImage, // Placeholder - replace with actual image
-      specialty: "Very high fat content milk"
-    },
-    {
-      name: "Toda",
-      origin: "India (Tamil Nadu - Nilgiris)",
-      characteristics: "Fawn colored, thick hair coat, semi-wild, sturdy build",
-      avgWeight: "300-400 kg",
-      milkYield: "4-8 liters/day",
-      lactationYield: "400-600 kg",
-      fatContent: "8%",
-      climate: "Hilly regions",
-      image: todaImage, // Placeholder - replace with actual image
-      specialty: "Adapted to hilly terrains"
-    },
-    {
-      name: "Nagpuri",
-      origin: "India (Maharashtra)",
-      characteristics: "Dark grey color, sword-like horns, white facial patches",
-      avgWeight: "400-500 kg",
-      milkYield: "8-12 liters/day",
-      lactationYield: "700-1,200 kg",
-      fatContent: "7-8%",
-      climate: "Semi-arid",
-      image: nagpuriImage, // Placeholder - replace with actual image
-      specialty: "Good draught animal"
-    }
-  ];
-
   const physicalParams = [
     { parameter: "Body Length", cow: "150-180 cm", buffalo: "140-170 cm" },
     { parameter: "Height at Withers", cow: "120-140 cm", buffalo: "130-150 cm" },
@@ -273,7 +61,7 @@ const AnimalGuide = () => {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="pt-20 pb-24 bg-gradient-to-br from-emerald-900 via-green-800 to-teal-900 text-white relative overflow-hidden">
+      <section className="pt-20 pb-24 bg-gradient-hero text-white relative overflow-hidden">
         <div className="absolute -top-20 -right-16 w-80 h-80 bg-emerald-500/20 rounded-full blur-3xl animate-float" aria-hidden="true"></div>
         <div className="absolute -bottom-24 -left-12 w-96 h-96 bg-amber-400/10 rounded-full blur-3xl animate-pulse-soft" aria-hidden="true"></div>
         <div className="container mx-auto px-6 relative z-10">
@@ -441,7 +229,7 @@ const AnimalGuide = () => {
               <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
                 {cowBreeds.map((breed, index) => (
                   <ScrollReveal key={breed.name} delay={(index % 4) * 100}>
-                    <div className="group h-full rounded-2xl border border-border bg-card shadow-card card-lift overflow-hidden">
+                    <Link to={`/breeds/${breed.slug}`} className="group block h-full rounded-2xl border border-border bg-card shadow-card card-lift overflow-hidden">
                       <div className="relative h-48 overflow-hidden">
                         <img
                           src={breed.image}
@@ -483,8 +271,11 @@ const AnimalGuide = () => {
                         <div className="text-xs text-muted-foreground">
                           Lactation yield: <span className="font-semibold text-foreground">{breed.lactationYield}</span>
                         </div>
+                        <span className="inline-flex items-center gap-1 text-primary font-semibold text-sm group-hover:gap-2 transition-all">
+                          View details <ArrowRight className="h-4 w-4" />
+                        </span>
                       </div>
-                    </div>
+                    </Link>
                   </ScrollReveal>
                 ))}
               </div>
@@ -494,7 +285,7 @@ const AnimalGuide = () => {
               <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
                 {buffaloBreeds.map((breed, index) => (
                   <ScrollReveal key={breed.name} delay={(index % 4) * 100}>
-                    <div className="group h-full rounded-2xl border border-border bg-card shadow-card card-lift overflow-hidden">
+                    <Link to={`/breeds/${breed.slug}`} className="group block h-full rounded-2xl border border-border bg-card shadow-card card-lift overflow-hidden">
                       <div className="relative h-48 overflow-hidden">
                         <img
                           src={breed.image}
@@ -536,8 +327,11 @@ const AnimalGuide = () => {
                         <div className="text-xs text-muted-foreground">
                           Lactation yield: <span className="font-semibold text-foreground">{breed.lactationYield}</span>
                         </div>
+                        <span className="inline-flex items-center gap-1 text-primary font-semibold text-sm group-hover:gap-2 transition-all">
+                          View details <ArrowRight className="h-4 w-4" />
+                        </span>
                       </div>
-                    </div>
+                    </Link>
                   </ScrollReveal>
                 ))}
               </div>
