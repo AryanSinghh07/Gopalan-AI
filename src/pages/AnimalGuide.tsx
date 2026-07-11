@@ -62,22 +62,22 @@ const AnimalGuide = () => {
 
       {/* Hero Section */}
       <section className="pt-20 pb-24 bg-gradient-hero text-white relative overflow-hidden">
-        <div className="absolute -top-20 -right-16 w-80 h-80 bg-emerald-500/20 rounded-full blur-3xl animate-float" aria-hidden="true"></div>
+        <div className="absolute -top-20 -right-16 w-80 h-80 bg-accent/25 rounded-full blur-3xl animate-float" aria-hidden="true"></div>
         <div className="absolute -bottom-24 -left-12 w-96 h-96 bg-amber-400/10 rounded-full blur-3xl animate-pulse-soft" aria-hidden="true"></div>
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center max-w-5xl mx-auto">
             <ScrollReveal variant="fade-in">
-              <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 text-emerald-100 text-sm font-semibold tracking-wide mb-6">
+              <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 text-white/85 text-sm font-semibold tracking-wide mb-6">
                 Complete Livestock Guide
               </span>
             </ScrollReveal>
             <ScrollReveal variant="fade-up" delay={100}>
               <h1 className="font-display font-bold text-4xl md:text-6xl mb-8 text-white leading-tight">
-                Complete Guide to <span className="bg-gradient-to-r from-emerald-200 via-green-100 to-amber-200 bg-clip-text text-transparent">Cattle &amp; Buffalo</span>
+                Complete Guide to <span className="bg-gradient-to-r from-amber-200 via-amber-100 to-orange-200 bg-clip-text text-transparent">Cattle &amp; Buffalo</span>
               </h1>
             </ScrollReveal>
             <ScrollReveal variant="fade-up" delay={200}>
-              <p className="text-lg md:text-xl text-emerald-50/90 mb-10 leading-relaxed max-w-3xl mx-auto">
+              <p className="text-lg md:text-xl text-white/85 mb-10 leading-relaxed max-w-3xl mx-auto">
                 Learn about cattle and buffalo breeds — their traits, milk yield, and how to care for them.
               </p>
             </ScrollReveal>
@@ -85,15 +85,15 @@ const AnimalGuide = () => {
               <div className="flex flex-wrap justify-center gap-4">
                 <div className="rounded-2xl bg-white/10 px-6 py-4 min-w-[8rem]">
                   <AnimatedCounter end={16} className="text-3xl font-display font-bold text-white" />
-                  <p className="text-sm text-emerald-100 mt-1">Cattle Breeds</p>
+                  <p className="text-sm text-white/85 mt-1">Cattle Breeds</p>
                 </div>
                 <div className="rounded-2xl bg-white/10 px-6 py-4 min-w-[8rem]">
                   <AnimatedCounter end={8} className="text-3xl font-display font-bold text-white" />
-                  <p className="text-sm text-emerald-100 mt-1">Buffalo Breeds</p>
+                  <p className="text-sm text-white/85 mt-1">Buffalo Breeds</p>
                 </div>
                 <div className="rounded-2xl bg-white/10 px-6 py-4 min-w-[8rem]">
                   <AnimatedCounter end={4} className="text-3xl font-display font-bold text-white" />
-                  <p className="text-sm text-emerald-100 mt-1">Expert Care Areas</p>
+                  <p className="text-sm text-white/85 mt-1">Expert Care Areas</p>
                 </div>
               </div>
             </ScrollReveal>
@@ -126,7 +126,7 @@ const AnimalGuide = () => {
                     loading="lazy"
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-emerald-950/70 via-transparent to-transparent"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
                   <div className="absolute bottom-4 left-4">
                     <span className="inline-block bg-primary/90 backdrop-blur-sm rounded-full px-4 py-2 text-white font-semibold">
                       8 Breeds Featured

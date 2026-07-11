@@ -153,13 +153,13 @@ const Guide = () => {
       {/* Hero Section */}
       <section className="pt-20 pb-20 bg-gradient-hero text-white relative overflow-hidden">
         {/* Soft floating glows */}
-        <div className="absolute -top-16 -right-16 w-72 h-72 bg-emerald-500/20 rounded-full blur-3xl animate-float" aria-hidden="true"></div>
+        <div className="absolute -top-16 -right-16 w-72 h-72 bg-accent/25 rounded-full blur-3xl animate-float" aria-hidden="true"></div>
         <div className="absolute -bottom-20 -left-10 w-80 h-80 bg-amber-400/10 rounded-full blur-3xl animate-pulse-soft" aria-hidden="true"></div>
 
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <ScrollReveal variant="fade-in">
-              <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 text-emerald-100 text-sm font-semibold tracking-wide mb-4">
+              <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 text-white/85 text-sm font-semibold tracking-wide mb-4">
                 Step-by-Step Guide
               </span>
             </ScrollReveal>
@@ -169,7 +169,7 @@ const Guide = () => {
               </h1>
             </ScrollReveal>
             <ScrollReveal variant="fade-up" delay={200}>
-              <p className="text-lg text-emerald-50/90 mb-8 max-w-2xl mx-auto">
+              <p className="text-lg text-white/85 mb-8 max-w-2xl mx-auto">
                 Follow this simple guide to classify and score your animals with our AI system.
               </p>
             </ScrollReveal>
@@ -182,7 +182,7 @@ const Guide = () => {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="bg-transparent text-white border-white/60 hover:bg-white hover:text-emerald-900 transition-colors duration-200"
+                  className="bg-transparent text-white border-white/60 hover:bg-white hover:text-primary transition-colors duration-200"
                 >
                   Watch Tutorial
                 </Button>
@@ -194,15 +194,15 @@ const Guide = () => {
               <div className="mt-10 grid grid-cols-3 gap-4 max-w-md mx-auto">
                 <div className="rounded-2xl bg-white/10 px-4 py-3">
                   <AnimatedCounter end={5} className="text-3xl font-display font-bold text-white" />
-                  <p className="text-xs text-emerald-100 mt-1">Easy Steps</p>
+                  <p className="text-xs text-white/85 mt-1">Easy Steps</p>
                 </div>
                 <div className="rounded-2xl bg-white/10 px-4 py-3">
                   <AnimatedCounter end={3} className="text-3xl font-display font-bold text-white" />
-                  <p className="text-xs text-emerald-100 mt-1">Photo Angles</p>
+                  <p className="text-xs text-white/85 mt-1">Photo Angles</p>
                 </div>
                 <div className="rounded-2xl bg-white/10 px-4 py-3">
                   <AnimatedCounter end={2} className="text-3xl font-display font-bold text-white" />
-                  <p className="text-xs text-emerald-100 mt-1">Points per Photo</p>
+                  <p className="text-xs text-white/85 mt-1">Points per Photo</p>
                 </div>
               </div>
             </ScrollReveal>

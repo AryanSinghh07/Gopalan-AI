@@ -71,7 +71,7 @@ const Hero = () => {
           </video>
         ))}
         {/* Readability overlay: deep green tint fading to dark */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-emerald-950/40 to-black/60" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/45 to-black/60" />
       </div>
 
       {/* Floating particles */}

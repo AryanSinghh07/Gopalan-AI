@@ -318,7 +318,7 @@ const MedicalSupport = () => {
         <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
           <div className="absolute top-16 left-10 w-40 h-40 bg-white/5 rounded-full animate-float"></div>
           <div className="absolute bottom-10 right-16 w-32 h-32 bg-amber-300/10 rounded-full animate-float" style={{ animationDelay: '1.2s' }}></div>
-          <div className="absolute top-1/3 right-1/4 w-24 h-24 bg-emerald-300/10 rounded-full animate-pulse-soft"></div>
+          <div className="absolute top-1/3 right-1/4 w-24 h-24 bg-accent/20 rounded-full animate-pulse-soft"></div>
         </div>
 
         <div className="container mx-auto px-6 relative z-10 section-padding">
@@ -339,7 +339,7 @@ const MedicalSupport = () => {
             </ScrollReveal>
 
             <ScrollReveal delay={100}>
-              <p className="text-lg md:text-xl text-emerald-100 max-w-3xl mx-auto mb-12 leading-relaxed">
+              <p className="text-lg md:text-xl text-white/85 max-w-3xl mx-auto mb-12 leading-relaxed">
                 Your trusted health guide for cows and buffalo. Find symptoms, causes, treatments, and emergency steps — all in one place.
               </p>
             </ScrollReveal>
@@ -353,7 +353,7 @@ const MedicalSupport = () => {
                       {stat.icon}
                     </div>
                     <div className="text-2xl md:text-3xl font-bold text-white mb-1">{stat.value}</div>
-                    <div className="text-emerald-100 text-sm md:text-base">{stat.label}</div>
+                    <div className="text-white/85 text-sm md:text-base">{stat.label}</div>
                   </div>
                 </ScrollReveal>
               ))}
