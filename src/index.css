@@ -113,7 +113,8 @@
     @apply bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent;
   }
 
-  .gradient-text-lime {
+  .gradient-text-lime,
+  .gradient-text-warm {
     @apply bg-gradient-to-r from-primary-glow to-accent bg-clip-text text-transparent;
   }
 

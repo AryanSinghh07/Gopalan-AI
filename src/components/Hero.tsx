@@ -47,8 +47,8 @@ const Hero = () => {
     };
   }, []);
 
-  const scrollToClassification = () => {
-    document.getElementById("classification")?.scrollIntoView({ behavior: "smooth" });
+  const scrollToHowItWorks = () => {
+    document.getElementById("how-it-works")?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -116,10 +116,9 @@ const Hero = () => {
           <div className="animate-scale-in" style={{ animationDelay: "0.6s" }}>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Button
-                variant="hero"
                 size="lg"
-                className="font-inter text-lg px-8 py-6 min-h-14 rounded-xl transform hover:scale-105 transition-all duration-300 shadow-glow"
-                onClick={scrollToClassification}
+                className="btn-lime font-inter text-lg px-8 py-6 min-h-14 rounded-xl transform hover:scale-105 transition-all duration-300"
+                onClick={() => navigate("/analyze")}
               >
                 <Camera className="h-5 w-5 mr-2" />
                 Analyze My Animal
@@ -128,7 +127,7 @@ const Hero = () => {
                 variant="outline-hero"
                 size="lg"
                 className="font-inter text-lg px-8 py-6 min-h-14 rounded-xl transform hover:scale-105 transition-all duration-300"
-                onClick={() => navigate("/guide")}
+                onClick={scrollToHowItWorks}
               >
                 <BookOpen className="h-5 w-5 mr-2" />
                 How It Works
@@ -140,7 +139,7 @@ const Hero = () => {
 
       {/* Scroll Indicator */}
       <button
-        onClick={scrollToClassification}
+        onClick={scrollToHowItWorks}
         aria-label="Scroll to learn more"
         className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/70 hover:text-white transition-colors animate-bounce"
       >

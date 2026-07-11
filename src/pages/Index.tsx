@@ -1,9 +1,8 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import AnimalTypeClassification from "@/components/AnimalTypeClassification";
+import HowItWorks from "@/components/HowItWorks";
 import ProblemStatement from "@/components/ProblemStatement";
-import Solution from "@/components/Solution";
-import TechnologySpecs from "@/components/TechnologySpecs";
+import Features from "@/components/Features";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -11,10 +10,9 @@ const Index = () => {
     <div className="min-h-screen bg-background font-inter">
       <Navbar />
       <Hero />
-      <AnimalTypeClassification />
+      <HowItWorks />
       <ProblemStatement />
-      <Solution />
-      <TechnologySpecs />
+      <Features />
       <Footer />
     </div>
   );
